@@ -158,3 +158,41 @@ $ git push --tags
 ```
 
 <hr>
+
+<h4>Merge & Rebase</h4>
+
+Merge <branch> into your current HEAD:
+```
+$ git merge <branch>
+```
+
+Rebase your current HEAD onto <branch>:<br>
+<em><sub>Don't rebase published commit!</sub></em>
+```
+$ git rebase <branch>
+```
+
+Abort a rebase:
+```
+$ git rebase --abort
+```
+
+Continue a rebase after resolving conflicts:
+```
+$ git rebase --continue
+```
+
+Use your configured merge tool to solve conflicts:
+```
+$ git mergetool
+```
+
+Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+```
+$ git add <resolved-file>
+```
+```
+$ git rm <resolved-file>
+```
+
+<hr>
