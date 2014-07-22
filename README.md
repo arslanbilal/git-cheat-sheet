@@ -10,8 +10,7 @@ Git Cheat Sheet
 * [Undo](#7)
 
 <hr>
-###1
-<h4>Create</h4>
+###Create
 
 Clone an existing repository:
 ```
@@ -24,8 +23,7 @@ $ git init
 ```
 
 <hr>
-###2
-<h4>Local Changes</h4>
+###Local Changes
 
 Changed files in your working directory:
 ```
@@ -69,8 +67,7 @@ $ git commit --amend
 ```
 
 <hr>
-###3
-<h4>Commit History</h4>
+###Commit History
 
 Show all commits, starting with newest:
 ```
@@ -88,8 +85,7 @@ $ git blame <file>
 ```
 
 <hr>
-###4
-<h4>Branches & Tags</h4>
+###Branches & Tags
 
 List all existing branches:
 ```
@@ -122,8 +118,7 @@ $ git tag <tag-name>
 ```
 
 <hr>
-###5
-<h4>Update & Publish</h4>
+###Update & Publish
 
 List all current configured remotes:
 ```
@@ -166,8 +161,7 @@ $ git push --tags
 ```
 
 <hr>
-###6
-<h4>Merge & Rebase</h4>
+###Merge & Rebase
 
 Merge <branch> into your current HEAD:
 ```
@@ -204,8 +198,7 @@ $ git rm <resolved-file>
 ```
 
 <hr>
-###7
-<h4>Undo</h4>
+###Undo
 
 Discard all local changes in your working directory:
 ```
