@@ -196,3 +196,37 @@ $ git rm <resolved-file>
 ```
 
 <hr>
+
+<h4>Undo</h4>
+
+Discard all local changes in your working directory:
+```
+$ git reset --hard HEAD
+```
+
+Discard local changes in a specific file:
+```
+$ git checkout HEAD <file>
+```
+
+Revert a commit (by producing a new commit with contrary changes):
+```
+$ git revert <commit>
+```
+
+Reset your HEAD pointer to a previous commit and discard all changes since then:
+```
+$ git reset --hard <commit>
+```
+
+Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+```
+$ git reset <commit>
+```
+
+Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+```
+$ git reset --keep <commit>
+```
+
+<hr>
