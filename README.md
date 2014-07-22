@@ -80,3 +80,37 @@ $ git blame <file>
 ```
 
 <hr>
+
+<h4>Branches & Tags</h4>
+
+List all existing branches:
+```
+$ git branch
+```
+
+Switch HEAD branch:
+```
+$ git checkout <branch>
+```
+
+Create a new branch based on your current HEAD:
+```
+$ git branch <new-branch>
+```
+
+Create a new tracking branch based on a remote branch:
+```
+$ git branch --track <new-branch> <remote-branch>
+```
+
+Delete a local branch:
+```
+$ git branch -d <branch>
+```
+
+Mark the current commit with a tag:
+```
+$ git tag <tag-name>
+```
+
+<hr>
