@@ -1,5 +1,10 @@
 Git Cheat Sheet
 ===============
+
+Git cheat sheet saves you from learning all the commands by heart.
+
+<hr>
+
 ###Index
 * [Create](#1)
 * [Local Changes](#2)
