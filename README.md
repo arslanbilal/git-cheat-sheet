@@ -1,8 +1,16 @@
 Git Cheat Sheet
 ===============
+###Index
+* [Create](#1)
+* [Local Changes](#2)
+* [Commit History](#3)
+* [Branches & Tags](#4)
+* [Update & Publish](#5)
+* [Merge & Rebase](#6)
+* [Undo](#7)
 
 <hr>
-
+###1
 <h4>Create</h4>
 
 Clone an existing repository:
@@ -16,7 +24,7 @@ $ git init
 ```
 
 <hr>
-
+###2
 <h4>Local Changes</h4>
 
 Changed files in your working directory:
@@ -61,7 +69,7 @@ $ git commit --amend
 ```
 
 <hr>
-
+###3
 <h4>Commit History</h4>
 
 Show all commits, starting with newest:
@@ -80,7 +88,7 @@ $ git blame <file>
 ```
 
 <hr>
-
+###4
 <h4>Branches & Tags</h4>
 
 List all existing branches:
@@ -114,7 +122,7 @@ $ git tag <tag-name>
 ```
 
 <hr>
-
+###5
 <h4>Update & Publish</h4>
 
 List all current configured remotes:
@@ -158,7 +166,7 @@ $ git push --tags
 ```
 
 <hr>
-
+###6
 <h4>Merge & Rebase</h4>
 
 Merge <branch> into your current HEAD:
@@ -196,7 +204,7 @@ $ git rm <resolved-file>
 ```
 
 <hr>
-
+###7
 <h4>Undo</h4>
 
 Discard all local changes in your working directory:
