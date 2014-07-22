@@ -45,7 +45,7 @@ Add all current changes to the next commit:
 $ git add
 ```
 
-Add some changes in <file> to the next commit:
+Add some changes in &lt;file&gt; to the next commit:
 ```
 $ git add -p <file>
 ```
@@ -84,7 +84,7 @@ Show changes over time for a specific file:
 $ git log -p <file>
 ```
 
-Who changed, what and when in <file>:
+Who changed, what and when in &lt;file&gt;:
 ```
 $ git blame <file>
 ```
@@ -135,12 +135,12 @@ Show information about a remote:
 $ git remote show <remote>
 ```
 
-Add new remote repository, named <remote>:
+Add new remote repository, named &lt;remote&gt;:
 ```
 $ git remote add <remote> <url>
 ```
 
-Download all changes from <remote>, but don't integrate into HEAD:
+Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
 ```
 $ git fetch <remote>
 ```
@@ -173,7 +173,7 @@ Merge <branch> into your current HEAD:
 $ git merge <branch>
 ```
 
-Rebase your current HEAD onto <branch>:<br>
+Rebase your current HEAD onto &lt;branch&gt;:<br>
 <em><sub>Don't rebase published commit!</sub></em>
 ```
 $ git rebase <branch>
