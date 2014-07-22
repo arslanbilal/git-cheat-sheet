@@ -114,3 +114,47 @@ $ git tag <tag-name>
 ```
 
 <hr>
+
+<h4>Update & Publish</h4>
+
+List all current configured remotes:
+```
+$ git remote -v
+```
+
+Show information about a remote:
+```
+$ git remote show <remote>
+```
+
+Add new remote repository, named <remote>:
+```
+$ git remote add <remote> <url>
+```
+
+Download all changes from <remote>, but don't integrate into HEAD:
+```
+$ git fetch <remote>
+```
+
+Download changes and directly merge/integrate into HEAD:
+```
+$ git remote pull <remote> <url>
+```
+
+Publish local changes on a remote:
+```
+$ git push remote <remote> <branch>
+```
+
+Delete a branch on the remote:
+```
+$ git push <remote> :<branch>
+```
+
+Publish your tags:
+```
+$ git push --tags
+```
+
+<hr>
