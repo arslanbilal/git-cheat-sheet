@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ===============
 
+<p align="center">
+	<img alt="Git" src="./Img/git-logo.png">
+</p>
+
 Git cheat sheet saves you from learning all the commands by heart.
 
 <hr>
