@@ -1,9 +1,21 @@
 Git Cheat Sheet
 ===============
 
+Git cheat sheet saves you from learning all the commands by heart.
+
 <hr>
 
-<h4>Create</h4>
+###Index
+* [Create](#1)
+* [Local Changes](#2)
+* [Commit History](#3)
+* [Branches & Tags](#4)
+* [Update & Publish](#5)
+* [Merge & Rebase](#6)
+* [Undo](#7)
+
+<hr>
+###Create
 
 Clone an existing repository:
 ```
@@ -16,8 +28,7 @@ $ git init
 ```
 
 <hr>
-
-<h4>Local Changes</h4>
+###Local Changes
 
 Changed files in your working directory:
 ```
@@ -34,7 +45,7 @@ Add all current changes to the next commit:
 $ git add
 ```
 
-Add some changes in <file> to the next commit:
+Add some changes in &lt;file&gt; to the next commit:
 ```
 $ git add -p <file>
 ```
@@ -46,7 +57,7 @@ $ git commit -a
 
 Commit previously staged changes:
 ```
-$ it commit
+$ git commit
 ```
 
 Commit with message
@@ -61,8 +72,7 @@ $ git commit --amend
 ```
 
 <hr>
-
-<h4>Commit History</h4>
+###Commit History
 
 Show all commits, starting with newest:
 ```
@@ -74,14 +84,13 @@ Show changes over time for a specific file:
 $ git log -p <file>
 ```
 
-Who changed, what and when in <file>:
+Who changed, what and when in &lt;file&gt;:
 ```
 $ git blame <file>
 ```
 
 <hr>
-
-<h4>Branches & Tags</h4>
+###Branches & Tags
 
 List all existing branches:
 ```
@@ -114,8 +123,7 @@ $ git tag <tag-name>
 ```
 
 <hr>
-
-<h4>Update & Publish</h4>
+###Update & Publish
 
 List all current configured remotes:
 ```
@@ -127,12 +135,12 @@ Show information about a remote:
 $ git remote show <remote>
 ```
 
-Add new remote repository, named <remote>:
+Add new remote repository, named &lt;remote&gt;:
 ```
 $ git remote add <remote> <url>
 ```
 
-Download all changes from <remote>, but don't integrate into HEAD:
+Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
 ```
 $ git fetch <remote>
 ```
@@ -158,15 +166,14 @@ $ git push --tags
 ```
 
 <hr>
-
-<h4>Merge & Rebase</h4>
+###Merge & Rebase
 
 Merge <branch> into your current HEAD:
 ```
 $ git merge <branch>
 ```
 
-Rebase your current HEAD onto <branch>:<br>
+Rebase your current HEAD onto &lt;branch&gt;:<br>
 <em><sub>Don't rebase published commit!</sub></em>
 ```
 $ git rebase <branch>
@@ -196,8 +203,7 @@ $ git rm <resolved-file>
 ```
 
 <hr>
-
-<h4>Undo</h4>
+###Undo
 
 Discard all local changes in your working directory:
 ```
