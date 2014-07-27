@@ -156,8 +156,8 @@ $ git remote pull <remote> <url>
 
 Get all changes from HEAD to local repository:
 ```
-```
 $ git pull origin master
+```
 
 Publish local changes on a remote:
 ```
