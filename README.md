@@ -6,3 +6,5 @@ Git Cheat Sheet
 </p>
 
 Git cheat sheet saves you from learning all the commands by heart.
+
+Be free to contribute and add your language.
