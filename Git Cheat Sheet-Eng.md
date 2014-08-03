@@ -58,7 +58,7 @@ Commit previously staged changes:
 $ git commit
 ```
 
-Commit with message
+Commit with message:
 ```
 $ git commit -m 'message here'
 ```
