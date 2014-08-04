@@ -7,4 +7,4 @@ Git Cheat Sheet
 
 Git cheat sheet saves you from learning all the commands by heart.
 
-Be free to contribute and add your language.
+Be free to contribute, update the grammar mistakes. You are also free to add your language file.
