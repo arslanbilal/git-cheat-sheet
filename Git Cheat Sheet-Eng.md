@@ -4,13 +4,13 @@ Git Cheat Sheet English
 <hr>
 
 ###Index
-* [Create](#1)
-* [Local Changes](#2)
-* [Commit History](#3)
-* [Branches & Tags](#4)
-* [Update & Publish](#5)
-* [Merge & Rebase](#6)
-* [Undo](#7)
+* [Create](#create)
+* [Local Changes](#local-changes)
+* [Commit History](#commit-history)
+* [Branches & Tags](#branches--tags)
+* [Update & Publish](#update--publish)
+* [Merge & Rebase](#merge--rebase)
+* [Undo](#undo)
 
 <hr>
 ###Create
