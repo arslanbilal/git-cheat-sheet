@@ -4,7 +4,7 @@ Git Cheat Sheet English
 <hr>
 
 ###Index
-* [Create](#1)
+* [Create](#create)
 * [Local Changes](#2)
 * [Commit History](#3)
 * [Branches & Tags](#4)
