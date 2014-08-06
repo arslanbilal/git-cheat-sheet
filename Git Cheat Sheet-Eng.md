@@ -1,7 +1,6 @@
 Git Cheat Sheet English
 ===============
 
-<hr>
 
 ###Index
 * [Create](#create)
