@@ -1,7 +1,6 @@
 Git Cheat Sheet Turkish
 ===============
 
-<hr>
 
 ###Index
 * [Oluşturma](#oluşturma)
