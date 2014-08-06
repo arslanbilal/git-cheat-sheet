@@ -7,7 +7,7 @@ Git Cheat Sheet
 
 # Avaiable Languages:
 - [English Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Eng.md)
-- [Turkish Git Cheat Shhet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Tr.md)
+- [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Tr.md)
 
 Git cheat sheet saves you from learning all the commands by heart.
 
