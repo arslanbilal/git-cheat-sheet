@@ -9,7 +9,7 @@ Git Cheat Sheet Turkish
 * [Commit Geçmişi](#commit-geçmişi)
 * [Branches & Tags](#branches--tags)
 * [Güncelleştirme & Yayınlama](#güncelleştirme--yayınlama)
-* [Birleştirme & Rebase](#merge--rebase)
+* [Merge(Birleştirme) & Rebase](#merge--rebase)
 * [Geri Alma](#geri-alma)
 
 <hr>
@@ -168,7 +168,7 @@ $ git push --tags
 ```
 
 <hr>
-###Merge(Birleştirmek) & Rebase
+###Merge & Rebase
 
 Merge <branch> into your current HEAD:
 ```
