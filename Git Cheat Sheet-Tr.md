@@ -4,23 +4,23 @@ Git Cheat Sheet Turkish
 <hr>
 
 ###Index
-* [Oluşturma](#Oluşturma)
-* [Yerel Değişiklikler](#Yerel-Değişiklikler)
-* [Commit Geçmişi](#Commit-Geçmişi)
-* [Branches & Tags](#Branches--Tags)
-* [Güncelleştirme & Yayınlama](#Güncelleştirme--Yayınlama)
-* [Birleştirme & Rebase](#Birleştirme--Rebase)
-* [Geri Alma](#Geri-Alma)
+* [Oluşturma](#oluşturma)
+* [Yerel Değişiklikler](#yerel-değişiklikler)
+* [Commit Geçmişi](#commit-geçmişi)
+* [Branches & Tags](#branches--tags)
+* [Güncelleştirme & Yayınlama](#güncelleştirme--yayınlama)
+* [Birleştirme & Rebase](#merge--rebase)
+* [Geri Alma](#geri-alma)
 
 <hr>
 ###Oluşturma
 
-Var olan bir repositoryi klonlama:
+Var olan bir repositoryi(depoyu) klonlama:
 ```
 $ git clone ssh://user@domain.com/repo.git
 ```
 
-Yeni bir yerel repository oluşturma:
+Yeni bir yerel repository(depo) oluşturma:
 ```
 $ git init
 ```
@@ -72,12 +72,12 @@ $ git commit --amend
 <hr>
 ###Commit Geçmişi
 
-Tüm commitleri gösterme, en yenisinden başlar:
+Tüm commitleri en yenisinden başlayarak listeler:
 ```
 $ git log
 ```
 
-Belirli bir dosya için zaman içindeki değişiklikleri göstermektedir:
+Belirli bir dosya üzerinde zaman içinde meydana gelen değişiklikleri göstermektedir:
 ```
 $ git log -p <file>
 ```
@@ -87,7 +87,7 @@ $ git blame <file>
 ```
 
 <hr>
-###Branches & Tags
+###Branches & Tags(Etiketler)
 
 Tüm var olan branchleri listeler:
 ```
@@ -152,7 +152,7 @@ Tüm ana Branchteki değişiklikleri yerel repositorye ekler:
 $ git pull origin master
 ```
 
-Remote da bulunan repositorye, yerel değişiklikleri yayınlar:
+Remote da bulunan repositorye(depoya), yerel değişiklikleri yayınlar:
 ```
 $ git push remote <remote> <branch>
 ```
@@ -168,7 +168,7 @@ $ git push --tags
 ```
 
 <hr>
-###Merge & Rebase
+###Merge(Birleştirmek) & Rebase
 
 Merge <branch> into your current HEAD:
 ```
@@ -181,17 +181,17 @@ Rebase your current HEAD onto &lt;branch&gt;:<br>
 $ git rebase <branch>
 ```
 
-Abort a rebase:
+Rabase iptal etmek:
 ```
 $ git rebase --abort
 ```
 
-Continue a rebase after resolving conflicts:
+Çakışmaları çözümledikten sonra rebase devam etmek:
 ```
 $ git rebase --continue
 ```
 
-Use your configured merge tool to solve conflicts:
+Çatışmaları çözmek için yapılandırılmış birleştirme aracını kullanmak:
 ```
 $ git mergetool
 ```
