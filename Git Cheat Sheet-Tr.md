@@ -7,7 +7,7 @@ Git Cheat Sheet Turkish
 * [Oluşturma](#oluşturma)
 * [Yerel Değişiklikler](#yerel-değişiklikler)
 * [Commit Geçmişi](#commit-geçmişi)
-* [Branches & Tags](#branches--tags)
+* [Branches & Tags(Etiketler)](#branches--tags)
 * [Güncelleştirme & Yayınlama](#güncelleştirme--yayınlama)
 * [Merge(Birleştirme) & Rebase](#merge--rebase)
 * [Geri Alma](#geri-alma)
@@ -87,7 +87,7 @@ $ git blame <file>
 ```
 
 <hr>
-###Branches & Tags(Etiketler)
+###Branches & Tags
 
 Tüm var olan branchleri listeler:
 ```
