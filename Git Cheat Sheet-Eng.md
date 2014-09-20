@@ -71,9 +71,19 @@ $ git commit --amend
 <hr>
 ###Commit History
 
-Show all commits, starting with newest:
+Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
 ```
 $ git log
+```
+
+Show all the commits (it'll show just the commit has and the commit message)
+```
+$ git log --oneline
+```
+
+Show all commits of a specific user
+```
+$ git log --author="username"
 ```
 
 Show changes over time for a specific file:
@@ -210,6 +220,11 @@ $ git rm <resolved-file>
 Discard all local changes in your working directory:
 ```
 $ git reset --hard HEAD
+```
+
+Get all the files out of the staging area (i.e. undo the last `git add`)
+```
+$ git reset HEAD
 ```
 
 Discard local changes in a specific file:
