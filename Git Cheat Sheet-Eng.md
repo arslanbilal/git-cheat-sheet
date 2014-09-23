@@ -67,6 +67,12 @@ Change last commit:<br>
 ```
 $ git commit --amend
 ```
+Move uncommited changes from current branch to some other branch:<br>
+```
+git stash
+git checkout branch2
+git stash pop
+```
 
 <hr>
 ###Commit History
