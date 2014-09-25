@@ -82,7 +82,7 @@ Show all commits, starting with newest (it'll show the hash, author information,
 $ git log
 ```
 
-Show all the commits (it'll show just the commit has and the commit message)
+Show all the commits (it'll show just the commit hash and the commit message)
 ```
 $ git log --oneline
 ```
@@ -175,7 +175,9 @@ $ git push remote <remote> <branch>
 
 Delete a branch on the remote:
 ```
-$ git push <remote> :<branch>
+$ git push <remote> :<branch> (since Git v1.5.0)
+or
+git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
 Publish your tags:
