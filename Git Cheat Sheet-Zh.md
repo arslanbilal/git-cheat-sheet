@@ -2,14 +2,14 @@ Git Cheat Sheet Chinese
 ========================
 
 
-###Index
+###索引
 * [创建](#创建)
 * [本地修改](#本地修改)
-* [Commit History](#commit-history)
-* [Branches & Tags](#branches--tags)
-* [Update & Publish](#update--publish)
-* [Merge & Rebase](#merge--rebase)
-* [Undo](#undo)
+* [提交历史](#提交历史)
+* [分支与标签](#分支与标签)
+* [更新与发布](#更新与发布)
+* [合并与重置](#合并与重置)
+* [撤销](#撤销)
 
 ---
 
@@ -98,7 +98,7 @@ $ git blame <file>
 ```
 
 ---
-###分支和标签
+###分支与标签
 
 列出所有的分支：
 ```
@@ -131,7 +131,7 @@ $ git tag <tag-name>
 ```
 
 ---
-###更新和发布
+###更新与发布
 
 列出对当前远程端的操作：
 ```
@@ -181,35 +181,35 @@ $ git push --tags
 ```
 
 ---
-###Merge & Rebase
+###合并与重置
 
-Merge <branch> into your current HEAD:
+将分支合并到当前HEAD中：
 ```
 $ git merge <branch>
 ```
 
-Rebase your current HEAD onto &lt;branch&gt;:<br>
+将当前HEAD版本重置到分支中:<br>
 <em><sub>Don't rebase published commit!</sub></em>
 ```
 $ git rebase <branch>
 ```
 
-Abort a rebase:
+退出重置:
 ```
 $ git rebase --abort
 ```
 
-Continue a rebase after resolving conflicts:
+解决冲突后继续重置：
 ```
 $ git rebase --continue
 ```
 
-Use your configured merge tool to solve conflicts:
+使用配置好的merge tool 解决冲突：
 ```
 $ git mergetool
 ```
 
-Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+在编辑器中手动解决冲突后，标记文件为`已解决冲突`
 ```
 $ git add <resolved-file>
 ```
@@ -218,39 +218,39 @@ $ git rm <resolved-file>
 ```
 
 ---
-###Undo
+###撤销
 
-Discard all local changes in your working directory:
+放弃工作目录下的所有修改：
 ```
 $ git reset --hard HEAD
 ```
 
-Get all the files out of the staging area (i.e. undo the last `git add`)
+移除缓存区的所有文件（i.e. 撤销上次`git add`）:
 ```
 $ git reset HEAD
 ```
 
-Discard local changes in a specific file:
+放弃某个文件的所有本地修改：
 ```
 $ git checkout HEAD <file>
 ```
 
-Revert a commit (by producing a new commit with contrary changes):
+重置一个提交（通过创建一个截然不同的新提交）
 ```
 $ git revert <commit>
 ```
 
-Reset your HEAD pointer to a previous commit and discard all changes since then:
+将HEAD重置到上一次提交的版本，并放弃之后的所有修改：
 ```
 $ git reset --hard <commit>
 ```
 
-Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：
 ```
 $ git reset <commit>
 ```
 
-Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+将HEAD重置到上一次提交的版本，并保留未提交的本地修改：
 ```
 $ git reset --keep <commit>
 ```
