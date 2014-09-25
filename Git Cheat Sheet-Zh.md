@@ -70,115 +70,117 @@ $ git commit --amend
 ```
 
 ---
-###Commit History
+###提交历史
 
-Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
+从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：
 ```
 $ git log
 ```
 
-Show all the commits (it'll show just the commit has and the commit message)
+显示所有提交（仅显示提交的hash和message）：
 ```
 $ git log --oneline
 ```
 
-Show all commits of a specific user
+显示某个用户的所有提交：
 ```
 $ git log --author="username"
 ```
 
-Show changes over time for a specific file:
+显示某个文件的所有修改：
 ```
 $ git log -p <file>
 ```
 
-Who changed, what and when in &lt;file&gt;:
+谁，在什么时间，修改了文件的什么内容：
 ```
 $ git blame <file>
 ```
 
-<hr>
-###Branches & Tags
+---
+###分支和标签
 
-List all existing branches:
+列出所有的分支：
 ```
 $ git branch
 ```
 
-Switch HEAD branch:
+切换分支：
 ```
 $ git checkout <branch>
 ```
 
-Create a new branch based on your current HEAD:
+基于当前分支创建新分支：
 ```
 $ git branch <new-branch>
 ```
 
-Create a new tracking branch based on a remote branch:
+基于远程分支创建新的可追溯的分支：
 ```
 $ git branch --track <new-branch> <remote-branch>
 ```
 
-Delete a local branch:
+删除本地分支:
 ```
 $ git branch -d <branch>
 ```
 
-Mark the current commit with a tag:
+给当前版本打标签：
 ```
 $ git tag <tag-name>
 ```
 
-<hr>
-###Update & Publish
+---
+###更新和发布
 
-List all current configured remotes:
+列出对当前远程端的操作：
 ```
 $ git remote -v
 ```
 
-Show information about a remote:
+显示远程端的信息：
 ```
 $ git remote show <remote>
 ```
 
-Add new remote repository, named &lt;remote&gt;:
+添加新的远程端：
 ```
 $ git remote add <remote> <url>
 ```
 
-Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
+下载远程端版本，但不合并到HEAD中：
 ```
 $ git fetch <remote>
 ```
 
-Download changes and directly merge/integrate into HEAD:
+下载远程端版本，并自动与HEAD版本合并：
 ```
 $ git remote pull <remote> <url>
 ```
 
-Get all changes from HEAD to local repository:
+将远程端版本合并到本地版本中：
 ```
 $ git pull origin master
 ```
 
-Publish local changes on a remote:
+将本地版本发布到远程端：
 ```
 $ git push remote <remote> <branch>
 ```
 
-Delete a branch on the remote:
+删除远程端分支：
 ```
-$ git push <remote> :<branch>
+$ git push <remote> :<branch> (since Git v1.5.0)
+or
+git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
-Publish your tags:
+发布标签:
 ```
 $ git push --tags
 ```
 
-<hr>
+---
 ###Merge & Rebase
 
 Merge <branch> into your current HEAD:
@@ -215,7 +217,7 @@ $ git add <resolved-file>
 $ git rm <resolved-file>
 ```
 
-<hr>
+---
 ###Undo
 
 Discard all local changes in your working directory:
@@ -253,4 +255,4 @@ Reset your HEAD pointer to a previous commit and preserve uncommitted local chan
 $ git reset --keep <commit>
 ```
 
-<hr>
+---
