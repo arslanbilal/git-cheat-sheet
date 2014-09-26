@@ -15,7 +15,7 @@ Git Cheat Sheet Chinese
 
 ###创建
 
-复制一个以创建的仓库:
+复制一个已创建的仓库:
 ```
 $ git clone ssh://user@domain.com/repo.git
 ```
@@ -38,7 +38,7 @@ $ git status
 $ git diff
 ```
 
-把当天所有修改添加到下次提交中：
+把当前所有修改添加到下次提交中：
 ```
 $ git add .
 ```
