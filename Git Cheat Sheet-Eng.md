@@ -62,6 +62,11 @@ Commit with message:
 $ git commit -m 'message here'
 ```
 
+Commit to some previous date:
+```
+git commit --date="`date --date='n day ago'`" -am "Commit Message"
+```
+
 Change last commit:<br>
 <em><sub>Don't amend published commits!</sub></em>
 ```
