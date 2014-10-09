@@ -5,6 +5,7 @@ Git Cheat Sheet English
 ###Index
 * [Create](#create)
 * [Local Changes](#local-changes)
+* [Search](#search)
 * [Commit History](#commit-history)
 * [Branches & Tags](#branches--tags)
 * [Update & Publish](#update--publish)
@@ -77,6 +78,19 @@ Move uncommited changes from current branch to some other branch:<br>
 git stash
 git checkout branch2
 git stash pop
+```
+
+<hr>
+###Search
+
+A text search on all files in the directory:
+```
+$ git grep "Hello"
+```
+
+In any version of a text search:
+```
+$ git grep "Hello" v2.5
 ```
 
 <hr>

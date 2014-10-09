@@ -72,12 +72,12 @@ $ git commit --amend
 <hr>
 ###Arama
 
-Bir metni , dizindeki bütün dosyalarda aramak:
+Bir metni dizindeki bütün dosyalarda aramak:
 ```
 $ git grep "Merhaba"
 ```
 
-Bir metni , herhangi bir sürüm içinde aramak:
+Bir metni herhangi bir sürüm içinde aramak:
 ```
 $ git grep "Merhaba" v2.5
 ```
