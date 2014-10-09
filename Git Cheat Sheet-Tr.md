@@ -75,11 +75,12 @@ $ git commit --amend
 Bir metni , dizindeki bütün dosyalarda aramak:
 ```
 $ git grep "Merhaba"
+```
 
 Bir metni , herhangi bir sürüm içinde aramak:
 ```
 $ git grep "Merhaba" v2.5
-
+```
 
 <hr>
 ###Commit Geçmişi
