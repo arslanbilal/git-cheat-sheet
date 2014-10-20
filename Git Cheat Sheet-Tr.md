@@ -5,6 +5,7 @@ Git Cheat Sheet Turkish
 ###Index
 * [Oluşturma](#oluşturma)
 * [Yerel Değişiklikler](#yerel-değişiklikler)
+* [Arama](#arama)
 * [Commit Geçmişi](#commit-geçmişi)
 * [Branches & Tags(Etiketler)](#branches--tags)
 * [Güncelleştirme & Yayınlama](#güncelleştirme--yayınlama)
@@ -66,6 +67,19 @@ Son commiti değiştirme:<br>
 <em><sub>Yayınlanan commite değişiklik yapmayın!</sub></em>
 ```
 $ git commit --amend
+```
+
+<hr>
+###Arama
+
+Bir metni dizindeki bütün dosyalarda aramak:
+```
+$ git grep "Merhaba"
+```
+
+Bir metni herhangi bir sürüm içinde aramak:
+```
+$ git grep "Merhaba" v2.5
 ```
 
 <hr>
@@ -216,7 +230,7 @@ Belli bir dosyadaki yerel değişiklikleri kaldırır:
 $ git checkout HEAD <file>
 ```
 
-Revert a commit (by producing a new commit with contrary changes):
+Silinen dosyayı geri döndürme dosyanın commit loglarının tutuluyor olması ile mümkündür:
 ```
 $ git revert <commit>
 ```
