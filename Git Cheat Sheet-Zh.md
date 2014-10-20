@@ -74,7 +74,7 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 ```
 $ git commit --amend
 ```
-Move uncommited changes from current branch to some other branch:<br>
+把当前分支中未提交的修改移动到其他分支
 ```
 git stash
 git checkout branch2
@@ -83,12 +83,12 @@ git stash pop
 
 ###搜索
 
-A text search on all files in the directory:
+从当前目录的所有文件中查找文本内容：
 ```
 $ git grep "Hello"
 ```
 
-In any version of a text search:
+在某一版本中搜索文本：
 ```
 $ git grep "Hello" v2.5
 ```
