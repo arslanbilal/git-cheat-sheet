@@ -5,6 +5,7 @@ Git Cheat Sheet Chinese
 ###索引
 * [创建](#创建)
 * [本地修改](#本地修改)
+* [搜索](#搜索)
 * [提交历史](#提交历史)
 * [分支与标签](#分支与标签)
 * [更新与发布](#更新与发布)
@@ -63,10 +64,33 @@ $ git commit
 $ git commit -m 'message here'
 ```
 
+Commit to some previous date:
+```
+git commit --date="`date --date='n day ago'`" -am "Commit Message"
+```
+
 修改上次提交<br/>
 <em><sub>Don't amend published commits!</sub></em>
 ```
 $ git commit --amend
+```
+把当前分支中未提交的修改移动到其他分支
+```
+git stash
+git checkout branch2
+git stash pop
+```
+
+###搜索
+
+从当前目录的所有文件中查找文本内容：
+```
+$ git grep "Hello"
+```
+
+在某一版本中搜索文本：
+```
+$ git grep "Hello" v2.5
 ```
 
 ---
