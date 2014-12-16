@@ -5,7 +5,7 @@ Git Cheat Sheet
 	<img alt="Git" src="./Img/git-logo.png" height="190" width="455">
 </p>
 
-# Avaiable Languages:
+# Available Languages:
 - [English Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Eng.md)
 - [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Tr.md)
 - [Chinese Git Cheat Sheet](https://github.com/flyhigher139/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Zh.md)
