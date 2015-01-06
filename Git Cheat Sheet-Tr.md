@@ -63,10 +63,22 @@ Mesaj ile commitleme:
 $ git commit -m 'message here'
 ```
 
+Önceki belli bir tarihe commitleme:
+```
+git commit --date="`date --date='n day ago'`" -am "Commit Message"
+```
+
 Son commiti değiştirme:<br>
 <em><sub>Yayınlanan commite değişiklik yapmayın!</sub></em>
 ```
 $ git commit --amend
+```
+
+Mevcut branchteki kaydedilmemiş commitleri diğer bazı branchlere taşıma:
+```
+git stash
+git checkout branch2
+git stash pop
 ```
 
 <hr>
@@ -90,10 +102,21 @@ Tüm commitleri en yenisinden başlayarak listeler:
 $ git log
 ```
 
+Tüm commitleri görüntüler(Sadece commit hash ve commit mesajı görüntülenir.):
+```
+$ git log --oneline
+```
+
+Belli kullanıcıya ait commitleri görüntüler:
+```
+$ git log --author="username"
+```
+
 Belirli bir dosya üzerinde zaman içinde meydana gelen değişiklikleri göstermektedir:
 ```
 $ git log -p <file>
 ```
+
 &lt;Dosyayı&gt; kim , ne ve ne zaman değiştirdiğini gösterir.:
 ```
 $ git blame <file>
@@ -172,7 +195,9 @@ $ git push remote <remote> <branch>
 
 Remote da bulunan bir branchi siler:
 ```
-$ git push <remote> :<branch>
+$ git push <remote> :<branch> (since Git v1.5.0)
+or
+$ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
 Etiketleri yayınlar:
@@ -223,6 +248,11 @@ $ git rm <resolved-file>
 Çalışılan dosyadaki tüm yerel değişiklikleri kaldırır:
 ```
 $ git reset --hard HEAD
+```
+
+Evreleme alanı dışındaki tüm dosyaları alır(örnek: son git add'i geri alır):
+```
+$ git reset HEAD
 ```
 
 Belli bir dosyadaki yerel değişiklikleri kaldırır:
