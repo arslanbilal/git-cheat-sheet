@@ -73,7 +73,7 @@ Change last commit:<br>
 ```
 $ git commit --amend
 ```
-Move uncommited changes from current branch to some other branch:<br>
+Move uncommitted changes from current branch to some other branch:<br>
 ```
 git stash
 git checkout branch2
@@ -101,12 +101,12 @@ Show all commits, starting with newest (it'll show the hash, author information,
 $ git log
 ```
 
-Show all the commits (it'll show just the commit hash and the commit message)
+Show all the commits(it'll show just the commit hash and the commit message):
 ```
 $ git log --oneline
 ```
 
-Show all commits of a specific user
+Show all commits of a specific user:
 ```
 $ git log --author="username"
 ```
@@ -249,7 +249,7 @@ Discard all local changes in your working directory:
 $ git reset --hard HEAD
 ```
 
-Get all the files out of the staging area (i.e. undo the last `git add`)
+Get all the files out of the staging area(i.e. undo the last `git add`):
 ```
 $ git reset HEAD
 ```
