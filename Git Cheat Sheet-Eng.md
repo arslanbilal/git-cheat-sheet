@@ -11,6 +11,7 @@ Git Cheat Sheet English
 * [Update & Publish](#update--publish)
 * [Merge & Rebase](#merge--rebase)
 * [Undo](#undo)
+* [Sync](#sync)
 
 <hr>
 ###Create
@@ -269,6 +270,11 @@ Reset your HEAD pointer to a previous commit and discard all changes since then:
 $ git reset --hard <commit>
 ```
 
+Reset your HEAD pointer to a remote branch current state. 
+```
+git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
+```
+
 Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
 ```
 $ git reset <commit>
@@ -280,3 +286,7 @@ $ git reset --keep <commit>
 ```
 
 <hr>
+###Sync
+
+
+
