@@ -11,6 +11,7 @@ Git Cheat Sheet Turkish
 * [Güncelleştirme & Yayınlama](#güncelleştirme--yayınlama)
 * [Merge(Birleştirme) & Rebase](#merge--rebase)
 * [Geri Alma](#geri-alma)
+* [Git Flow](#git-flow)
 
 <hr>
 ##Oluşturma

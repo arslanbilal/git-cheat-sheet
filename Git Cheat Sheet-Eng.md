@@ -11,7 +11,6 @@ Git Cheat Sheet English
 * [Update & Publish](#update--publish)
 * [Merge & Rebase](#merge--rebase)
 * [Undo](#undo)
-* [Sync](#sync)
 * [Git Flow](#git-flow)
 
 <hr>
