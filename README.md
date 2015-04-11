@@ -1,4 +1,4 @@
-Git Cheat Sheet
+Git Cheat Sheet with git-flow feature
 ===============
 
 <p align="center">
