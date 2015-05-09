@@ -158,6 +158,11 @@ $ git branch -r
 $ git checkout <branch>
 ```
 
+#####Create and switch new branch:
+```
+$ git checkout -b <branch>
+```
+
 #####Create a new branch based on your current HEAD:
 ```
 $ git branch <new-branch>
