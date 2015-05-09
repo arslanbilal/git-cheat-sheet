@@ -143,9 +143,14 @@ $ git blame <file>
 <hr>
 ##Branches & Tags
 
-#####List all existing branches:
+#####List all local branches:
 ```
 $ git branch
+```
+
+#####List all remote branches:
+```
+$ git branch -r
 ```
 
 #####Switch HEAD branch:
