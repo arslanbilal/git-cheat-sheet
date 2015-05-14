@@ -11,6 +11,7 @@ Git Cheat Sheet Chinese
 * [更新与发布](#更新与发布)
 * [合并与重置](#合并与重置)
 * [撤销](#撤销)
+* [Git Flow](#git-flow)
 
 ---
 
@@ -41,7 +42,7 @@ $ git diff
 
 把当前所有修改添加到下次提交中：
 ```
-$ git add .
+$ git add 
 ```
 
 把对某个文件的修改添加到下次提交中：
@@ -64,16 +65,17 @@ $ git commit
 $ git commit -m 'message here'
 ```
 
-Commit to some previous date:
+提交，并将提交时间设置为之前的某个日期:
 ```
 git commit --date="`date --date='n day ago'`" -am "Commit Message"
 ```
 
 修改上次提交<br/>
-<em><sub>Don't amend published commits!</sub></em>
+<em><sub>请勿修改已发布的提交记录!</sub></em>
 ```
 $ git commit --amend
 ```
+
 把当前分支中未提交的修改移动到其他分支
 ```
 git stash
@@ -81,6 +83,7 @@ git checkout branch2
 git stash pop
 ```
 
+---
 ###搜索
 
 从当前目录的所有文件中查找文本内容：
@@ -134,6 +137,11 @@ $ git branch
 $ git checkout <branch>
 ```
 
+创建并切换到新分支:
+```
+$ git checkout -b <branch>
+```
+
 基于当前分支创建新分支：
 ```
 $ git branch <new-branch>
@@ -157,7 +165,7 @@ $ git tag <tag-name>
 ---
 ###更新与发布
 
-列出对当前远程端的操作：
+列出当前配置的远程端：
 ```
 $ git remote -v
 ```
@@ -213,7 +221,7 @@ $ git merge <branch>
 ```
 
 将当前HEAD版本重置到分支中:<br>
-<em><sub>Don't rebase published commit!</sub></em>
+<em><sub>请勿重置已发布的提交!</sub></em>
 ```
 $ git rebase <branch>
 ```
@@ -264,7 +272,7 @@ $ git checkout HEAD <file>
 $ git revert <commit>
 ```
 
-将HEAD重置到上一次提交的版本，并放弃之后的所有修改：
+将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
 ```
 $ git reset --hard <commit>
 ```
@@ -280,3 +288,138 @@ $ git reset --keep <commit>
 ```
 
 ---
+
+##Git-Flow
+
+###索引
+* [Setup](#setup)
+* [Getting Started](#getting-started)
+* [Features](#features)
+* [Make a Release](#make-a-release)
+* [Hotfixes](#hotfixes)
+* [Commands](#commands)
+<hr>
+
+###Setup
+######You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
+
+#####OSX Homebrew:
+```
+$ git clone ssh://user@domain.com/repo.git
+```
+
+#####OSX Macports:
+```
+$ port install git-flow
+```
+
+#####Linux:
+```
+$ apt-get install git-flow
+```
+
+#####Windows (Cygwin):
+######You need wget and util-linux to install git-flow.
+```
+$ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+```
+<hr>
+
+
+###Getting Started
+######Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
+#####Initialize:
+######You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
+```
+git flow init
+```
+<hr>
+
+
+###Features
+######Develop new features for upcoming releases. Typically exist in developers repos only.
+#####Start a new feature:
+######This action creates a new feature branch based on 'develop' and switches to it.
+```
+git flow feature start MYFEATURE
+```
+
+#####Finish up a feature:
+######Finish the development of a feature. This action performs the following:
+######1)Merged MYFEATURE into 'develop'.
+######2)Removes the feature branch.
+######3)Switches back to 'develop' branch
+```
+git flow feature finish MYFEATURE
+```
+
+#####Publish a feature:
+######Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
+```
+git flow feature publish MYFEATURE
+```
+
+#####Getting a published feature:
+######Get a feature published by another user.
+```
+git flow feature pull origin MYFEATURE
+```
+
+#####Tracking a origin feature:
+######You can track a feature on origin by using
+```
+git flow feature track MYFEATURE
+```
+<hr>
+
+
+###Make a Release
+######Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+
+#####Start a release:
+######To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+```
+git flow release start RELEASE [BASE]
+```
+######It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+```
+git flow release publish RELEASE
+```
+######(You can track a remote release with the: ```git flow release track RELEASE``` command)
+
+#####Finish up a release:
+######Finishing a release is one of the big steps in git branching. It performs several actions:
+######1)Merges the release branch back into 'master'
+######2)Tags the release with its name
+######3)Back-merges the release into 'develop'
+######4)Removes the release branch
+```
+git flow release finish RELEASE
+```
+######Don't forget to push your tags with ```git push --tags```
+<hr>
+
+
+###Hotfixes
+######Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+
+#####Git flow hotfix start:
+######Like the other git flow commands, a hotfix is started with
+```
+$ git flow hotfix start VERSION [BASENAME]
+```
+######The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+
+#####Finish a hotfix:
+######By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
+```
+git flow hotfix finish VERSION
+```
+<hr>
+
+
+###Commands
+<p align="center">
+    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
+</p>
+<hr>
