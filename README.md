@@ -331,7 +331,7 @@ $ git reset --keep <commit>
 
 #####OSX Homebrew:
 ```
-$ git clone ssh://user@domain.com/repo.git
+$ brew install git-flow
 ```
 
 #####OSX Macports:
