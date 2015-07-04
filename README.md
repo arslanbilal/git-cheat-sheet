@@ -6,8 +6,8 @@ Git Cheat Sheet with git-flow feature
 </p>
 <hr>
 # Other Available Languages:
-1. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Tr.md)
-2. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/Git%20Cheat%20Sheet-Zh.md)
+1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+2. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
 
 
 Git cheat sheet saves you from learning all the commands by heart.
