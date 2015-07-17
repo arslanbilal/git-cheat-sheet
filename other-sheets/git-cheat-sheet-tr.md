@@ -240,7 +240,7 @@ $ git rebase --abort
 $ git rebase --continue
 ```
 
-#####Çatışmaları çözmek için yapılandırılmış birleştirme aracını kullanmak:
+#####Çakışmaları çözmek için yapılandırılmış birleştirme aracını kullanmak:
 ```
 $ git mergetool
 ```
