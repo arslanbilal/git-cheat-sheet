@@ -6,7 +6,7 @@ Git Cheat Sheet with git-flow feature
 </p>
 <hr>
 # Other Available Languages:
-1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
 2. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
 
 ## PDF versions:
