@@ -341,7 +341,7 @@ $ brew install git-flow
 $ port install git-flow
 ```
 
-#####Linux:
+#####Linux (Debian-based):
 ```
 $ apt-get install git-flow
 ```
