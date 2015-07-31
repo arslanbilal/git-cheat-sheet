@@ -185,6 +185,11 @@ $ git branch -d <branch>
 $ git tag <tag-name>
 ```
 
+#####Mark the current commit with a tag that includes a message:
+```
+$ git tag -a <tag-name>
+```
+
 <hr>
 ##Update & Publish
 
