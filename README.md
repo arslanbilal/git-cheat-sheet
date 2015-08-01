@@ -319,6 +319,13 @@ $ git reset <commit>
 ```
 $ git reset --keep <commit>
 ```
+
+#####Remove files that was accidentally committed before adding it in .gitignore
+```
+$ git rm -r --cached .
+$ git add .
+$ git commit -m "remove xyz file"
+```
 <hr>
 
 ##Git-Flow
