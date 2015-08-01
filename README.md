@@ -320,7 +320,7 @@ $ git reset <commit>
 $ git reset --keep <commit>
 ```
 
-#####Remove files that was accidentally committed before adding it in .gitignore
+#####Remove files that were accidentally committed before they were added to .gitignore
 ```
 $ git rm -r --cached .
 $ git add .
