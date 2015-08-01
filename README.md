@@ -100,7 +100,10 @@ git stash
 git checkout branch2
 git stash pop
 ```
-
+#####Restore stashed changes back to current branch
+```
+git stash apply
+```
 <hr>
 ##Search
 
@@ -221,6 +224,11 @@ $ git remote pull <remote> <url>
 #####Get all changes from HEAD to local repository:
 ```
 $ git pull origin master
+```
+
+#####Get all changes from HEAD to local repository without a merge:
+```
+git pull --rebase <remote> <branch>
 ```
 
 #####Publish local changes on a remote:
