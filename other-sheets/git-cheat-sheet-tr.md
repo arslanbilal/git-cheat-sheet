@@ -313,7 +313,7 @@ $ git reset --keep <commit>
 
 #####OSX Homebrew:
 ```
-$ git clone ssh://user@domain.com/repo.git
+$ brew install git-flow
 ```
 
 #####OSX Macports:
@@ -357,7 +357,7 @@ git flow feature start MYFEATURE
 ###### Bu komut bize develop dalını (branch) temel alan bir özellik dalı (feature) oluşturur. Ve bulunduğumuz dalı develop/MYFEATURE olarak değiştirir.
 
 #####Bir özellik eklemesi bitirilirken (feature finish):
-######Bir özelliğin eklenme işlemi bitirilirken şunları yapılır: 
+######Bir özelliğin eklenme işlemi bitirilirken şunları yapılır:
 ######1)Kendi çalıştığımız özellik dalı (burada MYFEATURE) develop ana dalı ile birleştirilir.
 ######2)Bu birleşmeden sonra kendi özellik dalımız (MYFEATURE) silinir.
 ######3)Bulunduğumuz dal tekrar develop olarak değiştirilir.
