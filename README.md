@@ -49,7 +49,7 @@ $ git init
 <hr>
 ##Local Changes
 
-#####Changed files in your working directory:
+#####Changes in working directory:
 ```
 $ git status
 ```
