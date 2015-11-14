@@ -284,7 +284,22 @@ $ git add <resolved-file>
 ```
 $ git rm <resolved-file>
 ```
-
+#####Squashing commits:
+```
+$ git rebase -i <commit-just-before-first>
+```
+Now replace this,
+```
+pick <commit_id>
+pick <commit_id2>
+pick <commit_id3>
+```
+with,
+```
+pick <commit_id>
+squash <commit_id2>
+squash <commit_id3>
+```
 <hr>
 ##Undo
 
