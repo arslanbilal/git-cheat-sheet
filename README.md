@@ -92,7 +92,7 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 #####Change last commit:<br>
 <em><sub>Don't amend published commits!</sub></em>
 ```
-$ git commit --amend
+$ git commit -a --amend
 ```
 #####Move uncommitted changes from current branch to some other branch:<br>
 ```
