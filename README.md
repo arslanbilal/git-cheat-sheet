@@ -183,6 +183,12 @@ $ git branch --track <new-branch> <remote-branch>
 $ git branch -d <branch>
 ```
 
+#####Force delete a local branch:
+<em><sub>You will lose unmerged changes!</sub></em>
+```
+$ git branch -D <branch>
+```
+
 #####Mark the current commit with a tag:
 ```
 $ git tag <tag-name>
