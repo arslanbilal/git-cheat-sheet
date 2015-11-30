@@ -7,6 +7,7 @@ Git Cheat Sheet Hindi [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7
 * [खोज](#खोज)
 * [कमेट इतिहास](#कमेट-इतिहास)
 * [शाखाएं और टैग](#शाखाएं-और-टैग)
+* [मर्ज और रिबेस](मर्ज-और-रिबेस)
 
 <hr>
 ##निर्माण
@@ -134,23 +135,57 @@ $ git checkout <branch>
 
 #####नई शाखा बनाएँ और उस पर जाने:
 ```
-$ git branch <new-branch>
+$ git checkout -b <new-branch>
 ```
 
-#####:
+#####एक रिमोट शाखा पर आधारित एक नए ट्रैकिंग शाखा बनाएँ:
 ```
 $ git branch --track <new-branch> <remote-branch>
 ```
 
-#####Yerel branchi siler:
+#####स्थानीय शाखा हटाना:
 ```
 $ git branch -d <branch>
 ```
 
-#####Güncel commiti etiket ile işaretler:
+<hr>
+
+##मर्ज और रिबेस
+
+#####एक शाखा मर्ज:
 ```
-$ git tag <tag-name>
+$ git merge <branch>
+```
+
+#####Rebase your current HEAD onto &lt;branch&gt;:<br>
+######प्रकाशित कमेट का रिबेस मत करो!!
+```
+$ git rebase <branch>
+```
+
+#####रिबेस छोड़ना:
+```
+$ git rebase --abort
+```
+
+#####संघर्ष को हल करने के बाद एक रिबेस जारी:
+```
+$ git rebase --continue
+```
+
+#####संघर्ष का समाधान करने के लिए अपने से कॉन्फ़िगर मर्ज उपकरण का उपयोग करें:
+```
+$ git mergetool
+```
+
+#####सुलझाया के रूप में मैन्युअल निशान फ़ाइल (हल करने के बाद) संघर्षों और हल करने के लिए अपने संपादक का उपयोग करें:
+```
+$ git add <resolved-file>
+```
+```
+$ git rm <resolved-file>
 ```
 
 <hr>
+
 
