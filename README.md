@@ -8,6 +8,7 @@ Git Cheat Sheet - git-flow [![Awesome](https://cdn.rawgit.com/sindresorhus/aweso
 # Other Available Languages:
 1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
 2. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+3. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
 
 ## PDF versions:
 1. [English Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/pdf/git-cheat-sheet.pdf)
