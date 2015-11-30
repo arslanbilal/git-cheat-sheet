@@ -8,6 +8,7 @@ Git Cheat Sheet Hindi [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7
 * [कमेट इतिहास](#कमेट-इतिहास)
 * [शाखाएं और टैग](#शाखाएं-और-टैग)
 * [मर्ज और रिबेस](मर्ज-और-रिबेस)
+* [पूर्ववत](पूर्ववत)
 
 <hr>
 ##निर्माण
@@ -187,5 +188,45 @@ $ git rm <resolved-file>
 ```
 
 <hr>
+
+##पूर्ववत
+
+#####अपने कार्य निर्देशिका में सभी स्थानीय परिवर्तनों को छोड़ें:
+```
+$ git reset --hard HEAD
+```
+
+#####मचान क्षेत्र से बाहर सभी फ़ाइलों को प्राप्त(पिछले  ```git add``` पूर्ववत):
+```
+$ git reset HEAD
+```
+
+#####एक विशिष्ट फ़ाइल में स्थानीय परिवर्तनों को छोड़ें:
+```
+$ git checkout HEAD <file>
+```
+
+#####कमेट एक वापस लाएं:
+```
+$ git revert <commit>
+```
+
+#####Reset your HEAD pointer to a previous commit and discard all changes since then:
+```
+$ git reset --hard <commit>
+```
+
+#####Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+```
+$ git reset <commit>
+```
+
+#####Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+```
+$ git reset --keep <commit>
+```
+
+<hr>
+
 
 
