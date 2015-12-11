@@ -1,4 +1,4 @@
-Git Cheat Sheet with git-flow feature
+Git Cheat Sheet - git-flow [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 ===============
 <hr>
 <p align="center">
@@ -6,8 +6,9 @@ Git Cheat Sheet with git-flow feature
 </p>
 <hr>
 # Other Available Languages:
-1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
 2. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+3. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
 
 ## PDF versions:
 1. [English Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/pdf/git-cheat-sheet.pdf)
@@ -49,7 +50,7 @@ $ git init
 <hr>
 ##Local Changes
 
-#####Changed files in your working directory:
+#####Changes in working directory:
 ```
 $ git status
 ```
@@ -92,7 +93,7 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 #####Change last commit:<br>
 <em><sub>Don't amend published commits!</sub></em>
 ```
-$ git commit --amend
+$ git commit -a --amend
 ```
 #####Move uncommitted changes from current branch to some other branch:<br>
 ```
@@ -100,7 +101,10 @@ git stash
 git checkout branch2
 git stash pop
 ```
-
+#####Restore stashed changes back to current branch
+```
+git stash apply
+```
 <hr>
 ##Search
 
@@ -180,9 +184,20 @@ $ git branch --track <new-branch> <remote-branch>
 $ git branch -d <branch>
 ```
 
+#####Force delete a local branch:
+<em><sub>You will lose unmerged changes!</sub></em>
+```
+$ git branch -D <branch>
+```
+
 #####Mark the current commit with a tag:
 ```
 $ git tag <tag-name>
+```
+
+#####Mark the current commit with a tag that includes a message:
+```
+$ git tag -a <tag-name>
 ```
 
 <hr>
@@ -216,6 +231,11 @@ $ git remote pull <remote> <url>
 #####Get all changes from HEAD to local repository:
 ```
 $ git pull origin master
+```
+
+#####Get all changes from HEAD to local repository without a merge:
+```
+git pull --rebase <remote> <branch>
 ```
 
 #####Publish local changes on a remote:
@@ -271,7 +291,22 @@ $ git add <resolved-file>
 ```
 $ git rm <resolved-file>
 ```
-
+#####Squashing commits:
+```
+$ git rebase -i <commit-just-before-first>
+```
+Now replace this,
+```
+pick <commit_id>
+pick <commit_id2>
+pick <commit_id3>
+```
+with,
+```
+pick <commit_id>
+squash <commit_id2>
+squash <commit_id3>
+```
 <hr>
 ##Undo
 
@@ -314,6 +349,13 @@ $ git reset <commit>
 ```
 $ git reset --keep <commit>
 ```
+
+#####Remove files that were accidentally committed before they were added to .gitignore
+```
+$ git rm -r --cached .
+$ git add .
+$ git commit -m "remove xyz file"
+```
 <hr>
 
 ##Git-Flow
@@ -341,7 +383,7 @@ $ brew install git-flow
 $ port install git-flow
 ```
 
-#####Linux:
+#####Linux (Debian-based):
 ```
 $ apt-get install git-flow
 ```
