@@ -427,6 +427,6 @@ git flow hotfix finish VERSION
 
 ###Komutlar (Commands)
 <p align="center">
-	<img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
+	<img alt="Git" src="../Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
