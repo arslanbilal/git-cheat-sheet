@@ -16,13 +16,10 @@ Git Cheat Sheet - git-flow [![Awesome](https://cdn.rawgit.com/sindresorhus/aweso
 Git cheat sheet saves you from learning all the commands by heart.
 
 Be free to contribute, update the grammar mistakes. You are also free to add your language file.
-
 <hr>
 
 Git Cheat Sheet English
 ===============
-
-
 ###Index
 * [Set Up](#setup)
 * [Create](#create)
@@ -53,7 +50,6 @@ $ git config --global user.email “[valid-email]”
 ```
 $ git config --global color.ui auto
 ```
-
 <hr>
 ##Create
 
@@ -66,7 +62,6 @@ $ git clone ssh://user@domain.com/repo.git
 ```
 $ git init
 ```
-
 <hr>
 ##Local Changes
 
@@ -112,9 +107,11 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 
 #####Change last commit:<br>
 <em><sub>Don't amend published commits!</sub></em>
+
 ```
 $ git commit -a --amend
 ```
+
 #####Move uncommitted changes from current branch to some other branch:<br>
 ```
 git stash
@@ -165,7 +162,6 @@ $ git log -p <file>
 ```
 $ git blame <file>
 ```
-
 <hr>
 ##Branches & Tags
 
@@ -206,6 +202,7 @@ $ git branch -d <branch>
 
 #####Force delete a local branch:
 <em><sub>You will lose unmerged changes!</sub></em>
+
 ```
 $ git branch -D <branch>
 ```
@@ -219,7 +216,6 @@ $ git tag <tag-name>
 ```
 $ git tag -a <tag-name>
 ```
-
 <hr>
 ##Update & Publish
 
@@ -274,7 +270,6 @@ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 $ git push --tags
 ```
-
 <hr>
 ##Merge & Rebase
 
@@ -285,6 +280,7 @@ $ git merge <branch>
 
 #####Rebase your current HEAD onto &lt;branch&gt;:<br>
 <em><sub>Don't rebase published commit!</sub></em>
+
 ```
 $ git rebase <branch>
 ```
@@ -308,20 +304,26 @@ $ git mergetool
 ```
 $ git add <resolved-file>
 ```
+
 ```
 $ git rm <resolved-file>
 ```
+
 #####Squashing commits:
 ```
 $ git rebase -i <commit-just-before-first>
 ```
+
 Now replace this,
+
 ```
 pick <commit_id>
 pick <commit_id2>
 pick <commit_id3>
 ```
-with,
+
+to this,
+
 ```
 pick <commit_id>
 squash <commit_id2>
