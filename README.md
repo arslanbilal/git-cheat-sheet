@@ -36,6 +36,15 @@ Git Cheat Sheet English
 <hr>
 ##Setup
 
+#####Show current configuration:
+```
+$ git config --list
+```
+#####Show global configuration:
+```
+$ git config --global --list
+```
+
 #####Set a name that is identifiable for credit when review version history:
 ```
 $ git config --global user.name “[firstname lastname]”
@@ -357,7 +366,7 @@ $ git revert <commit>
 $ git reset --hard <commit>
 ```
 
-#####Reset your HEAD pointer to a remote branch current state. 
+#####Reset your HEAD pointer to a remote branch current state.
 ```
 git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
