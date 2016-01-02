@@ -22,6 +22,7 @@ Git Cheat Sheet English
 ===============
 ###Index
 * [Set Up](#setup)
+* [Configuration Files](#configuration-files)
 * [Create](#create)
 * [Local Changes](#local-changes)
 * [Search](#search)
@@ -40,9 +41,19 @@ Git Cheat Sheet English
 ```
 $ git config --list
 ```
+#####Show local configuration:
+```
+$ git config --local --list
+```
+
 #####Show global configuration:
 ```
 $ git config --global --list
+```
+
+#####Show global configuration:
+```
+$ git config --system --list
 ```
 
 #####Set a name that is identifiable for credit when review version history:
@@ -59,6 +70,24 @@ $ git config --global user.email “[valid-email]”
 ```
 $ git config --global color.ui auto
 ```
+<hr>
+##Configuration Files
+
+#####Repository specific configuration file [--local]:
+```
+<repo>/.git/config
+```
+
+#####User-specific configuration file [--global]:
+```
+~/.gitconfig
+```
+
+#####System-wide configuration file [--system]:
+```
+/etc/gitconfig
+```
+
 <hr>
 ##Create
 
