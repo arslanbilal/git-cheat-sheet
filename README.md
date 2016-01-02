@@ -51,7 +51,7 @@ $ git config --local --list
 $ git config --global --list
 ```
 
-#####Show global configuration:
+#####Show system configuration:
 ```
 $ git config --system --list
 ```
