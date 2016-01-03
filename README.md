@@ -100,6 +100,11 @@ $ git commit
 $ git commit -m 'message here'
 ```
 
+#####Commit skipping the staging area and adding message:
+```
+$ git commit -am 'message here'
+```
+
 #####Commit to some previous date:
 ```
 git commit --date="`date --date='n day ago'`" -am "Commit Message"
@@ -300,7 +305,7 @@ $ git rebase --continue
 $ git mergetool
 ```
 
-#####Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+#####Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
 ```
 $ git add <resolved-file>
 ```
