@@ -92,8 +92,19 @@ $ git config --global color.ui auto
 ##Create
 
 #####Clone an existing repository:
+
+There are two ways:
+
+Via SSH
+
 ```
 $ git clone ssh://user@domain.com/repo.git
+```
+
+Via HTTP
+
+```
+$ git clone http://domain.com/user/repo.git
 ```
 
 #####Create a new local repository:
