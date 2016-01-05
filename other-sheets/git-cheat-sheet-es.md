@@ -233,88 +233,88 @@ $ git tag -a <tag-name>
 <hr>
 ##Modificación y publicación
 
-#####List all current configured remotes:
+#####Listar todos remotos configurados actualmente:
 ```
 $ git remote -v
 ```
 
-#####Show information about a remote:
+#####Mostrar información acerca de un remoto:
 ```
 $ git remote show <remote>
 ```
 
-#####Add new remote repository, named &lt;remote&gt;:
+#####Agregar un nuevo repositorio remoto, nombrarlo &lt;remote&gt;:
 ```
 $ git remote add <remote> <url>
 ```
 
-#####Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
+#####Bajar todos los cambios desde &lt;remote&gt;, pero sin integrarlos en HEAD:
 ```
 $ git fetch <remote>
 ```
 
-#####Download changes and directly merge/integrate into HEAD:
+#####Bajar los cambios y fusionar/integrar directamente en HEAD:
 ```
 $ git remote pull <remote> <url>
 ```
 
-#####Get all changes from HEAD to local repository:
+#####Obtener todos los cambios desde HEAD hacia el repositorio local:
 ```
 $ git pull origin master
 ```
 
-#####Get all changes from HEAD to local repository without a merge:
+#####Obtener todos los cambios desde HEAD hacia el repositorio local sin fusionar:
 ```
 git pull --rebase <remote> <branch>
 ```
 
-#####Publish local changes on a remote:
+#####Publicar los cambios locales en un remoto:
 ```
 $ git push remote <remote> <branch>
 ```
 
-#####Delete a branch on the remote:
+#####Eliminar una rama en el remoto:
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 or
 git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
-#####Publish your tags:
+#####Publicar tus etiquetas:
 ```
 $ git push --tags
 ```
 <hr>
 ##Fusionar & Reorganizar
 
-#####Merge <branch> into your current HEAD:
+#####Fusionar <branch> con el HEAD actual:
 ```
 $ git merge <branch>
 ```
 
-#####Rebase your current HEAD onto &lt;branch&gt;:<br>
-<em><sub>Don't rebase published commit!</sub></em>
+#####Reorganizar el HEAD actual sobre &lt;branch&gt;:<br>
+<em><sub>No reorganices confirmaciones (commits) publicadas!</sub></em>
 
 ```
 $ git rebase <branch>
 ```
 
-#####Abort a rebase:
+#####Abortar una reorganización:
 ```
 $ git rebase --abort
 ```
 
-#####Continue a rebase after resolving conflicts:
+#####Continuar una reorganización desde resolver conflictos:
 ```
 $ git rebase --continue
 ```
 
-#####Use your configured merge tool to solve conflicts:
+#####Utilizar tu herramienta configurada de fusiones para resolver conflictos:
 ```
 $ git mergetool
 ```
 
-#####Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
+#####Utilizar tu editor para manualmente resolver conflictos y (despues de resolverlos) marcar el archivo como resuelto:
 ```
 $ git add <resolved-file>
 ```
@@ -328,7 +328,7 @@ $ git rm <resolved-file>
 $ git rebase -i <commit-just-before-first>
 ```
 
-Now replace this,
+Ahora reemplaza esto,
 
 ```
 pick <commit_id>
@@ -336,7 +336,7 @@ pick <commit_id2>
 pick <commit_id3>
 ```
 
-to this,
+con esto,
 
 ```
 pick <commit_id>
@@ -346,47 +346,47 @@ squash <commit_id3>
 <hr>
 ##Deshacer
 
-#####Discard all local changes in your working directory:
+#####Descartar todos los cambios locales en tu directorio de trabajo:
 ```
 $ git reset --hard HEAD
 ```
 
-#####Get all the files out of the staging area(i.e. undo the last `git add`):
+#####Obtener todos los archivos fuera del área de ensayo (e.j. deshace el ultimo `git add`):
 ```
 $ git reset HEAD
 ```
 
-#####Discard local changes in a specific file:
+#####Descartar los cambios locales en un archivo específico:
 ```
 $ git checkout HEAD <file>
 ```
 
-#####Revert a commit (by producing a new commit with contrary changes):
+#####Revertir una confirmación (commit) (produciendo una nueva confirmación con los cambios contrarios):
 ```
 $ git revert <commit>
 ```
 
-#####Reset your HEAD pointer to a previous commit and discard all changes since then:
+#####Reiniciar tu puntero HEAD a una confirmación (commit) anterior y descartar todos los cambios desde entonces:
 ```
 $ git reset --hard <commit>
 ```
 
-#####Reset your HEAD pointer to a remote branch current state. 
+#####Reinicar tu puntero HEAD al estado actual de una rama remota:
 ```
 git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
 
-#####Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+#####Reiniciar tu puntero HEAD a una confirmación (commit) anterior y conservar todos los cambios como cambios fuera del área de ensayo:
 ```
 $ git reset <commit>
 ```
 
-#####Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+#####Reiniciar tu puntero HEAD a una confirmación (commit) anterior y conservar los cambios locales en el área de ensayo:
 ```
 $ git reset --keep <commit>
 ```
 
-#####Remove files that were accidentally committed before they were added to .gitignore
+#####Eliminar archivos que fueron accidentalmente confirmados antes de ser añadidos al .gitignore (ignorados):
 ```
 $ git rm -r --cached .
 $ git add .
@@ -407,7 +407,7 @@ $ git commit -m "remove xyz file"
 
 
 ###Configuración
-######You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
+######Necesitas una instalación de Git como prerequisito. Git flow trabaja en OSX, Linux and Windows.
 
 #####OSX Homebrew:
 ```
@@ -425,7 +425,7 @@ $ apt-get install git-flow
 ```
 
 #####Windows (Cygwin):
-######You need wget and util-linux to install git-flow.
+######Necesitas wget y util-linux para instalar git-glow.
 ```
 $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
 ```
@@ -433,8 +433,8 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 
 
 ###Iniciando
-######Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
-#####Initialize:
+######Git flow necesita ser inicializado con el fin de personalizar la configuración de su proyecto. Inicia usando git-flow inicializandolo dentro de un repositorio git existente:
+#####Inicilizar:
 ######You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
 ```
 git flow init
