@@ -16,89 +16,117 @@ Git Cheat Sheet Spanish (Español) [![Awesome](https://cdn.rawgit.com/sindresorh
 
 <hr>
 ##Configuración
+#####Mostrar la configuración actual:
+```
+$ git config --list
+```
+#####Mostrar la configuración local:
+```
+$ git config --local --list
+```
 
-#####Set a name that is identifiable for credit when review version history:
+#####Mostrar la configuración global:
+```
+$ git config --global --list
+```
+
+#####Mostrar la configuración del sistema:
+```
+$ git config --system --list
+```
+
+#####Asignar un nombre identificable para cuando se hagan revisiones:
 ```
 $ git config --global user.name “[firstname lastname]”
 ```
 
-#####Set an email address that will be associated with each history marker:
+#####Asignar la dirección de correo que será asosiada al usuario:
 ```
 $ git config --global user.email “[valid-email]”
 ```
 
-#####Set automatic command line coloring for Git for easy reviewing:
+#####Asignar comando para facilitar la revisión en Git:
 ```
 $ git config --global color.ui auto
 ```
 <hr>
 ##Crear
+#####Clonar un repositorio existente:
 
-#####Clone an existing repository:
+Hay dos maneras de hacerlo:
+
+Via SSH
+
 ```
 $ git clone ssh://user@domain.com/repo.git
 ```
 
-#####Create a new local repository:
+Via HTTP
+
+```
+$ git clone http://domain.com/user/repo.git
+```
+
+#####Crear un nuevo repositorio local:
 ```
 $ git init
 ```
 <hr>
 ##Cambios locales
 
-#####Changes in working directory:
+#####Cambios en el directorio de trabajo:
 ```
 $ git status
 ```
 
-#####Changes to tracked files:
+#####Cambios en los archivos rastreados:
 ```
 $ git diff
 ```
 
-#####Add all current changes to the next commit:
+#####Agregar todos los cambios actuales en la próxima confirmación (commit):
 ```
-$ git add
+$ git add .
 ```
 
-#####Add some changes in &lt;file&gt; to the next commit:
+#####Agregar algunos cambios en &lt;file&gt; a la próxima confirmación (commit):
 ```
 $ git add -p <file>
 ```
 
-#####Commit all local changes in tracked files:
+#####Confirmar (Hacer commit) todos los cambios locales en los archivos rastreados:
 ```
 $ git commit -a
 ```
 
-#####Commit previously staged changes:
+#####Confirmar (Hacer commit) los cambios previamente en el área de ensayo (staged):
 ```
 $ git commit
 ```
 
-#####Commit with message:
+#####Confirmar (Hacer commit) con mensaje:
 ```
 $ git commit -m 'message here'
 ```
 
-#####Commit skipping the staging area and adding message:
+#####Confirmar (Hacer commit) saltandose el area de ensayo y añadiendo un mensaje:
 ```
 $ git commit -am 'message here'
 ```
 
-#####Commit to some previous date:
+#####Confirmar (Hacer commit) a alguna fecha anterior:
 ```
 git commit --date="`date --date='n day ago'`" -am "Commit Message"
 ```
 
-#####Change last commit:<br>
-<em><sub>Don't amend published commits!</sub></em>
+#####Cambiar la última confirmación (commit):<br>
+<em><sub>No Modificar Confirmaciones (commits) publicados!</sub></em>
 
 ```
 $ git commit -a --amend
 ```
 
-#####Move uncommitted changes from current branch to some other branch:<br>
+#####Mover cambios sin confirmar desde la rama actual hasta alguna otra rama:<br>
 ```
 git stash
 git checkout branch2
@@ -111,12 +139,12 @@ git stash apply
 <hr>
 ##Busquedas
 
-#####A text search on all files in the directory:
+#####Un texto en todos los archivos en el directorio:
 ```
 $ git grep "Hello"
 ```
 
-#####In any version of a text search:
+#####En cualquier versión de una búsqueda de texto:
 ```
 $ git grep "Hello" v2.5
 ```
@@ -124,17 +152,17 @@ $ git grep "Hello" v2.5
 <hr>
 ###Historial de commits
 
-#####Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
+#####Muestra todas las confirmaciones (commits), iniciando con la mas reciente (mostrará el hash, información del autor, fecha de la confirmación y título ó mensaje de la confirmación):
 ```
 $ git log
 ```
 
-#####Show all the commits(it'll show just the commit hash and the commit message):
+#####Muestra todas las confirmaciones (commits) (solo mostrará el hash de la configuración y el mensaje):
 ```
 $ git log --oneline
 ```
 
-#####Show all commits of a specific user:
+#####Muestra todas las confirmaciones (commits) de un usuario en específico:
 ```
 $ git log --author="username"
 ```
@@ -144,34 +172,34 @@ $ git log --author="username"
 $ git log -p <file>
 ```
 
-#####Who changed, what and when in &lt;file&gt;:
+#####Quien cambió, qué y cuándo en &lt;file&gt;:
 ```
 $ git blame <file>
 ```
 <hr>
 ##Ramas y etiquetas
 
-#####List all local branches:
+#####Listar todas las ramas locales:
 ```
 $ git branch
 ```
 
-#####List all remote branches:
+#####Listar todas las ramas remotas:
 ```
 $ git branch -r
 ```
 
-#####Switch HEAD branch:
+#####Cambiar de rama el HEAD:
 ```
 $ git checkout <branch>
 ```
 
-#####Create and switch new branch:
+#####Crear y cambiar a una nueva rama:
 ```
 $ git checkout -b <branch>
 ```
 
-#####Create a new branch based on your current HEAD:
+#####Crear una nueva rama basada en el HEAD actual:
 ```
 $ git branch <new-branch>
 ```
@@ -181,13 +209,13 @@ $ git branch <new-branch>
 $ git branch --track <new-branch> <remote-branch>
 ```
 
-#####Delete a local branch:
+#####Eliminar una rama local:
 ```
 $ git branch -d <branch>
 ```
 
-#####Force delete a local branch:
-<em><sub>You will lose unmerged changes!</sub></em>
+#####Forzar la eliminación de una rama local:
+<em><sub>Perderas los cambios sin confirmar</sub></em>
 
 ```
 $ git branch -D <branch>
