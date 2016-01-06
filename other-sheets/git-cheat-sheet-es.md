@@ -1,4 +1,4 @@
-Git Cheat Sheet Spanish (Español) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+Git Cheat Sheet Spanish (Hoja de trucos de Git en Español) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 ===============
 <hr>
 ###Índice
@@ -132,7 +132,7 @@ git stash
 git checkout branch2
 git stash pop
 ```
-#####Restore stashed changes back to current branch
+#####Restaurar cambios escondido de nuevo a la rama actual
 ```
 git stash apply
 ```
@@ -167,7 +167,7 @@ $ git log --oneline
 $ git log --author="username"
 ```
 
-#####Show changes over time for a specific file:
+#####Mostrar cambios en el tiempo para un archivo específico:
 ```
 $ git log -p <file>
 ```
@@ -204,7 +204,7 @@ $ git checkout -b <branch>
 $ git branch <new-branch>
 ```
 
-#####Create a new tracking branch based on a remote branch:
+#####Crear una nueva rama de rastreo basada en una rama remota:
 ```
 $ git branch --track <new-branch> <remote-branch>
 ```
@@ -221,12 +221,12 @@ $ git branch -d <branch>
 $ git branch -D <branch>
 ```
 
-#####Mark the current commit with a tag:
+#####Marcar la confirmación actual con una etiqueta:
 ```
 $ git tag <tag-name>
 ```
 
-#####Mark the current commit with a tag that includes a message:
+#####Marcar la confirmación actual con una etiqueta que incluye un mensaje:
 ```
 $ git tag -a <tag-name>
 ```
@@ -323,7 +323,7 @@ $ git add <resolved-file>
 $ git rm <resolved-file>
 ```
 
-#####Squashing commits:
+#####Aplastando confirmaciones (squashing commits):
 ```
 $ git rebase -i <commit-just-before-first>
 ```
@@ -480,7 +480,7 @@ git flow feature track MYFEATURE
 
 
 ###Hacer un lanzamiento
-######Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+######Apoya la preparación de un nuevo lanzamiento a producción. Permite correcciones de errores menores y la preparación de los metadatos de un lanzamiento
 
 #####Iniciar un lanzamiento:
 ######Para iniciar un lanzamiento, utiliza el comando de lanzamiento de git flow. Este crea una rama de lanzamiento creada desde la rama 'desarrollo'. Opcionalmente, puedes suministrar el codigo hash sha-1 de una confirmación (commit) [BASE], para iniciar el lanzamiento desde ahi. La confirmación debe estar en la rama 'desarrollo'.
@@ -514,7 +514,7 @@ git flow release finish RELEASE
 ```
 $ git flow hotfix start VERSION [BASENAME]
 ```
-######The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+######El argumento de la versión presente, marca el nuevo nombre de versión de la revisión (solución). Opcionalmente, se puede especificar un nombre base para empezar.
 
 #####Terminando una solucion caliente (hotfix):
 ######Al terminar una solución caliente (hotfix) se fusiona en las ramas desarrollo y en master. Además, la fusión en master se etiqueta con la versión de la solución (hotfix)
