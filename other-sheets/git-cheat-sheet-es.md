@@ -435,7 +435,7 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 ###Iniciando
 ######Git flow necesita ser inicializado con el fin de personalizar la configuración de su proyecto. Inicia usando git-flow inicializandolo dentro de un repositorio git existente:
 #####Inicilizar:
-######You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
+######Tendras que responder algunas preguntas acerca de las convenciones de nombre para tus ramas. Es recomendado utilizar los valores por defecto.
 ```
 git flow init
 ```
@@ -443,36 +443,36 @@ git flow init
 
 
 ###Características
-######Develop new features for upcoming releases. Typically exist in developers repos only.
-#####Start a new feature:
-######This action creates a new feature branch based on 'develop' and switches to it.
+######Desarrolla nuevas características para los próximos lanzamientos. Normalmente, existen solo en los repositorios de desarrolladores.
+#####Inicia una nueva característica:
+######Esta acción crea una nueva rama de característica basada en 'desarrollo' (ó 'develop') y cambia a la misma.
 ```
 git flow feature start MYFEATURE
 ```
 
-#####Finish up a feature:
-######Finish the development of a feature. This action performs the following:
-######1)Merged MYFEATURE into 'develop'.
-######2)Removes the feature branch.
-######3)Switches back to 'develop' branch
+#####Términa una característica:
+######Finaliza el desarrollo de una característica. Esta acción ejecuta lo siguiente:
+######1)Fusiona MYFEATURE en 'desarrollo'.
+######2)Elimina la rama de la característica.
+######3)Cambia de regreso a la rama 'desarrollo'.
 ```
 git flow feature finish MYFEATURE
 ```
 
-#####Publish a feature:
-######Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
+#####Publica una característica:
+######¿Estas desarrollando una característica en colaboración? Publica una característica al servidor remoto, de esa manera puede ser utilizada por los demas usuarios.
 ```
 git flow feature publish MYFEATURE
 ```
 
-#####Getting a published feature:
-######Get a feature published by another user.
+#####Obtener una característica publicada:
+######Obtener una característica publicada por otro usuario.
 ```
 git flow feature pull origin MYFEATURE
 ```
 
-#####Tracking a origin feature:
-######You can track a feature on origin by using
+#####Rastrear una característica de origen (origin):
+######Puedes rastrear una característica en origin utilizando
 ```
 git flow feature track MYFEATURE
 ```
@@ -482,42 +482,42 @@ git flow feature track MYFEATURE
 ###Hacer un lanzamiento
 ######Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
 
-#####Start a release:
-######To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+#####Iniciar un lanzamiento:
+######Para iniciar un lanzamiento, utiliza el comando de lanzamiento de git flow. Este crea una rama de lanzamiento creada desde la rama 'desarrollo'. Opcionalmente, puedes suministrar el codigo hash sha-1 de una confirmación (commit) [BASE], para iniciar el lanzamiento desde ahi. La confirmación debe estar en la rama 'desarrollo'.
 ```
 git flow release start RELEASE [BASE]
 ```
-######It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+######Es aconsejable publicar la rama de lanzamiento despues de crearla para permitir las confirmaciones (commits) del lanzamiento a los otros desarrolladores. Hazlo similiar a la publicación de la característica con el comando:
 ```
 git flow release publish RELEASE
 ```
-######(You can track a remote release with the: ```git flow release track RELEASE``` command)
+######(Puedes rastrear un lanzamiento remoto con el comando: ```git flow release track RELEASE```)
 
-#####Finish up a release:
-######Finishing a release is one of the big steps in git branching. It performs several actions:
-######1)Merges the release branch back into 'master'
-######2)Tags the release with its name
-######3)Back-merges the release into 'develop'
-######4)Removes the release branch
+#####Terminando un lanzamiento:
+######Terminar un lanzamiento es uno de los pasos mas grandes en la ramificacion de git. Se lleva a cabo varias acciones:
+######1)Fusionar la rama de lanzamiento en 'master'
+######2)Etiquetar el lanzamiento con su nombre
+######3)Volver a fusionar la rama de lanzamiento en 'desarrollo' (ó 'develop')
+######4)Eliminar la rama de lanzamiento
 ```
 git flow release finish RELEASE
 ```
-######Don't forget to push your tags with ```git push --tags```
+######No olvides publicar tus etiquetas con ```git push --tags```
 <hr>
 
 
-###Soluciones calientes
-######Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+###Soluciones calientes (Hotfixes)
+######Las soluciones calientes se deben a la necesidad de actuar inmediatamente despues de un estado no deseado de una version en producción en vivo. Puede ser ramificada fuera de la etiqueta correspondiente en la rama principal que marca la versión de producción.
 
-#####Git flow hotfix start:
-######Like the other git flow commands, a hotfix is started with
+#####Las soluciones calientes (hotfix) en Git flow, se inician de la siguiente manera:
+######Al igual que los demas comando de git flow, una solución caliente (hotfix) se inicia con
 ```
 $ git flow hotfix start VERSION [BASENAME]
 ```
 ######The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
 
-#####Finish a hotfix:
-######By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
+#####Terminando una solucion caliente (hotfix):
+######Al terminar una solución caliente (hotfix) se fusiona en las ramas desarrollo y en master. Además, la fusión en master se etiqueta con la versión de la solución (hotfix)
 ```
 git flow hotfix finish VERSION
 ```
