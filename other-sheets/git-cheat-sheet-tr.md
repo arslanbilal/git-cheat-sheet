@@ -225,12 +225,12 @@ $ git merge <branch>
 ```
 
 #####Rebase your current HEAD onto &lt;branch&gt;:<br>
-######Don't rebase published commit!
+######Yayınlanan committen sonra rebase yapmayın!
 ```
 $ git rebase <branch>
 ```
 
-#####Rabase iptal etmek:
+#####Rebase iptal etmek:
 ```
 $ git rebase --abort
 ```
