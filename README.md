@@ -71,6 +71,12 @@ $ git config --global user.email “[valid-email]”
 ```
 $ git config --global color.ui auto
 ```
+
+#####Set global editor for commit
+```
+$ git config --global core.editor vi
+```
+
 <hr>
 ##Configuration Files
 
@@ -211,6 +217,11 @@ $ git log --author="username"
 #####Show changes over time for a specific file:
 ```
 $ git log -p <file>
+```
+
+#####Display commits that are present only in remote/branch in right side
+```
+$ git log --oneline <origin/master>..<remote/master> --left-right
 ```
 
 #####Who changed, what and when in &lt;file&gt;:
