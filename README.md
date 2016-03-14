@@ -173,16 +173,33 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 $ git commit -a --amend
 ```
 
+#####Change commit date of last commit:
+```
+GIT_COMMITTER_DATE="date" git commit --amend
+```
+
+#####Change Author date of last commit:
+```
+git commit --amend --date="date"
+```
+
 #####Move uncommitted changes from current branch to some other branch:<br>
 ```
 git stash
 git checkout branch2
 git stash pop
 ```
-#####Restore stashed changes back to current branch
+
+#####Restore stashed changes back to current branch:
 ```
 git stash apply
 ```
+
+#####Remove the last set of stashed changes:
+```
+git stash drop
+```
+
 <hr>
 ##Search
 
