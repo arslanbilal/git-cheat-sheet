@@ -156,6 +156,13 @@ $ git branch --track <new-branch> <remote-branch>
 ```
 $ git branch -d <branch>
 ```
+强制删除一个本地分支：<br>
+<em><sub>将会丢失未合并的修改！</sub></em>
+
+```
+$ git branch -D <branch>
+```
+
 
 给当前版本打标签：
 ```
