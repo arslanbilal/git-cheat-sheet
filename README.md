@@ -245,6 +245,16 @@ $ git log --oneline <origin/master>..<remote/master> --left-right
 ```
 $ git blame <file>
 ```
+
+#####Show Reference log:
+```
+$ git reflog show 
+```
+
+#####Delete Reference log:
+```
+$ git reflog delete
+```
 <hr>
 ##Branches & Tags
 
