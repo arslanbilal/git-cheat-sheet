@@ -610,6 +610,6 @@ git flow hotfix finish VERSION
 ###Git flow schema
 
 <p align="center">
-	<img alt="Git" src="../Img/git-flow-commands-without-flow.png">
+	<img alt="Git" src="Img/git-flow-commands-without-flow.png">
 </p>
 <hr>
