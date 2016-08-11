@@ -131,7 +131,7 @@ $ git diff
 
 #####Add all current changes to the next commit:
 ```
-$ git add
+$ git add .
 ```
 
 #####Add some changes in &lt;file&gt; to the next commit:
