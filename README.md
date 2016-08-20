@@ -40,7 +40,7 @@ Git Cheat Sheet English
 ```
 $ git config --list
 ```
-#####Show local configuration:
+#####Show repository configuration:
 ```
 $ git config --local --list
 ```
@@ -171,7 +171,7 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 $ git commit -a --amend
 ```
 
-#####Change commit date of last commit:
+#####Change committer date of last commit:
 ```
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
