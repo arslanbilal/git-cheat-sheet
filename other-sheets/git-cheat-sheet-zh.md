@@ -232,7 +232,8 @@ $ git log --author="username"
 $ git log -p <file>
 ```
 
-##### Display commits that are present only in remote/branch in right side：
+##### 仅显示远端<remote/master>分支与远端<origin/master>分支提交记录的差集：
+
 ```
 $ git log --oneline <origin/master>..<remote/master> --left-right
 ```
@@ -290,7 +291,7 @@ $ git branch --track <new-branch> <remote-branch>
 $ git branch -d <branch>
 ```
 
-##### 强制删除一个本地分支：<br>
+##### 强制删除一个本地分支：
 <em><sub>将会丢失未合并的修改！</sub></em>
 
 ```
