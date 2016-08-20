@@ -6,24 +6,22 @@ Git Cheat Sheet - git-flow [![Awesome](https://cdn.rawgit.com/sindresorhus/aweso
 </p>
 <hr>
 # Other Available Languages:
-1. [Chinese Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
-2. [Turkish Git Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+1. [Arabic Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ar.md)
+2. [Chinese Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
 3. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
-
-## PDF versions:
-1. [English Cheat Sheet](https://github.com/ArslanBilal/Git-Cheat-Sheet/blob/master/pdf/git-cheat-sheet.pdf)
+4. [Turkish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
+5. [Spanish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-es.md)
 
 Git cheat sheet saves you from learning all the commands by heart.
 
 Be free to contribute, update the grammar mistakes. You are also free to add your language file.
-
 <hr>
 
 Git Cheat Sheet English
 ===============
-
-
 ###Index
+* [Set Up](#setup)
+* [Configuration Files](#configuration-files)
 * [Create](#create)
 * [Local Changes](#local-changes)
 * [Search](#search)
@@ -34,19 +32,90 @@ Git Cheat Sheet English
 * [Undo](#undo)
 * [Git Flow](#git-flow)
 
+
+<hr>
+##Setup
+
+#####Show current configuration:
+```
+$ git config --list
+```
+#####Show local configuration:
+```
+$ git config --local --list
+```
+
+#####Show global configuration:
+```
+$ git config --global --list
+```
+
+#####Show system configuration:
+```
+$ git config --system --list
+```
+
+#####Set a name that is identifiable for credit when review version history:
+```
+$ git config --global user.name “[firstname lastname]”
+```
+
+#####Set an email address that will be associated with each history marker:
+```
+$ git config --global user.email “[valid-email]”
+```
+
+#####Set automatic command line coloring for Git for easy reviewing:
+```
+$ git config --global color.ui auto
+```
+
+#####Set global editor for commit
+```
+$ git config --global core.editor vi
+```
+
+<hr>
+##Configuration Files
+
+#####Repository specific configuration file [--local]:
+```
+<repo>/.git/config
+```
+
+#####User-specific configuration file [--global]:
+```
+~/.gitconfig
+```
+
+#####System-wide configuration file [--system]:
+```
+/etc/gitconfig
+```
+
 <hr>
 ##Create
 
 #####Clone an existing repository:
+
+There are two ways:
+
+Via SSH
+
 ```
 $ git clone ssh://user@domain.com/repo.git
+```
+
+Via HTTP
+
+```
+$ git clone http://domain.com/user/repo.git
 ```
 
 #####Create a new local repository:
 ```
 $ git init
 ```
-
 <hr>
 ##Local Changes
 
@@ -62,7 +131,7 @@ $ git diff
 
 #####Add all current changes to the next commit:
 ```
-$ git add
+$ git add .
 ```
 
 #####Add some changes in &lt;file&gt; to the next commit:
@@ -85,6 +154,11 @@ $ git commit
 $ git commit -m 'message here'
 ```
 
+#####Commit skipping the staging area and adding message:
+```
+$ git commit -am 'message here'
+```
+
 #####Commit to some previous date:
 ```
 git commit --date="`date --date='n day ago'`" -am "Commit Message"
@@ -92,19 +166,38 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 
 #####Change last commit:<br>
 <em><sub>Don't amend published commits!</sub></em>
+
 ```
 $ git commit -a --amend
 ```
+
+#####Change commit date of last commit:
+```
+GIT_COMMITTER_DATE="date" git commit --amend
+```
+
+#####Change Author date of last commit:
+```
+git commit --amend --date="date"
+```
+
 #####Move uncommitted changes from current branch to some other branch:<br>
 ```
 git stash
 git checkout branch2
 git stash pop
 ```
-#####Restore stashed changes back to current branch
+
+#####Restore stashed changes back to current branch:
 ```
 git stash apply
 ```
+
+#####Remove the last set of stashed changes:
+```
+git stash drop
+```
+
 <hr>
 ##Search
 
@@ -141,11 +234,25 @@ $ git log --author="username"
 $ git log -p <file>
 ```
 
+#####Display commits that are present only in remote/branch in right side
+```
+$ git log --oneline <origin/master>..<remote/master> --left-right
+```
+
 #####Who changed, what and when in &lt;file&gt;:
 ```
 $ git blame <file>
 ```
 
+#####Show Reference log:
+```
+$ git reflog show 
+```
+
+#####Delete Reference log:
+```
+$ git reflog delete
+```
 <hr>
 ##Branches & Tags
 
@@ -186,6 +293,7 @@ $ git branch -d <branch>
 
 #####Force delete a local branch:
 <em><sub>You will lose unmerged changes!</sub></em>
+
 ```
 $ git branch -D <branch>
 ```
@@ -199,7 +307,6 @@ $ git tag <tag-name>
 ```
 $ git tag -a <tag-name>
 ```
-
 <hr>
 ##Update & Publish
 
@@ -254,7 +361,6 @@ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 $ git push --tags
 ```
-
 <hr>
 ##Merge & Rebase
 
@@ -265,6 +371,7 @@ $ git merge <branch>
 
 #####Rebase your current HEAD onto &lt;branch&gt;:<br>
 <em><sub>Don't rebase published commit!</sub></em>
+
 ```
 $ git rebase <branch>
 ```
@@ -284,24 +391,30 @@ $ git rebase --continue
 $ git mergetool
 ```
 
-#####Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+#####Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
 ```
 $ git add <resolved-file>
 ```
+
 ```
 $ git rm <resolved-file>
 ```
+
 #####Squashing commits:
 ```
 $ git rebase -i <commit-just-before-first>
 ```
+
 Now replace this,
+
 ```
 pick <commit_id>
 pick <commit_id2>
 pick <commit_id3>
 ```
-with,
+
+to this,
+
 ```
 pick <commit_id>
 squash <commit_id2>
@@ -335,7 +448,7 @@ $ git revert <commit>
 $ git reset --hard <commit>
 ```
 
-#####Reset your HEAD pointer to a remote branch current state. 
+#####Reset your HEAD pointer to a remote branch current state.
 ```
 git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
@@ -491,5 +604,12 @@ git flow hotfix finish VERSION
 ###Commands
 <p align="center">
 	<img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
+</p>
+<hr>
+
+###Git flow schema
+
+<p align="center">
+	<img alt="Git" src="Img/git-flow-commands-without-flow.png">
 </p>
 <hr>
