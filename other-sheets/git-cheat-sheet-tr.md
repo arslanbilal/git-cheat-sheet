@@ -43,7 +43,7 @@ $ git diff
 
 #####Tüm güncel değişiklikleri sonraki commite ekleme:
 ```
-$ git add
+$ git add .
 ```
 
 #####Sonraki commite &lt;dosyasındaki&gt; bazı değişikleri ekleme:

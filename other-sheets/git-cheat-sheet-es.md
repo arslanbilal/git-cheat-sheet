@@ -118,7 +118,7 @@ $ git diff
 
 ##### Agregar todos los cambios actuales al siguiente commit:
 ```
-$ git add
+$ git add .
 ```
 
 ##### Agregar algunos cambios de &lt;archivo&gt; para el siguiente commit:
