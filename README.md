@@ -5,7 +5,9 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 	<img alt="Git" src="./Img/git-logo.png" height="190" width="455">
 </p>
 <hr>
+
 # Other Available Languages:
+
 1. [Arabic Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ar.md)
 2. [Chinese Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
 3. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
@@ -15,6 +17,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 Git cheat sheet saves you from learning all the commands by heart.
 
 Be free to contribute, update the grammar mistakes. You are also free to add your language file.
+
 <hr>
 
 Git Cheat Sheet English
@@ -34,6 +37,7 @@ Git Cheat Sheet English
 
 
 <hr>
+
 ## Setup
 
 ##### Show current configuration:
@@ -76,6 +80,7 @@ $ git config --global core.editor vi
 ```
 
 <hr>
+
 ## Configuration Files
 
 ##### Repository specific configuration file [--local]:
@@ -94,6 +99,7 @@ $ git config --global core.editor vi
 ```
 
 <hr>
+
 ## Create
 
 ##### Clone an existing repository:
@@ -199,7 +205,8 @@ git stash drop
 ```
 
 <hr>
-##Search
+
+## Search
 
 ##### A text search on all files in the directory:
 ```
@@ -212,7 +219,8 @@ $ git grep "Hello" v2.5
 ```
 
 <hr>
-### Commit History
+
+## Commit History
 
 ##### Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
 ```
@@ -254,6 +262,7 @@ $ git reflog show
 $ git reflog delete
 ```
 <hr>
+
 ## Branches & Tags
 
 ##### List all local branches:
@@ -308,6 +317,7 @@ $ git tag <tag-name>
 $ git tag -a <tag-name>
 ```
 <hr>
+
 ## Update & Publish
 
 ##### List all current configured remotes:
@@ -362,6 +372,7 @@ git push <remote> --delete <branch> (since Git v1.7.0)
 $ git push --tags
 ```
 <hr>
+
 ## Merge & Rebase
 
 ##### Merge branch into your current HEAD:
@@ -421,6 +432,7 @@ squash <commit_id2>
 squash <commit_id3>
 ```
 <hr>
+
 ## Undo
 
 ##### Discard all local changes in your working directory:
@@ -480,8 +492,8 @@ $ git commit -m "remove xyz file"
 * [Make a Release](#make-a-release)
 * [Hotfixes](#hotfixes)
 * [Commands](#commands)
-<hr>
 
+<hr>
 
 ### Setup
 ###### You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
@@ -508,7 +520,6 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 ```
 <hr>
 
-
 ### Getting Started
 ###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
 ##### Initialize:
@@ -517,7 +528,6 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 git flow init
 ```
 <hr>
-
 
 ### Features
 ###### Develop new features for upcoming releases. Typically exist in developers repos only.
@@ -529,9 +539,9 @@ git flow feature start MYFEATURE
 
 ##### Finish up a feature:
 ###### Finish the development of a feature. This action performs the following:
-###### 1)Merged MYFEATURE into 'develop'.
-###### 2)Removes the feature branch.
-###### 3)Switches back to 'develop' branch
+###### 1) Merged MYFEATURE into 'develop'.
+###### 2) Removes the feature branch.
+###### 3) Switches back to 'develop' branch
 ```
 git flow feature finish MYFEATURE
 ```
@@ -555,7 +565,6 @@ git flow feature track MYFEATURE
 ```
 <hr>
 
-
 ### Make a Release
 ###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
 
@@ -572,16 +581,16 @@ git flow release publish RELEASE
 
 ##### Finish up a release:
 ###### Finishing a release is one of the big steps in git branching. It performs several actions:
-###### 1)Merges the release branch back into 'master'
-###### 2)Tags the release with its name
-###### 3)Back-merges the release into 'develop'
-###### 4)Removes the release branch
+###### 1) Merges the release branch back into 'master'
+###### 2) Tags the release with its name
+###### 3) Back-merges the release into 'develop'
+###### 4) Removes the release branch
 ```
 git flow release finish RELEASE
 ```
 ###### Don't forget to push your tags with ```git push --tags```
-<hr>
 
+<hr>
 
 ### Hotfixes
 ###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
@@ -599,7 +608,6 @@ $ git flow hotfix start VERSION [BASENAME]
 git flow hotfix finish VERSION
 ```
 <hr>
-
 
 ### Commands
 <p align="center">
