@@ -285,6 +285,12 @@ $ git checkout <branch>
 $ git checkout -b <branch>
 ```
 
+##### Create a new branch from an exiting branch and switch to new branch:
+```
+$ git checkout -b <new_branch> <existing_branch>
+```
+
+
 ##### Create a new branch based on your current HEAD:
 ```
 $ git branch <new-branch>
