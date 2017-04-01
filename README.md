@@ -135,6 +135,11 @@ $ git status
 $ git diff
 ```
 
+##### See changes/difference of a specific file:
+```
+$ git diff <file>
+```
+
 ##### Add all current changes to the next commit:
 ```
 $ git add .
