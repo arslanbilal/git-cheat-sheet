@@ -2,7 +2,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 ===============
 <hr>
 <p align="center">
-	<img alt="Git" src="./Img/git-logo.png" height="190" width="455">
+    <img alt="Git" src="./Img/git-logo.png" height="190" width="455">
 </p>
 <hr>
 
@@ -167,7 +167,7 @@ $ git commit -am 'message here'
 
 ##### Commit to some previous date:
 ```
-git commit --date="`date --date='n day ago'`" -am "Commit Message"
+$ git commit --date="`date --date='n day ago'`" -am "<Commit Message Here>"
 ```
 
 ##### Change last commit:<br>
@@ -177,31 +177,45 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 $ git commit -a --amend
 ```
 
+##### Amend with last commit but use the previous commit log message
+<em><sub>Don't amend published commits!</sub></em>
+
+```shell
+$ git commit --amend --no-edit
+```
+
 ##### Change committer date of last commit:
 ```
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
 
 ##### Change Author date of last commit:
-```
-git commit --amend --date="date"
+```shell
+$ git commit --amend --date="date"
 ```
 
 ##### Move uncommitted changes from current branch to some other branch:<br>
 ```
-git stash
-git checkout branch2
-git stash pop
+$ git stash
+$ git checkout branch2
+$ git stash pop
 ```
 
 ##### Restore stashed changes back to current branch:
+```shell
+$ git stash apply
 ```
-git stash apply
+
+#### Restore particular stash back to current branch:
+- *{stash_number}* can be obtained from `git stash list`
+
+```shell
+$ git stash apply stash@{stash_number}
 ```
 
 ##### Remove the last set of stashed changes:
 ```
-git stash drop
+$ git stash drop
 ```
 
 <hr>
@@ -254,7 +268,7 @@ $ git blame <file>
 
 ##### Show Reference log:
 ```
-$ git reflog show 
+$ git reflog show
 ```
 
 ##### Delete Reference log:
@@ -270,6 +284,11 @@ $ git reflog delete
 $ git branch
 ```
 
+#### List local/remote branches
+```
+$ git branch -a
+```
+
 ##### List all remote branches:
 ```
 $ git branch -r
@@ -280,9 +299,19 @@ $ git branch -r
 $ git checkout <branch>
 ```
 
+##### Checkout single file from different branch
+```
+$ git checkout <branch> -- <filename>
+```
+
 ##### Create and switch new branch:
 ```
 $ git checkout -b <branch>
+```
+
+#### Checkout and create a new branch from existing commit
+```
+$ git checkout <commit-hash> -b <new_branch_name>
 ```
 
 ##### Create a new branch based on your current HEAD:
@@ -298,6 +327,11 @@ $ git branch --track <new-branch> <remote-branch>
 ##### Delete a local branch:
 ```
 $ git branch -d <branch>
+```
+
+##### Rename current branch to new branch name
+```shell
+$ git branch -m <new_branch_name>
 ```
 
 ##### Force delete a local branch:
@@ -352,7 +386,7 @@ $ git pull origin master
 
 ##### Get all changes from HEAD to local repository without a merge:
 ```
-git pull --rebase <remote> <branch>
+$ git pull --rebase <remote> <branch>
 ```
 
 ##### Publish local changes on a remote:
@@ -363,8 +397,10 @@ $ git push remote <remote> <branch>
 ##### Delete a branch on the remote:
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
-or
-git push <remote> --delete <branch> (since Git v1.7.0)
+```
+OR
+```
+$ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
 ##### Publish your tags:
@@ -372,6 +408,16 @@ git push <remote> --delete <branch> (since Git v1.7.0)
 $ git push --tags
 ```
 <hr>
+
+#### Configure the merge tool globally to meld (editor)
+```bash
+$ git config --global merge.tool meld
+```
+
+##### Use your configured merge tool to solve conflicts:
+```
+$ git mergetool
+```
 
 ## Merge & Rebase
 
@@ -395,11 +441,6 @@ $ git rebase --abort
 ##### Continue a rebase after resolving conflicts:
 ```
 $ git rebase --continue
-```
-
-##### Use your configured merge tool to solve conflicts:
-```
-$ git mergetool
 ```
 
 ##### Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
@@ -462,7 +503,7 @@ $ git reset --hard <commit>
 
 ##### Reset your HEAD pointer to a remote branch current state.
 ```
-git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
+$ git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
 
 ##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
@@ -484,6 +525,7 @@ $ git commit -m "remove xyz file"
 <hr>
 
 ## Git-Flow
+Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
 ### Index
 * [Setup](#setup)
@@ -500,7 +542,7 @@ $ git commit -m "remove xyz file"
 
 ##### OSX Homebrew:
 ```
-$ brew install git-flow
+$ brew install git-flow-avh
 ```
 
 ##### OSX Macports:
@@ -510,13 +552,13 @@ $ port install git-flow
 
 ##### Linux (Debian-based):
 ```
-$ apt-get install git-flow
+$ sudo apt-get install git-flow
 ```
 
 ##### Windows (Cygwin):
 ###### You need wget and util-linux to install git-flow.
-```
-$ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+```bash
+$ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
 ```
 <hr>
 
@@ -524,8 +566,13 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 ###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
 ##### Initialize:
 ###### You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
-```
+```shell
 git flow init
+```
+OR
+###### To use default
+```shell
+git flow init -d
 ```
 <hr>
 
@@ -611,13 +658,13 @@ git flow hotfix finish VERSION
 
 ### Commands
 <p align="center">
-	<img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
+    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
 
 ### Git flow schema
 
 <p align="center">
-	<img alt="Git" src="Img/git-flow-commands-without-flow.png">
+    <img alt="Git" src="Img/git-flow-commands-without-flow.png">
 </p>
 <hr>
