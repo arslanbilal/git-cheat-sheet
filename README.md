@@ -123,7 +123,9 @@ $ git clone http://domain.com/user/repo.git
 ```
 $ git init
 ```
+
 <hr>
+
 ## Local Changes
 
 ##### Changes in working directory:
