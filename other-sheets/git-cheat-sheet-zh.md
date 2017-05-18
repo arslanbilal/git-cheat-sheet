@@ -19,6 +19,8 @@ Git cheat sheet 让你不用再去记所有的git命令。
 
 欢迎贡献内容、更新语法错误，也欢迎添加你母语版本的Git cheat sheet。
 
+(注：中文版的问题反馈或贡献请在[flyhigher139/Git-Cheat-Sheet](https://github.com/flyhigher139/Git-Cheat-Sheet)发Issue或Pull requests)
+
 ---------------------
 
 Git Cheat Sheet 中文版
