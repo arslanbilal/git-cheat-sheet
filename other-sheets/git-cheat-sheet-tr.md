@@ -14,6 +14,7 @@ Git Cheat Sheet Turkish [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/
 * [Git Flow](#git-flow)
 
 <hr>
+
 ## Oluşturma
 
 ##### Var olan bir repositoryi(depoyu) klonlama:
@@ -27,7 +28,6 @@ $ git init
 ```
 
 <hr>
-
 
 ## Yerel Değişiklikler
 
@@ -85,6 +85,7 @@ git stash pop
 ```
 
 <hr>
+
 ## Arama
 
 ##### Bir metni dizindeki bütün dosyalarda aramak:
@@ -127,7 +128,6 @@ $ git blame <file>
 
 <hr>
 
-
 ## Branches & Tags
 
 ##### Tüm var olan branchleri listeler:
@@ -161,7 +161,6 @@ $ git tag <tag-name>
 ```
 
 <hr>
-
 
 ## Güncelleştirme & Yayınlama
 
@@ -216,7 +215,6 @@ $ git push --tags
 
 <hr>
 
-
 ## Merge & Rebase
 
 ##### Merge <branch> into your current HEAD:
@@ -254,7 +252,6 @@ $ git rm <resolved-file>
 ```
 
 <hr>
-
 
 ## Geri Alma
 
@@ -295,7 +292,6 @@ $ git reset --keep <commit>
 
 <hr>
 
-
 ## Git-Flow
 
 ### Index
@@ -305,8 +301,8 @@ $ git reset --keep <commit>
 * [Bir Yayın Çıkarırken (Release)](#release)
 * [Hata Giderimleri (Hotfixes)](#hata-giderimleri)
 * [Komutlar (Commands)](#komutlar)
-<hr>
 
+<hr>
 
 ### Ayarlar
 ###### Git flow'u kullanabilmek için öncelikli olarak git kurulumunun yapılması gerekmektedir. Git flow OSX, Linux ve Windows üzerinde çalıştırılabilir.
@@ -331,8 +327,8 @@ $ apt-get install git-flow
 ```
 $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
 ```
-<hr>
 
+<hr>
 
 ### Başlarken
 ###### Git flow, kullanmak istediğiniz projede ayarlarınızı özelleştirmek amacıyla başlatılır (initialize).
@@ -343,8 +339,8 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 ```
 git flow init
 ```
-<hr>
 
+<hr>
 
 ### Özellikler (Features)
 ###### Git flow ile yayınlamak üzere olduğunuz projenize ekleyeceğiniz özellikler için yeni dallarda (feature) kodlama yaparsınız. Genel olarak sadece geliştirici repolarında bulunurlar.
@@ -376,8 +372,8 @@ git flow feature publish MYFEATURE
 ```
 git flow feature pull origin MYFEATURE
 ```
-<hr>
 
+<hr>
 
 ### Bir Yayın Çıkarırken (Release)
 ###### Yeni bir ürünün yayınlanmasına yardımcı olur. Küçük hata giderimleri ve meta-data hazırlığı için kullanılabilir.
@@ -404,8 +400,8 @@ git flow release publish RELEASE
 git flow release finish RELEASE
 ```
 ###### Ancak etiketlerinizi de eklemeyi unutmayın! ```git push --tags``` bu sorununuzu da halledecektir.
-<hr>
 
+<hr>
 
 ### Hata giderimleri (Hotfixes)
 ###### Yayına çıkarılmış bir versiyonda istenmeyen durumlar ortaya çıktığında ani hata giderimi için kullanılır. Hotfixler, master ana dalı (branch)ındaki versiyon numarasını belirten etiketten dallanır (branching).
@@ -422,17 +418,20 @@ $ git flow hotfix start VERSION [BASENAME]
 ```
 git flow hotfix finish VERSION
 ```
-<hr>
 
+<hr>
 
 ### Komutlar (Commands)
 <p align="center">
 	<img alt="Git" src="../Img/git-flow-commands.png" height="270" width="460">
 </p>
+
 <hr>
+
 ### Git flow şeması
 
 <p align="center">
 	<img alt="Git" src="../Img/git-flow-commands-without-flow.png">
 </p>
+
 <hr>
