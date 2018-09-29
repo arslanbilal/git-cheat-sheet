@@ -282,7 +282,7 @@ $ git reflog delete
 
 ## Move / Rename
 
-##### Rename a commited file:
+##### Rename a file:
 
 Rename Index.txt to Index.html
 
