@@ -280,6 +280,20 @@ $ git reflog delete
 ```
 <hr>
 
+## Move / Rename Command
+
+##### Rename a commited file:
+
+We may have just commited a file named Index.txt,
+
+but we really were trying to save a .html file.
+
+```
+$ git mv Index.txt Index.html
+```
+
+<hr>
+
 ## Branches & Tags
 
 ##### List all local branches:
