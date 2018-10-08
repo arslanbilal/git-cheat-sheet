@@ -138,6 +138,11 @@ $ git status
 $ git diff
 ```
 
+##### See changes/difference of a specific file:
+```
+$ git diff <file>
+```
+
 ##### Add all current changes to the next commit:
 ```
 $ git add .
@@ -312,10 +317,18 @@ $ git checkout <branch> -- <filename>
 $ git checkout -b <branch>
 ```
 
+
+##### Create a new branch from an exiting branch and switch to new branch:
+```
+$ git checkout -b <new_branch> <existing_branch>
+```
+
+
 #### Checkout and create a new branch from existing commit
 ```
 $ git checkout <commit-hash> -b <new_branch_name>
 ```
+
 
 ##### Create a new branch based on your current HEAD:
 ```
