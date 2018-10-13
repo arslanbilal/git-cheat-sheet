@@ -20,7 +20,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 
 <hr>
 
-Git Cheat Sheet English
+Git Cheat Sheet Greek
 ===============
 ### Ευρετήριο
 * [Ρύθμιση](#setup)
