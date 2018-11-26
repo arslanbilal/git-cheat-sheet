@@ -285,6 +285,18 @@ $ git reflog delete
 ```
 <hr>
 
+## Move / Rename
+
+##### Rename a file:
+
+Rename Index.txt to Index.html
+
+```
+$ git mv Index.txt Index.html
+```
+
+<hr>
+
 ## Branches & Tags
 
 ##### List all local branches:
