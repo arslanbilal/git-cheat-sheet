@@ -119,9 +119,14 @@ Via HTTP
 $ git clone http://domain.com/user/repo.git
 ```
 
-##### Create a new local repository:
+##### Create a new local repository in the current directory:
 ```
 $ git init
+```
+
+##### Create a new local repository in a specific directory:
+```
+$ git init <directory>
 ```
 
 <hr>
