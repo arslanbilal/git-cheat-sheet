@@ -16,14 +16,14 @@ Git Cheat Sheet Estonian [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome
 
 <hr>
 
-## Setup
+## Sätted
 
-##### Show current configuration:
+##### Näita praegust seadet:
 ```
 $ git config --list
 ```
 
-##### Show repository configuration:
+##### Näita repository seadet:
 ```
 $ git config --local --list
 ```
@@ -33,7 +33,7 @@ $ git config --local --list
 $ git config --global --list
 ```
 
-##### Show system configuration:
+##### Näita süsteemi seadet:
 ```
 $ git config --system --list
 ```
