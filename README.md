@@ -418,6 +418,18 @@ $ git remote show <remote>
 $ git remote add <remote> <url>
 ```
 
+##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:: 
+```
+$ git remote rename <remote> <new_remote>
+```
+
+##### Remove a remote:
+```
+$ git remote rm <remote>
+```
+
+<em><sub>Note: git remote rm does not delete the remote repository from the server. It simply removes the remote and its references from your local repository.</sub></em>
+
 ##### Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
 ```
 $ git fetch <remote>
