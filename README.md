@@ -418,7 +418,7 @@ $ git remote show <remote>
 $ git remote add <remote> <url>
 ```
 
-##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:: 
+##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:
 ```
 $ git remote rename <remote> <new_remote>
 ```
