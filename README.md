@@ -139,6 +139,11 @@ $ git add .
 $ git add -p <file>
 ```
 
+#####Add only the mentioned files to the next commit:
+```
+$ git add <filename1> <filename2>
+```
+
 #####Commit all local changes in tracked files:
 ```
 $ git commit -a
