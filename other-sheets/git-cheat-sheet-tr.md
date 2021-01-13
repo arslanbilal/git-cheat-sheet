@@ -99,6 +99,7 @@ $ git grep "Merhaba" v2.5
 ```
 
 <hr>
+
 ## Commit Geçmişi
 
 ##### Tüm commitleri en yenisinden başlayarak listeler:
