@@ -204,7 +204,7 @@ $ git push remote <remote> <branch>
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 ```
-or
+ya da
 ```
 $ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
@@ -218,12 +218,12 @@ $ git push --tags
 
 ## Merge & Rebase
 
-##### Merge <branch> into your current HEAD:
+##### Seçili HEADinizi istediğiniz &lt;branch&gt;'e merge eder:
 ```
 $ git merge <branch>
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
+##### Seçili HEADinizi şimdiki &lt;branch&gt;'e rebase yapar<br>
 ###### Yayınlanan committen sonra rebase yapmayın!
 ```
 $ git rebase <branch>
@@ -244,7 +244,7 @@ $ git rebase --continue
 $ git mergetool
 ```
 
-##### Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+##### Editörünüzü kullanarak çakışmaları çözümledikten sonra dosyayı çözümlenmiş olarak ekleyin:
 ```
 $ git add <resolved-file>
 ```
@@ -276,17 +276,17 @@ $ git checkout HEAD <file>
 $ git revert <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
+##### Belirlediğiniz HEADden bir önceki commite döner ve belirlemiş olduğunuz committe yaptığınız tüm değişiklikleri geri alır:
 ```
 $ git reset --hard <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+##### Belirlediğiniz HEADden bir önceki commite döner ve belirlemiş olduğunuz committe yaptığınız tüm değişiklikleri untracked dosyalar arasına alır:
 ```
 $ git reset <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+##### Belirlediğiniz HEADden bir önceki commite döner ve yaptığınız tüm değişiklilkleri local commitlerinizi tutarak geri alır:
 ```
 $ git reset --keep <commit>
 ```
