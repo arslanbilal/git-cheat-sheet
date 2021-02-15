@@ -252,12 +252,12 @@ $ git grep "Hello" v2.5
 
 ##### Show commits that introduced a specific keyword
 ```
-$ git log -S'keyword'
+$ git log -S 'keyword'
 ```
 
 ##### Show commits that introduced a specific keyword (using a regular expression)
 ```
-$ git log -S'keyword' --pickaxe-regex
+$ git log -S 'keyword' --pickaxe-regex
 ```
 
 <hr>
