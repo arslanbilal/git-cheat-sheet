@@ -252,7 +252,7 @@ $ git log -S'keyword'
 
 ##### Show commits that introduced a specific keyword (using a regular expression)
 ```
-$ git log -S'ke.word' --pickaxe-regex
+$ git log -S'keyword' --pickaxe-regex
 ```
 
 <hr>
