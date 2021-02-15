@@ -180,7 +180,7 @@ $ git commit
 $ git commit -m 'mensagem aqui'
 ```
 
-##### Realizar um commit pulando a área de preparação (*staging area*) e adicionando uma mensagem:
+##### Realizar um *commit* pulando a área de preparação (*staging area*) e adicionando uma mensagem:
 
 ```
 $ git commit -am 'mensagem aqui'
@@ -199,7 +199,7 @@ $ git commit --date="`date --date='n day ago'`" -am "<Mensagem do commit aqui>"
 $ git commit -a --amend
 ```
 
-##### Emendar com o último *commit*, mas usar a mensagem de log do *commit* anterior
+##### Emendar com o último *commit*, mas usar a mensagem de log do *commit* anterior:
 <em><sub>Não emenda os *commits* publicados!</sub></em>
 
 ```shell
@@ -224,7 +224,6 @@ $ git commit --amend --date="data"
 $ git stash
 $ git checkout ramo2
 $ git stash pop
-
 ```
 
 ##### Restaurar as alterações acumuladas (*stashed changes*) de volta para o ramo atual:
@@ -331,7 +330,7 @@ $ git reflog delete
 
 ## Mover / Renomear
 
-##### Renomear um arquivo
+##### Renomear um arquivo:
 
 Renomear Index.txt para Index.html
 
@@ -349,7 +348,7 @@ $ git mv Index.txt Index.html
 $ git branch
 ```
 
-##### Listar ramos locais/remotos
+##### Listar ramos locais/remotos:
 
 ```
 $ git branch -a
@@ -367,7 +366,7 @@ $ git branch -r
 $ git checkout <ramo>
 ```
 
-##### Atualizar um único arquivo de outro ramo
+##### Atualizar um único arquivo de outro ramo:
 
 ```
 $ git checkout <ramo> -- <arquivo>
