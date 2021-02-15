@@ -98,6 +98,16 @@ $ git grep "Merhaba"
 $ git grep "Merhaba" v2.5
 ```
 
+##### Belirli bir kelimeyi içeren commitleri göstermek:
+```
+$ git log -S "keyword"
+```
+
+##### Belirli bir kelimeyi içeren commitleri göstermek (düzenli ifadeler kullanarak):
+```
+$ git log -S "keyword" --pickaxe-regex
+```
+
 <hr>
 
 ## Commit Geçmişi
