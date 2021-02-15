@@ -446,70 +446,70 @@ $ git pull --rebase <remote> <branch>
 $ git push remote <remote> <branch>
 ```
 
-##### Delete a branch on the remote:
+##### Deleta uma branch na remota:
 ```
-$ git push <remote> :<branch> (since Git v1.5.0)
+$ git push <remote> :<branch> (desde Git v1.5.0)
 ```
 OR
 ```
-$ git push <remote> --delete <branch> (since Git v1.7.0)
+$ git push <remote> --delete <branch> (desde Git v1.7.0)
 ```
 
-##### Publish your tags:
+##### Publicar suas tags:
 ```
 $ git push --tags
 ```
 <hr>
 
-#### Configure the merge tool globally to meld (editor)
+#### Configurar a ferramenta de merge globalmente para fundir o código
 ```bash
 $ git config --global merge.tool meld
 ```
 
-##### Use your configured merge tool to solve conflicts:
+##### Use sua própria ferramenta/editor para resolver conflitos:
 ```
 $ git mergetool
 ```
 
-## Merge & Rebase
+## Merge & Rebase (fundir e rebasear)
 
-##### Merge branch into your current HEAD:
+##### Fazer merge da branch na pilha (HEAD) atual:
 ```
 $ git merge <branch>
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
-<em><sub>Don't rebase published commit!</sub></em>
+##### Rebasear a pilha (HEAD) em &lt;branch&gt;:<br>
+<em><sub>Só faça rebase de commit publicado!</sub></em>
 
 ```
 $ git rebase <branch>
 ```
 
-##### Abort a rebase:
+##### Aborte o rebase:
 ```
 $ git rebase --abort
 ```
 
-##### Continue a rebase after resolving conflicts:
+##### Continue um rebase depois de resolver os conflitos:
 ```
 $ git rebase --continue
 ```
 
-##### Use your editor to manually solve conflicts and (after resolving) mark arquivo as resolved:
+##### Use seu editor para resolver conflitos manualmente e (depois de resolvidos) marcar arquivo como resolvido:
 ```
-$ git add <resolved-arquivo>
-```
-
-```
-$ git rm <resolved-arquivo>
+$ git add <arquivo_resolvido>
 ```
 
-##### Squashing commits:
 ```
-$ git rebase -i <commit-just-before-first>
+$ git rm <arquivo_resolvido>
 ```
 
-Now replace this,
+##### Squashing commits (tradução literal seria "esmagar commits"):
+```
+$ git rebase -i <commit-logo-antes-do-primeiro>
+```
+
+Agora, substitua...
 
 ```
 pick <commit_id>
@@ -517,7 +517,7 @@ pick <commit_id2>
 pick <commit_id3>
 ```
 
-to this,
+para isso,
 
 ```
 pick <commit_id>
@@ -526,44 +526,44 @@ squash <commit_id3>
 ```
 <hr>
 
-## Undo
+## Desfazer
 
-##### Discard all local changes in your working diretório:
+##### Descartar todas as alterações locais no seu atual diretório:
 ```
 $ git reset --hard HEAD
 ```
 
-##### Get all the arquivos out of the staging area(i.e. undo the last `git add`):
+##### Tira todos os arquivos da área temporária (staging) (ou seja, desfaz o último `git add`):
 ```
 $ git reset HEAD
 ```
 
-##### Discard local changes in a specific arquivo:
+##### Descarta as alterações locais em um arquivo específico:
 ```
 $ git checkout HEAD <arquivo>
 ```
 
-##### Revert a commit (by producing a new commit with contrary changes):
+##### Reverte um commit (produzindo um novo commit com mudanças contrárias ou diferentes):
 ```
 $ git revert <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
+##### Reseta o ponteiro da HEAD para um commit anterior e descarta todas as mudanças desde aquele ponto:
 ```
 $ git reset --hard <commit>
 ```
 
-##### Reset your HEAD pointer to a remote branch current state.
+##### Reseta o ponteiro da HEAD pointer para o estado atual de uma branch remota.
 ```
 $ git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+##### Reseta o ponteiro da HEAD para um commit anterior e mantém todas as mudanças na staged:
 ```
 $ git reset <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+##### Reseta o ponteiro da HEAD para um commit anterior e preserva mudanças locais sem commit:
 ```
 $ git reset --keep <commit>
 ```
@@ -577,20 +577,19 @@ $ git commit -m "remove xyz arquivo"
 <hr>
 
 ## Git-Flow
-Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
 ### Index
-* [Setup](#setup)
-* [Getting Started](#getting-started)
-* [Features](#features)
-* [Make a Release](#make-a-release)
+* [Instalação](#instalação)
+* [Iniciando](#iniciando)
+* [Características](#características)
+* [Fazer um release](#fazer-um-release)
 * [Hotfixes](#hotfixes)
-* [Commands](#commands)
+* [Comandos](#comandos)
 
 <hr>
 
-### Setup
-###### You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
+### Instalação
+###### Você precisa de uma instalação do Git como pré-requisito. Git flow funciona em OSX, Linux e Windows.
 
 ##### OSX Homebrew:
 ```
@@ -608,113 +607,113 @@ $ sudo apt-get install git-flow
 ```
 
 ##### Windows (Cygwin):
-###### You need wget and util-linux to install git-flow.
+###### Você vai precisar do wget e util-linux para instalar o git-flow.
 ```bash
 $ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
 ```
 <hr>
 
-### Getting Started
-###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
-##### Initialize:
-###### You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
+### Iniciando
+###### Git flow precisa inicializar para personalizar um projeto. O uso do git-flow começa ao inicializar dentro de um repositório git existente:
+##### Inicializar:
+###### Você vai precisar responder algumas questões para personalizar a configuração do projeto. Recomenda-se usar as configurações padrão.
 ```shell
 git flow init
 ```
-OR
-###### To use default
+OU
+###### Para usar o padrão (default)
 ```shell
 git flow init -d
 ```
 <hr>
 
-### Features
-###### Develop new features for upcoming releases. Typically exist in developers repos only.
-##### Start a new feature:
-###### This action creates a new feature branch based on 'develop' and switches to it.
+### Características
+###### Desenvolva novas características para versões posteriores. Tipicamente existe em repos de desenvolvedores apenas.
+##### Iniciar uma nova feature (característica):
+###### Esta ação cria uma branch de nova feature baseada no 'develop' e alterna para ela.
 ```
 git flow feature start MYFEATURE
 ```
 
-##### Finish up a feature:
-###### Finish the development of a feature. This action performs the following:
-###### 1) Merged MYFEATURE into 'develop'.
-###### 2) Removes the feature branch.
-###### 3) Switches back to 'develop' branch
+##### Terminar uma feature:
+###### Finaliza o desenvolvimento da feature. Esta ação realiza o seguinte:
+###### 1) Faz o merged da MYFEATURE na 'develop'.
+###### 2) Remove a branch 'feature'.
+###### 3) Volta para a branch 'develop'
 ```
 git flow feature finish MYFEATURE
 ```
 
-##### Publish a feature:
-###### Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
+##### Publicar uma feature:
+###### Você desenvolve uma feature em equipe? Publique uma feature para o servidor remoto para que os outros possam usá-la.
 ```
 git flow feature publish MYFEATURE
 ```
 
-##### Getting a published feature:
-###### Get a feature published by another user.
+##### Baixar uma feature publicada:
+###### Baixar uma feature publicada por outro usuário.
 ```
 git flow feature pull origin MYFEATURE
 ```
 
-##### Tracking a origin feature:
-###### You can track a feature on origin by using
+##### Rastreando a feature na origin:
+###### Você consegue rastrear a feature na origin usando:
 ```
 git flow feature track MYFEATURE
 ```
 <hr>
 
-### Make a Release
-###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+### Fazer um release
+###### Ajustes na preparação de um novo release de produção. Permitir para correção de bugs menores e preparando os metadados para um release.
 
-##### Start a release:
-###### To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+##### Iniciar um release:
+###### Use o comando git flow, que cria uma branch de release a partir da 'develop'. Opcionalmente você pode fornecer um hash sha-1 de um commit [BASE] para iniciar a release a partir deste. O commit deve estar no branch 'develop'.
 ```
 git flow release start RELEASE [BASE]
 ```
-###### It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+###### É aconselhável publicar a release branch depois de criá-la, para permitir outros commits de desenvolvedores. Faça de maneira similar a publicar uma feature com o comando:
 ```
 git flow release publish RELEASE
 ```
-###### (You can track a remote release with the: ```git flow release track RELEASE``` command)
+###### (É possível rastrear uma release remota com: ```git flow release track RELEASE```)
 
-##### Finish up a release:
-###### Finishing a release is one of the big steps in git branching. It performs several actions:
-###### 1) Merges the release branch back into 'master'
-###### 2) Tags the release with its name
-###### 3) Back-merges the release into 'develop'
-###### 4) Removes the release branch
+##### Finalizando a release:
+###### Finalizar a release é um dos grandes pontos em branching no git. Isto executa várias ações:
+###### 1) Merge da release branch de volta na 'master'
+###### 2) Faz as tags da release com seu nome
+###### 3) Volta a fundir a release branch na branch 'develop'
+###### 4) Apaga a release branch
 ```
 git flow release finish RELEASE
 ```
-###### Don't forget to push your tags with ```git push --tags```
+###### Não esqueça de publicar as tags com ```git push --tags```
 
 <hr>
 
 ### Hotfixes
-###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+###### Hotfixes surgiram da necessidade de agir imediatamente sobre um determinado estado de uma versão em produção. Pode ser criado um branch correspondente a partir da tag na master branch que marca a versão em produção.
 
-##### Git flow hotfix start:
-###### Like the other git flow commands, a hotfix is started with
+##### Iniciar um hotfix:
+###### Assim como o comando git flow, um hotfix inicia com:
 ```
 $ git flow hotfix start VERSION [BASENAME]
 ```
-###### The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+###### O argumento 'version' marca o novo nome da release. Opcionalmente pode-se especificar um basename.
 
-##### Finish a hotfix:
-###### By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
+##### Terminando um hotfix:
+###### Ao terminar um hotfix, este é fundido de volta na develop e na master. Adicionalmente é feita uma tag na master com a versão do hotfix.
 ```
 git flow hotfix finish VERSION
 ```
 <hr>
 
-### Commands
+### Comandos
 <p align="center">
     <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
 
-### Git flow schema
+### Esquema do Git flow
 
 <p align="center">
     <img alt="Git" src="Img/git-flow-commands-without-flow.png">
