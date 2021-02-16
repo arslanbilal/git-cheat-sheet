@@ -350,6 +350,10 @@ $ git checkout <branch> -- <filename>
 $ git checkout -b <branch>
 ```
 
+##### Switch to the previous branch, without saying the name explicitly:
+```
+$ git checkout -
+```
 
 ##### Create a new branch from an exiting branch and switch to new branch:
 ```
