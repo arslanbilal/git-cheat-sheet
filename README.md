@@ -507,6 +507,11 @@ $ git mergetool
 $ git merge <branch>
 ```
 
+#### List merged branches
+```
+$ git branch --merged
+```
+
 ##### Rebase your current HEAD onto &lt;branch&gt;:<br>
 <em><sub>Don't rebase published commit!</sub></em>
 
