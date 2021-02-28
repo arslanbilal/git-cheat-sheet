@@ -22,7 +22,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 
 <hr>
 
-Git Cheat Sheet English
+깃 치트시트 한국어
 ===============
 ### Index
 * [설정](#setup)
@@ -83,19 +83,19 @@ $ git config --global core.editor vi
 
 <hr>
 
-## Configuration Files
+## 설정 파일
 
-##### Repository specific configuration file [--local]:
+##### 특정 리포지토리 설정 파일 [--local]:
 ```
 <repo>/.git/config
 ```
 
-##### User-specific configuration file [--global]:
+##### 특정 유저 설정 파일 [--global]:
 ```
 ~/.gitconfig
 ```
 
-##### System-wide configuration file [--system]:
+##### 시스템 전체 설정 파일 [--system]:
 ```
 /etc/gitconfig
 ```
