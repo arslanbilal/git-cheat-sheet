@@ -102,30 +102,30 @@ $ git config --global core.editor vi
 
 <hr>
 
-## Create
+## 생성
 
-##### Clone an existing repository:
+##### 기존 리포지토리 복제:
 
-There are two ways:
+2가지 방법이 있습니다:
 
-Via SSH
+SSH를 통해
 
 ```
 $ git clone ssh://user@domain.com/repo.git
 ```
 
-Via HTTP
+HTTP를 통해
 
 ```
 $ git clone http://domain.com/user/repo.git
 ```
 
-##### Create a new local repository in the current directory:
+##### 현재 경로에 새로운 로컬 리포지토리 생성:
 ```
 $ git init
 ```
 
-##### Create a new local repository in a specific directory:
+##### 특정 경로에 새로운 로컬 리포지토리 생성:
 ```
 $ git init <directory>
 ```
