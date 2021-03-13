@@ -120,114 +120,114 @@ HTTP를 통해
 $ git clone http://domain.com/user/repo.git
 ```
 
-##### 현재 경로에 새로운 로컬 리포지토리 생성:
+##### 현재 디렉터리에 새로운 로컬 리포지토리 생성:
 ```
 $ git init
 ```
 
-##### 특정 경로에 새로운 로컬 리포지토리 생성:
+##### 특정 디렉터리에 새로운 로컬 리포지토리 생성:
 ```
 $ git init <directory>
 ```
 
 <hr>
 
-## Local Changes
+## 로컬 수정
 
-##### Changes in working directory:
+##### 작업 디렉터리 변경사항:
 ```
 $ git status
 ```
 
-##### Changes to tracked files:
+##### 추적된 파일들의 변경사항:
 ```
 $ git diff
 ```
 
-##### See changes/difference of a specific file:
+##### 특정 파일의 변경사항/차이 확인:
 ```
 $ git diff <file>
 ```
 
-##### Add all current changes to the next commit:
+##### 모든 현재 변경사항을 다음 커밋에 추가:
 ```
 $ git add .
 ```
 
-##### Add some changes in &lt;file&gt; to the next commit:
+##### <file>의 일부 변경사항을 다음 커밋에 추가:
 ```
 $ git add -p <file>
 ```
 
-##### Commit all local changes in tracked files:
+##### 추적되는 파일들의 모든 로컬 변경사항을 커밋:
 ```
 $ git commit -a
 ```
 
-##### Commit previously staged changes:
+##### 이전에 stage된 변경사항을 커밋:
 ```
 $ git commit
 ```
 
-##### Commit with message:
+##### 메시지와 함께 커밋:
 ```
 $ git commit -m 'message here'
 ```
 
-##### Commit skipping the staging area and adding message:
+##### Staging 영역 건너뛰기 및 메시지 추가 커밋:
 ```
 $ git commit -am 'message here'
 ```
 
-##### Commit to some previous date:
+##### 과거 날짜에 커밋:
 ```
 $ git commit --date="`date --date='n day ago'`" -am "<Commit Message Here>"
 ```
 
-##### Change last commit:<br>
-<em><sub>Don't amend published commits!</sub></em>
+##### 마지막 커밋 수정:<br>
+<em><sub>이미 배포된 커밋을 수정하지 마세요!</sub></em>
 
 ```
 $ git commit -a --amend
 ```
 
-##### Amend with last commit but use the previous commit log message
-<em><sub>Don't amend published commits!</sub></em>
+##### 이전 로그 메시지를 사용하여 마지막 커밋 수정:
+<em><sub>이미 배포된 커밋을 수정하지 마세요!</sub></em>
 
 ```shell
 $ git commit --amend --no-edit
 ```
 
-##### Change committer date of last commit:
+##### 마지막 커밋의 커밋 작성자 날짜 수정:
 ```
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
 
-##### Change Author date of last commit:
+##### 마지막 커밋의 작성자 날짜 수정:
 ```shell
 $ git commit --amend --date="date"
 ```
 
-##### Move uncommitted changes from current branch to some other branch:<br>
+##### 현재 브랜치의 커밋되지 않은 변경사항을 다른 브랜치로 이동:<br>
 ```
 $ git stash
 $ git checkout branch2
 $ git stash pop
 ```
 
-##### Restore stashed changes back to current branch:
+##### 보관된 변경사항을 현재 브랜치로 복원:
 ```shell
 $ git stash apply
 ```
 
-#### Restore particular stash back to current branch:
+#### 보관된 특정 변경사항을 현재 브랜치로 복원:
 - *{stash_number}* can be obtained from `git stash list`
 
 ```shell
 $ git stash apply stash@{stash_number}
 ```
 
-##### Remove the last set of stashed changes:
+##### 마지막으로 보관된 변경사항을 제거:
 ```
 $ git stash drop
 ```
