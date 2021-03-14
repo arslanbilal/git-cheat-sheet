@@ -291,11 +291,11 @@ $ git reflog delete
 ```
 <hr>
 
-## Move / Rename
+## 이동 / 이름 수정
 
-##### Rename a file:
+##### 파일 이름 수정:
 
-Rename Index.txt to Index.html
+Index.txt에서 Index.html로 이름 바꾸기
 
 ```
 $ git mv Index.txt Index.html
@@ -303,180 +303,180 @@ $ git mv Index.txt Index.html
 
 <hr>
 
-## Branches & Tags
+## 브랜치 & 태그
 
-##### List all local branches:
+##### 모든 로컬 브랜치 목록:
 ```
 $ git branch
 ```
 
-#### List local/remote branches
+#### 모든 로컬/원격 브랜치 목록
 ```
 $ git branch -a
 ```
 
-##### List all remote branches:
+##### 모든 원격 브랜치 목록:
 ```
 $ git branch -r
 ```
 
-##### Switch HEAD branch:
+##### HEAD 브랜치 전환:
 ```
 $ git checkout <branch>
 ```
 
-##### Checkout single file from different branch
+##### 다른 브랜치에서 단일 파일 Checkout:
 ```
 $ git checkout <branch> -- <filename>
 ```
 
-##### Create and switch new branch:
+##### 새로운 브랜치 생성 후 HEAD 브랜치 전환:
 ```
 $ git checkout -b <branch>
 ```
 
 
-##### Create a new branch from an exiting branch and switch to new branch:
+##### 기존 특정 브랜치에서 새로운 브랜치 생성하고 브랜치 전환:
 ```
 $ git checkout -b <new_branch> <existing_branch>
 ```
 
 
-#### Checkout and create a new branch from existing commit
+#### 기존 특정 커밋에서 브랜치 생성 후 브랜치 전환:
 ```
 $ git checkout <commit-hash> -b <new_branch_name>
 ```
 
 
-##### Create a new branch based on your current HEAD:
+##### 현재 HEAD 브랜치 기준으로 새 브랜치 생성:
 ```
 $ git branch <new-branch>
 ```
 
-##### Create a new tracking branch based on a remote branch:
+##### 원격 브랜치를 기반으로 새로운 추적 브랜치 생성:
 ```
 $ git branch --track <new-branch> <remote-branch>
 ```
 
-##### Delete a local branch:
+##### 로컬 브랜치 삭제:
 ```
 $ git branch -d <branch>
 ```
 
-##### Rename current branch to new branch name
+##### 현재 브랜치 이름 변경:
 ```shell
 $ git branch -m <new_branch_name>
 ```
 
-##### Force delete a local branch:
-<em><sub>You will lose unmerged changes!</sub></em>
+##### 로컬 브랜치 강제 삭제:
+<em><sub>머지되지 않은 변경사항을 잃게 됩니다!</sub></em>
 
 ```
 $ git branch -D <branch>
 ```
 
-##### Mark `HEAD` with a tag:
+##### `HEAD`에 태그 추가:
 ```
 $ git tag <tag-name>
 ```
 
-##### Mark `HEAD` with a tag and open the editor to include a message:
+##### `HEAD`에 태그를 추가하고 메시지를 포함할 에디터 열기:
 ```
 $ git tag -a <tag-name>
 ```
 
-##### Mark `HEAD` with a tag that includes a message:
+##### `HEAD`에 메시지를 포함하는 태그 추가:
 ```
 $ git tag <tag-name> -am 'message here'
 ```
 
-##### List all tags:
+##### 모든 태그 목록:
 ```
 $ git tag
 ```
 
-##### List all tags with their messages (tag message or commit message if tag has no message):
+##### 메시지 (태그 메시지, 없다면 커밋 메시지)와 함께 모든 태그 목록 표시:
 ```
 $ git tag -n
 ```
 
 <hr>
 
-## Update & Publish
+## 업데이트 & 배포
 
-##### List all current configured remotes:
+##### 현재 구성된 모든 원격 목록 표시:
 ```
 $ git remote -v
 ```
 
-##### Show information about a remote:
+##### 특정 원격 정보 표시:
 ```
 $ git remote show <remote>
 ```
 
-##### Add new remote repository, named &lt;remote&gt;:
+##### 이름 &lt;remote&gt; 새로운 원격 리포지토리 추가:
 ```
 $ git remote add <remote> <url>
 ```
 
-##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:
+##### &lt;remote&gt;에서 &lt;new_remote&gt;로 원격 리포지토리의 이름 수정:
 ```
 $ git remote rename <remote> <new_remote>
 ```
 
-##### Remove a remote:
+##### 특정 원격 삭제:
 ```
 $ git remote rm <remote>
 ```
 
-<em><sub>Note: git remote rm does not delete the remote repository from the server. It simply removes the remote and its references from your local repository.</sub></em>
+<em><sub>알림: git remote rm 은 서버의 원격 리포지토리를 삭제하지 않습니다. 단순히 리모트와 참조를 로컬 리포지토리에서부터 삭제만 합니다.</sub></em>
 
-##### Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
+##### &lt;remote&gt;에서 모든 변경사항 다운로드하지만 HEAD와 통합하지 않음:
 ```
 $ git fetch <remote>
 ```
 
-##### Download changes and directly merge/integrate into HEAD:
+##### 변경사항을 다운로드하고 HEAD와 병합:
 ```
 $ git remote pull <remote> <url>
 ```
 
-##### Get all changes from HEAD to local repository:
+##### HEAD에서 로컬 리포지토리로 모든 변경사항을 가져옴:   
 ```
 $ git pull origin master
 ```
 
-##### Get all changes from HEAD to local repository without a merge:
+##### 병합하지 않고 HEAD에서 로컬 리포지토리로 모든 변경사항을 가져옴:
 ```
 $ git pull --rebase <remote> <branch>
 ```
 
-##### Publish local changes on a remote:
+##### 로컬 변경사항을 리모트에 배포:
 ```
 $ git push remote <remote> <branch>
 ```
 
-##### Delete a branch on the remote:
+##### 리모트에서 브랜치 삭제:
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 ```
-OR
+혹은
 ```
 $ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
-##### Publish your tags:
+##### 태그 배포:
 ```
 $ git push --tags
 ```
 <hr>
 
-#### Configure the merge tool globally to meld (editor)
+#### 병합 툴(편집기)을 글로벌 설정
 ```bash
 $ git config --global merge.tool meld
 ```
 
-##### Use your configured merge tool to solve conflicts:
+##### 구성된 병합 툴로 충돌 해결:
 ```
 $ git mergetool
 ```
