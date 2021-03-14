@@ -587,20 +587,20 @@ $ git commit -m "remove xyz file"
 <hr>
 
 ## Git-Flow
-Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
+개선된 [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
-### Index
-* [Setup](#setup)
-* [Getting Started](#getting-started)
-* [Features](#features)
-* [Make a Release](#make-a-release)
-* [Hotfixes](#hotfixes)
-* [Commands](#commands)
+### 인덱스
+* [설정](#setup)
+* [시작하기](#getting-started)
+* [기능](#features)
+* [릴리즈 생성](#make-a-release)
+* [핫픽스](#hotfixes)
+* [명령어들](#commands)
 
 <hr>
 
-### Setup
-###### You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
+### 설정
+###### 필수 구성 요소로 Git을 설치해야 합니다. Git 플로우는 OSX, 리눅스 및 윈도우즈에서 작동합니다.
 
 ##### OSX Homebrew:
 ```
@@ -618,113 +618,113 @@ $ sudo apt-get install git-flow
 ```
 
 ##### Windows (Cygwin):
-###### You need wget and util-linux to install git-flow.
+###### git-flow를 설치하기 위해서는 wget과 util-linux가 필요합니다.
 ```bash
 $ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
 ```
 <hr>
 
-### Getting Started
-###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
-##### Initialize:
-###### You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
+### 시작하기
+###### 프로젝트 설정을 커스텀하려면 Git 플로우를 초기화해야합니다. 기존 git 리포지토리 내에서 초기화하여 git-flow 사용을 시작하십시오:
+##### 초기화:
+###### 브랜치의 이름 규칙에 관한 몇 가지 질문에 답해야합니다. 기본값을 사용하는 것이 좋습니다.
 ```shell
 git flow init
 ```
-OR
-###### To use default
+혹은
+###### 기본값 사용
 ```shell
 git flow init -d
 ```
 <hr>
 
-### Features
-###### Develop new features for upcoming releases. Typically exist in developers repos only.
-##### Start a new feature:
-###### This action creates a new feature branch based on 'develop' and switches to it.
+### 기능
+###### 릴리즈를위한 새로운 기능을 개발하십시오. 일반적으로 개발자 리포지토리에만 존재합니다.
+##### 새로운 기능 시작:
+###### 이 작업은 'develop'을 기반으로 새 기능 브랜치를 만들고 전환합니다.
 ```
 git flow feature start MYFEATURE
 ```
 
-##### Finish up a feature:
-###### Finish the development of a feature. This action performs the following:
-###### 1) Merged MYFEATURE into 'develop'.
-###### 2) Removes the feature branch.
-###### 3) Switches back to 'develop' branch
+##### 기능 완료:
+###### 기능 개발을 완료합니다. 이 작업은 다음을 수행합니다:
+###### 1) MYFEATURE를 'develop'에 병합.
+###### 2) 기능 브랜치를 제거.
+###### 3) 'develop' 브랜치로 재전환
 ```
 git flow feature finish MYFEATURE
 ```
 
-##### Publish a feature:
-###### Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
+##### 기능 배포:
+###### 공동으로 기능을 개발하고 있습니까? 다른 사용자가 사용할 수 있도록 기능을 원격 서버에 배포합니다.
 ```
 git flow feature publish MYFEATURE
 ```
 
-##### Getting a published feature:
-###### Get a feature published by another user.
+##### 배포된 기능 가져오기:
+###### 다른 사용자에 의해 배포된 기능을 가져오기.
 ```
 git flow feature pull origin MYFEATURE
 ```
 
-##### Tracking a origin feature:
-###### You can track a feature on origin by using
+##### 오리진 기능 추적:
+###### 다음을 통해서 오리진의 기능을 추적할 수 있습니다.
 ```
 git flow feature track MYFEATURE
 ```
 <hr>
 
-### Make a Release
-###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+### 릴리즈 생성
+###### 새로운 프로덕션 릴리즈 준비를 지원하고 사소한 버그 수정 및 릴리즈를위한 메타 데이터 준비를 허용합니다.
 
-##### Start a release:
-###### To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+##### 릴리즈 시작:
+###### 릴리스를 시작하려면 git flow release 명령을 사용하십시오. 'develop'브랜치에서 생성 된 릴리즈 브랜치를 생성합니다. 릴리즈를 시작할 [BASE] 커밋 sha-1 해시를 선택적으로 제공 할 수 있습니다. 커밋은 'develop'브랜치에 있어야합니다. 
 ```
 git flow release start RELEASE [BASE]
 ```
-###### It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+###### 다른 개발자의 릴리즈 커밋을 허용하도록 릴리스 브랜치를 만든 후 배포하는 것이 좋습니다. 다음 명령을 사용하여 기능 배포와 유사하게 수행하십시오. 
 ```
 git flow release publish RELEASE
 ```
-###### (You can track a remote release with the: ```git flow release track RELEASE``` command)
+###### (이 명령어를 통해 리모트 릴리즈를 추적할 수 있습니다: ```git flow release track RELEASE```)
 
-##### Finish up a release:
-###### Finishing a release is one of the big steps in git branching. It performs several actions:
-###### 1) Merges the release branch back into 'master'
-###### 2) Tags the release with its name
-###### 3) Back-merges the release into 'develop'
-###### 4) Removes the release branch
+##### 릴리즈 완료:
+###### 릴리즈를 완료하는 것은 깃 브랜치의 중요한 단계 중 하나입니다. 이것은 몇 가지 작업을 수행합니다:
+###### 1) 릴리즈 브랜치를 'master'브랜치로 다시 병합합니다
+###### 2) 릴리즈에 이름으로 태그 지정
+###### 3) 릴리즈를 'develop'로 역으로 병합
+###### 4) 릴리즈 브랜치 삭제
 ```
 git flow release finish RELEASE
 ```
-###### Don't forget to push your tags with ```git push --tags```
+###### ```git push --tags```로 태그를 푸시하는 것을 잊지마세요 
 
 <hr>
 
-### Hotfixes
-###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+### 핫픽스
+###### 핫픽스는 라이브 프로덕션 버전의 원치 않는 상태에 즉시 대응해야 하는 필요성 때문에 발생합니다. 프로덕션 버전을 표시하는 마스터 브랜치의 해당 태그에서 분기될 수 있습니다. 
 
-##### Git flow hotfix start:
-###### Like the other git flow commands, a hotfix is started with
+##### 깃 플로우 핫픽스 시작:
+###### 다른 깃 플로우 명령어처럼 핫픽스는 다음으로 시작됩니다
 ```
 $ git flow hotfix start VERSION [BASENAME]
 ```
-###### The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+###### 위 명령어의 버전 인수를 통해 새로운 릴리즈 이름을 표시합니다. 선택적으로 시작할 기본 이름을 설정할 수 있습니다.
 
-##### Finish a hotfix:
-###### By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
+##### 핫픽스 완료:
+###### 핫픽스를 완료하면 다시 develop/master 브랜치로 병합됩니다. 또한 마스터 병합에는 핫픽스 버전 태그가 지정됩니다.
 ```
 git flow hotfix finish VERSION
 ```
 <hr>
 
-### Commands
+### 명령어
 <p align="center">
     <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
 
-### Git flow schema
+### 깃 플로우 스키마
 
 <p align="center">
     <img alt="Git" src="Img/git-flow-commands-without-flow.png">
