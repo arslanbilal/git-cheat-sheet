@@ -109,7 +109,7 @@ git clone ssh://user@domain.com/repo.git
 git clone http://domain.com/user/repo.git
 ```
 
-##### एक नए स्थानीय रिपॉजिटरी (भंडार) बनाएं:
+##### एक नई स्थानीय रिपॉजिटरी (भंडार) बनाएं:
 
 ```shell
 git init

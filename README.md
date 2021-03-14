@@ -14,7 +14,8 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 4. [Turkish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
 5. [Spanish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-es.md)
 6. [Greek Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-el.md)
-6. [Korean Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ko.md)
+7. [Brazilian Portuguese Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-pt_BR.md)
+8. [Korean Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ko.md)
 
 Git cheat sheet saves you from learning all the commands by heart.
 
@@ -159,6 +160,11 @@ $ git add .
 $ git add -p <file>
 ```
 
+##### Add only the mentioned files to the next commit:
+```
+$ git add <filename1> <filename2>
+```
+
 ##### Commit all local changes in tracked files:
 ```
 $ git commit -a
@@ -244,6 +250,16 @@ $ git grep "Hello"
 ##### In any version of a text search:
 ```
 $ git grep "Hello" v2.5
+```
+
+##### Show commits that introduced a specific keyword
+```
+$ git log -S 'keyword'
+```
+
+##### Show commits that introduced a specific keyword (using a regular expression)
+```
+$ git log -S 'keyword' --pickaxe-regex
 ```
 
 <hr>
@@ -335,6 +351,10 @@ $ git checkout <branch> -- <filename>
 $ git checkout -b <branch>
 ```
 
+##### Switch to the previous branch, without saying the name explicitly:
+```
+$ git checkout -
+```
 
 ##### Create a new branch from an exiting branch and switch to new branch:
 ```
@@ -486,6 +506,11 @@ $ git mergetool
 ##### Merge branch into your current HEAD:
 ```
 $ git merge <branch>
+```
+
+#### List merged branches
+```
+$ git branch --merged
 ```
 
 ##### Rebase your current HEAD onto &lt;branch&gt;:<br>

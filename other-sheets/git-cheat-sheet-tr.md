@@ -3,6 +3,8 @@ Git Cheat Sheet Turkish [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/
 
 
 ### Index
+* [Kurulum](#kurulum)
+* [Yapılandırma](#yapılandırma)
 * [Oluşturma](#oluşturma)
 * [Yerel Değişiklikler](#yerel-değişiklikler)
 * [Arama](#arama)
@@ -12,6 +14,68 @@ Git Cheat Sheet Turkish [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/
 * [Merge(Birleştirme) & Rebase](#merge--rebase)
 * [Geri Alma](#geri-alma)
 * [Git Flow](#git-flow)
+
+<hr>
+
+## Kurulum
+
+##### Mevcut ayarları göstermek:
+```
+$ git config --list
+```
+##### Repository(depo) ayarlarını göstermek:
+```
+$ git config --local --list
+```
+
+##### Global ayarları göstermek:
+```
+$ git config --global --list
+```
+
+##### Sistem ayarlarını göstermek:
+```
+$ git config --system --list
+```
+
+##### Sürüm geçmişinde gözükecek adı belirlemek:
+```
+$ git config --global user.name “[firstname lastname]”
+```
+
+##### Sürüm geçmişinde ilişkilendirilecek e-postayı belirlemek:
+```
+$ git config --global user.email “[valid-email]”
+```
+
+##### Otomatik komut satırı renklendirmesini ayarlamak:
+```
+$ git config --global color.ui auto
+```
+
+##### Commitler için global yazı editörünü ayarlamak:
+```
+$ git config --global core.editor vi
+```
+
+<hr>
+
+## Yapılandırma
+
+##### Repositorye(depoya) özgü yapılandırma dosyası [--local]:
+```
+<repo>/.git/config
+```
+
+##### Kullanıcıya özel yapılandırma dosyası [--global]:
+```
+~/.gitconfig
+```
+
+##### Sistem genelinde yapılandırma dosyası [--system]:
+```
+/etc/gitconfig
+```
 
 <hr>
 
@@ -26,6 +90,10 @@ $ git clone ssh://user@domain.com/repo.git
 ```
 $ git init
 ```
+
+##### Belirli dizinde yerel repository(depo) oluşturma:
+```
+$ git init <directory>
 
 <hr>
 
@@ -84,6 +152,23 @@ git checkout branch2
 git stash pop
 ```
 
+##### Saklanan değişiklikleri mevcut branche geri yükleme:
+```shell
+$ git stash apply
+```
+
+#### İstenilen saklanma yerini mevcut branche geri yükleme:
+- *{stash_number}* `git stash list` ile elde edilebilir
+
+```shell
+$ git stash apply stash@{stash_number}
+```
+
+##### Saklanan değişiklikleri kaldırma:
+```
+$ git stash drop
+```
+
 <hr>
 
 ## Arama
@@ -96,6 +181,16 @@ $ git grep "Merhaba"
 ##### Bir metni herhangi bir sürüm içinde aramak:
 ```
 $ git grep "Merhaba" v2.5
+```
+
+##### Belirli bir kelimeyi içeren commitleri göstermek:
+```
+$ git log -S "keyword"
+```
+
+##### Belirli bir kelimeyi içeren commitleri göstermek (düzenli ifadeler kullanarak):
+```
+$ git log -S "keyword" --pickaxe-regex
 ```
 
 <hr>
@@ -122,13 +217,34 @@ $ git log --author="username"
 $ git log -p <file>
 ```
 
-##### &lt;Dosyayı&gt; kim , ne ve ne zaman değiştirdiğini gösterir.:
+##### &lt;Dosyayı&gt; kimin ne zaman değiştirdiğini gösterir:
 ```
 $ git blame <file>
 ```
 
+##### Referans kayıtlarını gösterir:
+```
+$ git reflog show
+```
+
+##### Referans kayıtlarını siler:
+```
+$ git reflog delete
+```
+
 <hr>
 
+## Taşı / Yeniden Adlandır
+
+##### Dosyayı yeniden adlandırmak:
+
+Index.txt'den Index.html'e
+
+```
+$ git mv Index.txt Index.html
+```
+
+<hr>
 ## Branches & Tags
 
 ##### Tüm var olan branchleri listeler:
@@ -159,6 +275,26 @@ $ git branch -d <branch>
 ##### Güncel commiti etiket ile işaretler:
 ```
 $ git tag <tag-name>
+```
+
+##### `HEAD`i  etiket ile işaretler ve bir mesaj eklemek için yazı editörünü açar:
+```
+$ git tag -a <tag-name>
+```
+
+##### `HEAD`i bir mesaj içermek şartı ile etiketler:
+```
+$ git tag <tag-name> -am 'message here'
+```
+
+##### Tüm etiketleri listeler:
+```
+$ git tag
+```
+
+##### Tüm etiketleri mesajları ile listeler (etiket mesajı yoksa bir etiket mesajı yaz):
+```
+$ git tag -n
 ```
 
 <hr>
@@ -204,7 +340,7 @@ $ git push remote <remote> <branch>
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 ```
-or
+ya da
 ```
 $ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
@@ -218,12 +354,12 @@ $ git push --tags
 
 ## Merge & Rebase
 
-##### Merge <branch> into your current HEAD:
+##### Seçili HEADinizi istediğiniz &lt;branch&gt;'e merge eder:
 ```
 $ git merge <branch>
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
+##### Seçili HEADinizi şimdiki &lt;branch&gt;'e rebase yapar<br>
 ###### Yayınlanan committen sonra rebase yapmayın!
 ```
 $ git rebase <branch>
@@ -244,12 +380,33 @@ $ git rebase --continue
 $ git mergetool
 ```
 
-##### Use your editor to manully solve conflicts and (after resolving) mark file as resolved:
+##### Editörünüzü kullanarak çakışmaları çözümledikten sonra dosyayı çözümlenmiş olarak ekleyin:
 ```
 $ git add <resolved-file>
 ```
 ```
 $ git rm <resolved-file>
+```
+
+##### Commitleri birleştirmek:
+```
+$ git rebase -i <commit-just-before-first>
+```
+
+Bu metni,
+
+```
+pick <commit_id>
+pick <commit_id2>
+pick <commit_id3>
+```
+
+bu metin ile değiştirin,
+
+```
+pick <commit_id>
+squash <commit_id2>
+squash <commit_id3>
 ```
 
 <hr>
@@ -276,19 +433,27 @@ $ git checkout HEAD <file>
 $ git revert <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
+##### Belirlediğiniz HEADden bir önceki commite döner ve belirlemiş olduğunuz committe yaptığınız tüm değişiklikleri geri alır:
 ```
 $ git reset --hard <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+##### Belirlediğiniz HEADden bir önceki commite döner ve belirlemiş olduğunuz committe yaptığınız tüm değişiklikleri untracked dosyalar arasına alır:
 ```
 $ git reset <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+##### Belirlediğiniz HEADden bir önceki commite döner ve yaptığınız tüm değişiklilkleri local commitlerinizi tutarak geri alır:
 ```
 $ git reset --keep <commit>
+```
+
+
+##### Gitignore'a eklenmeden önce yanlışlıkla kaydedilmiş dosyaları kaldırın:
+```
+$ git rm -r --cached .
+$ git add .
+$ git commit -m "remove xyz file"
 ```
 
 <hr>
@@ -337,10 +502,14 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 ##### Başlangıç (Initialize):
 ###### Bu noktada kafanızda dallarınızı (branches) isimlendirme konusuna ilişkin birçok soru işareti oluşacaktır. Bu bağlamda varsayılan (default) değerleri kullanmanız önerilir.
 ###### git flow'u kullanmak istediğiniz reponuzdayken:
-```
+```shell
 git flow init
 ```
-
+ya da
+###### varsayılan:
+```shell
+git flow init -d
+```
 <hr>
 
 ### Özellikler (Features)
