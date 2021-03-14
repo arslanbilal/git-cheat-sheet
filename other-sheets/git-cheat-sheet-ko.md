@@ -481,31 +481,31 @@ $ git config --global merge.tool meld
 $ git mergetool
 ```
 
-## Merge & Rebase
+## 병합 & 리베이스
 
-##### Merge branch into your current HEAD:
+##### 현재 HEAD로 브랜치 병합:
 ```
 $ git merge <branch>
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
+##### 현재 HEAD에 &lt;branch&gt;로 리베이스:<br>
 <em><sub>Don't rebase published commit!</sub></em>
 
 ```
 $ git rebase <branch>
 ```
 
-##### Abort a rebase:
+##### 리베이스 중단:
 ```
 $ git rebase --abort
 ```
 
-##### Continue a rebase after resolving conflicts:
+##### 충돌 해결 후 리베이스 재개:
 ```
 $ git rebase --continue
 ```
 
-##### Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
+##### 편집기를 사용하여 수동으로 충돌을 해결하고 해당 파일에 표시:
 ```
 $ git add <resolved-file>
 ```
@@ -514,12 +514,12 @@ $ git add <resolved-file>
 $ git rm <resolved-file>
 ```
 
-##### Squashing commits:
+##### 커밋들을 압축:
 ```
 $ git rebase -i <commit-just-before-first>
 ```
 
-Now replace this,
+이제 이걸
 
 ```
 pick <commit_id>
@@ -527,7 +527,7 @@ pick <commit_id2>
 pick <commit_id3>
 ```
 
-to this,
+이렇게 바꿉니다,
 
 ```
 pick <commit_id>
@@ -536,49 +536,49 @@ squash <commit_id3>
 ```
 <hr>
 
-## Undo
+## 실행 취소
 
-##### Discard all local changes in your working directory:
+##### 작업 디렉터리의 모든 로컬 변경사항 취소:
 ```
 $ git reset --hard HEAD
 ```
 
-##### Get all the files out of the staging area(i.e. undo the last `git add`):
+##### Staging 영역에서 모든 파일 빼내기 (즉 마지막 `git add`를 실행 취소):
 ```
 $ git reset HEAD
 ```
 
-##### Discard local changes in a specific file:
+##### 특정 파일의 로컬 변경사항 취소:
 ```
 $ git checkout HEAD <file>
 ```
 
-##### Revert a commit (by producing a new commit with contrary changes):
+##### 커밋 되돌리기 (되돌리기 위한 변경사항을 포함하는 새 커밋을 생성함):
 ```
 $ git revert <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
+##### HEAD 포인터를 이전 커밋으로 재설정하고 그 이후의 모든 변경 사항을 삭제:
 ```
 $ git reset --hard <commit>
 ```
 
-##### Reset your HEAD pointer to a remote branch current state.
+##### HEAD 포인터를 원격 브랜치의 현재 상태로 재설정:
 ```
 $ git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+##### HEAD 포인터를 이전 커밋으로 재설정하고 모든 변경사항을 Unstaging 상태로 유지:
 ```
 $ git reset <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+##### HEAD 포인터를 이전 커밋으로 재설정하고 커밋되지 않은 로컬 변경사항 유지:
 ```
 $ git reset --keep <commit>
 ```
 
-##### Remove files that were accidentally committed before they were added to .gitignore
+##### .gitignore에 추가되기 전에 실수로 커밋된 파일 제거:
 ```
 $ git rm -r --cached .
 $ git add .
