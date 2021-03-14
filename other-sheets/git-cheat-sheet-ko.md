@@ -16,7 +16,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 6. [Greek Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-el.md)
 6. [Korean Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ko.md)
 
-깃 치트시트는 당신이 모든 명령어를 외우는 일로부터 벗어나게 합니다.
+깃 치트시트는 당신이 모든 명령어를 외우는 일로부터 벗어나게 해드립니다.
 
 언제든지 기여하고 문법 실수들을 업데이트하세요. 또한 언어 파일을 자유롭게 추가할 수 있습니다.
 
@@ -154,7 +154,7 @@ $ git diff <file>
 $ git add .
 ```
 
-##### <file>의 일부 변경사항을 다음 커밋에 추가:
+##### \<file>의 일부 변경사항을 다음 커밋에 추가:
 ```
 $ git add -p <file>
 ```
@@ -174,7 +174,7 @@ $ git commit
 $ git commit -m 'message here'
 ```
 
-##### Staging 영역 건너뛰기 및 메시지 추가 커밋:
+##### Staging 영역 건너뛰기 및 메시지 추가하여 커밋:
 ```
 $ git commit -am 'message here'
 ```
@@ -221,7 +221,7 @@ $ git stash apply
 ```
 
 #### 보관된 특정 변경사항을 현재 브랜치로 복원:
-- *{stash_number}* can be obtained from `git stash list`
+- `git stash list`를 통해 *{stash_number}* 를 얻을 수 있습니다. 
 
 ```shell
 $ git stash apply stash@{stash_number}
@@ -234,58 +234,58 @@ $ git stash drop
 
 <hr>
 
-## Search
+## 검색
 
-##### A text search on all files in the directory:
+##### 디렉터리에 있는 모든 파일에서 텍스트 검색:
 ```
 $ git grep "Hello"
 ```
 
-##### In any version of a text search:
+##### 버전에서 텍스트 검색:
 ```
 $ git grep "Hello" v2.5
 ```
 
 <hr>
 
-## Commit History
+## 커밋 히스토리
 
-##### Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
+##### 모든 커밋 표시, 가장 최신 커밋부터(커밋 해시, 작성자 정보, 커밋 날짜, 커밋 제목 포함):
 ```
 $ git log
 ```
 
-##### Show all the commits(it'll show just the commit hash and the commit message):
+##### 모든 커밋 표시 (커밋 해시와 커밋 메시지 포함):
 ```
 $ git log --oneline
 ```
 
-##### Show all commits of a specific user:
+##### 특정 유저의 모든 커밋 표시:
 ```
 $ git log --author="username"
 ```
 
-##### Show changes over time for a specific file:
+##### 특정 파일에 대한 시간 경과에 따른 변경사항 표시:
 ```
 $ git log -p <file>
 ```
 
-##### Display commits that are present only in remote/branch in right side
+##### 현재 오른쪽 remote 브랜치에만 있는 커밋 표시:
 ```
 $ git log --oneline <origin/master>..<remote/master> --left-right
 ```
 
-##### Who changed, what and when in &lt;file&gt;:
+##### &lt;file&gt;에 대한 변경자, 변경사항 그리고 변경일자 표시:
 ```
 $ git blame <file>
 ```
 
-##### Show Reference log:
+##### 참조 로그 표시:
 ```
 $ git reflog show
 ```
 
-##### Delete Reference log:
+##### 참조 로그 삭제:
 ```
 $ git reflog delete
 ```
