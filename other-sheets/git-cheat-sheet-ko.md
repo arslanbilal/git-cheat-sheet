@@ -25,17 +25,17 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 깃 치트시트 한국어
 ===============
 ### Index
-* [설정](#setup)
-* [설정 파일들](#configuration-files)
-* [생성](#create)
-* [로컬 수정사항](#local-changes)
-* [검색](#search)
-* [커밋 히스토리](#commit-history)
-* [브랜치 & 태그](#branches--tags)
-* [업데이트 & 배포](#update--publish)
-* [머지 & 리베이스](#merge--rebase)
-* [되돌리기](#undo)
-* [깃 플로우](#git-flow)
+* [설정](#설정)
+* [설정 파일](#설정-파일)
+* [생성](#생성)
+* [로컬 변경사항](#로컬-변경사항)
+* [검색](#검색)
+* [커밋 히스토리](#커밋-히스토리)
+* [브랜치 & 태그](#브랜치--태그)
+* [업데이트 & 배포](#업데이트--배포)
+* [병합 & 리베이스](#병합--리베이스)
+* [실행취소](#실행취소)
+* [깃 플로우](#깃-플로우)
 
 
 <hr>
@@ -46,7 +46,7 @@ Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awe
 ```
 $ git config --list
 ```
-##### 현재 리포지토리 설정 구성 보기:
+##### 현재 저장소 설정 구성 보기:
 ```
 $ git config --local --list
 ```
@@ -85,7 +85,7 @@ $ git config --global core.editor vi
 
 ## 설정 파일
 
-##### 특정 리포지토리 설정 파일 [--local]:
+##### 특정 저장소 설정 파일 [--local]:
 ```
 <repo>/.git/config
 ```
@@ -104,7 +104,7 @@ $ git config --global core.editor vi
 
 ## 생성
 
-##### 기존 리포지토리 복제:
+##### 기존 저장소 복제:
 
 2가지 방법이 있습니다:
 
@@ -120,19 +120,19 @@ HTTP를 통해
 $ git clone http://domain.com/user/repo.git
 ```
 
-##### 현재 디렉터리에 새로운 로컬 리포지토리 생성:
+##### 현재 디렉터리에 새로운 로컬 저장소 생성:
 ```
 $ git init
 ```
 
-##### 특정 디렉터리에 새로운 로컬 리포지토리 생성:
+##### 특정 디렉터리에 새로운 로컬 저장소 생성:
 ```
 $ git init <directory>
 ```
 
 <hr>
 
-## 로컬 수정
+## 로컬 변경사항
 
 ##### 작업 디렉터리 변경사항:
 ```
@@ -154,7 +154,7 @@ $ git diff <file>
 $ git add .
 ```
 
-##### \<file>의 일부 변경사항을 다음 커밋에 추가:
+##### &lt;file&gt;의 일부 변경사항을 다음 커밋에 추가:
 ```
 $ git add -p <file>
 ```
@@ -325,7 +325,7 @@ $ git branch -r
 $ git checkout <branch>
 ```
 
-##### 다른 브랜치에서 단일 파일 Checkout:
+##### 다른 브랜치에서 단일 파일 전환:
 ```
 $ git checkout <branch> -- <filename>
 ```
@@ -380,7 +380,7 @@ $ git branch -D <branch>
 $ git tag <tag-name>
 ```
 
-##### `HEAD`에 태그를 추가하고 메시지를 포함할 에디터 열기:
+##### `HEAD`에 태그를 추가하고 메시지를 포함할 편집기 열기:
 ```
 $ git tag -a <tag-name>
 ```
@@ -404,32 +404,32 @@ $ git tag -n
 
 ## 업데이트 & 배포
 
-##### 현재 구성된 모든 원격 목록 표시:
+##### 현재 구성된 모든 원격 저장소 목록 표시:
 ```
 $ git remote -v
 ```
 
-##### 특정 원격 정보 표시:
+##### 특정 원격 저장소 정보 표시:
 ```
 $ git remote show <remote>
 ```
 
-##### 이름 &lt;remote&gt; 새로운 원격 리포지토리 추가:
+##### 이름 &lt;remote&gt; 새로운 원격 저장소 추가:
 ```
 $ git remote add <remote> <url>
 ```
 
-##### &lt;remote&gt;에서 &lt;new_remote&gt;로 원격 리포지토리의 이름 수정:
+##### &lt;remote&gt;에서 &lt;new_remote&gt;로 원격 저장소의 이름 수정:
 ```
 $ git remote rename <remote> <new_remote>
 ```
 
-##### 특정 원격 삭제:
+##### 등록된 원격 저장소 삭제:
 ```
 $ git remote rm <remote>
 ```
 
-<em><sub>알림: git remote rm 은 서버의 원격 리포지토리를 삭제하지 않습니다. 단순히 리모트와 참조를 로컬 리포지토리에서부터 삭제만 합니다.</sub></em>
+<em><sub>참고: git remote rm 은 서버에서 원격 저장소를 삭제하지 않습니다. 로컬 저장소에서 원격정보 및 해당 참조를 제거만 합니다.</sub></em>
 
 ##### &lt;remote&gt;에서 모든 변경사항 다운로드하지만 HEAD와 통합하지 않음:
 ```
@@ -441,22 +441,22 @@ $ git fetch <remote>
 $ git remote pull <remote> <url>
 ```
 
-##### HEAD에서 로컬 리포지토리로 모든 변경사항을 가져옴:   
+##### HEAD에서 로컬 저장소로 모든 변경사항을 가져옴:   
 ```
 $ git pull origin master
 ```
 
-##### 병합하지 않고 HEAD에서 로컬 리포지토리로 모든 변경사항을 가져옴:
+##### 병합하지 않고 HEAD에서 로컬 저장소로 모든 변경사항을 가져옴:
 ```
 $ git pull --rebase <remote> <branch>
 ```
 
-##### 로컬 변경사항을 리모트에 배포:
+##### 로컬 변경사항을 원격 저장소에 배포:
 ```
 $ git push remote <remote> <branch>
 ```
 
-##### 리모트에서 브랜치 삭제:
+##### 원격 저장소에서 브랜치 삭제:
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 ```
@@ -489,7 +489,7 @@ $ git merge <branch>
 ```
 
 ##### 현재 HEAD에 &lt;branch&gt;로 리베이스:<br>
-<em><sub>Don't rebase published commit!</sub></em>
+<em><sub>이미 배포된 커밋을 리베이스하지 마세요!</sub></em>
 
 ```
 $ git rebase <branch>
@@ -536,7 +536,7 @@ squash <commit_id3>
 ```
 <hr>
 
-## 실행 취소
+## 실행취소
 
 ##### 작업 디렉터리의 모든 로컬 변경사항 취소:
 ```
@@ -586,16 +586,16 @@ $ git commit -m "remove xyz file"
 ```
 <hr>
 
-## Git-Flow
+## 깃 플로우
 개선된 [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 인덱스
-* [설정](#setup)
-* [시작하기](#getting-started)
-* [기능](#features)
-* [릴리즈 생성](#make-a-release)
-* [핫픽스](#hotfixes)
-* [명령어들](#commands)
+* [설정](#설정)
+* [시작하기](#시작하기)
+* [기능](#기능)
+* [릴리즈 생성](#릴리즈-생성)
+* [핫픽스](#핫픽스)
+* [명령어들](#명령어들)
 
 <hr>
 
@@ -625,7 +625,7 @@ $ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervan
 <hr>
 
 ### 시작하기
-###### 프로젝트 설정을 커스텀하려면 Git 플로우를 초기화해야합니다. 기존 git 리포지토리 내에서 초기화하여 git-flow 사용을 시작하십시오:
+###### 프로젝트 설정을 커스텀하려면 Git 플로우를 초기화해야합니다. 기존 git 저장소 내에서 초기화하여 git-flow 사용을 시작하십시오:
 ##### 초기화:
 ###### 브랜치의 이름 규칙에 관한 몇 가지 질문에 답해야합니다. 기본값을 사용하는 것이 좋습니다.
 ```shell
@@ -639,7 +639,7 @@ git flow init -d
 <hr>
 
 ### 기능
-###### 릴리즈를위한 새로운 기능을 개발하십시오. 일반적으로 개발자 리포지토리에만 존재합니다.
+###### 릴리즈를위한 새로운 기능을 개발하십시오. 일반적으로 개발자 저장소에만 존재합니다.
 ##### 새로운 기능 시작:
 ###### 이 작업은 'develop'을 기반으로 새 기능 브랜치를 만들고 전환합니다.
 ```
@@ -686,7 +686,7 @@ git flow release start RELEASE [BASE]
 ```
 git flow release publish RELEASE
 ```
-###### (이 명령어를 통해 리모트 릴리즈를 추적할 수 있습니다: ```git flow release track RELEASE```)
+###### (이 명령어를 통해 원격 저장소 릴리즈를 추적할 수 있습니다: ```git flow release track RELEASE```)
 
 ##### 릴리즈 완료:
 ###### 릴리즈를 완료하는 것은 깃 브랜치의 중요한 단계 중 하나입니다. 이것은 몇 가지 작업을 수행합니다:
@@ -718,7 +718,7 @@ git flow hotfix finish VERSION
 ```
 <hr>
 
-### 명령어
+### 명령어들
 <p align="center">
     <img alt="Git" src="../Img/git-flow-commands.png" height="270" width="460">
 </p>
