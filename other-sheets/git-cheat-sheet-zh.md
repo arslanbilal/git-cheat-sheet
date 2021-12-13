@@ -42,6 +42,7 @@ Git Cheat Sheet 中文版
 ### 配置
 
 ##### 列出当前配置：
+
 ```
 $ git config --list
 ```
@@ -62,13 +63,15 @@ $ git config --system --list
 ```
 
 ##### 设置用户名：
+
 ```
-$ git config --global user.name “[firstname lastname]”
+$ git config --global user.name "[firstname lastname]"
 ```
 
 ##### 设置用户邮箱：
+
 ```
-$ git config --global user.email “[valid-email]”
+$ git config --global user.email "[valid-email]"
 ```
 
 ##### 设置git命令输出为彩色：
@@ -165,11 +168,13 @@ git commit --date="`date --date='n day ago'`" -am "Commit Message"
 
 ##### 修改上次提交
 <em><sub>请勿修改已发布的提交记录!</sub></em>
+
 ```
 $ git commit --amend
 ```
 
 ##### 修改上次提交的committer date：
+
 ```
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
@@ -608,8 +613,7 @@ git flow release start RELEASE [BASE]
 git flow release publish RELEASE
 ```
 
-(你可以通过 
-`git flow release track RELEASE` 命令追溯远端的 release 版本)
+(你可以通过`git flow release track RELEASE` 命令追溯远端的 release 版本)
 
 ##### 完成 release 版本:
 
@@ -667,3 +671,4 @@ git flow hotfix finish VERSION
     <img alt="Git" src="../Img/git-flow-commands-without-flow.png">
 </p>
 <hr>
+
