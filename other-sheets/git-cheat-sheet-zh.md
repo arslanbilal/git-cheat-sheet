@@ -1,19 +1,9 @@
-# Git Cheat Sheet 中文版 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-
------------------
-
+Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+===============
+<hr>
 <p align="center">
-    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
+	<img alt="Git" src="../Img/git-logo.png" height="190" width="455">
 </p>
-
-------------------
-
-# Other Available Languages:
-1. [Arabic Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ar.md)
-2. [English Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/README.md)
-3. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
-4. [Turkish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
-5. [Spanish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-es.md)
 
 Git cheat sheet 让你不用再去记所有的git命令。
 
