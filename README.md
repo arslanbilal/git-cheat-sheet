@@ -34,6 +34,7 @@ Git Cheat Sheet English
 * [Local Changes](#local-changes)
 * [Search](#search)
 * [Commit History](#commit-history)
+* [Move / Rename](#move--rename)
 * [Branches & Tags](#branches--tags)
 * [Update & Publish](#update--publish)
 * [Merge & Rebase](#merge--rebase)
