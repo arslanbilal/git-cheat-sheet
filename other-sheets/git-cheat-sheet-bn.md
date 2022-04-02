@@ -28,21 +28,21 @@
 
 ## সেট আপ
 
-##### বর্তমান কনফিগারেশন দেখা:
+##### বর্তমান কনফিগারেশন দেখুন:
 ```
 $ git config --list
 ```
-##### রিপোজিটরি কনফিগারেশন দেখা:
+##### রিপোজিটরি কনফিগারেশন দেখুন:
 ```
 $ git config --local --list
 ```
 
-##### গ্লোবাল কনফিগারেশন দেখা:
+##### গ্লোবাল কনফিগারেশন দেখুন:
 ```
 $ git config --global --list
 ```
 
-##### সিস্টেম কনফিগারেশন দেখা:
+##### সিস্টেম কনফিগারেশন দেখুন:
 ```
 $ git config --system --list
 ```
@@ -227,22 +227,22 @@ $ git stash drop
 
 ## অনুসন্ধান
 
-##### A text search on all files in the directory:
+##### ডিরেক্টরির সমস্ত ফাইলে একটি পাঠ্য অনুসন্ধান করুন:
 ```
 $ git grep "Hello"
 ```
 
-##### In any version of a text search:
+##### যেকোনো সংস্করণের একটি পাঠ্য অনুসন্ধান করুন:
 ```
 $ git grep "Hello" v2.5
 ```
 
-##### Show commits that introduced a specific keyword
+##### কমিট দেখান যা একটি নির্দিষ্ট কীওয়ার্ডকে পরিচয় করিয়ে দেয়
 ```
 $ git log -S 'keyword'
 ```
 
-##### Show commits that introduced a specific keyword (using a regular expression)
+##### কমিট দেখান যা একটি নির্দিষ্ট কীওয়ার্ডকে (একটি রেগুলার এক্সপ্রেশন ব্যবহার করে) পরিচয় করিয়ে দেয়:
 ```
 $ git log -S 'keyword' --pickaxe-regex
 ```
@@ -251,42 +251,42 @@ $ git log -S 'keyword' --pickaxe-regex
 
 ## কমিট ইতিহাস
 
-##### Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
+##### নতুন থেকে শুরু করে সব কমিট দেখুন (এটি হ্যাশ, লেখকের তথ্য, কমিটের তারিখ এবং কমিটের শিরোনাম দেখাবে):
 ```
 $ git log
 ```
 
-##### Show all the commits(it'll show just the commit hash and the commit message):
+##### সমস্ত কমিট দেখুন (এটি শুধু কমিট হ্যাশ এবং কমিট মেসেজ দেখাবে):
 ```
 $ git log --oneline
 ```
 
-##### Show all commits of a specific user:
+##### একটি নির্দিষ্ট ব্যবহারকারীর সমস্ত কমিট দেখুন:
 ```
 $ git log --author="username"
 ```
 
-##### Show changes over time for a specific file:
+##### একটি নির্দিষ্ট ফাইলের জন্য সময়ের সাথে পরিবর্তন দেখুন:
 ```
 $ git log -p <file>
 ```
 
-##### Display commits that are present only in remote/branch in right side
+##### ডিসপ্লে কমিট যা শুধুমাত্র ডান পাশে থাকা রিমোট বা শাখাকে উপস্থাপন করে:
 ```
 $ git log --oneline <origin/master>..<remote/master> --left-right
 ```
 
-##### Who changed, what and when in &lt;file&gt;:
+##### &lt;file&gt; টি কে পরিবর্তন করল, কি এবং কখন করল:
 ```
 $ git blame <file>
 ```
 
-##### Show Reference log:
+##### রেফারেন্স লগ দেখুন:
 ```
 $ git reflog show
 ```
 
-##### Delete Reference log:
+##### রেফারেন্স লগ মুছুন:
 ```
 $ git reflog delete
 ```
@@ -294,9 +294,9 @@ $ git reflog delete
 
 ## সড়ানো বা নাম পরিবর্তন
 
-##### Rename a file:
+##### একটি ফাইলের নাম পরিবর্তন করুন:
 
-Rename Index.txt to Index.html
+`Rename Index.txt to Index.html`
 
 ```
 $ git mv Index.txt Index.html
@@ -306,101 +306,101 @@ $ git mv Index.txt Index.html
 
 ## ব্রাঞ্চ এবং ট্যাগ
 
-##### List all local branches:
+##### সমস্ত লোকাল ব্রাঞ্চের তালিকা করুন:
 ```
 $ git branch
 ```
 
-#### List local/remote branches
+#### লোকাল বা রিমোট ব্রাঞ্চের তালিকা দেখুন
 ```
 $ git branch -a
 ```
 
-##### List all remote branches:
+##### সমস্ত রিমোট ব্রাঞ্চের তালিকা দেখুন:
 ```
 $ git branch -r
 ```
 
-##### Switch HEAD branch:
+##### হেড ব্রাঞ্চ পরিবর্তন করুন:
 ```
 $ git checkout <branch>
 ```
 
-##### Checkout single file from different branch
+##### বিভিন্ন ব্রাঞ্চ থেকে একটি ফাইলকে চেকআউট করুন:
 ```
 $ git checkout <branch> -- <filename>
 ```
 
-##### Create and switch new branch:
+##### নতুন ব্রাঞ্চ তৈরি করুন এবং স্যুইচ করুন:
 ```
 $ git checkout -b <branch>
 ```
 
-##### Switch to the previous branch, without saying the name explicitly:
+##### স্পষ্টভাবে ব্রাঞ্চের নাম না বলে পূর্ববর্তী ব্রাঞ্চে যাওয়া:
 ```
 $ git checkout -
 ```
 
-##### Create a new branch from an exiting branch and switch to new branch:
+##### বর্তমান শাখা থেকে একটি নতুন শাখা তৈরি করুন এবং নতুন শাখায় স্যুইচ করুন:
 ```
 $ git checkout -b <new_branch> <existing_branch>
 ```
 
 
-#### Checkout and create a new branch from existing commit
+#### চেকআউট করুন এবং বিদ্যমান কমিট থেকে একটি নতুন শাখা তৈরি করুন:
 ```
 $ git checkout <commit-hash> -b <new_branch_name>
 ```
 
 
-##### Create a new branch based on your current HEAD:
+##### আপনার বর্তমান হেডের উপর ভিত্তি করে একটি নতুন শাখা তৈরি করুন:
 ```
 $ git branch <new-branch>
 ```
 
-##### Create a new tracking branch based on a remote branch:
+##### রিমোট শাখার উপর ভিত্তি করে একটি নতুন ট্র্যাকিং শাখা তৈরি করুন:
 ```
 $ git branch --track <new-branch> <remote-branch>
 ```
 
-##### Delete a local branch:
+##### একটি লোকাল ব্রাঞ্চ মুছে ফেলুন:
 ```
 $ git branch -d <branch>
 ```
 
-##### Rename current branch to new branch name
+##### নতুন শাখার নামে বর্তমান শাখার নাম পরিবর্তন করুন:
 ```shell
 $ git branch -m <new_branch_name>
 ```
 
-##### Force delete a local branch:
-<em><sub>You will lose unmerged changes!</sub></em>
+##### জোর করে একটি লোকাল ব্রাঞ্চ মুছে ফেলুন:
+<em><sub>আপনি মার্জ না করা পরিবর্তনগুলি হারাবেন!</sub></em>
 
 ```
 $ git branch -D <branch>
 ```
 
-##### Mark `HEAD` with a tag:
+##### একটি ট্যাগ দিয়ে `HEAD` চিহ্নিত করুন:
 ```
 $ git tag <tag-name>
 ```
 
-##### Mark `HEAD` with a tag and open the editor to include a message:
+##### একটি ট্যাগ দিয়ে `HEAD` চিহ্নিত করুন এবং একটি বার্তা অন্তর্ভুক্ত করতে এডিটরটি খুলুন:
 ```
 $ git tag -a <tag-name>
 ```
 
-##### Mark `HEAD` with a tag that includes a message:
+##### একটি ট্যাগ দিয়ে 'HEAD' চিহ্নিত করুন যাতে একটি বার্তা রয়েছে:
 ```
 $ git tag <tag-name> -am 'message here'
 ```
 
-##### List all tags:
+##### সব ট্যাগের তালিকা:
 ```
 $ git tag
 ```
 
-##### List all tags with their messages (tag message or commit message if tag has no message):
+##### সমস্ত ট্যাগকে তাদের বার্তাগুলির সাথে তালিকাভুক্ত করুন (ট্যাগের কোনও বার্তা না থাকলে, ট্যাগ বার্তা বা কমিট বার্তা):
 ```
 $ git tag -n
 ```
