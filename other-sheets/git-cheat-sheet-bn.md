@@ -409,79 +409,79 @@ $ git tag -n
 
 ## আপডেট এবং প্রকাশ
 
-##### List all current configured remotes:
+##### কারেন্ট কনফিগার্ড রিমোটের তালিকা করুন:
 ```
 $ git remote -v
 ```
 
-##### Show information about a remote:
+##### একটি রিমোট সম্পর্কে তথ্য দেখুন:
 ```
 $ git remote show <remote>
 ```
 
-##### Add new remote repository, named &lt;remote&gt;:
+##### নতুন রিমোট রিপোজিটরি যোগ করুন, নাম &lt;remote&gt;:
 ```
 $ git remote add <remote> <url>
 ```
 
-##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:
+##### রিমোট রিপোজিটরির নাম পরিবর্তন করুন, &lt;remote&gt; থেকে &lt;new_remote&gt;:
 ```
 $ git remote rename <remote> <new_remote>
 ```
 
-##### Remove a remote:
+##### একটি রিমোট সড়ান:
 ```
 $ git remote rm <remote>
 ```
 
-<em><sub>Note: git remote rm does not delete the remote repository from the server. It simply removes the remote and its references from your local repository.</sub></em>
+<em><sub>দ্রষ্টব্য: `git remote rm` সার্ভার থেকে রিমোট রিপোজিটরি মুছে দেয় না। এটি কেবল আপনার লোকাল রিপোজিটরি থেকে রিমোট এবং এর রেফারেন্সগুলি সরিয়ে দেয়।</sub></em>
 
-##### Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
+##### &lt;remote&gt; থেকে সমস্ত পরিবর্তন ডাউনলোড করুন, কিন্তু HEAD এ একত্রিত করবেন না:
 ```
 $ git fetch <remote>
 ```
 
-##### Download changes and directly merge/integrate into HEAD:
+##### পরিবর্তনগুলি ডাউনলোড করুন এবং সরাসরি HEAD-এ মার্জ বা ইন্ট্রিগেইট করুন:
 ```
 $ git remote pull <remote> <url>
 ```
 
-##### Get all changes from HEAD to local repository:
+##### হেড থেকে লোকাল রিপোজিটরিতে সমস্ত পরিবর্তন পান:
 ```
 $ git pull origin master
 ```
 
-##### Get all changes from HEAD to local repository without a merge:
+##### HEAD থেকে লোকাল রিপোজিটরিতে সমস্ত পরিবর্তন পান কোন মার্জ করা ছাড়াই:
 ```
 $ git pull --rebase <remote> <branch>
 ```
 
-##### Publish local changes on a remote:
+##### রিমোটের মধ্যে লোকাল পরিবর্তনগুলি প্রকাশ করুন:
 ```
 $ git push <remote> <branch>
 ```
 
-##### Delete a branch on the remote:
+##### রিমোট থেকে একটি শাখা মুছুন:
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 ```
-OR
+**অথবা**
 ```
 $ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
-##### Publish your tags:
+##### আপনার ট্যাগগুলো প্রকাশ করুন:
 ```
 $ git push --tags
 ```
 <hr>
 
-#### Configure the merge tool globally to meld (editor)
+#### (এডিটর) মেল্ড করার জন্য বিশ্বব্যাপী মার্জ টুল কনফিগার করুন:
 ```bash
 $ git config --global merge.tool meld
 ```
 
-##### Use your configured merge tool to solve conflicts:
+##### কনফ্লিক্ট সমাধান করতে আপনার কনফিগার করা মার্জ টুল ব্যবহার করুন:
 ```
 $ git mergetool
 ```
@@ -730,14 +730,14 @@ git flow hotfix finish VERSION
 
 ### Commands
 <p align="center">
-    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
+    <img alt="Git" src=".././Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
 
 ### Git flow schema
 
 <p align="center">
-    <img alt="Git" src="Img/git-flow-commands-without-flow.png">
+    <img alt="Git" src="../Img/git-flow-commands-without-flow.png">
 </p>
 <hr>
 
