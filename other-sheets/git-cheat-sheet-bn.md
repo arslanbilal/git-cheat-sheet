@@ -1,94 +1,75 @@
-Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
+গিট এবং গিট ফ্লো চিট শীট [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 ===============
 <hr>
 <p align="center">
-    <img alt="Git" src="./Img/git-logo.png" height="190" width="455">
+    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
 </p>
-<hr>
-
-# Other Available Languages:
-
-1. [Arabic Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ar.md)
-2. [Brazilian Portuguese Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-pt_BR.md)
-3. [Chinese Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-zh.md)
-4. [German Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-de.md)
-5. [Greek Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-el.md)
-6. [Hindi Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-hi.md)
-7. [Korean Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-ko.md)
-8. [Polish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-pl.md)
-9. [Spanish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-es.md)
-10. [Turkish Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-tr.md)
-11. [Bengali Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-bn.md)
-
-Git cheat sheet saves you from learning all the commands by heart.
-
-Be free to contribute, update the grammar mistakes. You are also free to add your language file.
-
-<hr>
-
-Git Cheat Sheet English
-===============
-### Index
-* [Set Up](#setup)
-* [Configuration Files](#configuration-files)
-* [Create](#create)
-* [Local Changes](#local-changes)
-* [Search](#search)
-* [Commit History](#commit-history)
-* [Move / Rename](#move--rename)
-* [Branches & Tags](#branches--tags)
-* [Update & Publish](#update--publish)
-* [Merge & Rebase](#merge--rebase)
-* [Undo](#undo)
-* [Git Flow](#git-flow)
 
 
 <hr>
 
-## Setup
+### সূচিপত্র
+* [সেট আপ](#সেট-আপ)
+* [কনফিগারেশন ফাইল](#কনফিগারেশন-ফাইল)
+* [তৈরী করা](#তৈরী-করা)
+* [লোকালি পরিবর্তন করা](#লোকালি-পরিবর্তন-করা)
+* [অনুসন্ধান](#অনুসন্ধান)
+* [কমিট ইতিহাস](#কমিট-ইতিহাস)
+* [সড়ানো বা নাম পরিবর্তন](#সড়ানো-বা-নাম-পরিবর্তন)
+* [ব্রাঞ্চ এবং ট্যাগ](#ব্রাঞ্চ-এবং-ট্যাগ)
+* [আপডেট এবং প্রকাশ](#আপডেট-এবং-প্রকাশ)
+* [মার্জ এবং রিবেস](#মার্জ-এবং-রিবেস)
+* [আনডো](#আনডো)
+* [গিট ফ্লো](#গিট-ফ্লো)
 
-##### Show current configuration:
+
+<hr>
+
+## সেট আপ
+
+##### বর্তমান কনফিগারেশন দেখান:
 ```
 $ git config --list
 ```
-##### Show repository configuration:
+##### রিপোজিটরি কনফিগারেশন দেখান:
 ```
 $ git config --local --list
 ```
 
-##### Show global configuration:
+##### গ্লোবাল কনফিগারেশন দেখান:
 ```
 $ git config --global --list
 ```
 
-##### Show system configuration:
+##### সিস্টেম কনফিগারেশন দেখান:
 ```
 $ git config --system --list
 ```
 
-##### Set a name that is identifiable for credit when review version history:
+##### সংস্করণ ইতিহাস পর্যালোচনা করার সময় কৃতিত্বের জন্য সনাক্তযোগ্য একটি নাম সেট করুন:
 ```
 $ git config --global user.name "[firstname lastname]"
 ```
 
-##### Set an email address that will be associated with each history marker:
+##### একটি ইমেল ঠিকানা সেট করুন যা প্রতিটি ইতিহাস চিহ্নিতকারীর সাথে যুক্ত হবে:
 ```
 $ git config --global user.email "[valid-email]"
 ```
 
-##### Set automatic command line coloring for Git for easy reviewing:
+##### সহজ পর্যালোচনার জন্য গিটের মধ্যে স্বয়ংক্রিয় কমান্ড লাইনের রঙ সেট করুন:
 ```
 $ git config --global color.ui auto
 ```
 
-##### Set global editor for commit
+##### কমিটের জন্য গ্লোবাল এডিটর সেট করুন:
 ```
 $ git config --global core.editor vi
 ```
 
 <hr>
 
-## Configuration Files
+## কনফিগারেশন ফাইল
 
 ##### Repository specific configuration file [--local]:
 ```
@@ -107,7 +88,7 @@ $ git config --global core.editor vi
 
 <hr>
 
-## Create
+## তৈরী করা
 
 ##### Clone an existing repository:
 
@@ -137,7 +118,7 @@ $ git init <directory>
 
 <hr>
 
-## Local Changes
+## লোকালি পরিবর্তন করা
 
 ##### Changes in working directory:
 ```
@@ -244,7 +225,7 @@ $ git stash drop
 
 <hr>
 
-## Search
+## অনুসন্ধান
 
 ##### A text search on all files in the directory:
 ```
@@ -268,7 +249,7 @@ $ git log -S 'keyword' --pickaxe-regex
 
 <hr>
 
-## Commit History
+## কমিট ইতিহাস
 
 ##### Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
 ```
@@ -311,7 +292,7 @@ $ git reflog delete
 ```
 <hr>
 
-## Move / Rename
+## সড়ানো বা নাম পরিবর্তন
 
 ##### Rename a file:
 
@@ -323,7 +304,7 @@ $ git mv Index.txt Index.html
 
 <hr>
 
-## Branches & Tags
+## ব্রাঞ্চ এবং ট্যাগ
 
 ##### List all local branches:
 ```
@@ -426,7 +407,7 @@ $ git tag -n
 
 <hr>
 
-## Update & Publish
+## আপডেট এবং প্রকাশ
 
 ##### List all current configured remotes:
 ```
@@ -505,7 +486,7 @@ $ git config --global merge.tool meld
 $ git mergetool
 ```
 
-## Merge & Rebase
+## মার্জ এবং রিবেস
 
 ##### Merge branch into your current HEAD:
 ```
@@ -565,7 +546,7 @@ squash <commit_id3>
 ```
 <hr>
 
-## Undo
+## আনডো
 
 ##### Discard all local changes in your working directory:
 ```
@@ -615,7 +596,7 @@ $ git commit -m "remove xyz file"
 ```
 <hr>
 
-## Git-Flow
+## গিট ফ্লো
 Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
 ### Index
