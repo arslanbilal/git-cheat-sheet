@@ -28,26 +28,26 @@
 
 ## সেট আপ
 
-##### বর্তমান কনফিগারেশন দেখান:
+##### বর্তমান কনফিগারেশন দেখা:
 ```
 $ git config --list
 ```
-##### রিপোজিটরি কনফিগারেশন দেখান:
+##### রিপোজিটরি কনফিগারেশন দেখা:
 ```
 $ git config --local --list
 ```
 
-##### গ্লোবাল কনফিগারেশন দেখান:
+##### গ্লোবাল কনফিগারেশন দেখা:
 ```
 $ git config --global --list
 ```
 
-##### সিস্টেম কনফিগারেশন দেখান:
+##### সিস্টেম কনফিগারেশন দেখা:
 ```
 $ git config --system --list
 ```
 
-##### সংস্করণ ইতিহাস পর্যালোচনা করার সময় কৃতিত্বের জন্য সনাক্তযোগ্য একটি নাম সেট করুন:
+##### সংস্করণকৃত ইতিহাস পর্যালোচনা করার সময় এবং কৃতিত্বের জন্য সনাক্তযোগ্য একটি নাম সেট করুন:
 ```
 $ git config --global user.name "[firstname lastname]"
 ```
@@ -57,7 +57,7 @@ $ git config --global user.name "[firstname lastname]"
 $ git config --global user.email "[valid-email]"
 ```
 
-##### সহজ পর্যালোচনার জন্য গিটের মধ্যে স্বয়ংক্রিয় কমান্ড লাইনের রঙ সেট করুন:
+##### সহজে পর্যালোচনার জন্য গিটের মধ্যে স্বয়ংক্রিয় কমান্ড লাইনের রঙ সেট করুন:
 ```
 $ git config --global color.ui auto
 ```
@@ -71,17 +71,17 @@ $ git config --global core.editor vi
 
 ## কনফিগারেশন ফাইল
 
-##### Repository specific configuration file [--local]:
+##### রিপোজিটরি স্পেসিফিক কনফিগারেশন ফাইল [--local]:
 ```
 <repo>/.git/config
 ```
 
-##### User-specific configuration file [--global]:
+##### ইউজার স্পেসিফিক কনফিগারেশন ফাইল [--global]:
 ```
 ~/.gitconfig
 ```
 
-##### System-wide configuration file [--system]:
+##### সিস্টেম-ওয়াইজ কনফিগারেশন ফাইল [--system]:
 ```
 /etc/gitconfig
 ```
@@ -90,28 +90,28 @@ $ git config --global core.editor vi
 
 ## তৈরী করা
 
-##### Clone an existing repository:
+##### একটি বিদ্যমান রিপোজিটরি ক্লোন করুন:
 
-There are two ways:
+দুটি উপায় আছে:
 
-Via SSH
+SSH এর মাধ্যমে
 
 ```
 $ git clone ssh://user@domain.com/repo.git
 ```
 
-Via HTTP
+HTTP এর মাধ্যমে
 
 ```
 $ git clone http://domain.com/user/repo.git
 ```
 
-##### Create a new local repository in the current directory:
+##### বর্তমান ডিরেক্টরিতে একটি নতুন লোকাল রিপোজিটরি তৈরি করুন:
 ```
 $ git init
 ```
 
-##### Create a new local repository in a specific directory:
+##### একটি নির্দিষ্ট ডিরেক্টরিতে একটি নতুন লোকাল রিপোজিটরি তৈরি করুন:
 ```
 $ git init <directory>
 ```
@@ -120,105 +120,105 @@ $ git init <directory>
 
 ## লোকালি পরিবর্তন করা
 
-##### Changes in working directory:
+##### কাজের ডিরেক্টরিতে পরিবর্তন দেখুন:
 ```
 $ git status
 ```
 
-##### Changes to tracked files:
+##### ট্র্যাক করা ফাইলে পরিবর্তন দেখুন:
 ```
 $ git diff
 ```
 
-##### See changes/difference of a specific file:
+##### একটি নির্দিষ্ট ফাইলের পরিবর্তন বা পার্থক্য দেখুন:
 ```
 $ git diff <file>
 ```
 
-##### Add all current changes to the next commit:
+##### পরবর্তী কমিটে সমস্ত পরিবর্তনগুলো যোগ করুন:
 ```
 $ git add .
 ```
 
-##### Add some changes in &lt;file&gt; to the next commit:
+##### &lt;file&gt; এর পরিবর্তনগুলো পরবর্তী কমিটে যোগ করুন:
 ```
 $ git add -p <file>
 ```
 
-##### Add only the mentioned files to the next commit:
+##### পরবর্তী কমিটে শুধুমাত্র উল্লিখিত ফাইলগুলো যোগ করুন:
 ```
 $ git add <filename1> <filename2>
 ```
 
-##### Commit all local changes in tracked files:
+##### ট্র্যাক করা ফাইলগুলিতে সমস্ত লোকাল পরিবর্তনগুলি কমিট করুন:
 ```
 $ git commit -a
 ```
 
-##### Commit previously staged changes:
+##### পূর্বে স্টেজ পরিবর্তনগুলো কমিট করুন:
 ```
 $ git commit
 ```
 
-##### Commit with message:
+##### মেসেজ দিয়ে কমিট করুন:
 ```
 $ git commit -m 'message here'
 ```
 
-##### Commit skipping the staging area and adding message:
+##### স্টেজিং এরিয়া এড়িয়ে যাওয়া এবং মেসেজ যোগ করার কমিট করুন:
 ```
 $ git commit -am 'message here'
 ```
 
-##### Commit to some previous date:
+##### কিছু পূর্ববর্তী তারিখ কমিট করুন:
 ```
 $ git commit --date="`date --date='n day ago'`" -am "<Commit Message Here>"
 ```
 
-##### Change last commit:<br>
-<em><sub>Don't amend published commits!</sub></em>
+##### শেষ কমিট পরিবর্তন করুন:<br>
+<em><sub>প্রকাশিত কমিটটি সংশোধন করবেন না!</sub></em>
 
 ```
 $ git commit -a --amend
 ```
 
-##### Amend with last commit but use the previous commit log message
-<em><sub>Don't amend published commits!</sub></em>
+##### শেষ কমিট দিয়ে সংশোধন করুন কিন্তু আগের কমিট লগ মেসেজটি ব্যবহার করুন
+<em><sub>প্রকাশিত কমিটটি সংশোধন করবেন না!</sub></em>
 
 ```shell
 $ git commit --amend --no-edit
 ```
 
-##### Change committer date of last commit:
+##### শেষ কমিটের তারিখ পরিবর্তন করুন:
 ```
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
 
-##### Change Author date of last commit:
+##### শেষ কমিটের অথর ডেট পরিবর্তন করুন:
 ```shell
 $ git commit --amend --date="date"
 ```
 
-##### Move uncommitted changes from current branch to some other branch:<br>
+##### বর্তমান শাখা থেকে অন্য কোন শাখায় অপ্রত্যাশিত পরিবর্তনগুলি সড়ান:<br>
 ```
 $ git stash
 $ git checkout branch2
 $ git stash pop
 ```
 
-##### Restore stashed changes back to current branch:
+##### লুকিয়ে রাখা বা স্ট্যাশ করা পরিবর্তনগুলিকে বর্তমান শাখায় ফিরিয়ে আনুন:
 ```shell
 $ git stash apply
 ```
 
-#### Restore particular stash back to current branch:
-- *{stash_number}* can be obtained from `git stash list`
+#### বর্তমান শাখায় নির্দিষ্ট স্ট্যাশ পুনরুদ্ধার করুন বা ফিরিয়ে আনুন:
+- `git stash list` থেকে *{stash_number}* পাওয়া যাবে
 
 ```shell
 $ git stash apply stash@{stash_number}
 ```
 
-##### Remove the last set of stashed changes:
+##### স্ট্যাশে রাখা পরিবর্তনের শেষ সেটটি সড়ান:
 ```
 $ git stash drop
 ```
