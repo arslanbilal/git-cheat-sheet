@@ -488,34 +488,35 @@ $ git mergetool
 
 ## মার্জ এবং রিবেস
 
-##### Merge branch into your current HEAD:
+##### আপনার বর্তমান HEAD এর মধ্যে ব্রাঞ্চ মার্জ করুন:
 ```
 $ git merge <branch>
 ```
 
-#### List merged branches
+#### মার্জ করা ব্রাঞ্চগুলোর তালিকা করুন:
 ```
 $ git branch --merged
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
-<em><sub>Don't rebase published commit!</sub></em>
+##### &lt;branch&gt; তে আপনার বর্তমান হেড রিবেস করুন:<br>
+<em><sub>
+প্রকাশিত কমিট রিবেস করবেন না!</sub></em>
 
 ```
 $ git rebase <branch>
 ```
 
-##### Abort a rebase:
+##### একটি রিবেস (পুনর্বাসন) বাতিল করুন:
 ```
 $ git rebase --abort
 ```
 
-##### Continue a rebase after resolving conflicts:
+##### কনফ্লিক্ট সমাধানের পরে একটি রিবেস (পুনর্বাসন) চালিয়ে যান:
 ```
 $ git rebase --continue
 ```
 
-##### Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
+##### কনফ্লিক্টগুলি ম্যানুয়ালি সমাধান করতে আপনার এডিটরটি ব্যবহার করুন এবং (সমাধানের পরে) ফাইলটিকে সমাধান হয়েছে হিসাবে চিহ্নিত করুন:
 ```
 $ git add <resolved-file>
 ```
@@ -524,12 +525,13 @@ $ git add <resolved-file>
 $ git rm <resolved-file>
 ```
 
-##### Squashing commits:
+##### স্কোয়াশিং কমিট:
 ```
 $ git rebase -i <commit-just-before-first>
 ```
 
-Now replace this,
+
+এখন এটি প্রতিস্থাপন করুন,
 
 ```
 pick <commit_id>
@@ -537,7 +539,7 @@ pick <commit_id2>
 pick <commit_id3>
 ```
 
-to this,
+এই,
 
 ```
 pick <commit_id>
@@ -548,47 +550,47 @@ squash <commit_id3>
 
 ## আনডো
 
-##### Discard all local changes in your working directory:
+##### আপনার কাজের ডিরেক্টরির সমস্ত লোকাল পরিবর্তনগুলো বাতিল করুন:
 ```
 $ git reset --hard HEAD
 ```
 
-##### Get all the files out of the staging area(i.e. undo the last `git add`):
+##### স্টেজিং এরিয়া থেকে সমস্ত ফাইল বের করুন (অর্থাৎ শেষ `git add` কমান্ডটি আনডো করুন):
 ```
 $ git reset HEAD
 ```
 
-##### Discard local changes in a specific file:
+##### একটি নির্দিষ্ট ফাইলের লোকাল পরিবর্তনগুলো বাতিল করুন:
 ```
 $ git checkout HEAD <file>
 ```
 
-##### Revert a commit (by producing a new commit with contrary changes):
+##### একটি কমিট প্রত্যাবর্তন করুন (বিপরীত পরিবর্তনের সাথে একটি নতুন কমিটি তৈরি করে):
 ```
 $ git revert <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
+##### আপনার হেড পয়েন্টারকে পূর্ববর্তী কমিটটিতে পুনরায় সেট করুন এবং তারপর থেকে সমস্ত পরিবর্তন বাতিল করুন:
 ```
 $ git reset --hard <commit>
 ```
 
-##### Reset your HEAD pointer to a remote branch current state.
+##### আপনার হেড পয়েন্টারকে রিমোট ব্রাঞ্চের বর্তমান অবস্থায় রিসেট করুন:
 ```
 $ git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
+##### আপনার হেড পয়েন্টারকে পূর্ববর্তী কমিটটিতে রিসেট করুন এবং সমস্ত পরিবর্তনগুলিকে আন-স্টেইজ পরিবর্তন হিসাবে সংরক্ষণ করুন:
 ```
 $ git reset <commit>
 ```
 
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
+##### আপনার হেড পয়েন্টারকে পূর্ববর্তী কমিটটিতে রিসেট করুন এবং আন-কমিটেড লোকাল পরিবর্তনগুলি সংরক্ষণ করুন:
 ```
 $ git reset --keep <commit>
 ```
 
-##### Remove files that were accidentally committed before they were added to .gitignore
+##### `.gitignore` এ যোগ করার আগে ভুলবশত কমিট দেওয়া হয়েছে এমন ফাইলগুলিকে সড়ান:
 ```
 $ git rm -r --cached .
 $ git add .
