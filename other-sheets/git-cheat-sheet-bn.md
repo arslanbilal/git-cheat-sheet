@@ -664,7 +664,7 @@ git flow feature start MYFEATURE
 ###### একটি ফিচার তৈরি শেষ করুন। এই একশনটি  নিম্নলিখিত ধাপগুলো অনুসরণ করে:
 ###### 1) `MYFEATURE` কে `develop` এ মার্জ করা হয়েছে
 ###### 2) ফিচার শাখা সড়ান
-###### 3) `develop` শাখায় ফিরে যাওয়া
+###### 3) `develop` শাখায় ফিরে যান
 ```
 git flow feature finish MYFEATURE
 ```
@@ -689,44 +689,44 @@ git flow feature track MYFEATURE
 <hr>
 
 ### রিলিজ করুন
-###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+###### একটি নতুন প্রোডাকশন রিলিজের প্রস্তুতি সমর্থন করুন। ছোটখাট বাগ ফিক্স এবং রিলিজের জন্য মেটা-ডেটা প্রস্তুত করার অনুমতি দিন।
 
-##### Start a release:
-###### To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
+##### একটি রিলিজ শুরু করুন:
+###### একটি রিলিজ শুরু করতে, `git flow release` কমান্ডটি ব্যবহার করুন। এটি `develop` ব্রাঞ্চ থেকে একটি রিলিজ ব্রাঞ্চ তৈরি করে। রিলিজ শুরু করার জন্য আপনি ঐচ্ছিকভাবে একটি **[BASE]** কমিট **sha-1** হ্যাশ সরবরাহ করতে পারেন। কমিটটি অবশ্যই `develop` ব্রাঞ্চে থাকতে হবে।
 ```
 git flow release start RELEASE [BASE]
 ```
-###### It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
+###### অন্য ডেভেলপারদের রিলিজ কমিট করার জন্য, এটি তৈরি করার পরে রিলিজ ব্রাঞ্চ প্রকাশ করা বুদ্ধিমানের কাজ। কমান্ডের সাথে ফিচার প্রকাশনার অনুরূপ এটি করুন:
 ```
 git flow release publish RELEASE
 ```
-###### (You can track a remote release with the: ```git flow release track RELEASE``` command)
+###### (আপনি একটি রিমোট রিলিজ ট্র্যাক করতে পারেন: ```git flow release track RELEASE``` কমান্ডটির মাধ্যমে)
 
-##### Finish up a release:
-###### Finishing a release is one of the big steps in git branching. It performs several actions:
-###### 1) Merges the release branch back into 'master'
-###### 2) Tags the release with its name
-###### 3) Back-merges the release into 'develop'
-###### 4) Removes the release branch
+##### একটি রিলিজ শেষ করুন:
+###### একটি রিলিজ শেষ করা গিট ব্রাঞ্চিংয়ের একটি বড় পদক্ষেপ। এটি বেশ কয়েকটি ক্রিয়া সম্পাদন করে:
+###### 1) `রিলিজ ব্রাঞ্চকে` আবার `master` এ মার্জ করে
+###### 2) রিলিজটিকে তার নামের সাথে ট্যাগ করুন
+###### 3) রিলিজটিকে `develop` এ ব্যাক-মার্জ করে
+###### 4) রিলিজ ব্রাঞ্চটি সরিয়ে দেয়
 ```
 git flow release finish RELEASE
 ```
-###### Don't forget to push your tags with ```git push --tags```
+###### আপনার ট্যাগগুলিকে ```git push --tags``` দিয়ে পুশ করতে ভুলবেন না।
 
 <hr>
 
 ### হটফিক্স
-###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+###### হটফিক্সগুলি লাইভ প্রোডাকশন সংস্করণের একটি অবাঞ্ছিত অবস্থায় অবিলম্বে কাজ করার প্রয়োজনীয়তা থেকে উদ্ভূত হয়। উৎপাদন সংস্করণ চিহ্নিতকারী মাস্টার ব্রাঞ্চের সংশ্লিষ্ট ট্যাগ থেকে ব্রাঞ্চ করা যেতে পারে।
 
-##### Git flow hotfix start:
-###### Like the other git flow commands, a hotfix is started with
+##### গিট ফ্লো হটফিক্স শুরু:
+###### অন্যান্য গিট ফ্লো কমান্ডের মতো, একটি হটফিক্স শুরু করা হয় নিচের কমান্ডটি দিয়ে 
 ```
 $ git flow hotfix start VERSION [BASENAME]
 ```
-###### The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
+###### সংস্করণ আর্গুমেন্ট এতদ্বারা নতুন হটফিক্স রিলিজের নাম চিহ্নিত করে। ঐচ্ছিকভাবে আপনি শুরু করার জন্য একটি বেসনাম উল্লেখ করতে পারেন।
 
-##### Finish a hotfix:
-###### By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
+##### একটি হটফিক্স শেষ করুন:
+###### একটি হটফিক্স শেষ করার মাধ্যমে এটি আবার পুনরায় ডেভেলপ এবং মাস্টারে একত্রিত হয়।  মাস্টার মার্জটি হটফিক্স সংস্করণের সাথে ট্যাগ করা হয়।
 ```
 git flow hotfix finish VERSION
 ```
