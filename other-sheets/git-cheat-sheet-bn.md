@@ -599,94 +599,96 @@ $ git commit -m "remove xyz file"
 <hr>
 
 ## গিট ফ্লো
-Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
+ইমপ্রোভড [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
 
-### Index
-* [Setup](#setup)
-* [Getting Started](#getting-started)
-* [Features](#features)
-* [Make a Release](#make-a-release)
-* [Hotfixes](#hotfixes)
-* [Commands](#commands)
+### সূচিপত্র
+* [সেটআপ](#সেটআপ)
+* [শুরু হচ্ছে](#শুরু-হচ্ছে)
+* [বৈশিষ্ট্য](#বৈশিষ্ট্য)
+* [রিলিজ করুন](#রিলিজ-করুন)
+* [হটফিক্স](#হটফিক্স)
+* [কমান্ড](#কমান্ড)
+* [গিট ফ্লো স্কিমা](#গিট-ফ্লো-স্কিমা)
+  
 
 <hr>
 
-### Setup
-###### You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
+### সেটআপ
+###### পূর্বশর্ত হিসাবে আপনার একটি কার্যকরী গিট ইনস্টলেশন প্রয়োজন। গিট ফ্লো `ওএসএক্স, লিনাক্স এবং উইন্ডোজে` কাজ করে।
 
-##### OSX Homebrew:
+##### ওএসএক্স হোমব্রু:
 ```
 $ brew install git-flow-avh
 ```
 
-##### OSX Macports:
+##### ওএসএক্স ম্যাকপোর্টস:
 ```
 $ port install git-flow
 ```
 
-##### Linux (Debian-based):
+##### লিনাক্স (ডেবিয়ান ভিত্তিক):
 ```
 $ sudo apt-get install git-flow
 ```
 
-##### Windows (Cygwin):
-###### You need wget and util-linux to install git-flow.
+##### উইন্ডোজ (Cygwin):
+###### গিট-ফ্লো ইনস্টল করতে আপনার wget এবং util-linux প্রয়োজন।
 ```bash
 $ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
 ```
 <hr>
 
-### Getting Started
-###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
-##### Initialize:
-###### You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
+### শুরু হচ্ছে
+###### আপনার প্রজেক্ট সেটআপ কাস্টমাইজ করার জন্য গিট প্রবাহ শুরু করা প্রয়োজন। একটি বিদ্যমান গিট রিপোজিটরির ভিতরে শুরু করে গিট-ফ্লো ব্যবহার শুরু করুন:
+##### শুরু করুন:
+###### আপনাকে আপনার শাখার নামকরণের নিয়মাবলী সম্পর্কিত কয়েকটি প্রশ্নের উত্তর দিতে হবে। এটি ডিফল্ট মান ব্যবহার করার সুপারিশ করা হয়।
 ```shell
 git flow init
 ```
-OR
-###### To use default
+অথবা
+###### ডিফল্ট ব্যবহার করতে
 ```shell
 git flow init -d
 ```
 <hr>
 
-### Features
-###### Develop new features for upcoming releases. Typically exist in developers repos only.
-##### Start a new feature:
-###### This action creates a new feature branch based on 'develop' and switches to it.
+### বৈশিষ্ট্য
+###### আসন্ন রিলিজের জন্য নতুন ফিচার তৈরি যা শুধুমাত্র ডেভেলপার রিপোতে বিদ্যমান।
+##### একটি নতুন ফিচার শুরু করুন:
+###### এই একশনটি `develop` এর উপর ভিত্তি করে একটি নতুন ফিচারের ব্রাঞ্চ তৈরি করে এবং এতে স্যুইচ করে।
 ```
 git flow feature start MYFEATURE
 ```
 
-##### Finish up a feature:
-###### Finish the development of a feature. This action performs the following:
-###### 1) Merged MYFEATURE into 'develop'.
-###### 2) Removes the feature branch.
-###### 3) Switches back to 'develop' branch
+##### একটি ফিচার শেষ করুন:
+###### একটি ফিচার তৈরি শেষ করুন। এই একশনটি  নিম্নলিখিত ধাপগুলো অনুসরণ করে:
+###### 1) `MYFEATURE` কে `develop` এ মার্জ করা হয়েছে
+###### 2) ফিচার শাখা সড়ান
+###### 3) `develop` শাখায় ফিরে যাওয়া
 ```
 git flow feature finish MYFEATURE
 ```
 
-##### Publish a feature:
-###### Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
+##### একটি ফিচার পাবলিশ করুন:
+###### আপনি কি সহযোগিতার মাধ্যমে একটি ফিচার তৈরি করবেন? লোকাল সার্ভারে একটি ফিচার পাবলিশ করুন যাতে এটি অন্যান্য ব্যবহারকারীদের দ্বারা ব্যবহার করা যায়৷
 ```
 git flow feature publish MYFEATURE
 ```
 
-##### Getting a published feature:
-###### Get a feature published by another user.
+##### একটি প্রকাশিত ফিচার পাচ্ছেন:
+###### অন্য ব্যবহারকারীর দ্বারা প্রকাশিত একটি ফিচার পান।
 ```
 git flow feature pull origin MYFEATURE
 ```
 
-##### Tracking a origin feature:
-###### You can track a feature on origin by using
+##### একটি মূল ফিচার ট্র্যাকিং:
+###### আপনি এই কমান্ডটি ব্যবহার করে অরিজিনের একটি ফিচার ট্র্যাক করতে পারেন।
 ```
 git flow feature track MYFEATURE
 ```
 <hr>
 
-### Make a Release
+### রিলিজ করুন
 ###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
 
 ##### Start a release:
@@ -713,7 +715,7 @@ git flow release finish RELEASE
 
 <hr>
 
-### Hotfixes
+### হটফিক্স
 ###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
 
 ##### Git flow hotfix start:
@@ -730,13 +732,13 @@ git flow hotfix finish VERSION
 ```
 <hr>
 
-### Commands
+### কমান্ড
 <p align="center">
     <img alt="Git" src=".././Img/git-flow-commands.png" height="270" width="460">
 </p>
 <hr>
 
-### Git flow schema
+### গিট ফ্লো স্কিমা
 
 <p align="center">
     <img alt="Git" src="../Img/git-flow-commands-without-flow.png">
