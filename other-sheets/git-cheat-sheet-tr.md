@@ -98,6 +98,7 @@ $ git init
 ##### Belirli dizinde yerel repository(depo) oluşturma:
 ```
 $ git init <directory>
+```
 
 <hr>
 
