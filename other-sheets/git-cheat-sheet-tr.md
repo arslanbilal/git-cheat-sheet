@@ -609,3 +609,5 @@ git flow hotfix finish VERSION
 </p>
 
 <hr>
+
+## Go to [Index](#index)
