@@ -398,6 +398,10 @@ $ git branch -m <new_branch_name>
 ```
 $ git branch -D <branch>
 ```
+##### Apply specific commit from another branch:
+```
+git cherry-pick <commit hash>
+```
 
 ##### Mark `HEAD` with a tag:
 ```
