@@ -1,624 +1,680 @@
-Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-===============
-<hr>
-<p align="center">
-	<img alt="Git" src="../Img/git-logo.png" height="190" width="455">
-</p>
-<hr>
+# Git Cheat Sheet Español
 
+![Git Logo](../Img/git-logo.png)
 
-### Índice
-* [Configuración](#configuración)
-* [Archivos de Configuración](#archivos-de-configuración)
-* [Crear](#crear)
-* [Cambios locales](#cambios-locales)
-* [Buscar](#buscar)
-* [Historial de Commits](#historial-de-commits)
-* [Ramas & Etiquetas](#ramas--etiquetas)
-* [Actualizar & Publicar](#actualizar--publicar)
-* [Fusionar & Rebasar](#fusionar-y-rebasar)
-* [Deshacer](#deshacer)
-* [Git Flow](#git-flow)
+Una guía de referencia rápida para los comandos de Git más utilizados, organizados por categorías para facilitar su consulta.
 
-<hr>
+---
 
-## Configuración
+## 📖 Acerca de esta Guía
 
-##### Mostrar la cofiguración actual:
-```
-$ git config --list
-```
+Esta guía completa de referencia de Git es un recurso integral para cualquiera que busque mejorar su flujo de trabajo con Git. Desde principiantes que comienzan su viaje con Git hasta desarrolladores experimentados, esta guía proporciona comandos organizados y categorizados para acelerar tu proceso de desarrollo.
 
-##### Mostrar la configuración local:
-```
-$ git config --local --list
-```
+### Características Principales:
+- **Categorías organizadas**: Los comandos están organizados en grupos claros y lógicos
+- **Ejemplos prácticos**: Con casos de uso del mundo real
+- **Amigable para principiantes**: Con explicaciones claras y consejos
+- **Referencia rápida**: Acceso rápido a comandos esenciales
 
-##### Mostrar la configuración global:
-```
-$ git config --global --list
-```
+---
 
-##### Mostrar la configuración del sistema:
-```
-$ git config --system --list
-```
+## 📑 Tabla de Contenidos
 
-##### Establecer un nombre que es identificable de crédito cuando se revise el historial de versiones:
-```
-$ git config --global user.name “[nombre apellido]”
-```
+- [� Acerca de esta Guía](#acerca-de-esta-guía)
+- [�🔧 Configuración Inicial](#configuración-inicial)
+- [📁 Configuración de Repositorio](#configuración-de-repositorio)
+- [📊 Comandos de Estado](#comandos-de-estado)
+- [📝 Gestión de Archivos](#gestión-de-archivos)
+- [💾 Commits](#commits)
+- [🌿 Ramas (Branches)](#ramas-branches)
+- [🔀 Fusión (Merge)](#fusión-merge)
+- [🌐 Remotos](#remotos)
+- [📚 Historial y Logs](#historial-y-logs)
+- [🏷️ Etiquetas (Tags)](#etiquetas-tags)
+- [↩️ Deshacer Cambios](#deshacer-cambios)
+- [📦 Stash](#stash)
+- [🌊 Git Flow](#git-flow)
+- [⚙️ Archivos de Configuración](#archivos-de-configuración)
+- [🔍 Búsqueda](#búsqueda)
+- [📁 Mover/Renombrar](#moverrenombrar)
+- [💡 Consejos Útiles](#consejos-útiles)
+- [🌍 Otros Idiomas](#otros-idiomas)
+- [🤝 Contribuir](#contribuir)
+- [📄 Licencia](#licencia)
+- [📖 Recursos Adicionales](#recursos-adicionales)
 
-##### Establecer una dirección de email que será asociada con cada marca histórica:
-```
-$ git config --global user.email “[email-válido]”
-```
+---
 
-##### Establecer coloreado automático de la línea de comandos de Git para una fácil revisión:
-```
-$ git config --global color.ui auto
-```
+## 🔧 Configuración Inicial
 
-##### Establecer el editor global para commits:
-```
-$ git config --global core.editor vi
-```
+Configurar Git con tu información personal:
 
-<hr>
+```bash
+# Configurar nombre de usuario
+git config --global user.name "Tu Nombre"
 
-## Archivos de Configuración
+# Configurar email
+git config --global user.email "tuemail@ejemplo.com"
 
-##### Archivo de configuración específico del repositorio [--local]:
-```
-<repo>/.git/config
+# Ver configuración actual
+git config --list
+
+# Configurar editor por defecto
+git config --global core.editor "nano"
+
+# Configurar herramienta de diff
+git config --global merge.tool vimdiff
 ```
 
-##### Archivo de configuración específico del usuario [--global]:
-```
-~/.gitconfig
+---
+
+## 📁 Configuración de Repositorio
+
+### Inicializar un nuevo repositorio:
+
+```bash
+# Crear un nuevo repositorio Git
+git init
+
+# Clonar un repositorio existente
+git clone <url-del-repositorio>
+
+# Clonar a un directorio específico
+git clone <url-del-repositorio> <nombre-directorio>
 ```
 
-##### Archivo de configuración del sistema [--system]:
-```
-/etc/gitconfig
+---
+
+## 📊 Comandos de Estado
+
+### Verificar el estado de tu repositorio:
+
+```bash
+# Mostrar estado actual del repositorio
+git status
+
+# Mostrar estado en formato corto
+git status -s
+
+# Mostrar estado ignorando archivos no rastreados
+git status --ignored
+
+# Mostrar diferencias en archivos modificados
+git diff
+
+# Mostrar diferencias en el área de preparación
+git diff --staged
+
+# Mostrar diferencias entre ramas
+git diff <rama1> <rama2>
 ```
 
-<hr>
+---
 
-## Crear
+## 📝 Gestión de Archivos
 
-##### Clonar un repositorio existente:
+### Agregar y remover archivos:
 
-Existen dos maneras:
+```bash
+# Agregar archivo específico al área de preparación
+git add <archivo>
 
-Vía SSH
+# Agregar todos los archivos modificados
+git add .
 
-```
-$ git clone ssh://usuario@dominio.com/repo.git
-```
+# Agregar todos los archivos de un tipo específico
+git add *.txt
 
-Vía HTTP
+# Agregar interactivamente
+git add -i
 
-```
-$ git clone http://dominio.com/usuario/repo.git
-```
+# Remover archivo del repositorio y del directorio de trabajo
+git rm <archivo>
 
-##### Crea un nuevo repositorio local:
-```
-$ git init
-```
+# Remover archivo solo del repositorio (mantener en directorio)
+git rm --cached <archivo>
 
-<hr>
-
-## Cambios Locales
-
-##### Cambios en el directorio de trabajo:
-```
-$ git status
+# Mover/renombrar archivo
+git mv <archivo-origen> <archivo-destino>
 ```
 
-##### Cambios en archivos rastreados:
-```
-$ git diff
+---
+
+## 💾 Commits
+
+### Guardar cambios en el repositorio:
+
+```bash
+# Hacer commit con mensaje
+git commit -m "Mensaje del commit"
+
+# Hacer commit agregando todos los archivos modificados
+git commit -am "Mensaje del commit"
+
+# Modificar el último commit
+git commit --amend
+
+# Hacer commit vacío (útil para triggers de CI/CD)
+git commit --allow-empty -m "Trigger CI"
+
+# Hacer commit con mensaje detallado (abre editor)
+git commit
 ```
 
-##### Agregar todos los cambios actuales al siguiente commit:
-```
-$ git add .
+---
+
+## 🌿 Ramas (Branches)
+
+### Trabajar con ramas:
+
+```bash
+# Listar todas las ramas
+git branch
+
+# Listar ramas remotas
+git branch -r
+
+# Listar todas las ramas (locales y remotas)
+git branch -a
+
+# Crear nueva rama
+git branch <nombre-rama>
+
+# Cambiar a una rama
+git checkout <nombre-rama>
+
+# Crear y cambiar a nueva rama
+git checkout -b <nombre-rama>
+
+# Crear rama desde un commit específico
+git checkout -b <nombre-rama> <hash-commit>
+
+# Eliminar rama
+git branch -d <nombre-rama>
+
+# Eliminar rama forzadamente
+git branch -D <nombre-rama>
+
+# Renombrar rama actual
+git branch -m <nuevo-nombre>
+
+# Renombrar rama específica
+git branch -m <nombre-antiguo> <nombre-nuevo>
 ```
 
-##### Agregar algunos cambios de &lt;archivo&gt; para el siguiente commit:
-```
-$ git add -p <archivo>
+---
+
+## 🔀 Fusión (Merge)
+
+### Fusionar cambios entre ramas:
+
+```bash
+# Fusionar rama en la rama actual
+git merge <nombre-rama>
+
+# Fusionar sin fast-forward (crear commit de merge)
+git merge --no-ff <nombre-rama>
+
+# Fusionar solo si es fast-forward
+git merge --ff-only <nombre-rama>
+
+# Abortar fusión en curso
+git merge --abort
+
+# Continuar fusión después de resolver conflictos
+git merge --continue
 ```
 
-##### Realizar un commit de todos los cambios locales en los archivos rastreados:
-```
-$ git commit -a
+---
+
+## 🌐 Remotos
+
+### Gestionar repositorios remotos:
+
+```bash
+# Listar repositorios remotos
+git remote
+
+# Listar repositorios remotos con URLs
+git remote -v
+
+# Agregar repositorio remoto
+git remote add <nombre> <url>
+
+# Cambiar URL de repositorio remoto
+git remote set-url <nombre> <nueva-url>
+
+# Eliminar repositorio remoto
+git remote remove <nombre>
+
+# Subir cambios al repositorio remoto
+git push <remoto> <rama>
+
+# Subir rama y establecer tracking
+git push -u <remoto> <rama>
+
+# Subir todas las ramas
+git push --all
+
+# Subir etiquetas
+git push --tags
+
+# Descargar cambios del repositorio remoto
+git pull <remoto> <rama>
+
+# Descargar cambios sin fusionar
+git fetch <remoto>
+
+# Descargar todas las ramas remotas
+git fetch --all
 ```
 
-##### Realizar un commit de los cambios previamente almacenados en el área de pruebas (stage area):
-```
-$ git commit
+---
+
+## 📚 Historial y Logs
+
+### Explorar el historial de commits:
+
+```bash
+# Mostrar historial de commits
+git log
+
+# Mostrar historial en una línea por commit
+git log --oneline
+
+# Mostrar historial con gráfico
+git log --graph
+
+# Mostrar historial de un archivo específico
+git log <archivo>
+
+# Mostrar estadísticas de commits
+git log --stat
+
+# Mostrar cambios en cada commit
+git log -p
+
+# Mostrar últimos N commits
+git log -n <número>
+
+# Mostrar commits entre fechas
+git log --since="2023-01-01" --until="2023-12-31"
+
+# Mostrar commits por autor
+git log --author="Nombre del Autor"
+
+# Buscar en mensajes de commit
+git log --grep="palabra clave"
 ```
 
-##### Realizar un commit con un mensaje:
-```
-$ git commit -m 'aquí el mensaje'
+---
+
+## 🏷️ Etiquetas (Tags)
+
+### Gestionar etiquetas de versión:
+
+```bash
+# Listar todas las etiquetas
+git tag
+
+# Crear etiqueta ligera
+git tag <nombre-etiqueta>
+
+# Crear etiqueta anotada
+git tag -a <nombre-etiqueta> -m "Mensaje de la etiqueta"
+
+# Crear etiqueta en commit específico
+git tag -a <nombre-etiqueta> <hash-commit>
+
+# Mostrar información de una etiqueta
+git show <nombre-etiqueta>
+
+# Eliminar etiqueta local
+git tag -d <nombre-etiqueta>
+
+# Eliminar etiqueta remota
+git push --delete <remoto> <nombre-etiqueta>
+
+# Subir etiqueta específica
+git push <remoto> <nombre-etiqueta>
+
+# Subir todas las etiquetas
+git push <remoto> --tags
 ```
 
-##### Realizar un commit saltándose el área de pruebas y agregando un mensaje:
-```
-$ git commit -am 'aquí el mensaje'
+---
+
+## ↩️ Deshacer Cambios
+
+### Revertir modificaciones:
+
+```bash
+# Descartar cambios en archivo específico
+git checkout <archivo>
+
+# Descartar todos los cambios no confirmados
+git checkout .
+
+# Revertir archivo a versión específica
+git checkout <hash-commit> <archivo>
+
+# Quitar archivo del área de preparación
+git reset <archivo>
+
+# Quitar todos los archivos del área de preparación
+git reset
+
+# Revertir al commit anterior (mantener cambios)
+git reset --soft HEAD~1
+
+# Revertir al commit anterior (descartar cambios)
+git reset --hard HEAD~1
+
+# Revertir a commit específico
+git reset --hard <hash-commit>
+
+# Crear commit que revierte otro commit
+git revert <hash-commit>
+
+# Revertir múltiples commits
+git revert <hash-desde>..<hash-hasta>
 ```
 
-##### Realizar un commit a alguna fecha anterior:
-```
-git commit --date="`date --date='n day ago'`" -am "Mensaje del commit"
-```
+---
 
-##### Cambiar último commit:
-<em><sub>¡No modificar commits ya publicados!</sub></em>
-```
-$ git commit -a --amend
-```
+## 📦 Stash
 
-##### Cambiar fecha del último commit:
-```
-GIT_COMMITTER_DATE="date" git commit --amend
-```
+### Guardar trabajo temporalmente:
 
-##### Cambiar fecha del autor del último commit:
-```
-git commit --amend --date="date"
-```
-
-##### Mover cambios no confirmados (uncommitted changes) de la rama actual a otra rama:<br>
-```
+```bash
+# Guardar cambios actuales en stash
 git stash
-git checkout branch2
-git stash pop
-```
 
-##### Restaurar cambios del área de pruebas (stage area) a la rama actual:
-```
+# Guardar con mensaje descriptivo
+git stash save "Mensaje descriptivo"
+
+# Listar todos los stashes
+git stash list
+
+# Aplicar el último stash
 git stash apply
-```
-
-##### Eliminar la última serie de cambios del área de pruebas (stage area):
-```
-git stash drop
-```
-
-<hr>
-
-## Buscar
-
-##### Un texto en todos los archivos del directorio:
-```
-$ git grep "Hola"
-```
-
-##### Un texto en cualquier versión:
-```
-$ git grep "Hola" v2.5
-```
-
-<hr>
-
-## Historial de Commits
-
-##### Mostrar todos los commits, empezando por los más recientes (se mostrará el hash, información sobre el autor, fecha y título del commit):
-```
-$ git log
-```
-
-##### Mostrar todos los commits (sólo se mostrará el hash y el mensaje del commit):
-```
-$ git log --oneline
-```
-
-##### Mostrar todos los commits de un usuario específico:
-```
-$ git log --author="usuario"
-```
-
-##### Mostrar los cambios a través del tiempo de un archivo específico:
-```
-$ git log -p <archivo>
-```
-
-##### Mostrar commmits que están presentes sólamente en remote/branch al lado derecho:
-```
-$ git log --oneline <origin/master>..<remote/master> --left-right
-```
-
-##### Quién cambió, qué y cuándo en &lt;archivo&gt;:
-```
-$ git blame <archivo>
-```
-
-##### Mostrar reference log:
-```
-$ git reflog show
-```
-
-##### Borrar reference log:
-```
-$ git reflog delete
-```
-
-<hr>
-
-## Ramas & Etiquetas
-
-##### Listar todas las ramas locales:
-```
-$ git branch
-```
-
-##### Listar todas las ramas remotas:
-```
-$ git branch -r
-```
-
-##### Cambiar rama HEAD:
-```
-$ git checkout <rama>
-```
-
-##### Crear nueva rama y cambiar a esta:
-```
-$ git checkout -b <rama>
-```
-
-##### Crear nueva rama basada en la rama HEAD actual:
-```
-$ git branch <nueva-rama>
-```
-
-##### Crear nueva rama de seguimiento basada en una rama remota:
-```
-$ git branch --track <nueva-rama> <rama-remota>
-```
-
-##### Eliminar una rama local:
-```
-$ git branch -d <rama>
-```
-
-##### Forzar eliminación de una rama local:
-<em><sub>¡Perderás los cambios sin fusionar!</sub></em>
-```
-$ git branch -D <branch>
-```
-
-##### Marcar el commit actual con una etiqueta:
-```
-$ git tag <tag-name>
-```
-
-##### Marcar el commit actual con una etiqueta que incluye un mensaje:
-```
-$ git tag -a <etiqueta>
-```
-
-<hr>
-
-## Actualizar & Publicar
-
-##### Listar todos los remotos configurados actuales:
-```
-$ git remote -v
-```
-
-##### Mostrar información sobre un remoto:
-```
-$ git remote show <remoto>
-```
-
-##### Agregar un nuevo repositorio, nombrado &lt;remoto&gt;:
-```
-$ git remote add <remoto> <url>
-```
-
-##### Quitar el repositorio &lt;remoto&gt; agregado previamente:
-```
-$ git remote rm <remoto>
-```
-
-##### Descargar todos los cambios de &lt;remoto&gt;, pero no integrarlos al HEAD:
-```
-$ git fetch <remoto>
-```
 
-##### Descargar cambios y fusionarlos/integrarlos directamente al HEAD:
-```
-$ git remote pull <remote> <url>
-```
-
-##### Obtener todos los cambios del HEAD al repositorio local:
-```
-$ git pull origin master
-```
-
-##### Obtener todos los cambios del HEAD al repositorio local sin fusionar:
-```
-git pull --rebase <remote> <branch>
-```
-
-##### Publicar cambios locales en un remoto:
-```
-$ git push remote <remoto> <rama>
-```
-
-##### Eliminar una rama en el remoto:
-```
-$ git push <remoto> :<rama> (desde Git v1.5.0) ó $ git push <remoto> --delete <rama> (desde Git v1.7.0)
-```
-
-##### Publicar tus etiquetas:
-```
-$ git push --tags
-```
-
-<hr>
-
-## Fusionar y Rebasar
-
-##### Fusionar <rama> en tu HEAD actual:
-```
-$ git merge <rama>
-```
-
-##### Rabasar tu actual HEAD sobre &lt;rama&gt;:<br>
-<em><sub>¡No rebasar commits ya publicados!</sub></em>
-```
-$ git rebase <rama>
-```
-
-##### Aborta un rebase:
-```
-$ git rebase --abort
-```
-
-##### Continuar un rebase después de resolver conflictos:
-```
-$ git rebase --continue
-```
-
-##### Usar tu herramienta de fusión configurada para resolver conflictos:
-```
-$ git mergetool
-```
-
-##### Usar tu editor para manualmente resolver conflictos y (después de resueltos) marcar el archivo como resuelto:
-```
-$ git add <archivo-resuelto>
-```
-
-```
-$ git rm <archivo-resuelto>
-```
-
-##### Aplastando commits (squashing):
-```
-$ git rebase -i <commit-just-before-first>
-```
-
-Ahora reemplazando esto,
+# Aplicar stash específico
+git stash apply stash@{0}
 
-```
-pick <commit_id>
-pick <commit_id2>
-pick <commit_id3>
-```
-
-con esto,
-
-```
-pick <commit_id>
-squash <commit_id2>
-squash <commit_id3>
-```
-
-<hr>
-
-## Deshacer
-
-##### Descartar todos los cambios locales en tu directorio de trabajo:
-```
-$ git reset --hard HEAD
-```
-
-##### Sacar todos los archivos del área de pruebas (es decir, deshacer el último `git add`):
-```
-$ git reset HEAD
-```
-
-##### Descartar cambios locales de un archivo específico:
-```
-$ git checkout HEAD <archivo>
-```
-
-##### Revertir un commit (produciendo un nuevo commit con los cambios contrarios):
-```
-$ git revert <commit>
-```
-
-##### Reestablecer tu puntero HEAD a un commit anterior y descartar todos los cambios desde entonces:
-```
-$ git reset --hard <commit>
-```
+# Aplicar y eliminar el último stash
+git stash pop
 
-##### Reestablecer tu puntero HEAD al estado actual de una rama remota.
-```
-$ git reset --hard <remote/branch> es decir, upstream/master, origin/my-feature
-```
+# Eliminar stash específico
+git stash drop stash@{0}
 
-##### Reestablecer tu puntero HEAD a un commit anterior y preservar todos los cambios en el área de pruebas (stage area):
-```
-$ git reset <commit>
-```
+# Eliminar todos los stashes
+git stash clear
 
-##### Reestablecer tu puntero HEAD a un commit anterior y preservar los cambios locales sin confirmar (uncommitted changes):
-```
-$ git reset --keep <commit>
-```
+# Mostrar cambios en un stash
+git stash show stash@{0}
 
-##### Remover los archivos que fueron accidentalmente agregados al commit antes de ser añadidos al .gitignore:
-```
-$ git rm -r --cached .
-$ git add .
-$ git commit -m "remove xyz file"
+# Crear rama desde un stash
+git stash branch <nombre-rama> stash@{0}
 ```
-
-<hr>
-
-##  Git-Flow
-
-### Índice
-* [Configuración](#configuración)
-* [Iniciando](#iniciando)
-* [Features (características)](#features__características_)
-* [Hacer un lanzamiento](#hacer-un-lanzamiento)
-* [Hotfixes (revisiones)](#hotfixes__revisiones_)
-* [Comandos](#commandos)
 
-<hr>
+---
 
-### Configuración
-###### Necesitas tener Git instalado como prerequisito. Git flow trabaja en OSX, Linux y Windows.
+## 🌊 Git Flow
 
-##### OSX Homebrew:
-```
-$ brew install git-flow
-```
-
-##### OSX Macports:
-```
-$ port install git-flow
-```
+Git Flow es un modelo de ramificación que define un flujo de trabajo estricto diseñado alrededor del lanzamiento del proyecto.
 
-##### Linux (basado en Debian):
-```
-$ apt-get install git-flow
-```
-
-##### Windows (Cygwin):
-###### Necesitas wget y util-linux para instalar git-flow.
-```
-$ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
-```
+### Ramas principales:
+- **master/main**: Código de producción
+- **develop**: Rama de desarrollo principal
 
-<hr>
+### Ramas de soporte:
+- **feature**: Para nuevas características
+- **release**: Para preparar nuevas versiones
+- **hotfix**: Para correcciones urgentes en producción
 
-### Iniciando
-###### Git flow necesita ser inicializado con el fin de personalizar la configuración de tu proyecto. Empieza usando git-flow inicializándolo dentro de un repositorio git existente:
+### Comandos Git Flow:
 
-##### Inicilizar:
-###### Tendrás que responder un par de preguntas acerca de las convenciones de nombramiento de tus ramas. Es recomendable usar los valores por defecto.
-```
+```bash
+# Inicializar git flow
 git flow init
+
+# Iniciar nueva característica
+git flow feature start <nombre-caracteristica>
+
+# Finalizar característica
+git flow feature finish <nombre-caracteristica>
+
+# Publicar característica
+git flow feature publish <nombre-caracteristica>
+
+# Iniciar release
+git flow release start <version>
+
+# Finalizar release
+git flow release finish <version>
+
+# Iniciar hotfix
+git flow hotfix start <version>
+
+# Finalizar hotfix
+git flow hotfix finish <version>
 ```
 
-<hr>
+### Flujo de trabajo sin Git Flow:
 
-### Features (características)
-###### Desarrolla nuevos features para próximos lanzamientos. Típicamente sólo existen en los repositorios de desarrolladores.
+![Git Flow Commands](../Img/git-flow-commands-without-flow.png)
 
-##### Iniciar un nuevo feature:
-###### Esta acción crea una nueva rama (feature branch) basada en la rama de desarrollo (develop branch) y cambia a esta.
-```
-git flow feature start MIFEATURE
-```
+```bash
+# Crear rama de característica
+git checkout develop
+git checkout -b feature/nueva-caracteristica
 
-##### Terminar un feature:
-###### Finalizar el desarrollo de un feature. Esta accion realiza lo siguiente:
-###### 1) Fusiona MIFEATURE con la rama de desarrollo (develop branch).
-###### 2) Elimina la rama del feature (feature branch).
-###### 3) Cambia nuevamente a la rama de desarrollo (develop branch).
-```
-git flow feature finish MIFEATURE
-```
+# Trabajar en la característica
+git add .
+git commit -m "Agregar nueva característica"
 
-##### Publicar un feature:
-###### ¿Estás desarrollando un feature colaborativamente? Publica un feature en el servidor remoto, así puede ser usado por otros usuarios.
-```
-git flow feature publish MIFEATURE
-```
+# Fusionar característica en develop
+git checkout develop
+git merge --no-ff feature/nueva-caracteristica
+git branch -d feature/nueva-caracteristica
 
-##### Obteniendo un feature publicado:
-###### Obtener un feature publicado por otro usuario.
-```
-git flow feature pull origin MIFEATURE
-```
+# Crear rama de release
+git checkout develop
+git checkout -b release/1.0.0
 
-##### Rastrear un origin feature:
-###### Puedes rastrear un feature en origin usando:
-```
-git flow feature track MIFEATURE
+# Finalizar release
+git checkout master
+git merge --no-ff release/1.0.0
+git tag -a 1.0.0 -m "Versión 1.0.0"
+git checkout develop
+git merge --no-ff release/1.0.0
+git branch -d release/1.0.0
 ```
 
-<hr>
+---
 
-### Hacer un lanzamiento
-###### Apoya la preparación de un nuevo lanzamiento a producción. Permite la corrección de pequeños bugs y la preparación de metadatos para un lanzamiento.
+## ⚙️ Archivos de Configuración
 
-##### Empezar un lanzamiento:
-###### Para empezar un lanzamiento, usa el comando "release" de git flow. Este crea una rama de lanzamiento (release branch) de la rama de desarrollo (develop branch). Opcionalmente puedes sustituir el hash sha-1 de un commit [BASE] para empezar el lanzamiento desde este. El commit debe estar en la rama de desarrollo (develop branch).
-```
-git flow release start RELEASE [BASE]
-```
-###### Es aconsejable publicar la rama de lanzamiento (release branch) después de crearla para permitir publicar commits de otros desarrolladores. Hazlo de manera similar a publicar un feature con el comando:
-```
-git flow release publish RELEASE
-```
+Git utiliza archivos de configuración para almacenar preferencias de usuario y repositorio:
 
-###### (Puedes rastrear un lanzamiento remoto con el comando: ```git flow release track RELEASE```)
+### Niveles de configuración:
 
-##### Terminando un lanzamiento:
-###### Terminando un lanzamiento es uno de los grandes pasos en la ramificación de git. Realiza varias acciones:
-###### 1) Fusiona la rama de lanzamiento (release branch) con la rama master.
-###### 2) Etiqueta la publicación con su nombre.
-###### 3) Vuelve a fusionar la rama de lanzamiento (release branch) en la rama de desarrollo (develop branch).
-###### 4) Elimina la rama de lanzamiento (release branch).
-```
-git flow release finish RELEASE
-```
-###### No olvides de publicar tus etiquetas con ```git push --tags```
+```bash
+# Sistema (todos los usuarios)
+git config --system
 
-<hr>
+# Usuario (usuario actual)
+git config --global
 
-### Hotfixes (revisiones)
-###### Los hotfixes surgen de la necesidad de actuar inmediatamente ante un estado indeseado en una versión de producción en vivo. Puede ser desramificada de la correspondiente etiqueta en la rama master que marca la versión de producción.
-
-##### Emepezar un hotfix en git flow:
-###### Como los otros comandos de git flow, un hotfix es inicializado con:
-```
-$ git flow hotfix start VERSION [BASENAME]
+# Repositorio (proyecto específico)
+git config --local
 ```
 
-###### El argumento versión marca el nombre de publicación del nuevo hotfix. Opcionalmente puedes especificar un nombre base desde cual empezar.
+### Configuraciones comunes:
 
-##### Terminar un hotfix:
-###### Al finalizar un hotfix este se fusiona nuevamente con la rama de desarrollo y la rama master. Adicionalmente la fusión master es etiquetada con la versión del hotfix.
+```bash
+# Identidad del usuario
+git config --global user.name "Tu Nombre"
+git config --global user.email "email@ejemplo.com"
+
+# Editor de texto
+git config --global core.editor nano
+
+# Herramienta de merge
+git config --global merge.tool vimdiff
+
+# Colores en la salida
+git config --global color.ui auto
+
+# Ver configuraciones
+git config --list
 ```
-git flow hotfix finish VERSION
+
+---
+
+## 🔍 Búsqueda
+
+### Buscar en el historial y contenido:
+
+```bash
+# Buscar en mensajes de commit
+git log --grep="palabra-clave"
+
+# Buscar cambios en el código
+git log -S "fragmento de código"
+
+# Buscar en archivos de trabajo
+git grep "patrón"
+
+# Buscar en commit específico
+git grep "patrón" <hash-commit>
+
+# Buscar ignorando mayúsculas/minúsculas
+git grep -i "patrón"
+
+# Buscar palabras completas
+git grep -w "palabra"
+
+# Mostrar números de línea
+git grep -n "patrón"
 ```
 
-<hr>
+---
 
-### Comandos
-<p align="center">
-	<img alt="Git" src="../Img/git-flow-commands.png" height="270" width="460">
-</p>
+## 📁 Mover/Renombrar
 
-<hr>
+### Mover y renombrar archivos:
 
-### Esquema de git flow
-<p align="center">
-	<img alt="Git" src="../Img/git-flow-commands-without-flow.png">
-</p>
+```bash
+# Renombrar archivo
+git mv archivo_viejo.txt archivo_nuevo.txt
 
-<hr>
+# Mover archivo a carpeta
+git mv archivo.txt carpeta/
+
+# Renombrar carpeta
+git mv carpeta_vieja carpeta_nueva
+
+# Proceso de renombrado sin git mv
+mv archivo_viejo.txt archivo_nuevo.txt
+git add archivo_nuevo.txt
+git rm archivo_viejo.txt
+
+# Rastrear renombrados en el log
+git log --follow archivo.txt
+
+# Detectar movimientos
+git log --stat -M
+```
+
+---
+
+## 💡 Consejos Útiles
+
+### Alias útiles:
+
+```bash
+# Configurar alias útiles
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual '!gitk'
+```
+
+### Archivos .gitignore:
+
+```bash
+# Crear archivo .gitignore
+echo "node_modules/" >> .gitignore
+echo "*.log" >> .gitignore
+echo ".env" >> .gitignore
+
+# Ignorar archivos ya rastreados
+git rm --cached <archivo>
+echo "<archivo>" >> .gitignore
+git add .gitignore
+git commit -m "Agregar archivo a .gitignore"
+```
+
+---
+
+## 🌍 Otros Idiomas
+
+Esta hoja de referencia está disponible en los siguientes idiomas:
+
+- 🇺🇸 [English](../README.md)
+- 🇸🇦 [العربية](git-cheat-sheet-ar.md)
+- 🇧🇩 [বাংলা](git-cheat-sheet-bn.md)
+- 🇩🇪 [Deutsch](git-cheat-sheet-de.md)
+- 🇬🇷 [Ελληνικά](git-cheat-sheet-el.md)
+- 🇪🇸 **Español** (actual)
+- 🇮🇳 [हिन्दी](git-cheat-sheet-hi.md)
+- 🇰🇷 [한국어](git-cheat-sheet-ko.md)
+- 🇵🇱 [Polski](git-cheat-sheet-pl.md)
+- 🇧🇷 [Português](git-cheat-sheet-pt_BR.md)
+- 🇹🇷 [Türkçe](git-cheat-sheet-tr.md)
+- 🇨🇳 [中文](git-cheat-sheet-zh.md)
+
+---
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Para ayudar a mejorar este proyecto:
+
+1. **Reportar problemas**: Comparte errores o sugerencias de mejora
+2. **Agregar nuevos idiomas**: Crea traducciones o mejora las existentes
+3. **Mejorar contenido**: Agrega nuevos comandos, ejemplos o explicaciones
+4. **Dar retroalimentación**: Comparte tus experiencias y sugerencias
+
+### Cómo contribuir:
+- [Abrir un issue en GitHub](https://github.com/arslanbilal/git-cheat-sheet/issues)
+- Enviar un pull request
+- Sugerir mejoras de documentación
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](../LICENSE) para más detalles.
+
+---
+
+## 📖 Recursos Adicionales
+
+- [Documentación Oficial de Git](https://git-scm.com/doc)
+- [Tutoriales de Git de Atlassian](https://www.atlassian.com/git/tutorials)
+- [Hoja de Referencia de Git de GitHub](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Tutorial Interactivo de Git](https://learngitbranching.js.org/)
+- [Libro Pro Git (gratuito)](https://git-scm.com/book/es/v2)
+- [Flujos de Trabajo con Git](https://www.atlassian.com/git/tutorials/comparing-workflows)
+
+---
+
+<div align="center">
+  <strong>⭐ ¡Si esta hoja de referencia es útil, dale una estrella!</strong><br>
+  <em>¡Feliz codificación con Git! 🚀</em>
+</div>

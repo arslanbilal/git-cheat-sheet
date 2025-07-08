@@ -1,739 +1,714 @@
-Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-===============
-<hr>
-<p align="center">
-	<img alt="Git" src="../Img/git-logo.png" height="190" width="455">
-</p>
-<hr>
+# Git Cheat Sheet Polski
 
+![Git Logo](../Img/git-logo.png)
 
-### Indeks
-* [Konfiguracja](#konfiguracja)
-* [Pliki Konfiguracyjne](#pliki-konfiguracyjne)
-* [Tworzenie](#tworzenie)
-* [Zmiany Lokalne](#zmiany-lokalne)
-* [Wyszukiwanie](#wyszukiwanie)
-* [Historia Commitów](#historia-commitów)
-* [Gałęzie & Tagi](#gałęzie--tagi)
-* [Uaktualnij & Opublikuj](#uaktualnij--opublikuj)
-* [Połącz & Rebase](#połącz--rebase)
-* [Cofnij](#cofnij)
-* [Git Flow](#git-flow)
+Szybki przewodnik referencyjny dla najczęściej używanych poleceń Git, zorganizowany w kategorie dla łatwego użycia.
 
+## 📖 O tym przewodniku
 
-<hr>
+Ten kompleksowy przewodnik referencyjny Git jest kompletnym zasobem dla każdego, kto chce usprawnić swój przepływ pracy z Git. Od początkujących, którzy rozpoczynają swoją przygodę z Git, po doświadczonych programistów, ten przewodnik zapewnia systematycznie zorganizowane polecenia kategoryzowane w celu przyspieszenia procesu rozwoju.
 
-## Konfiguracja
+### Kluczowe cechy:
+- **Systematyczne kategorie**: Polecenia zorganizowane w jasne, logiczne grupy
+- **Praktyczne przykłady**: Zawiera rzeczywiste przypadki użycia
+- **Przyjazne dla początkujących**: Jasne wyjaśnienia i wskazówki
+- **Szybka referencja**: Błyskawiczny dostęp do niezbędnych poleceń
 
-##### Wyświetl aktualną konfigurację:
-```
-$ git config --list
-```
-##### Wyświetl konfigurację repozytorium:
-```
-$ git config --local --list
-```
+---
 
-##### Wyświetl konfigurację globalną:
-```
-$ git config --global --list
-```
+## 📑 Spis treści
 
-##### Wyświetl konfigurację systemową:
-```
-$ git config --system --list
-```
+- [📖 O tym przewodniku](#o-tym-przewodniku)
+- [🔧 Konfiguracja początkowa](#konfiguracja-początkowa)
+- [⚙️ Pliki konfiguracyjne](#pliki-konfiguracyjne)
+- [📁 Konfiguracja repozytorium](#konfiguracja-repozytorium)
+- [📊 Polecenia statusu](#polecenia-statusu)
+- [📝 Zarządzanie plikami](#zarządzanie-plikami)
+- [💾 Commity](#commity)
+- [🌿 Gałęzie (Branches)](#gałęzie-branches)
+- [🔀 Scalanie (Merge)](#scalanie-merge)
+- [🌐 Zdalne repozytoria](#zdalne-repozytoria)
+- [📚 Historia i logi](#historia-i-logi)
+- [🔍 Wyszukiwanie](#wyszukiwanie)
+- [📁 Przenoszenie/Zmiana nazwy](#przenoszeniizmiana-nazwy)
+- [🏷️ Tagi](#tagi)
+- [↩️ Cofanie zmian](#cofanie-zmian)
+- [📦 Schowek (Stash)](#schowek-stash)
+- [🌊 Git Flow](#git-flow)
+- [💡 Przydatne wskazówki](#przydatne-wskazówki)
+- [📚 Dodatkowe zasoby](#dodatkowe-zasoby)
+- [🌍 Inne języki](#inne-języki)
+- [🤝 Współpraca](#współpraca)
+- [📄 Licencja](#licencja)
 
-##### Ustaw nazwę do rozpoznawania autorstwa, podczas przeglądu historii wersji:
-```
-$ git config --global user.name “[imię nazwisko]”
-```
+---
 
-##### Ustaw adres email, który będzie przypisany do każdego znacznika historii:
-```
-$ git config --global user.email “[poprawny-email]”
-```
+## 🔧 Konfiguracja początkowa
 
-##### Ustaw automatyczne kolorowanie wiersza poleceń Git, aby ułatwić przegląd:
-```
-$ git config --global color.ui auto
-```
+Skonfiguruj Git ze swoimi danymi osobowymi:
 
-##### Ustaw edytor globalny dla commitów:
-```
-$ git config --global core.editor vi
-```
+```bash
+# Ustawienie nazwy użytkownika
+git config --global user.name "Twoje Imię"
 
-<hr>
+# Ustawienie adresu email
+git config --global user.email "email@example.com"
 
-## Pliki Konfiguracyjne
+# Wyświetlenie bieżącej konfiguracji
+git config --list
 
-##### Plik konfiguracyjny dla określonego repozytorium [--local]:
-```
-<repo>/.git/config
+# Ustawienie domyślnego edytora
+git config --global core.editor "nano"
+
+# Ustawienie narzędzia do scalania
+git config --global merge.tool vimdiff
 ```
 
-##### Własny plik konfiguracyjny [--global]:
-```
+---
+
+## ⚙️ Pliki konfiguracyjne
+
+Git zarządza konfiguracją na kilku poziomach:
+
+### Plik konfiguracji globalnej
+```bash
+# Ścieżka do globalnego pliku konfiguracji
 ~/.gitconfig
+
+# Edycja globalnej konfiguracji
+git config --global --edit
 ```
 
-##### Globalny plik konfiguracyjny [--system]:
+### Plik konfiguracji repozytorium
+```bash
+# Ścieżka do pliku konfiguracji repozytorium
+.git/config
+
+# Edycja konfiguracji repozytorium
+git config --edit
 ```
+
+### Konfiguracja systemowa
+```bash
+# Plik konfiguracji systemowej (wymaga uprawnień administratora)
 /etc/gitconfig
-```
-
-<hr>
-
-## Tworzenie
-
-##### Sklonuj istniejące repozytorium:
-
-Istnieją dwa sposoby:
-
-Przez SSH
-
-```
-$ git clone ssh://nazwa@domena.com/repo.git
-```
-
-Przez HTTP
-
-```
-$ git clone http://domena.com/nazwa/repo.git
-```
-
-##### Utwórz nowe repozytorium lokalne w bieżącej lokalizacji:
-```
-$ git init
-```
-
-##### Utwórz nowe repozytorium lokalne w konkretnej lokalizacji:
-```
-$ git init <ścieżka>
-```
-
-<hr>
-
-## Zmiany Lokalne
-
-##### Zmiany w katalogu roboczym:
-```
-$ git status
-```
-
-##### Zmiany w śledzonych plikach:
-```
-$ git diff
-```
-
-##### Zobacz zmiany/różnice w danym pliku:
-```
-$ git diff <plik>
-```
-
-##### Dodaj wszystkie bieżące zmiany do następnego commitu:
-```
-$ git add .
-```
-
-##### Dodaj kilka zmian w &lt;plik&gt; do następnego commitu:
-```
-$ git add -p <plik>
-```
-
-##### Dodaj tylko wymienione pliki do następnego commitu:
-```
-$ git add <nazwapliku1> <nazwapliku2>
-```
-
-##### Wykonaj commit z wszystkimi zmianami w śledzonych plikach:
-```
-$ git commit -a
-```
-
-##### Wykonaj commit wcześniej dodanych plików:
-```
-$ git commit
-```
-
-##### Wykonaj commit z wiadomością:
-```
-$ git commit -m 'twoja wiadomość'
-```
-
-##### Wykonaj commit omijając staging area i dodaj wiadomość:
-```
-$ git commit -am 'twoja wiadomość'
-```
-
-##### Wykonaj commit z wcześniejszą datą:
-```
-$ git commit --date="`date --date='n dzień temu'`" -am "<twoja wiadomość>"
-```
-
-##### Zmodyfikuj ostatni commit:<br>
-<em><sub>Nie modyfikuj opublikowanych commitów!</sub></em>
-
-```
-$ git commit -a --amend
-```
-
-##### Zmodyfikuj ostatni commit, ale pozostaw poprzednią wiadomość: 
-<em><sub>Nie modyfikuj opublikowanych commitów!</sub></em>
-
-```shell
-$ git commit --amend --no-edit
-```
-
-##### Zmień czas commitera ostatniego commitu:
-```
-GIT_COMMITTER_DATE="date" git commit --amend
-```
-
-##### Zmień czas autora ostatniego commitu:
-```shell
-$ git commit --amend --date="date"
-```
-
-##### Przenieś niecommitowane zmiany z bieżącej gałęzi do innej gałęzi:<br>
-```
-$ git stash
-$ git checkout gałąź2
-$ git stash pop
-```
-
-##### Przywróć przechowywane zmiany z powrotem do bieżącej gałęzi:
-```shell
-$ git stash apply
-```
-
-#### Przywróć dany stash z powrotem do bieżącej gałęzi:
-- *{numer_stashu}* można uzyskać poprzez `git stash list`
-
-```shell
-$ git stash apply stash@{numer_stashu}
-```
-
-##### Usuń ostatni zestaw przechowywanych zmian:
-```
-$ git stash drop
-```
-
-<hr>
-
-## Wyszukiwanie
-
-##### Wyszukiwanie tekstu we wszystkich plikach w katalogu:
-```
-$ git grep "Cześć"
-```
-
-##### W dowolnej wersji wyszukiwania tekstu:
-```
-$ git grep "Cześć" v2.5
-```
-
-##### Wyświetl commity, które wprowadziły określone słowo kluczowe:
-```
-$ git log -S 'słowo kluczowe'
-```
-
-##### Wyświetl commity, które wprowadziły określone słowo kluczowe (używając wyrażenia regularnego):
-```
-$ git log -S 'słowo kluczowe' --pickaxe-regex
-```
-
-<hr>
-
-## Historia Commitów
-
-##### Wyświetl wszystkie commity, zaczynając od najnowszego (wyświetli hash, informacje o autorze, datę commitu i tytuł commitu):
-```
-$ git log
-```
-
-##### Wyświetl wszystkie commity (wyświetli tylko hash commitu i wiadomość commitu):
-```
-$ git log --oneline
-```
-
-##### Wyświetl wszystkie commity określonego użytkownika:
-```
-$ git log --author="użytkownik"
-```
-
-##### Wyświetl zmiany w czasie dla określonego pliku:
-```
-$ git log -p <plik>
-```
-
-##### Wyświetl commity które są tylko w remote/branch po prawej stronie:
-```
-$ git log --oneline <origin/master>..<remote/master> --left-right
-```
-
-##### Kto zmienił, co i kiedy w &lt;plik&gt;:
-```
-$ git blame <plik>
-```
 
-##### Wyświetl dziennik referencji:
-```
-$ git reflog show
-```
-
-##### Usuń dziennik referencji:
-```
-$ git reflog delete
-```
-<hr>
-
-## Przenieś / Zmień nazwę
-
-##### Zmień nazwę pliku:
-
-Zmień nazwę z Index.txt na Index.html
-
-```
-$ git mv Index.txt Index.html
-```
-
-<hr>
-
-## Gałęzie & Tagi
-
-##### Wymień wszystkie lokalne gałęzie:
-```
-$ git branch
-```
-
-#### Wymień lokalne/zdalne gałęzie:
-```
-$ git branch -a
-```
-
-##### Wymień wszystkie zdalne gałęzie:
-```
-$ git branch -r
-```
-
-##### Zmień gałąź HEAD:
-```
-$ git checkout <gałąź>
-```
-
-##### Przełącz pojedynczy plik z innej gałęzi:
-```
-$ git checkout <gałąź> -- <nazwapliku>
-```
-
-##### Utwórz i zmień na nową gałąź:
-```
-$ git checkout -b <gałąź>
-```
-
-##### Zmień na poprzednią gałąź, bez podawania konkretnej nazwy:
-```
-$ git checkout -
-```
-
-##### Utwórz nową gałąź z istniejącej już gałęzi i przełącz na nową gałąź:
-```
-$ git checkout -b <nowa_gałąź> <istniejąca_gałąź>
-```
-
-
-#### Przełącz i utwórz nową galąź z istniejącego commitu:
-```
-$ git checkout <hash-commitu> -b <nazwa_nowej_gałęzi>
-```
-
-
-##### Utwórz nową gałąź na podstawie aktualnej gałęzi HEAD:
-```
-$ git branch <nowa-gałąź>
-```
-
-##### Utwórz nową gałąź śledzącą na podstawie gałęzi zdalnej:
-```
-$ git branch --track <nowa-gałąź> <gałąź-zdalna>
-```
-
-##### Usuń gałąź lokalną:
-```
-$ git branch -d <gałąź>
-```
-
-##### Zmień nazwę obecnej gałęzi:
-```shell
-$ git branch -m <nowa_nazwa_gałęzi>
-```
-
-##### Wymuś usunięcie gałęzi lokalnej:
-<em><sub>Utracisz niepołączone zmiany!</sub></em>
-
-```
-$ git branch -D <branch>
-```
-
-##### Oznacz `HEAD` tagiem:
-```
-$ git tag <nazwa-tagu>
-```
-
-##### Oznacz `HEAD` tagiem i otwórz edytor, aby napisać wiadomość:
-```
-$ git tag -a <nazwa-tagu>
-```
-
-##### Oznacz `HEAD` tagiem z wiadomością:
-```
-$ git tag <nazwa-tagu> -am 'twoja wiadomość'
-```
-
-##### Wyświetl wszystkie tagi:
-```
-$ git tag
-```
-
-##### Wyświetl wszystkie tagi wraz z ich wiadomościami (wiadomość tagu lub wiadomość commitu jeśli tag nie ma wiadomości):
-```
-$ git tag -n
-```
-
-<hr>
-
-## Uaktualnij & Opublikuj
-
-##### Wyświetl wszystkie obecnie skonfigurowane repozytoria zdalne:
-```
-$ git remote -v
-```
-
-##### Wyświetl informacje o repozytorium:
-```
-$ git remote show <repozytorium>
-```
-
-##### Dodaj nowe zdalne repozytorium o nazwie &lt;repozytorium&gt;:
-```
-$ git remote add <repozytorium> <url>
-```
-
-##### Zmień nazwę zdalnego repozytoriumy, z &lt;repozytorium&gt; na &lt;nowe_repozytorium&gt;:
-```
-$ git remote rename <repozytorium> <nowe_repozytorium>
-```
-
-##### Usuń repozytorium:
-```
-$ git remote rm <repozytorium>
-```
-
-<em><sub>Uwaga: git remote rm nie usuwa zdalnego repozytorium z serwera. Po prostu usuwa zdalne repozytorium i jego referencje z lokalnego repozytorium.</sub></em>
-
-##### Pobierz wszystkie zmiany z &lt;repozytorium&gt;, ale nie integruj ich z HEAD:
-```
-$ git fetch <repozytorium>
-```
-
-##### Pobierz zmian i bezpośrednio połącz/zintegruj z HEAD:
-```
-$ git remote pull <repozytorium> <url>
-```
-
-##### Pobierz wszystkie zmiany z HEAD do lokalnego repozytorium:
-```
-$ git pull origin master
-```
-
-##### Pobierz wszystkie zmiany z HEAD do lokalnego repozytorium bez łączenia ich:
-```
-$ git pull --rebase <repozytorium> <gałąź>
-```
-
-##### Opublikuj lokalne zmiany w repozytorium zdalnym:
-```
-$ git push remote <repozytorium> <gałąź>
-```
-
-##### Usuń gałąź w repozytorium zdalnym:
-```
-$ git push <repozytorium> :<gałąź> (od Git v1.5.0)
-```
-lub
-```
-$ git push <repozytorium> --delete <gałąź> (od Git v1.7.0)
-```
-
-##### Opublikuj swoje tagi:
-```
-$ git push --tags
+# Edycja konfiguracji systemowej
+git config --system --edit
 ```
-<hr>
 
-#### Ustaw globalne narzędzie do scalania jako Meld (edytor):
+### Przydatne ustawienia konfiguracji
 ```bash
-$ git config --global merge.tool meld
+# Włączenie kolorowego wyjścia
+git config --global color.ui true
+
+# Ustawienie domyślnej nazwy gałęzi
+git config --global init.defaultBranch main
+
+# Obsługa końców linii (macOS/Linux)
+git config --global core.autocrlf input
+
+# Obsługa końców linii (Windows)
+git config --global core.autocrlf true
 ```
 
-##### Uzyj narzędzia Meld, aby rozwiązywać konflikty:
-```
-$ git mergetool
-```
+---
 
-## Połącz & Rebase
+## 📁 Konfiguracja repozytorium
 
-##### Połącz gałąź z aktualnym HEAD:
-```
-$ git merge <gałąź>
-```
+### Tworzenie nowego repozytorium:
 
-#### Wyświetl połączone gałęzie:
-```
-$ git branch --merged
-```
-
-##### Zrebase'uj obecny HEAD w &lt;gałąź&gt;:<br>
-<em><sub>Nie rebase'uj opublikowanych commitów!</sub></em>
-
-```
-$ git rebase <gałąź>
-```
-
-##### Przerwij rebase:
-```
-$ git rebase --abort
-```
-
-##### Kontynuuj rebase po rozwiązaniu konfliktów:
-```
-$ git rebase --continue
-```
-
-##### Użyj swojego edytora do ręcznego rozwiązywania konfliktów i (po rozwiązaniu) oznacz plik jako rozwiązany:
-```
-$ git add <rozwiązany-plik>
-```
-
-```
-$ git rm <rozwiązany-plik>
-```
-
-##### Łączenie commitów:
-```
-$ git rebase -i <commit-just-before-first>
-```
-
-Teraz zastąp to,
-
-```
-pick <commit_id>
-pick <commit_id2>
-pick <commit_id3>
-```
-
-tym,
-
-```
-pick <commit_id>
-squash <commit_id2>
-squash <commit_id3>
-```
-<hr>
-
-## Cofnij
-
-##### Odrzuć wszystkie lokalne zmiany w twoim katalogu roboczym:
-```
-$ git reset --hard HEAD
-```
-
-##### Usuń wszystkie pliki ze staging area(czyli cofnij ostatnie `git add`):
-```
-$ git reset HEAD
-```
-
-##### Odrzuć lokalne zmiany w określonym pliku:
-```
-$ git checkout HEAD <plik>
-```
-
-##### Cofnij commit (tworząc nowy commit z przeciwnymi zmianami):
-```
-$ git revert <commit>
-```
-
-##### Zresetuj wskaźnik HEAD do poprzedniego commitu i odrzuć wszystkie zmiany od tego czasu:
-```
-$ git reset --hard <commit>
-```
-
-##### Zresetuj wskaźnik HEAD do bieżącego stanu zdalnej gałęzi:
-```
-$ git reset --hard <repozytorium/gałąź> np., upstream/master, origin/my-feature
-```
-
-##### Zresetuj wskaźnik HEAD do poprzedniego commitu i zachowaj wszystkie zmiany jako zmiany niestage'owane:
-```
-$ git reset <commit>
-```
-
-##### Zresetuj wskaźnik HEAD do poprzedniego commitu i zachowaj niecommitowane zmiany lokalne:
-```
-$ git reset --keep <commit>
-```
-
-##### Usuń pliki, które zostały przypadkowo zcommitowane przed dodaniem ich do .gitignore:
-```
-$ git rm -r --cached .
-$ git add .
-$ git commit -m "remove xyz file"
-```
-<hr>
-
-## Git-Flow
-Poprawione [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
-
-### Indeks
-* [Instalacja](#instalacja)
-* [Pierwsze Kroki](#pierwsze-kroki)
-* [Funkcjonalności](#funkcjonalności)
-* [Utwórz Wydanie](#utwórz-wydanie)
-* [Hotfiksy](#hotfiksy)
-* [Komendy](#komendy)
-
-<hr>
-
-### Instalacja
-###### Musisz mieć działającą instalację git jako warunek wstępny. Git flow działa na OSX, Linuxie i Windowsie.
-
-##### OSX Homebrew:
-```
-$ brew install git-flow-avh
-```
-
-##### OSX Macports:
-```
-$ port install git-flow
-```
-
-##### Linux (oparty na Debianie):
-```
-$ sudo apt-get install git-flow
-```
-
-##### Windows (Cygwin):
-###### Potrzebujesz wget oraz util-linux żeby zainstalować git-flow.
 ```bash
-$ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
-```
-<hr>
+# Utworzenie nowego repozytorium Git
+git init
 
-### Pierwsze Kroki
-###### Git flow musi zostać zainicjowany, aby dostosować konfigurację projektu do własnych potrzeb. Zacznij używać git-flow inicjalizując go wewnątrz istniejącego repozytorium git:
-##### Inicjalizacja:
-###### Będziesz musiał odpowiedzieć na kilka pytań dotyczących konwencji nazewnictwa dla twoich gałęzi. Zaleca się używanie wartości domyślnych.
-```shell
+# Klonowanie istniejącego repozytorium
+git clone <url-repozytorium>
+
+# Klonowanie do określonego katalogu
+git clone <url-repozytorium> <nazwa-katalogu>
+```
+
+---
+
+## 📊 Polecenia statusu
+
+### Sprawdzanie statusu repozytorium:
+
+```bash
+# Wyświetlenie bieżącego statusu repozytorium
+git status
+
+# Wyświetlenie statusu w krótkim formacie
+git status -s
+
+# Wyświetlenie statusu ignorując nieśledzone pliki
+git status --ignored
+
+# Wyświetlenie różnic w zmodyfikowanych plikach
+git diff
+
+# Wyświetlenie różnic w obszarze staging
+git diff --staged
+
+# Wyświetlenie różnic między gałęziami
+git diff <gałąź1> <gałąź2>
+```
+
+---
+
+## 📝 Zarządzanie plikami
+
+### Dodawanie i usuwanie plików:
+
+```bash
+# Dodanie określonego pliku do obszaru staging
+git add <plik>
+
+# Dodanie wszystkich zmodyfikowanych plików
+git add .
+
+# Dodanie wszystkich plików określonego typu
+git add *.txt
+
+# Interaktywne dodawanie
+git add -i
+
+# Usunięcie pliku z repozytorium i katalogu roboczego
+git rm <plik>
+
+# Usunięcie pliku tylko z repozytorium (zachowanie w katalogu)
+git rm --cached <plik>
+
+# Przenoszenie/zmiana nazwy pliku
+git mv <plik-źródłowy> <plik-docelowy>
+```
+
+---
+
+## 💾 Commity
+
+### Zapisywanie zmian w repozytorium:
+
+```bash
+# Commit z wiadomością
+git commit -m "Wiadomość commita"
+
+# Commit dodając wszystkie zmodyfikowane pliki
+git commit -am "Wiadomość commita"
+
+# Modyfikacja ostatniego commita
+git commit --amend
+
+# Pusty commit (przydatny dla wyzwalaczy CI/CD)
+git commit --allow-empty -m "Wyzwalacz CI"
+
+# Commit ze szczegółową wiadomością (otwiera edytor)
+git commit
+```
+
+---
+
+## 🌿 Gałęzie (Branches)
+
+### Praca z gałęziami:
+
+```bash
+# Wyświetlenie wszystkich gałęzi
+git branch
+
+# Wyświetlenie zdalnych gałęzi
+git branch -r
+
+# Wyświetlenie wszystkich gałęzi (lokalnych i zdalnych)
+git branch -a
+
+# Utworzenie nowej gałęzi
+git branch <nazwa-gałęzi>
+
+# Przełączenie na gałąź
+git checkout <nazwa-gałęzi>
+
+# Utworzenie i przełączenie na nową gałąź
+git checkout -b <nazwa-gałęzi>
+
+# Utworzenie gałęzi z określonego commita
+git checkout -b <nazwa-gałęzi> <hash-commita>
+
+# Usunięcie gałęzi
+git branch -d <nazwa-gałęzi>
+
+# Wymuszone usunięcie gałęzi
+git branch -D <nazwa-gałęzi>
+
+# Zmiana nazwy bieżącej gałęzi
+git branch -m <nowa-nazwa>
+
+# Zmiana nazwy określonej gałęzi
+git branch -m <stara-nazwa> <nowa-nazwa>
+```
+
+---
+
+## 🔀 Scalanie (Merge)
+
+### Scalanie zmian między gałęziami:
+
+```bash
+# Scalenie gałęzi z bieżącą gałęzią
+git merge <nazwa-gałęzi>
+
+# Scalenie bez fast-forward (utworzenie commita scalenia)
+git merge --no-ff <nazwa-gałęzi>
+
+# Scalenie tylko jeśli jest fast-forward
+git merge --ff-only <nazwa-gałęzi>
+
+# Anulowanie trwającego scalenia
+git merge --abort
+
+# Kontynuacja scalenia po rozwiązaniu konfliktów
+git merge --continue
+```
+
+---
+
+## 🌐 Zdalne repozytoria
+
+### Zarządzanie zdalnymi repozytoriami:
+
+```bash
+# Wyświetlenie zdalnych repozytoriów
+git remote
+
+# Wyświetlenie zdalnych repozytoriów z URL-ami
+git remote -v
+
+# Dodanie zdalnego repozytorium
+git remote add <nazwa> <url>
+
+# Zmiana URL zdalnego repozytorium
+git remote set-url <nazwa> <nowy-url>
+
+# Usunięcie zdalnego repozytorium
+git remote remove <nazwa>
+
+# Wysłanie zmian do zdalnego repozytorium
+git push <zdalne> <gałąź>
+
+# Wysłanie gałęzi i ustawienie śledzenia
+git push -u <zdalne> <gałąź>
+
+# Wysłanie wszystkich gałęzi
+git push --all
+
+# Wysłanie tagów
+git push --tags
+
+# Pobranie zmian ze zdalnego repozytorium
+git pull <zdalne> <gałąź>
+
+# Pobranie zmian bez scalania
+git fetch <zdalne>
+
+# Pobranie wszystkich zdalnych gałęzi
+git fetch --all
+```
+
+---
+
+## 📚 Historia i logi
+
+### Eksploracja historii commitów:
+
+```bash
+# Wyświetlenie historii commitów
+git log
+
+# Wyświetlenie historii w jednej linii na commit
+git log --oneline
+
+# Wyświetlenie historii z wykresem
+git log --graph
+
+# Wyświetlenie historii określonego pliku
+git log <plik>
+
+# Wyświetlenie statystyk commitów
+git log --stat
+
+# Wyświetlenie zmian w każdym commicie
+git log -p
+
+# Wyświetlenie ostatnich N commitów
+git log -n <liczba>
+
+# Wyświetlenie commitów między datami
+git log --since="2023-01-01" --until="2023-12-31"
+
+# Wyświetlenie commitów według autora
+git log --author="Imię Autora"
+
+# Wyszukiwanie w wiadomościach commitów
+git log --grep="słowo kluczowe"
+```
+
+---
+
+## 🔍 Wyszukiwanie
+
+### Wyszukiwanie w zawartości i historii:
+
+```bash
+# Wyszukiwanie tekstu w plikach śledzonych
+git grep "tekst do wyszukania"
+
+# Wyszukiwanie z ignorowaniem wielkości liter
+git grep -i "tekst"
+
+# Wyszukiwanie całych słów
+git grep -w "słowo"
+
+# Wyświetlenie numerów linii
+git grep -n "tekst"
+
+# Wyświetlenie tylko nazw plików
+git grep -l "tekst"
+
+# Wyszukiwanie w określonych plikach
+git grep "tekst" -- "*.js"
+
+# Wyszukiwanie w historii commitów
+git log -S "tekst" --source --all
+
+# Wyszukiwanie dodań/usunięć w historii
+git log -G "regex_pattern" --patch
+
+# Wyszukiwanie według nazwy pliku
+git log --all --full-history -- "**/nazwa_pliku.*"
+
+# Wyszukiwanie w określonym commicie
+git grep "tekst" <hash-commita>
+```
+
+---
+
+## 🏷️ Tagi
+
+### Zarządzanie tagami wersji:
+
+```bash
+# Wyświetlenie wszystkich tagów
+git tag
+
+# Utworzenie lekkiego tagu
+git tag <nazwa-tagu>
+
+# Utworzenie adnotowanego tagu
+git tag -a <nazwa-tagu> -m "Wiadomość tagu"
+
+# Utworzenie tagu na określonym commicie
+git tag -a <nazwa-tagu> <hash-commita>
+
+# Wyświetlenie informacji o tagu
+git show <nazwa-tagu>
+
+# Usunięcie lokalnego tagu
+git tag -d <nazwa-tagu>
+
+# Usunięcie zdalnego tagu
+git push --delete <zdalne> <nazwa-tagu>
+
+# Wysłanie określonego tagu
+git push <zdalne> <nazwa-tagu>
+
+# Wysłanie wszystkich tagów
+git push <zdalne> --tags
+```
+
+---
+
+## 📁 Przenoszenie/Zmiana nazwy
+
+### Zarządzanie plikami i katalogami:
+
+```bash
+# Przenoszenie/zmiana nazwy pliku
+git mv <stary-plik> <nowy-plik>
+
+# Zmiana nazwy katalogu
+git mv <stary-katalog> <nowy-katalog>
+
+# Przenoszenie wielu plików do katalogu
+git mv plik1.txt plik2.txt katalog/
+
+# Zmiana wielkości liter (systemy plików wrażliwe na wielkość liter)
+git mv nazwapliku.txt temp.txt
+git mv temp.txt NazwaPliku.txt
+
+# Śledzenie historii przeniesionego pliku
+git log --follow <plik>
+
+# Śledzenie przeniesionych plików
+git log --stat -M
+
+# Ustawienie progu wykrywania zmian nazwy
+git log --follow -M90% <plik>
+```
+
+---
+
+## ↩️ Cofanie zmian
+
+### Przywracanie modyfikacji:
+
+```bash
+# Anulowanie zmian w określonym pliku
+git checkout <plik>
+
+# Anulowanie wszystkich niezacommitowanych zmian
+git checkout .
+
+# Przywrócenie pliku do określonej wersji
+git checkout <hash-commita> <plik>
+
+# Usunięcie pliku z obszaru staging
+git reset <plik>
+
+# Usunięcie wszystkich plików z obszaru staging
+git reset
+
+# Powrót do poprzedniego commita (zachowanie zmian)
+git reset --soft HEAD~1
+
+# Powrót do poprzedniego commita (anulowanie zmian)
+git reset --hard HEAD~1
+
+# Powrót do określonego commita
+git reset --hard <hash-commita>
+
+# Utworzenie commita anulującego inny commit
+git revert <hash-commita>
+
+# Anulowanie wielu commitów
+git revert <hash-od>..<hash-do>
+```
+
+---
+
+## 📦 Schowek (Stash)
+
+### Tymczasowe zapisywanie pracy:
+
+```bash
+# Zapisanie bieżących zmian w schowku
+git stash
+
+# Zapisanie z opisową wiadomością
+git stash save "Opisowa wiadomość"
+
+# Wyświetlenie wszystkich schowków
+git stash list
+
+# Zastosowanie ostatniego schowka
+git stash apply
+
+# Zastosowanie określonego schowka
+git stash apply stash@{0}
+
+# Zastosowanie i usunięcie ostatniego schowka
+git stash pop
+
+# Usunięcie określonego schowka
+git stash drop stash@{0}
+
+# Usunięcie wszystkich schowków
+git stash clear
+
+# Wyświetlenie zmian w schowku
+git stash show stash@{0}
+
+# Utworzenie gałęzi ze schowka
+git stash branch <nazwa-gałęzi> stash@{0}
+```
+
+---
+
+## 🌊 Git Flow
+
+Git Flow to model rozgałęziania, który definiuje ścisły przepływ pracy zaprojektowany wokół wydania projektu.
+
+### Główne gałęzie:
+- **master/main**: Kod produkcyjny
+- **develop**: Główna gałąź rozwoju
+
+### Gałęzie wsparcia:
+- **feature**: Dla nowych funkcji
+- **release**: Dla przygotowania nowych wersji
+- **hotfix**: Dla pilnych poprawek w produkcji
+
+### Polecenia Git Flow:
+
+```bash
+# Inicjalizacja git flow
 git flow init
-```
-lub
-###### Żeby użyć ustawień domyślnych
-```shell
-git flow init -d
-```
-<hr>
 
-### Funkcjonalności
-###### Twórz nowe funkcjonalności dla nadchodzących wydań. Zazwyczaj istnieją tylko w repozytoriach deweloperów.
-##### Utwórz nową funkcjonalność:
-###### Ta czynnośc tworzy nową gałąź funkcjonalności wzorowaną na 'develop' i zmienia na tę gałąź.
-```
-git flow feature start MOJAFUNKCJA
-```
+# Rozpoczęcie nowej funkcji
+git flow feature start <nazwa-funkcji>
 
-##### Ukończ funkcjonalność:
-###### Dokończ tworzenie funkcjonalności. Ta czynność wykonuje następujące zadania:
-###### 1) Łączy MOJAFUNKCJA w 'develop'.
-###### 2) Usuwa gałąź funkcjonalności.
-###### 3) Zmienia z powrotem na gałąź 'develop'.
-```
-git flow feature finish MOJAFUNKCJA
+# Zakończenie funkcji
+git flow feature finish <nazwa-funkcji>
+
+# Publikowanie funkcji
+git flow feature publish <nazwa-funkcji>
+
+# Rozpoczęcie wydania
+git flow release start <wersja>
+
+# Zakończenie wydania
+git flow release finish <wersja>
+
+# Rozpoczęcie hotfixa
+git flow hotfix start <wersja>
+
+# Zakończenie hotfixa
+git flow hotfix finish <wersja>
 ```
 
-##### Publikowanie funkcji:
-###### Tworzysz funkcjonalność w ramach współpracy? Opublikuj funkcjonalność na zdalnym serwerze, aby mogli z niej korzystać inni użytkownicy.
-```
-git flow feature publish MOJAFUNKCJA
+### Przepływ pracy bez Git Flow:
+
+![Git Flow Commands](../Img/git-flow-commands-without-flow.png)
+
+```bash
+# Utworzenie gałęzi funkcji
+git checkout develop
+git checkout -b feature/nowa-funkcja
+
+# Praca nad funkcją
+git add .
+git commit -m "Dodanie nowej funkcji"
+
+# Scalenie funkcji z develop
+git checkout develop
+git merge --no-ff feature/nowa-funkcja
+git branch -d feature/nowa-funkcja
+
+# Utworzenie gałęzi wydania
+git checkout develop
+git checkout -b release/1.0.0
+
+# Zakończenie wydania
+git checkout master
+git merge --no-ff release/1.0.0
+git tag -a 1.0.0 -m "Wersja 1.0.0"
+git checkout develop
+git merge --no-ff release/1.0.0
+git branch -d release/1.0.0
 ```
 
-##### Pobieranie opublikowanej funkcji:
-###### Pobierz funkcję opublikowaną przez innego użytkownika.
-```
-git flow feature pull origin MOJAFUNKCJA
+---
+
+## 💡 Przydatne wskazówki
+
+### Przydatne aliasy:
+
+```bash
+# Ustawienie przydatnych aliasów
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual '!gitk'
 ```
 
-##### Śledź funkcję na origin:
-###### Możesz śledzić funkcję na origin używając:
-```
-git flow feature track MOJAFUNKCJA
-```
-<hr>
+### Pliki .gitignore:
 
-### Utwórz Wydanie
-###### Wspiera przygotowanie nowego wydania produkcyjnego. Umożliwia poprawki drobnych błędów i przygotowanie meta-danych do wydania.
+```bash
+# Utworzenie pliku .gitignore
+echo "node_modules/" >> .gitignore
+echo "*.log" >> .gitignore
+echo ".env" >> .gitignore
 
-##### Rozpocznij wydanie:
-###### Aby rozpocząć wydanie, użyj polecenia git flow release. Tworzy ono gałąź wydania utworzoną z gałęzi 'develop'. Opcjonalnie możesz podać hash SHA-1 commitu [BASE], od którego rozpocznie się wydanie. Commit musi znajdować się w gałęzi 'develop'.
+# Ignorowanie już śledzonych plików
+git rm --cached <plik>
+echo "<plik>" >> .gitignore
+git add .gitignore
+git commit -m "Dodanie pliku do .gitignore"
 ```
-git flow release start RELEASE [BASE]
-```
-###### Rozsądnie jest opublikować gałąź release po jej utworzeniu, aby umożliwić commitowanie wydania innym developerom. Zrób to podobnie do publikowania funkcji za pomocą polecenia:
-```
-git flow release publish RELEASE
-```
-###### (Możesz śledzić zdalne wydanie za pomocą komendy: ```git flow release track RELEASE```)
 
-##### Kończenie wydania:
-###### Kończenie wydania jest jednym z głównych kroków w rozgałęzianiu git. Wykonuje on kilka czynności:
-###### 1) Łączy gałąź wydania z powrotem w gałąź 'master'
-###### 2) Taguje wydanie jego nazwą
-###### 3) Łączy gałąź wydania z powrotem w gałąź 'develop'
-###### 4) Usuwa gałąź wydania
-```
-git flow release finish RELEASE
-```
-###### Nie zapomnij spushować swoich tagów używając ```git push --tags```
+---
 
-<hr>
+## 📚 Dodatkowe zasoby
 
-### Hotfiksy
-###### Hotfiksy powstają w wyniku konieczności natychmiastowego działania w przypadku niepożądanego stanu wersji produkcyjnej. Mogą być odgałęzione od odpowiedniego znacznika na gałęzi głównej, która oznacza wersję produkcyjną.
+### Oficjalna dokumentacja i przewodniki
+- [Oficjalna dokumentacja Git](https://git-scm.com/doc)
+- [Książka Pro Git (darmowa)](https://git-scm.com/book)
+- [Manual referencyjny Git](https://git-scm.com/docs)
+- [Tutorial Git](https://git-scm.com/docs/gittutorial)
 
-##### Początek Git flow hotfiksa:
-###### Tak jak inne komendy git flow, hotfiks rozpoczyna się:
-```
-$ git flow hotfix start VERSION [BASENAME]
-```
-###### Argument "version" oznacza nazwę nowego wydania hotfiksa. Opcjonalnie możesz określić nazwę bazową, od której chcesz rozpocząć.
+### Materiały do nauki online
+- [GitHub Git Handbook](https://guides.github.com/introduction/git-handbook/)
+- [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
+- [Learn Git Branching (interaktywny)](https://learngitbranching.js.org/)
+- [Git Immersion](http://gitimmersion.com/)
 
-##### Kończenie hotfiksa:
-###### Po ukończeniu hotfiksa zostaje on scalony z powrotem do wersji rozwojowej i głównej. Dodatkowo główne złączenie jest oznaczane wersją hotfiksa.
-```
-git flow hotfix finish VERSION
-```
-<hr>
+### Narzędzia GUI
+- [GitHub Desktop](https://desktop.github.com/)
+- [GitKraken](https://www.gitkraken.com/)
+- [SourceTree](https://www.sourcetreeapp.com/)
+- [Tower](https://www.git-tower.com/)
 
-### Komendy
-<p align="center">
-    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
-</p>
-<hr>
+### Zaawansowane tematy
+- [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+- [Przepływy pracy Git](https://www.atlassian.com/git/tutorials/comparing-workflows)
+- [Wewnętrzne mechanizmy Git](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
 
-### Schemat Git flow
+---
 
-<p align="center">
-    <img alt="Git" src="Img/git-flow-commands-without-flow.png">
-</p>
-<hr>
+## 🌍 Inne języki
+
+Ten Git Cheat Sheet jest dostępny w następujących językach:
+
+- 🇺🇸 [English](../README.md)
+- 🇸🇦 [العربية](git-cheat-sheet-ar.md)
+- 🇧🇩 [বাংলা](git-cheat-sheet-bn.md)
+- 🇩🇪 [Deutsch](git-cheat-sheet-de.md)
+- 🇬🇷 [Ελληνικά](git-cheat-sheet-el.md)
+- 🇪🇸 [Español](git-cheat-sheet-es.md)
+- 🇮🇳 [हिन्दी](git-cheat-sheet-hi.md)
+- 🇰🇷 [한국어](git-cheat-sheet-ko.md)
+- 🇵🇱 **Polski** (bieżący)
+- 🇧🇷 [Português](git-cheat-sheet-pt_BR.md)
+- 🇹🇷 [Türkçe](git-cheat-sheet-tr.md)
+- 🇨🇳 [中文](git-cheat-sheet-zh.md)
+
+---
+
+## 🤝 Współpraca
+
+Zachęcamy do współpracy! Aby pomóc w ulepszaniu tego projektu:
+
+1. **Zgłaszaj problemy**: Dziel się błędami lub sugestiami ulepszeń
+2. **Dodawaj nowe języki**: Twórz tłumaczenia lub ulepszaj istniejące
+3. **Ulepszaj treść**: Dodawaj nowe polecenia, przykłady lub wyjaśnienia
+4. **Przekazuj opinie**: Dziel się swoimi doświadczeniami i sugestiami
+
+### Jak współpracować:
+- [Otwórz issue na GitHub](https://github.com/arslanbilal/git-cheat-sheet/issues)
+- Wyślij pull request
+- Zaproponuj ulepszenia dokumentacji
+
+---
+
+## 📄 Licencja
+
+Ten projekt jest licencjonowany na licencji MIT. Zobacz plik [LICENSE](../LICENSE) po więcej szczegółów.
+
+---
+
+<div align="center">
+  <strong>⭐ Jeśli ten cheat sheet jest pomocny, zostaw gwiazdkę!</strong><br>
+  <em>Miłego kodowania z Git! 🚀</em>
+</div>

@@ -1,746 +1,983 @@
-Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-===============
-<hr>
-<p align="center">
-	<img alt="Git" src="../Img/git-logo.png" height="190" width="455">
-</p>
+# Git Cheat Sheet Deutsch
 
-Git Cheat Sheet erspart Ihnen das Auswendiglernen aller Befehle.
+![Git Logo](../Img/git-logo.png)
 
-Fühlen Sie sich frei, einen Beitrag zu leisten, aktualisieren Sie Grammatikfehler. Sie können auch Ihre eigene Sprachdatei hinzufügen.
+Dieses umfassende Git-Cheat-Sheet hilft Ihnen dabei, Git-Befehle zu beherrschen, ohne alles auswendig zu lernen. Egal, ob Sie Anfänger oder erfahrener Entwickler sind, dieser Leitfaden bietet eine schnelle Referenz für wichtige Git-Operationen.
 
-<hr>
+---
 
-Git Cheat Sheet Deutsch
-===============
-### Index
-* [Installation](#setup)
-* [Konfigurationsdateien](#configuration-files)
-* [Erstellen](#create)
-* [Lokale Änderungen](#local-changes)
-* [Suche](#search)
-* [Commit Historie](#commit-history)
-* [Zweige & Tags](#branches--tags)
-* [Aktualisieren & Veröffentlichen](#update--publish)
-* [Zusammenführen & Zurücksetzen](#merge--rebase)
-* [Rückgängig machen](#undo)
-* [Git Flow](#git-flow)
+## 📖 Über
 
+Dieses umfassende Git-Cheat-Sheet hilft Ihnen dabei, Git-Befehle zu beherrschen, ohne alles auswendig zu lernen. Egal, ob Sie Anfänger oder erfahrener Entwickler sind, dieser Leitfaden bietet eine schnelle Referenz für wichtige Git-Operationen.
 
-<hr>
+**Beiträge willkommen!** Fühlen Sie sich frei:
+- Grammatikfehler zu korrigieren
+- Neue Befehle hinzuzufügen
+- In Ihre Sprache zu übersetzen
+- Erklärungen zu verbessern
 
-## Installation
+---
 
-##### Zeige die aktuelle Konfiguration:
-```
-$ git config --list
-```
-##### Zeige die Repository Konfiguration:
-```
-$ git config --local --list
-```
+## 📋 Inhaltsverzeichnis
 
-##### Zeige die globale Konfiguration:
-```
-$ git config --global --list
-```
+- [📖 Über](#-Über)
+- [🔧 Setup](#-setup)
+- [⚙️ Konfigurationsdateien](#️-konfigurationsdateien)
+- [🆕 Repository erstellen](#-repository-erstellen)
+- [📝 Lokale Änderungen](#-lokale-änderungen)
+- [🔍 Suchen](#-suchen)
+- [📖 Commit-Historie](#-commit-historie)
+- [📁 Verschieben / Umbenennen](#-verschieben--umbenennen)
+- [🌿 Branches & Tags](#-branches--tags)
+- [🔄 Aktualisieren & Veröffentlichen](#-aktualisieren--veröffentlichen)
+- [🔀 Merge & Rebase](#-merge--rebase)
+- [↩️ Rückgängig machen](#️-rückgängig-machen)
+- [📦 Zwischenspeichern (Stash)](#-zwischenspeichern-stash)
+- [🌊 Git Flow](#-git-flow)
+- [💡 Nützliche Tipps](#-nützliche-tipps)
+- [🌍 Andere Sprachen](#-andere-sprachen)
+- [🤝 Beitragen](#-beitragen)
+- [📄 Lizenz](#-lizenz)
+- [📖 Zusätzliche Ressourcen](#-zusätzliche-ressourcen)
 
-##### Zeige die System Konfiguration:
-```
-$ git config --system --list
-```
+---
 
-##### Lege einen Namen fest, mit dem Sie beim Überprüfen des Versionsverlaufs identifiziert werden können:
-```
-$ git config --global user.name "[Vorname Nachname]"
-```
+## 🔧 Setup
 
-##### Lege eine E-Mail-Adresse fest, die jeder Verlaufsmarkierung zugeordnet wird:
-```
-$ git config --global user.email "[gültige-email]"
-```
+### Konfiguration anzeigen
 
-##### Stelle die automatische Farbgebung der Befehlszeile für Git ein
-```
-$ git config --global color.ui auto
-```
-
-##### Globalen Editor für Commits festlegen
-```
-$ git config --global core.editor vi
-```
-
-<hr>
-
-## Konfigurationsdateien
-
-##### Repository spezifische Konfigurationsdateien [--local]:
-```
-<repo>/.git/config
-```
-
-##### Benutzer spezifische Konfigurationsdatei [--global]:
-```
-~/.gitconfig
-```
-
-##### Systemweite Konfigurationsdatei [--system]:
-```
-/etc/gitconfig
-```
-
-<hr>
-
-## Erstellen
-
-##### Ein existierendes Repository clonen:
-
-Es gibt 2 Wege:
-
-Via SSH
-
-```
-$ git clone ssh://benutzer@domain.com/repo.git
-```
-
-Via HTTP
-
-```
-$ git clone http://domain.com/benutzer/repo.git
-```
-
-##### Erstelle ein neues lokales Repository im aktuellen Verzeichnis:
-```
-$ git init
-```
-
-##### Erstelle ein neues lokales Repository in einem bestimmten Verzeichnis:
-```
-$ git init <Verzeichnis>
-```
-
-<hr>
-
-## Lokale Änderungen
-
-##### Änderungen im Arbeitsverzeichnis:
-```
-$ git status
-```
-
-##### Zeige Änderungen an nachverfolgten Dateien:
-```
-$ git diff
-```
-
-##### Zeige Änderungen/Unterschiede einer bestimmten Datei:
-```
-$ git diff <Datei>
-```
-
-##### Füge alle aktuellen Änderungen zum nächsten Commit hinzu:
-```
-$ git add .
-```
-
-##### Füge Änderungen an &lt;Datei&gt; zum nächsten Commit hinzu:
-```
-$ git add -p <Datei>
-```
-
-##### Füge dem nächsten Commit nur die genannten Dateien hinzu:
-```
-$ git add <Dateiname1> <Dateiname2>
-```
-
-##### Commit aller lokalen Änderungen in nachverfolgten Dateien:
-```
-$ git commit -a
-```
-
-##### Commit von zuvor bereitgestellte Änderungen:
-```
-$ git commit
-```
-
-##### Commit mit Nachricht:
-```
-$ git commit -m 'Nachricht hier'
-```
-
-##### Commit mit überspringen des Staging-Bereichs und hinzufügen einer Nachricht:
-```
-$ git commit -am 'Nachricht hier'
-```
-
-##### Commit zu einem früheren Datum:
-```
-$ git commit --date="`date --date='n day ago'`" -am "<Commit Nachricht hier>"
-```
-
-##### Ändere letzten Commit:<br>
-<em><sub>Ändere keine veröffentlichten Commits!</sub></em>
-
-```
-$ git commit -a --amend
-```
-
-##### Mit letztem Commit ergänzen, aber vorherige Commit-Protokollmeldung verwenden
-<em><sub>Ändere keine veröffentlichten Commits!</sub></em>
-
-```shell
-$ git commit --amend --no-edit
-```
-
-##### Commit-Datum des letzten Commit ändern:
-```
-GIT_COMMITTER_DATE="date" git commit --amend
-```
-
-##### Ändere das Datum des letzten Commit:
-```shell
-$ git commit --amend --date="date"
-```
-
-##### Nicht committete Änderungen aus dem aktuellen Zweig in einen anderen Zweig verschieben:<br>
-```
-$ git stash
-$ git checkout Zweig2
-$ git stash pop
-```
-
-##### Stelle im Stash gespeicherte Änderungen auf dem aktuellen Zweig wieder her:
-```shell
-$ git stash apply
-```
-
-#### Stelle einen bestimmten Stash auf dem aktuellen Zweig wieder her:
-- *{stash_nummer}* kann bezogen werden von `git stash list`
-
-```shell
-$ git stash apply stash@{stash_nummer}
-```
-
-##### Entferne den letzten Satz gespeicherter Änderungen:
-```
-$ git stash drop
-```
-
-<hr>
-
-## Suche
-
-##### Eine Textsuche in allen Dateien im Verzeichnis:
-```
-$ git grep "Hallo"
-```
-
-##### Textsuche in jeder Version:
-```
-$ git grep "Hello" v2.5
-```
-
-##### Commits anzeigen, die ein bestimmtes Schlüsselwort eingeführt haben
-```
-$ git log -S 'Schlüsselwort'
-```
-
-##### Commits anzeigen, die ein bestimmtes Schlüsselwort eingeführt haben (mit Hilfe eines regulären Ausdrucks)
-```
-$ git log -S 'Schlüsselwort' --pickaxe-regex
-```
-
-<hr>
-
-## Commit Historie
-
-##### Alle Commits anzeigen, beginnend mit dem neuesten (es werden Hash, Autoreninformationen, Datum des Commit und Titel des Commits angezeigt):
-```
-$ git log
-```
-
-##### Alle Commits anzeigen (es werden nur der Commit-Hash und die Commit-Nachricht angezeigt):
-```
-$ git log --oneline
-```
-
-##### Alle Commits eines bestimmten Benutzers anzeigen:
-```
-$ git log --author="Benutzername"
-```
-
-##### Zeige Änderungen im Laufe der Zeit für eine bestimmte Datei an:
-```
-$ git log -p <Datei>
-```
-
-##### Zeigt Commits an, die nur in remote/branch auf der rechten Seite vorhanden sind
-```
-$ git log --oneline <origin/master>..<remote/master> --left-right
-```
-
-##### Wer hat wann, was in &lt;Datei&gt;  geändert:
-```
-$ git blame <Datei>
-```
-
-##### Referenzprotokoll anzeigen:
-```
-$ git reflog show
-```
-
-##### Referenzprotokoll löschen:
-```
-$ git reflog delete
-```
-<hr>
-
-## Verschieben / Umbenennen
-
-##### Eine Datei umbenennen:
-
-Index.txt umbenennen zu Index.html
-
-```
-$ git mv Index.txt Index.html
-```
-
-<hr>
-
-## Zweige & Tags
-
-##### Zeige alle lokalen Zweige:
-```
-$ git branch
-```
-
-#### Zeige alle lokalen und entfernten Zweige
-```
-$ git branch -a
-```
-
-##### Zeige alle entfernten Zweige:
-```
-$ git branch -r
-```
-
-##### HEAD-Zweig wechseln:
-```
-$ git checkout <Zweig>
-```
-
-##### Einzelne Datei aus einem anderen Zweig auschecken
-```
-$ git checkout <Zweig> -- <Datei>
-```
-
-##### Neuen Zweig erstellen und auschecken:
-```
-$ git checkout -b <Zweig>
-```
-
-##### In den vorherigen Zweig wechseln, ohne den Namen explizit anzugeben:
-```
-$ git checkout -
-```
-
-##### Erstelle einen neuen Zweig aus einem bestehenden Zweig und wechsle zum neuen Zweig:
-```
-$ git checkout -b <Neuer_Zweig> <Existierender_Zweig>
-```
-
-
-#### Auschecken und einen neuen Zweig aus einem bestehenden Commit erstellen
-```
-$ git checkout <commit-hash> -b <Neuer_Zweig_Name>
-```
-
-
-##### Erstelle einen neuen Zweig basierend auf dem aktuellen HEAD
-```
-$ git branch <Neuer_Zweig>
-```
-
-##### Erstelle einen neuen nachverfolgenden Zweig basierend auf einem entfernten Zweig:
-```
-$ git branch --track <Neuer_Zweig> <Entfernter_Zweig>
-```
-
-##### Einen lokalen Zweig löschen:
-```
-$ git branch -d <Zweig>
-```
-
-##### Benenne den aktuellen Zweig in einen neuen Namen um
-```shell
-$ git branch -m <Neuer_Zweig_Name>
-```
-
-##### Erzwinge löschen eines lokalen Zweigs:
-<em><sub>Nicht zusammengeführte Änderungen gehen verloren!</sub></em>
-
-```
-$ git branch -D <Zweig>
-```
-
-##### Markiere `HEAD` mit einem Tag:
-```
-$ git tag <Tag-Name>
-```
-
-##### Markiere `HEAD` mit einem Tag und öffne den Editor, um eine Nachricht einzufügen:
-```
-$ git tag -a <Tag-Name>
-```
-
-##### Markiere `HEAD` mit einem Tag, das eine Nachricht enthält:
-```
-$ git tag <Tag-Name> -am 'Nachricht hier'
-```
-
-##### Liste alle Tags auf:
-```
-$ git tag
-```
-
-##### Alle Tags mit ihren Nachrichten auflisten (Tag-Nachricht oder Commit-Nachricht, wenn Tag keine Nachricht hat):
-```
-$ git tag -n
-```
-
-<hr>
-
-## Aktualisieren & Veröffentlichen
-
-##### Alle aktuell konfigurierten entfernten Repositories auflisten:
-```
-$ git remote -v
-```
-
-##### Zeige Informationen über ein entferntes Repository:
-```
-$ git remote show <remote-Repository>
-```
-
-##### Füge ein neues remote Repository mit dem Namen &lt;remote-Repository&gt; hinzu:
-```
-$ git remote add <remote-Repository> <url>
-```
-
-##### Benenne ein entferntes Repository um, von &lt;remote-Repository&gt; zu &lt;neues-remote-Repository&gt;:
-```
-$ git remote rename <remote-Repository> <neues-remote-Repository>
-```
-
-##### Ein entferntes Repository löschen:
-```
-$ git remote rm <remote-Repository>
-```
-
-<em><sub>Hinweis: git remote rm löscht das entfernte Repository nicht vom Server. Es entfernt einfach das Repository und dessen Referenzen aus Ihrem lokalen Repository.</sub></em>
-
-##### Alle Änderungen von &lt;remote-Repository&gt; herunterladen, aber nicht in HEAD integrieren:
-```
-$ git fetch <remote-Repository>
-```
-
-##### Änderungen herunterladen und direkt in HEAD zusammenführen/integrieren:
-```
-$ git remote pull <remote-Repository> <url>
-```
-
-##### Alle Änderungen von HEAD in das lokale Repository übertragen:
-```
-$ git pull origin master
-```
-
-##### Hole alle Änderungen von HEAD in das lokale Repository ohne Zusammenführung
-```
-$ git pull --rebase <remote-Repository> <Zweig>
-```
-
-##### Lokale Änderungen auf einem entfernten Repository veröffentlichen:
-```
-$ git push <remote-Repository> <Zweig>
-```
-
-##### Einen Zweig auf dem entfernten Repository löschen:
-```
-$ git push <remote-Repository> :<Zweig> (since Git v1.5.0)
-```
-ODER
-```
-$ git push <remote-Repository> --delete <Zweig> (since Git v1.7.0)
-```
-
-##### Tags veröffentlichen:
-```
-$ git push --tags
-```
-<hr>
-
-#### Das Zusammenführungstool global auf meld (editor) setzen
+**Aktuelle Konfiguration anzeigen:**
 ```bash
-$ git config --global merge.tool meld
+git config --list
 ```
 
-##### Nutze konfiguriertes Zusammenführungstool, um Konflikte zu lösen:
-```
-$ git mergetool
-```
-
-## Zusammenführen & Zurücksetzen
-
-##### Zweig mit aktuellem HEAD zusammenführen:
-```
-$ git merge <Zweig>
+**Repository-Konfiguration anzeigen:**
+```bash
+git config --local --list
 ```
 
-#### Liste zusammengeführte Zweige auf
-```
-$ git branch --merged
-```
-
-##### Setze akzuellen HEAD auf &lt;Zweig&gt; zurück:<br>
-<em><sub>Setze keine veröffentlichten Zweige zurück!</sub></em>
-
-```
-$ git rebase <Zweig>
+**Globale Konfiguration anzeigen:**
+```bash
+git config --global --list
 ```
 
-##### Ein Zurücksetzen abbrechen:
-```
-$ git rebase --abort
-```
-
-##### Ein Zurücksetzen fortführen nachdem Konflikte gelöst wurden:
-```
-$ git rebase --continue
+**System-Konfiguration anzeigen:**
+```bash
+git config --system --list
 ```
 
-##### Verwende einen Editor, um Konflikte manuell zu lösen und (nach der Lösung) die Datei als gelöst zu markieren:
-```
-$ git add <gelöste-Datei>
+### Benutzer-Konfiguration
+
+**Namen für Versionsverlauf festlegen:**
+```bash
+git config --global user.name "[Vorname Nachname]"
 ```
 
-```
-$ git rm <gelöste-Datei>
-```
-
-##### Commits squashen:
-```
-$ git rebase -i <commit-direkt-vor-dem-ersten>
+**E-Mail-Adresse festlegen:**
+```bash
+git config --global user.email "[gültige-email]"
 ```
 
-Ändere,
+### Anzeige- & Editor-Einstellungen
 
+**Automatische Befehlszeilen-Farbgebung aktivieren:**
+```bash
+git config --global color.ui auto
 ```
+
+**Globalen Editor für Commits festlegen:**
+```bash
+git config --global core.editor vi
+```
+
+---
+
+## ⚙️ Konfigurationsdateien
+
+| Bereich | Ort | Befehlsflag |
+|---------|-----|-------------|
+| **Repository** | `<repo>/.git/config` | `--local` |
+| **Benutzer** | `~/.gitconfig` | `--global` |
+| **System** | `/etc/gitconfig` | `--system` |
+
+---
+
+## 🆕 Repository erstellen
+
+### Existierendes Repository klonen
+
+**Über SSH:**
+```bash
+git clone ssh://benutzer@domain.com/repo.git
+```
+
+**Über HTTPS:**
+```bash
+git clone https://domain.com/benutzer/repo.git
+```
+
+### Neues Repository initialisieren
+
+**Repository im aktuellen Verzeichnis erstellen:**
+```bash
+git init
+```
+
+**Repository in spezifischem Verzeichnis erstellen:**
+```bash
+git init <verzeichnis>
+```
+
+---
+
+## 📝 Lokale Änderungen
+
+### Status & Unterschiede prüfen
+
+**Arbeitsverzeichnis-Status anzeigen:**
+```bash
+git status
+```
+
+**Änderungen in verfolgten Dateien anzeigen:**
+```bash
+git diff
+```
+
+**Änderungen in spezifischer Datei anzeigen:**
+```bash
+git diff <datei>
+```
+
+### Änderungen bereitstellen
+
+**Alle aktuellen Änderungen hinzufügen:**
+```bash
+git add .
+```
+
+**Spezifische Dateien hinzufügen:**
+```bash
+git add <datei1> <datei2>
+```
+
+**Interaktiv Teile einer Datei hinzufügen:**
+```bash
+git add -p <datei>
+```
+
+### Änderungen committen
+
+**Alle verfolgten Dateiänderungen committen:**
+```bash
+git commit -a
+```
+
+**Bereitgestellte Änderungen committen:**
+```bash
+git commit
+```
+
+**Mit Nachricht committen:**
+```bash
+git commit -m 'Nachricht hier'
+```
+
+**Bereitstellung überspringen und mit Nachricht committen:**
+```bash
+git commit -am 'Nachricht hier'
+```
+
+**Mit spezifischem Datum committen:**
+```bash
+git commit --date="`date --date='n day ago'`" -am "<Commit-Nachricht hier>"
+```
+
+### Letzten Commit ändern
+
+> ⚠️ **Warnung:** Veröffentlichte Commits nicht ändern!
+
+**Letzten Commit ergänzen:**
+```bash
+git commit -a --amend
+```
+
+**Ergänzen ohne Commit-Nachricht zu ändern:**
+```bash
+git commit --amend --no-edit
+```
+
+**Committer-Datum ändern:**
+```bash
+GIT_COMMITTER_DATE="datum" git commit --amend
+```
+
+**Autor-Datum ändern:**
+```bash
+git commit --amend --date="datum"
+```
+
+### Änderungen zwischenspeichern
+
+**Aktuelle Änderungen temporär speichern:**
+```bash
+git stash
+```
+
+**Letzte gespeicherte Änderungen anwenden:**
+```bash
+git stash apply
+```
+
+**Spezifischen Stash anwenden:**
+```bash
+git stash apply stash@{stash_nummer}
+```
+> Verwenden Sie `git stash list`, um verfügbare Stashes zu sehen
+
+**Letzten Stash entfernen:**
+```bash
+git stash drop
+```
+
+**Nicht committete Änderungen zu anderem Branch verschieben:**
+```bash
+git stash
+git checkout branch2
+git stash pop
+```
+
+---
+
+## 🔍 Suchen
+
+### Text-Suche
+
+**Text in allen Dateien suchen:**
+```bash
+git grep "Hallo"
+```
+
+**In spezifischer Version suchen:**
+```bash
+git grep "Hallo" v2.5
+```
+
+### Commit-Suche
+
+**Commits finden, die spezifisches Schlüsselwort eingeführt haben:**
+```bash
+git log -S 'schlüsselwort'
+```
+
+**Mit regulärem Ausdruck suchen:**
+```bash
+git log -S 'schlüsselwort' --pickaxe-regex
+```
+
+---
+
+## 📖 Commit-Historie
+
+### Basis-Historie
+
+**Alle Commits anzeigen (detailliert):**
+```bash
+git log
+```
+
+**Commits anzeigen (eine Zeile je Commit):**
+```bash
+git log --oneline
+```
+
+**Commits von spezifischem Autor anzeigen:**
+```bash
+git log --author="benutzername"
+```
+
+**Änderungen für spezifische Datei anzeigen:**
+```bash
+git log -p <datei>
+```
+
+### Erweiterte Historie
+
+**Branches vergleichen:**
+```bash
+git log --oneline <origin/master>..<remote/master> --left-right
+```
+
+**Anzeigen, wer was wann geändert hat:**
+```bash
+git blame <datei>
+```
+
+### Referenz-Logs
+
+**Referenz-Log anzeigen:**
+```bash
+git reflog show
+```
+
+**Referenz-Log löschen:**
+```bash
+git reflog delete
+```
+
+---
+
+## 📁 Verschieben / Umbenennen
+
+**Datei umbenennen:**
+```bash
+git mv Index.txt Index.html
+```
+
+---
+
+## 🌿 Branches & Tags
+
+### Branches auflisten
+
+**Lokale Branches auflisten:**
+```bash
+git branch
+```
+
+**Alle Branches auflisten (lokal + remote):**
+```bash
+git branch -a
+```
+
+**Remote Branches auflisten:**
+```bash
+git branch -r
+```
+
+**Zusammengeführte Branches auflisten:**
+```bash
+git branch --merged
+```
+
+### Branches wechseln & erstellen
+
+**Zu existierendem Branch wechseln:**
+```bash
+git checkout <branch>
+```
+
+**Neuen Branch erstellen und dorthin wechseln:**
+```bash
+git checkout -b <branch>
+```
+
+**Zum vorherigen Branch wechseln:**
+```bash
+git checkout -
+```
+
+**Branch von existierendem Branch erstellen:**
+```bash
+git checkout -b <neuer_branch> <existierender_branch>
+```
+
+**Branch von spezifischem Commit erstellen:**
+```bash
+git checkout <commit-hash> -b <neuer_branch_name>
+```
+
+**Branch ohne Wechsel erstellen:**
+```bash
+git branch <neuer-branch>
+```
+
+**Tracking-Branch erstellen:**
+```bash
+git branch --track <neuer-branch> <remote-branch>
+```
+
+### Branch-Operationen
+
+**Einzelne Datei von anderem Branch abrufen:**
+```bash
+git checkout <branch> -- <dateiname>
+```
+
+**Spezifischen Commit von anderem Branch anwenden:**
+```bash
+git cherry-pick <commit hash>
+```
+
+**Aktuellen Branch umbenennen:**
+```bash
+git branch -m <neuer_branch_name>
+```
+
+**Lokalen Branch löschen:**
+```bash
+git branch -d <branch>
+```
+
+**Lokalen Branch erzwungen löschen:**
+```bash
+git branch -D <branch>
+```
+> ⚠️ **Warnung:** Sie verlieren nicht zusammengeführte Änderungen!
+
+### Tags
+
+**Tag am HEAD erstellen:**
+```bash
+git tag <tag-name>
+```
+
+**Annotierten Tag erstellen:**
+```bash
+git tag -a <tag-name>
+```
+
+**Tag mit Nachricht erstellen:**
+```bash
+git tag <tag-name> -am 'Nachricht hier'
+```
+
+**Alle Tags auflisten:**
+```bash
+git tag
+```
+
+**Tags mit Nachrichten auflisten:**
+```bash
+git tag -n
+```
+
+---
+
+## 🔄 Aktualisieren & Veröffentlichen
+
+### Remote-Verwaltung
+
+**Konfigurierte Remotes auflisten:**
+```bash
+git remote -v
+```
+
+**Remote-Informationen anzeigen:**
+```bash
+git remote show <remote>
+```
+
+**Neuen Remote hinzufügen:**
+```bash
+git remote add <remote> <url>
+```
+
+**Remote umbenennen:**
+```bash
+git remote rename <remote> <neuer_remote>
+```
+
+**Remote entfernen:**
+```bash
+git remote rm <remote>
+```
+> ℹ️ **Hinweis:** Dies entfernt nur die Remote-Referenz lokal, nicht das Remote-Repository selbst.
+
+### Fetch & Pull
+
+**Änderungen ohne Merge herunterladen:**
+```bash
+git fetch <remote>
+```
+
+**Änderungen herunterladen und mergen:**
+```bash
+git pull <remote> <branch>
+```
+
+**Änderungen vom Haupt-Branch abrufen:**
+```bash
+git pull origin master
+```
+
+**Mit Rebase pullen:**
+```bash
+git pull --rebase <remote> <branch>
+```
+
+### Push & Veröffentlichen
+
+**Lokale Änderungen veröffentlichen:**
+```bash
+git push <remote> <branch>
+```
+
+**Remote Branch löschen:**
+```bash
+# Git v1.7.0+
+git push <remote> --delete <branch>
+
+# Git v1.5.0+
+git push <remote> :<branch>
+```
+
+**Tags veröffentlichen:**
+```bash
+git push --tags
+```
+
+---
+
+## 🔀 Merge & Rebase
+
+### Merge-Operationen
+
+**Branch in aktuellen HEAD mergen:**
+```bash
+git merge <branch>
+```
+
+**Merge-Tool global konfigurieren:**
+```bash
+git config --global merge.tool meld
+```
+
+**Konfiguriertes Merge-Tool verwenden:**
+```bash
+git mergetool
+```
+
+### Rebase-Operationen
+
+> ⚠️ **Warnung:** Veröffentlichte Commits nicht rebasen!
+
+**Aktuellen HEAD auf Branch rebasen:**
+```bash
+git rebase <branch>
+```
+
+**Rebase abbrechen:**
+```bash
+git rebase --abort
+```
+
+**Rebase nach Konfliktlösung fortsetzen:**
+```bash
+git rebase --continue
+```
+
+### Konfliktlösung
+
+**Datei als gelöst markieren:**
+```bash
+git add <gelöste-datei>
+```
+
+**Gelöste Datei entfernen:**
+```bash
+git rm <gelöste-datei>
+```
+
+### Commits zusammenfassen
+
+**Interaktives Rebase zum Zusammenfassen:**
+```bash
+git rebase -i <commit-direkt-vor-dem-ersten>
+```
+
+**Beispiel-Konfiguration zum Zusammenfassen:**
+```
+# Vorher
 pick <commit_id>
 pick <commit_id2>
 pick <commit_id3>
-```
 
-zu,
-
-```
+# Nachher (commit_id2 und commit_id3 in commit_id zusammenfassen)
 pick <commit_id>
 squash <commit_id2>
 squash <commit_id3>
 ```
-<hr>
 
-## Rückgängig machen
+---
 
-##### Alle lokalen Änderungen im Arbeitsverzeichnis verwerfen:
-```
-$ git reset --hard HEAD
-```
+## ↩️ Rückgängig machen
 
-##### Holen Dateien aus dem Staging-Bereich (d.h. mache das letzte `git add` rückgängig):
-```
-$ git reset HEAD
-```
+### Änderungen verwerfen
 
-##### Lokale Änderungen in einer bestimmten Datei verwerfen:
-```
-$ git checkout HEAD <Datei>
-```
-
-##### Einen Commit rückgängig machen (indem ein neuer Commit mit gegensätzlichen Änderungen erstellt wird):
-```
-$ git revert <commit>
-```
-
-##### Setze HEAD-Zeiger auf einen früheren Commit zurück und verwirf alle Änderungen seitdem:
-```
-$ git reset --hard <commit>
-```
-
-##### Setze HEAD-Zeiger auf den aktuellen Zustand eines entfernten Zweigs zurück.
-```
-$ git reset --hard <remote-Repository/Zweig> z.B., upstream/master, origin/my-feature
-```
-
-##### Setze HEAD-Zeiger auf einen früheren Commit zurück und behalte alle Änderungen als nicht bereitgestellte Änderungen bei:
-```
-$ git reset <commit>
-```
-
-##### Setze HEAD-Zeiger auf einen früheren Commit zurück und behalte nicht committete lokale Änderungen bei:
-```
-$ git reset --keep <commit>
-```
-
-##### Entferne Dateien, die versehentlich commitet wurden, bevor sie zu .gitignore hinzugefügt wurden
-```
-$ git rm -r --cached .
-$ git add .
-$ git commit -m "Entferne Datei xyz"
-```
-<hr>
-
-## Git-Flow
-Verbessert [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
-
-### Index
-* [Installation](#setup)
-* [Einstieg](#getting-started)
-* [Funktionen](#features)
-* [Ein Release erstellen](#make-a-release)
-* [Hotfixes](#hotfixes)
-* [Kommandos](#commands)
-
-<hr>
-
-### Installation
-###### Voraussetzung ist eine funktionierende Git-Installation. Git-Flow funktioniert unter OSX, Linux und Windows.
-
-##### OSX Homebrew:
-```
-$ brew install git-flow-avh
-```
-
-##### OSX Macports:
-```
-$ port install git-flow
-```
-
-##### Linux (Debian-based):
-```
-$ sudo apt-get install git-flow
-```
-
-##### Windows (Cygwin):
-###### Sie benötigen wget und util-linux, um git-flow zu installieren.
+**Alle lokalen Änderungen verwerfen:**
 ```bash
-$ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
+git reset --hard HEAD
 ```
-<hr>
 
-### Einstieg
-###### Git-Flow muss initialisiert werden, um Ihr Projekt-Setup anzupassen. Beginnen Sie mit der Verwendung von Git-Flow, indem Sie es in einem vorhandenen Git-Repository initialisieren:
-##### Initialisierung:
-###### Sie müssen einige Fragen zu den Namenskonventionen für Ihre Zweige beantworten. Es wird empfohlen, die Standardwerte zu verwenden.
-```shell
+**Alle Dateien aus der Staging-Area entfernen:**
+```bash
+git reset HEAD
+```
+
+**Änderungen in spezifischer Datei verwerfen:**
+```bash
+git checkout HEAD <datei>
+```
+
+### Reset-Operationen
+
+**Zu vorherigem Commit zurücksetzen (alle Änderungen verwerfen):**
+```bash
+git reset --hard <commit>
+```
+
+**Zu Remote Branch-Zustand zurücksetzen:**
+```bash
+git reset --hard <remote/branch>
+# Beispiel: git reset --hard upstream/master
+```
+
+**Reset mit Änderungen als unstaged beibehalten:**
+```bash
+git reset <commit>
+```
+
+**Reset mit lokalen uncommitted Änderungen beibehalten:**
+```bash
+git reset --keep <commit>
+```
+
+### Commits rückgängig machen
+
+**Commit rückgängig machen (neuen Commit mit gegenteiligen Änderungen erstellen):**
+```bash
+git revert <commit>
+```
+
+### Ignorierte Dateien bereinigen
+
+**Versehentlich committete Dateien entfernen, die ignoriert werden sollten:**
+```bash
+git rm -r --cached .
+git add .
+git commit -m "ignorierte Dateien entfernen"
+```
+
+---
+
+## 📦 Zwischenspeichern (Stash)
+
+### Änderungen temporär speichern
+
+**Aktuelle Änderungen zwischenspeichern:**
+```bash
+git stash
+```
+
+**Mit beschreibender Nachricht zwischenspeichern:**
+```bash
+git stash save "Beschreibende Nachricht"
+```
+
+**Alle Stashes anzeigen:**
+```bash
+git stash list
+```
+
+**Letzten Stash anwenden:**
+```bash
+git stash apply
+```
+
+**Spezifischen Stash anwenden:**
+```bash
+git stash apply stash@{0}
+```
+
+**Letzten Stash anwenden und entfernen:**
+```bash
+git stash pop
+```
+
+**Spezifischen Stash entfernen:**
+```bash
+git stash drop stash@{0}
+```
+
+**Alle Stashes entfernen:**
+```bash
+git stash clear
+```
+
+**Änderungen in einem Stash anzeigen:**
+```bash
+git stash show stash@{0}
+```
+
+**Branch aus Stash erstellen:**
+```bash
+git stash branch <branch-name> stash@{0}
+```
+
+---
+
+## 🌊 Git Flow
+
+**Verbesserter Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
+
+### 📋 Inhaltsverzeichnis
+- [🔧 Setup](#setup-1)
+- [🚀 Erste Schritte](#erste-schritte)
+- [✨ Features](#features)
+- [🎁 Release erstellen](#release-erstellen)
+- [🔥 Hotfixes](#hotfixes)
+- [📊 Befehls-Übersicht](#befehls-übersicht)
+
+---
+
+### 🔧 Setup {#setup-1}
+
+> **Voraussetzung:** Funktionierende Git-Installation erforderlich. Git-flow funktioniert auf macOS, Linux und Windows.
+
+**macOS (Homebrew):**
+```bash
+brew install git-flow-avh
+```
+
+**macOS (MacPorts):**
+```bash
+port install git-flow
+```
+
+**Linux (Debian-basiert):**
+```bash
+sudo apt-get install git-flow
+```
+
+**Windows (Cygwin):**
+> Benötigt wget und util-linux
+```bash
+wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
+```
+
+---
+
+### 🚀 Erste Schritte
+
+Git-flow benötigt Initialisierung, um Ihre Projekt-Konfiguration anzupassen.
+
+**Initialisieren (interaktiv):**
+```bash
 git flow init
 ```
-ODER
-###### Um Standardwerte zu benutzen
-```shell
+> Sie beantworten Fragen zu Branch-Namenskonventionen. Standardwerte werden empfohlen.
+
+**Initialisieren (Standardwerte verwenden):**
+```bash
 git flow init -d
 ```
-<hr>
 
-### Funktionen
-###### Entwickeln Sie neue Funktionen für kommende Versionen. Existieren normalerweise nur in Entwickler-Repositorys.
-##### Eine neue Funktion starten:
-###### Diese Aktion erstellt einen neuen Funktions-Zweig basierend auf „develop“ und wechselt zu diesem.
-```
-git flow feature start MEINEFUNKTION
-```
+---
 
-##### Eine Funktion fertigstellen:
-###### Beenden Sie die Entwicklung einer Funktion. Diese Aktion führt Folgendes aus:
-###### 1) MEINEFUNKTION mit 'develop' zusammenführen.
-###### 2) Entfernt den Funktions-Zweig.
-###### 3) Wechselt zurück zum 'develop' Zweig
-```
-git flow feature finish MEINEFUNKTION
-```
+### ✨ Features
 
-##### Eine Funktion veröffentlichen:
-###### Entwickeln Sie eine Funktion in Zusammenarbeit? Veröffentlichen Sie eine Funktion auf dem Remote-Server, damit sie von anderen Benutzern verwendet werden kann.
-```
-git flow feature publish MEINEFUNKTION
-```
+Features sind für die Entwicklung neuer Funktionalität für kommende Releases. Sie existieren typischerweise nur in Entwickler-Repositories.
 
-##### Abrufen einer veröffentlichten Funktion:
-###### Abrufen einer von einem anderen Benutzer veröffentlichten Funktion.
+**Neues Feature starten:**
+```bash
+git flow feature start MEINFEATURE
 ```
-git flow feature pull origin MEINEFUNKTION
+> Erstellt Feature-Branch basierend auf 'develop' und wechselt dorthin
+
+**Feature beenden:**
+```bash
+git flow feature finish MEINFEATURE
+```
+> Dies wird:
+> 1. MEINFEATURE in 'develop' mergen
+> 2. Den Feature-Branch entfernen
+> 3. Zurück zu 'develop' wechseln
+
+**Feature veröffentlichen (für Zusammenarbeit):**
+```bash
+git flow feature publish MEINFEATURE
 ```
 
-##### Verfolgen eines einer Funktion:
-###### Sie können ein Feature auf origin verfolgen, indem Sie:
+**Veröffentlichtes Feature abrufen:**
+```bash
+git flow feature pull origin MEINFEATURE
 ```
-git flow feature track MEINEFUNKTION
-```
-<hr>
 
-### Ein Release erstellen
-###### Unterstützen Sie die Vorbereitung einer neuen Produktionsversion. Lassen Sie kleinere Fehlerkorrekturen zu und bereiten Sie Metadaten für eine Veröffentlichung vor.
-
-##### Ein Release beginnen:
-###### Um ein Release zu starten, verwenden Sie den Befehl git flow release. Er erstellt einen Release-Zweig, der aus dem 'develop'-Zweig erstellt wird. Sie können optional einen [BASE] Commit sha-1 Hash angeben, von dem aus die Veröffentlichung gestartet werden soll. Der Commit muss sich im Zweig „develop“ befinden.
+**Origin Feature verfolgen:**
+```bash
+git flow feature track MEINFEATURE
 ```
+
+---
+
+### 🎁 Release erstellen
+
+Releases unterstützen die Vorbereitung neuer Produktions-Releases, erlauben kleinere Bugfixes und bereiten Meta-Daten vor.
+
+**Release starten:**
+```bash
 git flow release start RELEASE [BASE]
 ```
-###### Es ist ratsam, den Release-Zweig nach seiner Erstellung zu veröffentlichen, um Release-Commits durch andere Entwickler zu ermöglichen. Machen Sie es ähnlich wie beim Veröffentlichen von Funktionen mit dem Befehl:
-```
+> Erstellt Release-Branch von 'develop'. Optional [BASE] Commit SHA-1 angeben.
+
+**Release veröffentlichen:**
+```bash
 git flow release publish RELEASE
 ```
-###### (Sie können eine Remote-Freigabe verfolgen mit dem: ```git flow release track RELEASE``` Befehl)
 
-##### Ein Release abschließen:
-###### Das Fertigstellen eines Release ist einer der großen Schritte beim Git-Branching. Er führt mehrere Aktionen aus:
-###### 1) Führt den Release-Zweig zurück in den 'master' Zweig
-###### 2) Tagged das Release mit dessen Namen
-###### 3) Führt das Release zurück in den 'develop' Zweig
-###### 4) Entfernt den Release-Zweig
+**Remote Release verfolgen:**
+```bash
+git flow release track RELEASE
 ```
+
+**Release beenden:**
+```bash
 git flow release finish RELEASE
 ```
-###### Vergessen Sie nicht, Ihre Tags mit ```git push --tags``` zu veröffentlichen
+> Dies wird:
+> 1. Release-Branch in 'master' mergen
+> 2. Das Release taggen
+> 3. Release zurück in 'develop' mergen
+> 4. Release-Branch entfernen
 
-<hr>
+> 💡 **Nicht vergessen:** Tags mit `git push --tags` pushen
 
-### Hotfixes
-###### Hotfixes entstehen aus der Notwendigkeit, sofort auf einen unerwünschten Zustand einer Live-Produktionsversion zu reagieren. Kann von dem entsprechenden Tag auf dem Master-Zweig abgezweigt werden, der die Produktionsversion markiert.
+---
 
-##### Git flow hotfix Start:
-###### Wie die anderen Git-Flow-Befehle wird ein Hotfix gestartet mit
+### 🔥 Hotfixes
+
+Hotfixes addressieren kritische Probleme in Live-Produktionsversionen. Sie zweigen vom entsprechenden Tag auf master ab.
+
+**Hotfix starten:**
+```bash
+git flow hotfix start VERSION [BASENAME]
 ```
-$ git flow hotfix start VERSION [BASENAME]
-```
-###### Das Versionsargument markiert dabei den neuen Hotfix-Release-Namen. Optional können Sie einen Basisnamen angeben, von dem aus gestartet werden soll.
 
-##### Einen Hotfix abschließen:
-###### Durch das Fertigstellen eines Hotfixes wird er wieder in Develop und Master zusammengeführt. Zusätzlich ist der Master-Merge mit der Hotfix-Version gekennzeichnet
-```
+**Hotfix beenden:**
+```bash
 git flow hotfix finish VERSION
 ```
-<hr>
+> Mergt zurück in 'develop' und 'master', und taggt den Master-Merge
 
-### Kommandos
-<p align="center">
-    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
-</p>
-<hr>
+---
 
-### Git flow Schema
+### 📊 Befehls-Übersicht
 
 <p align="center">
-    <img alt="Git" src="Img/git-flow-commands-without-flow.png">
+    <img alt="Git Flow Befehle" src="../Img/git-flow-commands.png" height="270" width="460">
 </p>
-<hr>
 
+### 🌊 Git Flow Schema
+
+<p align="center">
+    <img alt="Git Flow Schema" src="../Img/git-flow-commands-without-flow.png">
+</p>
+
+---
+
+## 💡 Nützliche Tipps
+
+### Nützliche Aliases
+
+**Nützliche Aliases konfigurieren:**
+```bash
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual '!gitk'
+```
+
+### .gitignore Dateien
+
+**.gitignore Datei erstellen:**
+```bash
+echo "node_modules/" >> .gitignore
+echo "*.log" >> .gitignore
+echo ".env" >> .gitignore
+
+# Bereits verfolgte Dateien ignorieren
+git rm --cached <datei>
+echo "<datei>" >> .gitignore
+git add .gitignore
+git commit -m "Datei zu .gitignore hinzufügen"
+```
+
+### Git Hooks
+
+**Lokale Hooks konfigurieren:**
+```bash
+# Pre-commit Hook (Beispiel)
+cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/sh
+# Tests vor jedem Commit ausführen
+npm test
+EOF
+
+chmod +x .git/hooks/pre-commit
+```
+
+---
+
+## 🌍 Andere Sprachen
+
+Dieses Cheat-Sheet ist in mehreren Sprachen verfügbar:
+
+| Sprache | Link |
+|---------|------|
+| 🇺🇸 Englisch | [README.md](../README.md) |
+| 🇸🇦 Arabisch | [git-cheat-sheet-ar.md](./git-cheat-sheet-ar.md) |
+| 🇧🇩 Bengali | [git-cheat-sheet-bn.md](./git-cheat-sheet-bn.md) |
+| 🇧🇷 Brasilianisches Portugiesisch | [git-cheat-sheet-pt_BR.md](./git-cheat-sheet-pt_BR.md) |
+| 🇨🇳 Chinesisch | [git-cheat-sheet-zh.md](./git-cheat-sheet-zh.md) |
+| 🇪🇸 Spanisch | [git-cheat-sheet-es.md](./git-cheat-sheet-es.md) |
+| 🇬🇷 Griechisch | [git-cheat-sheet-el.md](./git-cheat-sheet-el.md) |
+| 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./git-cheat-sheet-hi.md) |
+| 🇰🇷 Koreanisch | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
+| 🇵🇱 Polnisch | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
+| 🇹🇷 Türkisch | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
+
+---
+
+## 🤝 Beitragen
+
+Wir begrüßen Beiträge! Sie können:
+
+- 🐛 Fehler oder Tippfehler melden
+- ✨ Neue Git-Befehle hinzufügen
+- 🌍 In neue Sprachen übersetzen
+- 💡 Erklärungen verbessern
+- 📝 Formatierung verbessern
+
+**Wie Sie beitragen:**
+1. Forken Sie dieses Repository
+2. Erstellen Sie Ihren Feature-Branch (`git checkout -b feature/FantastischesFeature`)
+3. Committen Sie Ihre Änderungen (`git commit -m 'Fantastisches Feature hinzufügen'`)
+4. Pushen Sie zum Branch (`git push origin feature/FantastischesFeature`)
+5. Öffnen Sie einen Pull Request
+
+---
+
+## 📄 Lizenz
+
+Dieses Projekt ist Open Source und unter der [MIT-Lizenz](LICENSE) verfügbar.
+
+---
+
+## 📖 Zusätzliche Ressourcen
+
+- [Offizielle Git-Dokumentation](https://git-scm.com/doc)
+- [Atlassian Git-Tutorials](https://www.atlassian.com/git/tutorials)
+- [GitHub Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Interaktives Git-Tutorial](https://learngitbranching.js.org/)
+- [Pro Git Buch (kostenlos)](https://git-scm.com/book/de/v2)
+- [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+
+---
+
+<p align="center">
+    <b>⭐ Geben Sie diesem Repository einen Stern, wenn es hilfreich war!</b>
+</p>

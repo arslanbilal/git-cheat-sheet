@@ -1,767 +1,866 @@
-Git and Git Flow Cheat Sheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-===============
-<hr>
+# Git and Git Flow Cheat Sheet 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
 <p align="center">
     <img alt="Git" src="./Img/git-logo.png" height="190" width="455">
 </p>
-<hr>
 
-Git cheat sheet saves you from learning all the commands by heart.
+---
 
-Be free to contribute, update the grammar mistakes. You are also free to add your language file.
+## 📖 About
 
-<hr>
+This comprehensive Git cheat sheet helps you master Git commands without memorizing everything. Whether you're a beginner or an experienced developer, this guide provides quick reference to essential Git operations.
 
-Git Cheat Sheet English
-===============
-### Index
-* [Set Up](#setup)
-* [Configuration Files](#configuration-files)
-* [Create](#create)
-* [Local Changes](#local-changes)
-* [Search](#search)
-* [Commit History](#commit-history)
-* [Move / Rename](#move--rename)
-* [Branches & Tags](#branches--tags)
-* [Update & Publish](#update--publish)
-* [Merge & Rebase](#merge--rebase)
-* [Undo](#undo)
-* [Git Flow](#git-flow)
+**Contributions Welcome!** Feel free to:
+- Fix grammar mistakes
+- Add new commands
+- Translate to your language
+- Improve explanations
 
+---
+## 📋 Table of Contents
 
-<hr>
+- [🔧 Setup](#-setup)
+- [⚙️ Configuration Files](#️-configuration-files)
+- [🆕 Create Repository](#-create-repository)
+- [📝 Local Changes](#-local-changes)
+- [🔍 Search](#-search)
+- [📖 Commit History](#-commit-history)
+- [📁 Move / Rename](#-move--rename)
+- [🌿 Branches & Tags](#-branches--tags)
+- [🔄 Update & Publish](#-update--publish)
+- [🔀 Merge & Rebase](#-merge--rebase)
+- [↩️ Undo](#️-undo)
+- [🌊 Git Flow](#-git-flow)
+- [🌍 Other Languages](#-other-languages)
 
-## Setup
+---
 
-##### Show current configuration:
-```
-$ git config --list
-```
-##### Show repository configuration:
-```
-$ git config --local --list
-```
+## 🔧 Setup
 
-##### Show global configuration:
-```
-$ git config --global --list
+### View Configuration
+
+**Show current configuration:**
+```bash
+git config --list
 ```
 
-##### Show system configuration:
-```
-$ git config --system --list
-```
-
-##### Set a name that is identifiable for credit when review version history:
-```
-$ git config --global user.name "[firstname lastname]"
+**Show repository configuration:**
+```bash
+git config --local --list
 ```
 
-##### Set an email address that will be associated with each history marker:
-```
-$ git config --global user.email "[valid-email]"
-```
-
-##### Set automatic command line coloring for Git for easy reviewing:
-```
-$ git config --global color.ui auto
+**Show global configuration:**
+```bash
+git config --global --list
 ```
 
-##### Set global editor for commit
-```
-$ git config --global core.editor vi
-```
-
-<hr>
-
-## Configuration Files
-
-##### Repository specific configuration file [--local]:
-```
-<repo>/.git/config
+**Show system configuration:**
+```bash
+git config --system --list
 ```
 
-##### User-specific configuration file [--global]:
-```
-~/.gitconfig
+### User Configuration
+
+**Set your name for version history:**
+```bash
+git config --global user.name "[firstname lastname]"
 ```
 
-##### System-wide configuration file [--system]:
-```
-/etc/gitconfig
-```
-
-<hr>
-
-## Create
-
-##### Clone an existing repository:
-
-There are two ways:
-
-Via SSH
-
-```
-$ git clone ssh://user@domain.com/repo.git
+**Set your email address:**
+```bash
+git config --global user.email "[valid-email]"
 ```
 
-Via HTTP
+### Display & Editor Settings
 
-```
-$ git clone http://domain.com/user/repo.git
-```
-
-##### Create a new local repository in the current directory:
-```
-$ git init
+**Enable automatic command line coloring:**
+```bash
+git config --global color.ui auto
 ```
 
-##### Create a new local repository in a specific directory:
-```
-$ git init <directory>
-```
-
-<hr>
-
-## Local Changes
-
-##### Changes in working directory:
-```
-$ git status
+**Set global editor for commits:**
+```bash
+git config --global core.editor vi
 ```
 
-##### Changes to tracked files:
-```
-$ git diff
+---
+
+## ⚙️ Configuration Files
+
+| Scope | Location | Command Flag |
+|-------|----------|--------------|
+| **Repository** | `<repo>/.git/config` | `--local` |
+| **User** | `~/.gitconfig` | `--global` |
+| **System** | `/etc/gitconfig` | `--system` |
+
+---
+
+## 🆕 Create Repository
+
+### Clone Existing Repository
+
+**Via SSH:**
+```bash
+git clone ssh://user@domain.com/repo.git
 ```
 
-##### See changes/difference of a specific file:
-```
-$ git diff <file>
-```
-
-##### Add all current changes to the next commit:
-```
-$ git add .
+**Via HTTPS:**
+```bash
+git clone https://domain.com/user/repo.git
 ```
 
-##### Add some changes in &lt;file&gt; to the next commit:
-```
-$ git add -p <file>
+### Initialize New Repository
+
+**Create repository in current directory:**
+```bash
+git init
 ```
 
-##### Add only the mentioned files to the next commit:
-```
-$ git add <filename1> <filename2>
-```
-
-##### Commit all local changes in tracked files:
-```
-$ git commit -a
+**Create repository in specific directory:**
+```bash
+git init <directory>
 ```
 
-##### Commit previously staged changes:
-```
-$ git commit
+---
+
+## 📝 Local Changes
+
+### Check Status & Differences
+
+**View working directory status:**
+```bash
+git status
 ```
 
-##### Commit with message:
-```
-$ git commit -m 'message here'
-```
-
-##### Commit skipping the staging area and adding message:
-```
-$ git commit -am 'message here'
+**Show changes to tracked files:**
+```bash
+git diff
 ```
 
-##### Commit to some previous date:
-```
-$ git commit --date="`date --date='n day ago'`" -am "<Commit Message Here>"
-```
-
-##### Change last commit:<br>
-<em><sub>Don't amend published commits!</sub></em>
-
-```
-$ git commit -a --amend
+**Show changes in specific file:**
+```bash
+git diff <file>
 ```
 
-##### Amend with last commit but use the previous commit log message
-<em><sub>Don't amend published commits!</sub></em>
+### Staging Changes
 
-```shell
-$ git commit --amend --no-edit
+**Add all current changes:**
+```bash
+git add .
 ```
 
-##### Change committer date of last commit:
+**Add specific files:**
+```bash
+git add <filename1> <filename2>
 ```
+
+**Interactively add parts of a file:**
+```bash
+git add -p <file>
+```
+
+### Committing Changes
+
+**Commit all tracked file changes:**
+```bash
+git commit -a
+```
+
+**Commit staged changes:**
+```bash
+git commit
+```
+
+**Commit with message:**
+```bash
+git commit -m 'message here'
+```
+
+**Skip staging and commit with message:**
+```bash
+git commit -am 'message here'
+```
+
+**Commit with specific date:**
+```bash
+git commit --date="`date --date='n day ago'`" -am "<Commit Message Here>"
+```
+
+### Modify Last Commit
+
+> ⚠️ **Warning:** Don't amend published commits!
+
+**Amend last commit:**
+```bash
+git commit -a --amend
+```
+
+**Amend without changing commit message:**
+```bash
+git commit --amend --no-edit
+```
+
+**Change committer date:**
+```bash
 GIT_COMMITTER_DATE="date" git commit --amend
 ```
 
-##### Change Author date of last commit:
-```shell
-$ git commit --amend --date="date"
+**Change author date:**
+```bash
+git commit --amend --date="date"
 ```
 
-##### Move uncommitted changes from current branch to some other branch:<br>
-```
-$ git stash
-$ git checkout branch2
-$ git stash pop
+### Stashing Changes
+
+**Save current changes temporarily:**
+```bash
+git stash
 ```
 
-##### Restore stashed changes back to current branch:
-```shell
-$ git stash apply
+**Apply last stashed changes:**
+```bash
+git stash apply
 ```
 
-#### Restore particular stash back to current branch:
-- *{stash_number}* can be obtained from `git stash list`
-
-```shell
-$ git stash apply stash@{stash_number}
+**Apply specific stash:**
+```bash
+git stash apply stash@{stash_number}
 ```
+> Use `git stash list` to see available stashes
 
-##### Remove the last set of stashed changes:
-```
-$ git stash drop
-```
-
-<hr>
-
-## Search
-
-##### A text search on all files in the directory:
-```
-$ git grep "Hello"
+**Remove last stash:**
+```bash
+git stash drop
 ```
 
-##### In any version of a text search:
-```
-$ git grep "Hello" v2.5
-```
-
-##### Show commits that introduced a specific keyword
-```
-$ git log -S 'keyword'
+**Move uncommitted changes to another branch:**
+```bash
+git stash
+git checkout branch2
+git stash pop
 ```
 
-##### Show commits that introduced a specific keyword (using a regular expression)
-```
-$ git log -S 'keyword' --pickaxe-regex
+---
+
+## 🔍 Search
+
+### Text Search
+
+**Search for text in all files:**
+```bash
+git grep "Hello"
 ```
 
-<hr>
-
-## Commit History
-
-##### Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):
-```
-$ git log
+**Search in specific version:**
+```bash
+git grep "Hello" v2.5
 ```
 
-##### Show all the commits(it'll show just the commit hash and the commit message):
-```
-$ git log --oneline
+### Commit Search
+
+**Find commits that introduced specific keyword:**
+```bash
+git log -S 'keyword'
 ```
 
-##### Show all commits of a specific user:
-```
-$ git log --author="username"
-```
-
-##### Show changes over time for a specific file:
-```
-$ git log -p <file>
+**Search with regular expression:**
+```bash
+git log -S 'keyword' --pickaxe-regex
 ```
 
-##### Display commits that are present only in remote/branch in right side
-```
-$ git log --oneline <origin/master>..<remote/master> --left-right
+---
+
+## 📖 Commit History
+
+### Basic History
+
+**Show all commits (detailed):**
+```bash
+git log
 ```
 
-##### Who changed, what and when in &lt;file&gt;:
-```
-$ git blame <file>
-```
-
-##### Show Reference log:
-```
-$ git reflog show
+**Show commits (one line each):**
+```bash
+git log --oneline
 ```
 
-##### Delete Reference log:
-```
-$ git reflog delete
-```
-<hr>
-
-## Move / Rename
-
-##### Rename a file:
-
-Rename Index.txt to Index.html
-
-```
-$ git mv Index.txt Index.html
+**Show commits by specific author:**
+```bash
+git log --author="username"
 ```
 
-<hr>
-
-## Branches & Tags
-
-##### List all local branches:
-```
-$ git branch
+**Show changes for specific file:**
+```bash
+git log -p <file>
 ```
 
-#### List local/remote branches
-```
-$ git branch -a
+### Advanced History
+
+**Compare branches:**
+```bash
+git log --oneline <origin/master>..<remote/master> --left-right
 ```
 
-##### List all remote branches:
-```
-$ git branch -r
-```
-
-##### Switch HEAD branch:
-```
-$ git checkout <branch>
+**Show who changed what and when:**
+```bash
+git blame <file>
 ```
 
-##### Checkout single file from different branch
-```
-$ git checkout <branch> -- <filename>
+### Reference Logs
+
+**Show reference log:**
+```bash
+git reflog show
 ```
 
-##### Create and switch new branch:
-```
-$ git checkout -b <branch>
-```
-
-##### Switch to the previous branch, without saying the name explicitly:
-```
-$ git checkout -
+**Delete reference log:**
+```bash
+git reflog delete
 ```
 
-##### Create a new branch from an exiting branch and switch to new branch:
-```
-$ git checkout -b <new_branch> <existing_branch>
+---
+
+## 📁 Move / Rename
+
+**Rename a file:**
+```bash
+git mv Index.txt Index.html
 ```
 
+---
 
-#### Checkout and create a new branch from existing commit
-```
-$ git checkout <commit-hash> -b <new_branch_name>
-```
+## 🌿 Branches & Tags
 
+### List Branches
 
-##### Create a new branch based on your current HEAD:
-```
-$ git branch <new-branch>
-```
-
-##### Create a new tracking branch based on a remote branch:
-```
-$ git branch --track <new-branch> <remote-branch>
+**List local branches:**
+```bash
+git branch
 ```
 
-##### Delete a local branch:
-```
-$ git branch -d <branch>
-```
-
-##### Rename current branch to new branch name
-```shell
-$ git branch -m <new_branch_name>
+**List all branches (local + remote):**
+```bash
+git branch -a
 ```
 
-##### Force delete a local branch:
-<em><sub>You will lose unmerged changes!</sub></em>
+**List remote branches:**
+```bash
+git branch -r
+```
 
+**List merged branches:**
+```bash
+git branch --merged
 ```
-$ git branch -D <branch>
+
+### Switch & Create Branches
+
+**Switch to existing branch:**
+```bash
+git checkout <branch>
 ```
-##### Apply specific commit from another branch:
+
+**Create and switch to new branch:**
+```bash
+git checkout -b <branch>
 ```
+
+**Switch to previous branch:**
+```bash
+git checkout -
+```
+
+**Create branch from existing branch:**
+```bash
+git checkout -b <new_branch> <existing_branch>
+```
+
+**Create branch from specific commit:**
+```bash
+git checkout <commit-hash> -b <new_branch_name>
+```
+
+**Create branch without switching:**
+```bash
+git branch <new-branch>
+```
+
+**Create tracking branch:**
+```bash
+git branch --track <new-branch> <remote-branch>
+```
+
+### Branch Operations
+
+**Checkout single file from different branch:**
+```bash
+git checkout <branch> -- <filename>
+```
+
+**Apply specific commit from another branch:**
+```bash
 git cherry-pick <commit hash>
 ```
 
-##### Mark `HEAD` with a tag:
-```
-$ git tag <tag-name>
-```
-
-##### Mark `HEAD` with a tag and open the editor to include a message:
-```
-$ git tag -a <tag-name>
-```
-
-##### Mark `HEAD` with a tag that includes a message:
-```
-$ git tag <tag-name> -am 'message here'
-```
-
-##### List all tags:
-```
-$ git tag
-```
-
-##### List all tags with their messages (tag message or commit message if tag has no message):
-```
-$ git tag -n
-```
-
-<hr>
-
-## Update & Publish
-
-##### List all current configured remotes:
-```
-$ git remote -v
-```
-
-##### Show information about a remote:
-```
-$ git remote show <remote>
-```
-
-##### Add new remote repository, named &lt;remote&gt;:
-```
-$ git remote add <remote> <url>
-```
-
-##### Rename a remote repository, from &lt;remote&gt; to &lt;new_remote&gt;:
-```
-$ git remote rename <remote> <new_remote>
-```
-
-##### Remove a remote:
-```
-$ git remote rm <remote>
-```
-
-<em><sub>Note: git remote rm does not delete the remote repository from the server. It simply removes the remote and its references from your local repository.</sub></em>
-
-##### Download all changes from &lt;remote&gt;, but don't integrate into HEAD:
-```
-$ git fetch <remote>
-```
-
-##### Download changes and directly merge/integrate into HEAD:
-```
-$ git remote pull <remote> <url>
-```
-
-##### Get all changes from HEAD to local repository:
-```
-$ git pull origin master
-```
-
-##### Get all changes from HEAD to local repository without a merge:
-```
-$ git pull --rebase <remote> <branch>
-```
-
-##### Publish local changes on a remote:
-```
-$ git push <remote> <branch>
-```
-
-##### Delete a branch on the remote:
-```
-$ git push <remote> :<branch> (since Git v1.5.0)
-```
-OR
-```
-$ git push <remote> --delete <branch> (since Git v1.7.0)
-```
-
-##### Publish your tags:
-```
-$ git push --tags
-```
-<hr>
-
-#### Configure the merge tool globally to meld (editor)
+**Rename current branch:**
 ```bash
-$ git config --global merge.tool meld
+git branch -m <new_branch_name>
 ```
 
-##### Use your configured merge tool to solve conflicts:
-```
-$ git mergetool
-```
-
-## Merge & Rebase
-
-##### Merge branch into your current HEAD:
-```
-$ git merge <branch>
+**Delete local branch:**
+```bash
+git branch -d <branch>
 ```
 
-#### List merged branches
+**Force delete local branch:**
+```bash
+git branch -D <branch>
 ```
-$ git branch --merged
+> ⚠️ **Warning:** You will lose unmerged changes!
+
+### Tags
+
+**Create tag at HEAD:**
+```bash
+git tag <tag-name>
 ```
 
-##### Rebase your current HEAD onto &lt;branch&gt;:<br>
-<em><sub>Don't rebase published commit!</sub></em>
-
-```
-$ git rebase <branch>
+**Create annotated tag:**
+```bash
+git tag -a <tag-name>
 ```
 
-##### Abort a rebase:
-```
-$ git rebase --abort
-```
-
-##### Continue a rebase after resolving conflicts:
-```
-$ git rebase --continue
+**Create tag with message:**
+```bash
+git tag <tag-name> -am 'message here'
 ```
 
-##### Use your editor to manually solve conflicts and (after resolving) mark file as resolved:
-```
-$ git add <resolved-file>
-```
-
-```
-$ git rm <resolved-file>
+**List all tags:**
+```bash
+git tag
 ```
 
-##### Squashing commits:
-```
-$ git rebase -i <commit-just-before-first>
+**List tags with messages:**
+```bash
+git tag -n
 ```
 
-Now replace this,
+---
 
+## 🔄 Update & Publish
+
+### Remote Management
+
+**List configured remotes:**
+```bash
+git remote -v
 ```
+
+**Show remote information:**
+```bash
+git remote show <remote>
+```
+
+**Add new remote:**
+```bash
+git remote add <remote> <url>
+```
+
+**Rename remote:**
+```bash
+git remote rename <remote> <new_remote>
+```
+
+**Remove remote:**
+```bash
+git remote rm <remote>
+```
+> ℹ️ **Note:** This only removes the remote reference locally, not the remote repository itself.
+
+### Fetch & Pull
+
+**Download changes without merging:**
+```bash
+git fetch <remote>
+```
+
+**Download and merge changes:**
+```bash
+git pull <remote> <branch>
+```
+
+**Get changes from main branch:**
+```bash
+git pull origin master
+```
+
+**Pull with rebase:**
+```bash
+git pull --rebase <remote> <branch>
+```
+
+### Push & Publish
+
+**Publish local changes:**
+```bash
+git push <remote> <branch>
+```
+
+**Delete remote branch:**
+```bash
+# Git v1.7.0+
+git push <remote> --delete <branch>
+
+# Git v1.5.0+
+git push <remote> :<branch>
+```
+
+**Publish tags:**
+```bash
+git push --tags
+```
+
+---
+
+## 🔀 Merge & Rebase
+
+### Merge Operations
+
+**Merge branch into current HEAD:**
+```bash
+git merge <branch>
+```
+
+**Configure merge tool globally:**
+```bash
+git config --global merge.tool meld
+```
+
+**Use configured merge tool:**
+```bash
+git mergetool
+```
+
+### Rebase Operations
+
+> ⚠️ **Warning:** Don't rebase published commits!
+
+**Rebase current HEAD onto branch:**
+```bash
+git rebase <branch>
+```
+
+**Abort rebase:**
+```bash
+git rebase --abort
+```
+
+**Continue rebase after resolving conflicts:**
+```bash
+git rebase --continue
+```
+
+### Conflict Resolution
+
+**Mark file as resolved:**
+```bash
+git add <resolved-file>
+```
+
+**Remove resolved file:**
+```bash
+git rm <resolved-file>
+```
+
+### Squashing Commits
+
+**Interactive rebase for squashing:**
+```bash
+git rebase -i <commit-just-before-first>
+```
+
+**Example squash configuration:**
+```
+# Before
 pick <commit_id>
 pick <commit_id2>
 pick <commit_id3>
-```
 
-to this,
-
-```
+# After (squash commit_id2 and commit_id3 into commit_id)
 pick <commit_id>
 squash <commit_id2>
 squash <commit_id3>
 ```
-<hr>
 
-## Undo
+---
 
-##### Discard all local changes in your working directory:
-```
-$ git reset --hard HEAD
-```
+## ↩️ Undo
 
-##### Get all the files out of the staging area(i.e. undo the last `git add`):
-```
-$ git reset HEAD
-```
+### Discard Changes
 
-##### Discard local changes in a specific file:
-```
-$ git checkout HEAD <file>
-```
-
-##### Revert a commit (by producing a new commit with contrary changes):
-```
-$ git revert <commit>
-```
-
-##### Reset your HEAD pointer to a previous commit and discard all changes since then:
-```
-$ git reset --hard <commit>
-```
-
-##### Reset your HEAD pointer to a remote branch current state.
-```
-$ git reset --hard <remote/branch> e.g., upstream/master, origin/my-feature
-```
-
-##### Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:
-```
-$ git reset <commit>
-```
-
-##### Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:
-```
-$ git reset --keep <commit>
-```
-
-##### Remove files that were accidentally committed before they were added to .gitignore
-```
-$ git rm -r --cached .
-$ git add .
-$ git commit -m "remove xyz file"
-```
-<hr>
-
-## Git-Flow
-Improved [Git-flow](https://github.com/petervanderdoes/gitflow-avh)
-
-### Index
-* [Setup](#setup)
-* [Getting Started](#getting-started)
-* [Features](#features)
-* [Make a Release](#make-a-release)
-* [Hotfixes](#hotfixes)
-* [Commands](#commands)
-
-<hr>
-
-### Setup
-###### You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.
-
-##### OSX Homebrew:
-```
-$ brew install git-flow-avh
-```
-
-##### OSX Macports:
-```
-$ port install git-flow
-```
-
-##### Linux (Debian-based):
-```
-$ sudo apt-get install git-flow
-```
-
-##### Windows (Cygwin):
-###### You need wget and util-linux to install git-flow.
+**Discard all local changes:**
 ```bash
-$ wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
+git reset --hard HEAD
 ```
-<hr>
 
-### Getting Started
-###### Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:
-##### Initialize:
-###### You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.
-```shell
+**Unstage all files:**
+```bash
+git reset HEAD
+```
+
+**Discard changes in specific file:**
+```bash
+git checkout HEAD <file>
+```
+
+### Reset Operations
+
+**Reset to previous commit (discard all changes):**
+```bash
+git reset --hard <commit>
+```
+
+**Reset to remote branch state:**
+```bash
+git reset --hard <remote/branch>
+# Example: git reset --hard upstream/master
+```
+
+**Reset preserving changes as unstaged:**
+```bash
+git reset <commit>
+```
+
+**Reset preserving uncommitted local changes:**
+```bash
+git reset --keep <commit>
+```
+
+### Revert Commits
+
+**Revert commit (create new commit with opposite changes):**
+```bash
+git revert <commit>
+```
+
+### Clean Ignored Files
+
+**Remove accidentally committed files that should be ignored:**
+```bash
+git rm -r --cached .
+git add .
+git commit -m "remove ignored files"
+```
+
+---
+
+## 🌊 Git Flow
+
+**Improved Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
+
+### 📋 Table of Contents
+- [🔧 Setup](#setup-1)
+- [🚀 Getting Started](#getting-started)
+- [✨ Features](#features)
+- [🎁 Make a Release](#make-a-release)
+- [🔥 Hotfixes](#hotfixes)
+- [📊 Commands Overview](#commands-overview)
+
+---
+
+### 🔧 Setup {#setup-1}
+
+> **Prerequisite:** Working Git installation required. Git-flow works on macOS, Linux, and Windows.
+
+**macOS (Homebrew):**
+```bash
+brew install git-flow-avh
+```
+
+**macOS (MacPorts):**
+```bash
+port install git-flow
+```
+
+**Linux (Debian-based):**
+```bash
+sudo apt-get install git-flow
+```
+
+**Windows (Cygwin):**
+> Requires wget and util-linux
+```bash
+wget -q -O - --no-check-certificate https://raw.githubusercontent.com/petervanderdoes/gitflow/develop/contrib/gitflow-installer.sh install <state> | bash
+```
+
+---
+
+### 🚀 Getting Started
+
+Git-flow needs initialization to customize your project setup.
+
+**Initialize (interactive):**
+```bash
 git flow init
 ```
-OR
-###### To use default
-```shell
+> You'll answer questions about branch naming conventions. Default values are recommended.
+
+**Initialize (use defaults):**
+```bash
 git flow init -d
 ```
-<hr>
 
-### Features
-###### Develop new features for upcoming releases. Typically exist in developers repos only.
-##### Start a new feature:
-###### This action creates a new feature branch based on 'develop' and switches to it.
-```
+---
+
+### ✨ Features
+
+Features are for developing new functionality for upcoming releases. They typically exist only in developer repositories.
+
+**Start new feature:**
+```bash
 git flow feature start MYFEATURE
 ```
+> Creates feature branch based on 'develop' and switches to it
 
-##### Finish up a feature:
-###### Finish the development of a feature. This action performs the following:
-###### 1) Merged MYFEATURE into 'develop'.
-###### 2) Removes the feature branch.
-###### 3) Switches back to 'develop' branch
-```
+**Finish feature:**
+```bash
 git flow feature finish MYFEATURE
 ```
+> This will:
+> 1. Merge MYFEATURE into 'develop'
+> 2. Remove the feature branch
+> 3. Switch back to 'develop'
 
-##### Publish a feature:
-###### Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.
-```
+**Publish feature (for collaboration):**
+```bash
 git flow feature publish MYFEATURE
 ```
 
-##### Getting a published feature:
-###### Get a feature published by another user.
-```
+**Get published feature:**
+```bash
 git flow feature pull origin MYFEATURE
 ```
 
-##### Tracking a origin feature:
-###### You can track a feature on origin by using
-```
+**Track origin feature:**
+```bash
 git flow feature track MYFEATURE
 ```
-<hr>
 
-### Make a Release
-###### Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release
+---
 
-##### Start a release:
-###### To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.
-```
+### 🎁 Make a Release
+
+Releases support preparation of new production releases, allowing minor bug fixes and preparing meta-data.
+
+**Start release:**
+```bash
 git flow release start RELEASE [BASE]
 ```
-###### It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:
-```
+> Creates release branch from 'develop'. Optionally specify [BASE] commit SHA-1.
+
+**Publish release:**
+```bash
 git flow release publish RELEASE
 ```
-###### (You can track a remote release with the: ```git flow release track RELEASE``` command)
 
-##### Finish up a release:
-###### Finishing a release is one of the big steps in git branching. It performs several actions:
-###### 1) Merges the release branch back into 'master'
-###### 2) Tags the release with its name
-###### 3) Back-merges the release into 'develop'
-###### 4) Removes the release branch
+**Track remote release:**
+```bash
+git flow release track RELEASE
 ```
+
+**Finish release:**
+```bash
 git flow release finish RELEASE
 ```
-###### Don't forget to push your tags with ```git push --tags```
+> This will:
+> 1. Merge release branch into 'master'
+> 2. Tag the release
+> 3. Back-merge release into 'develop'
+> 4. Remove release branch
 
-<hr>
+> 💡 **Don't forget:** Push your tags with `git push --tags`
 
-### Hotfixes
-###### Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.
+---
 
-##### Git flow hotfix start:
-###### Like the other git flow commands, a hotfix is started with
+### 🔥 Hotfixes
+
+Hotfixes address critical issues in live production versions. They branch off from the corresponding tag on master.
+
+**Start hotfix:**
+```bash
+git flow hotfix start VERSION [BASENAME]
 ```
-$ git flow hotfix start VERSION [BASENAME]
-```
-###### The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.
 
-##### Finish a hotfix:
-###### By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version
-```
+**Finish hotfix:**
+```bash
 git flow hotfix finish VERSION
 ```
-<hr>
+> Merges back into both 'develop' and 'master', and tags the master merge
 
-### Commands
-<p align="center">
-    <img alt="Git" src="./Img/git-flow-commands.png" height="270" width="460">
-</p>
-<hr>
+---
 
-### Git flow schema
+### 📊 Commands Overview
 
 <p align="center">
-    <img alt="Git" src="Img/git-flow-commands-without-flow.png">
+    <img alt="Git Flow Commands" src="./Img/git-flow-commands.png" height="270" width="460">
 </p>
-<hr>
+
+### 🌊 Git Flow Schema
+
+<p align="center">
+    <img alt="Git Flow Schema" src="Img/git-flow-commands-without-flow.png">
+</p>
+
+---
 
 
-# Other Available Languages:
+## 🌍 Other Languages
 
-1. [Arabic Git Cheat Sheet](./other-sheets/git-cheat-sheet-ar.md)
-2. [Brazilian Portuguese Git Cheat Sheet](./other-sheets/git-cheat-sheet-pt_BR.md)
-3. [Chinese Git Cheat Sheet](./other-sheets/git-cheat-sheet-zh.md)
-4. [German Git Cheat Sheet](./other-sheets/git-cheat-sheet-de.md)
-5. [Greek Git Cheat Sheet](./other-sheets/git-cheat-sheet-el.md)
-6. [Hindi Git Cheat Sheet](./other-sheets/git-cheat-sheet-hi.md)
-7. [Korean Git Cheat Sheet](./other-sheets/git-cheat-sheet-ko.md)
-8. [Polish Git Cheat Sheet](./other-sheets/git-cheat-sheet-pl.md)
-9. [Spanish Git Cheat Sheet](./other-sheets/git-cheat-sheet-es.md)
-10. [Turkish Git Cheat Sheet](./other-sheets/git-cheat-sheet-tr.md)
-11. [Bengali Git Cheat Sheet](./other-sheets/git-cheat-sheet-bn.md)
+This cheat sheet is available in multiple languages:
+
+| Language | Link |
+|----------|------|
+| 🇸🇦 Arabic | [git-cheat-sheet-ar.md](./other-sheets/git-cheat-sheet-ar.md) |
+| 🇧🇩 Bengali | [git-cheat-sheet-bn.md](./other-sheets/git-cheat-sheet-bn.md) |
+| 🇧🇷 Brazilian Portuguese | [git-cheat-sheet-pt_BR.md](./other-sheets/git-cheat-sheet-pt_BR.md) |
+| 🇨🇳 Chinese | [git-cheat-sheet-zh.md](./other-sheets/git-cheat-sheet-zh.md) |
+| 🇩🇪 German | [git-cheat-sheet-de.md](./other-sheets/git-cheat-sheet-de.md) |
+| 🇬🇷 Greek | [git-cheat-sheet-el.md](./other-sheets/git-cheat-sheet-el.md) |
+| 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./other-sheets/git-cheat-sheet-hi.md) |
+| 🇰🇷 Korean | [git-cheat-sheet-ko.md](./other-sheets/git-cheat-sheet-ko.md) |
+| 🇵🇱 Polish | [git-cheat-sheet-pl.md](./other-sheets/git-cheat-sheet-pl.md) |
+| 🇪🇸 Spanish | [git-cheat-sheet-es.md](./other-sheets/git-cheat-sheet-es.md) |
+| 🇹🇷 Turkish | [git-cheat-sheet-tr.md](./other-sheets/git-cheat-sheet-tr.md) |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! You can:
+
+- 🐛 Report bugs or typos
+- ✨ Add new Git commands
+- 🌍 Translate to new languages
+- 💡 Improve explanations
+- 📝 Enhance formatting
+
+**How to contribute:**
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+    <b>⭐ Star this repository if you found it helpful!</b>
+</p>
 
