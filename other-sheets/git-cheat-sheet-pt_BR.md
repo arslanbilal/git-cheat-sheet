@@ -2,6 +2,10 @@
 
 ![Git Logo](../Img/git-logo.png)
 
+---
+
+## 📖 Sobre
+
 Esta folha de dicas abrangente do Git ajuda você a dominar comandos Git sem memorizar tudo. Seja você iniciante ou desenvolvedor experiente, este guia fornece referência rápida para operações essenciais do Git.
 
 **Contribuições são bem-vindas!** Sinta-se livre para:
@@ -26,10 +30,7 @@ Esta folha de dicas abrangente do Git ajuda você a dominar comandos Git sem mem
 - [🔀 Merge e Rebase](#-merge-e-rebase)
 - [↩️ Desfazer](#️-desfazer)
 - [🌊 Git Flow](#-git-flow)
-- [📚 Recursos Adicionais](#-recursos-adicionais)
 - [🌍 Outros Idiomas](#-outros-idiomas)
-- [🤝 Contribuir](#-contribuir)
-- [📄 Licença](#-licença)
 
 ---
 
@@ -811,32 +812,6 @@ git flow hotfix finish VERSAO
 
 ---
 
-## 📚 Recursos Adicionais
-
-### Documentação Oficial e Guias
-- [Documentação Oficial do Git](https://git-scm.com/doc)
-- [Livro Pro Git (gratuito)](https://git-scm.com/book/pt-br)
-- [Manual de Referência Git](https://git-scm.com/docs)
-- [Tutorial Git](https://git-scm.com/docs/gittutorial)
-
-### Materiais de Aprendizado Online
-- [GitHub Git Handbook](https://guides.github.com/introduction/git-handbook/)
-- [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
-- [Learn Git Branching (interativo)](https://learngitbranching.js.org/?locale=pt_BR)
-- [Git Immersion](http://gitimmersion.com/)
-
-### Ferramentas GUI
-- [GitHub Desktop](https://desktop.github.com/)
-- [GitKraken](https://www.gitkraken.com/)
-- [SourceTree](https://www.sourcetreeapp.com/)
-- [Tower](https://www.git-tower.com/)
-
-### Tópicos Avançados
-- [Git Hooks](https://git-scm.com/book/pt-br/v2/Customizing-Git-Git-Hooks)
-- [Workflows Git](https://www.atlassian.com/git/tutorials/comparing-workflows)
-- [Funcionamento Interno do Git](https://git-scm.com/book/pt-br/v2/Git-Internals-Plumbing-and-Porcelain)
-
----
 
 ## 🌍 Outros Idiomas
 
