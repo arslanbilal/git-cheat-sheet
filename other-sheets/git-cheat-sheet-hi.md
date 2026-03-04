@@ -806,7 +806,7 @@ git flow hotfix finish VERSION
     <img alt="Git Flow Commands" src="../Img/git-flow-commands.png" height="270" width="460">
 </p>
 
-### �� Git Flow स्कीमा
+### 🌊 Git Flow स्कीमा
 
 <p align="center">
     <img alt="Git Flow Schema" src="../Img/git-flow-commands-without-flow.png">

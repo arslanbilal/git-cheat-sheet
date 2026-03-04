@@ -659,7 +659,7 @@ git commit -m "remove ignored files"
 
 **উন্নত Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
-### �� সূচিপত্র
+### 📋 সূচিপত্র
 - [🔧 সেটআপ](#setup-1)
 - [🚀 শুরু করা](#getting-started)
 - [✨ ফিচার](#features)
