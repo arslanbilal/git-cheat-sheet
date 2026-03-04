@@ -1,8 +1,9 @@
-# Git Cheat Sheet Deutsch
+# Git und Git Flow Cheat Sheet
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-![Git Logo](../Img/git-logo.png)
-
-Dieses umfassende Git-Cheat-Sheet hilft Ihnen dabei, Git-Befehle zu beherrschen, ohne alles auswendig zu lernen. Egal, ob Sie Anfänger oder erfahrener Entwickler sind, dieser Leitfaden bietet eine schnelle Referenz für wichtige Git-Operationen.
+<p align="center">
+    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
+</p>
 
 ---
 
@@ -20,7 +21,6 @@ Dieses umfassende Git-Cheat-Sheet hilft Ihnen dabei, Git-Befehle zu beherrschen,
 
 ## 📋 Inhaltsverzeichnis
 
-- [📖 Über](#-Über)
 - [🔧 Setup](#-setup)
 - [⚙️ Konfigurationsdateien](#️-konfigurationsdateien)
 - [🆕 Repository erstellen](#-repository-erstellen)
@@ -32,13 +32,8 @@ Dieses umfassende Git-Cheat-Sheet hilft Ihnen dabei, Git-Befehle zu beherrschen,
 - [🔄 Aktualisieren & Veröffentlichen](#-aktualisieren--veröffentlichen)
 - [🔀 Merge & Rebase](#-merge--rebase)
 - [↩️ Rückgängig machen](#️-rückgängig-machen)
-- [📦 Zwischenspeichern (Stash)](#-zwischenspeichern-stash)
 - [🌊 Git Flow](#-git-flow)
-- [💡 Nützliche Tipps](#-nützliche-tipps)
 - [🌍 Andere Sprachen](#-andere-sprachen)
-- [🤝 Beitragen](#-beitragen)
-- [📄 Lizenz](#-lizenz)
-- [📖 Zusätzliche Ressourcen](#-zusätzliche-ressourcen)
 
 ---
 
@@ -661,62 +656,6 @@ git commit -m "ignorierte Dateien entfernen"
 
 ---
 
-## 📦 Zwischenspeichern (Stash)
-
-### Änderungen temporär speichern
-
-**Aktuelle Änderungen zwischenspeichern:**
-```bash
-git stash
-```
-
-**Mit beschreibender Nachricht zwischenspeichern:**
-```bash
-git stash save "Beschreibende Nachricht"
-```
-
-**Alle Stashes anzeigen:**
-```bash
-git stash list
-```
-
-**Letzten Stash anwenden:**
-```bash
-git stash apply
-```
-
-**Spezifischen Stash anwenden:**
-```bash
-git stash apply stash@{0}
-```
-
-**Letzten Stash anwenden und entfernen:**
-```bash
-git stash pop
-```
-
-**Spezifischen Stash entfernen:**
-```bash
-git stash drop stash@{0}
-```
-
-**Alle Stashes entfernen:**
-```bash
-git stash clear
-```
-
-**Änderungen in einem Stash anzeigen:**
-```bash
-git stash show stash@{0}
-```
-
-**Branch aus Stash erstellen:**
-```bash
-git stash branch <branch-name> stash@{0}
-```
-
----
-
 ## 🌊 Git Flow
 
 **Verbesserter Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
@@ -876,52 +815,6 @@ git flow hotfix finish VERSION
 
 ---
 
-## 💡 Nützliche Tipps
-
-### Nützliche Aliases
-
-**Nützliche Aliases konfigurieren:**
-```bash
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.unstage 'reset HEAD --'
-git config --global alias.last 'log -1 HEAD'
-git config --global alias.visual '!gitk'
-```
-
-### .gitignore Dateien
-
-**.gitignore Datei erstellen:**
-```bash
-echo "node_modules/" >> .gitignore
-echo "*.log" >> .gitignore
-echo ".env" >> .gitignore
-
-# Bereits verfolgte Dateien ignorieren
-git rm --cached <datei>
-echo "<datei>" >> .gitignore
-git add .gitignore
-git commit -m "Datei zu .gitignore hinzufügen"
-```
-
-### Git Hooks
-
-**Lokale Hooks konfigurieren:**
-```bash
-# Pre-commit Hook (Beispiel)
-cat > .git/hooks/pre-commit << 'EOF'
-#!/bin/sh
-# Tests vor jedem Commit ausführen
-npm test
-EOF
-
-chmod +x .git/hooks/pre-commit
-```
-
----
-
 ## 🌍 Andere Sprachen
 
 Dieses Cheat-Sheet ist in mehreren Sprachen verfügbar:
@@ -933,11 +826,12 @@ Dieses Cheat-Sheet ist in mehreren Sprachen verfügbar:
 | 🇧🇩 Bengali | [git-cheat-sheet-bn.md](./git-cheat-sheet-bn.md) |
 | 🇧🇷 Brasilianisches Portugiesisch | [git-cheat-sheet-pt_BR.md](./git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 Chinesisch | [git-cheat-sheet-zh.md](./git-cheat-sheet-zh.md) |
-| 🇪🇸 Spanisch | [git-cheat-sheet-es.md](./git-cheat-sheet-es.md) |
+| 🇩🇪 **Deutsch (aktuell)** | |
 | 🇬🇷 Griechisch | [git-cheat-sheet-el.md](./git-cheat-sheet-el.md) |
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./git-cheat-sheet-hi.md) |
 | 🇰🇷 Koreanisch | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
 | 🇵🇱 Polnisch | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
+| 🇪🇸 Spanisch | [git-cheat-sheet-es.md](./git-cheat-sheet-es.md) |
 | 🇹🇷 Türkisch | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
 
 ---
@@ -964,17 +858,6 @@ Wir begrüßen Beiträge! Sie können:
 ## 📄 Lizenz
 
 Dieses Projekt ist Open Source und unter der [MIT-Lizenz](LICENSE) verfügbar.
-
----
-
-## 📖 Zusätzliche Ressourcen
-
-- [Offizielle Git-Dokumentation](https://git-scm.com/doc)
-- [Atlassian Git-Tutorials](https://www.atlassian.com/git/tutorials)
-- [GitHub Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-- [Interaktives Git-Tutorial](https://learngitbranching.js.org/)
-- [Pro Git Buch (kostenlos)](https://git-scm.com/book/de/v2)
-- [Git Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
 ---
 
