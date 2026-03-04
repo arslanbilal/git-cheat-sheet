@@ -853,6 +853,7 @@ Esta folha de dicas está disponível em múltiplos idiomas:
 | 🇬🇷 Grego | [git-cheat-sheet-el.md](./git-cheat-sheet-el.md) |
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./git-cheat-sheet-hi.md) |
 | 🇰🇷 Coreano | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
+| 🇧🇷 **Português (Brasil)** | **atual** |
 | 🇵🇱 Polonês | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
 | 🇹🇷 Turco | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
 

@@ -856,6 +856,7 @@ git flow hotfix finish 版本
 | 🇰🇷 韩语 | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
 | 🇵🇱 波兰语 | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
 | 🇹🇷 土耳其语 | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
+| 🇨🇳 **中文** | **当前** |
 
 ---
 

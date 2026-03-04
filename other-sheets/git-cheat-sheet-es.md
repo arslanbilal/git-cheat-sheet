@@ -20,8 +20,8 @@ Esta guía completa de referencia de Git es un recurso integral para cualquiera 
 
 ## 📑 Tabla de Contenidos
 
-- [� Acerca de esta Guía](#acerca-de-esta-guía)
-- [�🔧 Configuración Inicial](#configuración-inicial)
+- [📖 Acerca de esta Guía](#acerca-de-esta-guía)
+- [🔧 Configuración Inicial](#configuración-inicial)
 - [📁 Configuración de Repositorio](#configuración-de-repositorio)
 - [📊 Comandos de Estado](#comandos-de-estado)
 - [📝 Gestión de Archivos](#gestión-de-archivos)
