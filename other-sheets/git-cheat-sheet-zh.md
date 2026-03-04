@@ -2,6 +2,10 @@
 
 ![Git Logo](../Img/git-logo.png)
 
+---
+
+## 📖 关于
+
 这个全面的Git速查表帮助您掌握Git命令而无需记住所有内容。无论您是初学者还是经验丰富的开发者，本指南都为基本的Git操作提供快速参考。
 
 **欢迎贡献！** 请随意：
@@ -14,7 +18,6 @@
 
 ## 📋 目录
 
-- [📖 关于](#-关于)
 - [🔧 设置](#-设置)
 - [⚙️ 配置文件](#️-配置文件)
 - [🆕 创建仓库](#-创建仓库)
@@ -27,10 +30,7 @@
 - [🔀 合并和变基](#-合并和变基)
 - [↩️ 撤销](#️-撤销)
 - [🌊 Git Flow](#-git-flow)
-- [📚 附加资源](#-附加资源)
 - [🌍 其他语言](#-其他语言)
-- [🤝 贡献](#-贡献)
-- [📄 许可证](#-许可证)
 
 ---
 
@@ -809,33 +809,6 @@ git flow hotfix finish 版本
 <p align="center">
     <img alt="Git Flow模式" src="../Img/git-flow-commands-without-flow.png">
 </p>
-
----
-
-## 📚 附加资源
-
-### 官方文档和指南
-- [Git官方文档](https://git-scm.com/doc)
-- [Pro Git书籍（免费）](https://git-scm.com/book/zh)
-- [Git参考手册](https://git-scm.com/docs)
-- [Git教程](https://git-scm.com/docs/gittutorial)
-
-### 在线学习资料
-- [GitHub Git手册](https://guides.github.com/introduction/git-handbook/)
-- [Atlassian Git教程](https://www.atlassian.com/git/tutorials)
-- [Learn Git Branching（交互式）](https://learngitbranching.js.org/?locale=zh_CN)
-- [Git Immersion](http://gitimmersion.com/)
-
-### GUI工具
-- [GitHub Desktop](https://desktop.github.com/)
-- [GitKraken](https://www.gitkraken.com/)
-- [SourceTree](https://www.sourcetreeapp.com/)
-- [Tower](https://www.git-tower.com/)
-
-### 高级主题
-- [Git Hooks](https://git-scm.com/book/zh/v2/自定义-Git-Git-钩子)
-- [Git工作流程](https://www.atlassian.com/git/tutorials/comparing-workflows)
-- [Git内部原理](https://git-scm.com/book/zh/v2/Git-内部原理-底层命令与上层命令)
 
 ---
 
