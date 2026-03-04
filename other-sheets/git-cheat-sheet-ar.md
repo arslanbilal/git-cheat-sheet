@@ -825,7 +825,7 @@ git flow hotfix finish VERSION
 | 🇧🇩 البنغالية | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 البرتغالية البرازيلية | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 الصينية | [git-cheat-sheet-zh.md](git-cheat-sheet-zh.md) |
-| 🇩�� الألمانية | [git-cheat-sheet-de.md](git-cheat-sheet-de.md) |
+| 🇩🇪 الألمانية | [git-cheat-sheet-de.md](git-cheat-sheet-de.md) |
 | 🇬🇷 اليونانية | [git-cheat-sheet-el.md](git-cheat-sheet-el.md) |
 | 🇮🇳 الهندية | [git-cheat-sheet-hi.md](git-cheat-sheet-hi.md) |
 | 🇰🇷 الكورية | [git-cheat-sheet-ko.md](git-cheat-sheet-ko.md) |
