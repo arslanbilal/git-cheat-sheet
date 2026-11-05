@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Git-flow المحسّن:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 جدول المحتويات
-- [🔧 الإعداد](#setup-1)
-- [🚀 البدء](#getting-started)
-- [✨ الميزات](#features)
-- [🎁 إنشاء إصدار](#make-a-release)
-- [🔥 الإصلاحات العاجلة](#hotfixes)
-- [📊 نظرة عامة على الأوامر](#commands-overview)
+- [🔧 الإعداد](#-الإعداد-1)
+- [🚀 البدء](#-البدء)
+- [✨ الميزات](#-الميزات)
+- [🎁 إنشاء إصدار](#-إنشاء-إصدار)
+- [🔥 الإصلاحات العاجلة](#-الإصلاحات-العاجلة)
+- [📊 نظرة عامة على الأوامر](#-نظرة-عامة-على-الأوامر)
 
 ---
 
-### 🔧 الإعداد {#setup-1}
+### 🔧 الإعداد
 
 > **متطلب أساسي:** يجب أن يكون Git مثبتاً ويعمل. Git-flow يعمل على macOS و Linux و Windows.
 
@@ -821,7 +821,8 @@ git flow hotfix finish VERSION
 
 | اللغة | الرابط |
 |-------|--------|
-| 🇸🇦 العربية | **الحالي** |
+| 🇺🇸 الإنجليزية | [README.md](../README.md) |
+| 🇸🇦 العربية | **(الحالي)** |
 | 🇧🇩 البنغالية | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 البرتغالية البرازيلية | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 الصينية | [git-cheat-sheet-zh.md](git-cheat-sheet-zh.md) |
@@ -832,7 +833,6 @@ git flow hotfix finish VERSION
 | 🇵🇱 البولندية | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
 | 🇪🇸 الإسبانية | [git-cheat-sheet-es.md](git-cheat-sheet-es.md) |
 | 🇹🇷 التركية | [git-cheat-sheet-tr.md](git-cheat-sheet-tr.md) |
-| 🇺🇸 الإنجليزية | [README.md](../README.md) |
 
 ---
 

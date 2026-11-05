@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Ulepszony Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Spis treści
-- [🔧 Instalacja](#instalacja)
-- [🚀 Rozpoczęcie pracy](#rozpoczęcie-pracy)
-- [✨ Funkcjonalności](#funkcjonalności)
-- [🎁 Tworzenie wydania](#tworzenie-wydania)
-- [🔥 Hotfixy](#hotfixy)
-- [📊 Przegląd poleceń](#przegląd-poleceń)
+- [🔧 Instalacja](#-instalacja)
+- [🚀 Rozpoczęcie pracy](#-rozpoczęcie-pracy)
+- [✨ Funkcjonalności](#-funkcjonalności)
+- [🎁 Tworzenie wydania](#-tworzenie-wydania)
+- [🔥 Hotfixy](#-hotfixy)
+- [📊 Przegląd poleceń](#-przegląd-poleceń)
 
 ---
 
-### 🔧 Instalacja {#instalacja}
+### 🔧 Instalacja
 
 > **Wymaganie wstępne:** Wymagana działająca instalacja Git. Git-flow działa na macOS, Linux i Windows.
 
@@ -821,6 +821,7 @@ Ta ściągawka jest dostępna w wielu językach:
 
 | Język | Link |
 |-------|------|
+| 🇺🇸 Angielski | [README.md](../README.md) |
 | 🇸🇦 Arabski | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
 | 🇧🇩 Bengalski | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 Portugalski (Brazylia) | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
@@ -829,10 +830,9 @@ Ta ściągawka jest dostępna w wielu językach:
 | 🇬🇷 Grecki | [git-cheat-sheet-el.md](git-cheat-sheet-el.md) |
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](git-cheat-sheet-hi.md) |
 | 🇰🇷 Koreański | [git-cheat-sheet-ko.md](git-cheat-sheet-ko.md) |
-| 🇵🇱 **Polski** | **(bieżący)** |
+| 🇵🇱 Polski | **(bieżący)** |
 | 🇪🇸 Hiszpański | [git-cheat-sheet-es.md](git-cheat-sheet-es.md) |
 | 🇹🇷 Turecki | [git-cheat-sheet-tr.md](git-cheat-sheet-tr.md) |
-| 🇺🇸 Angielski | [README.md](../README.md) |
 
 ---
 

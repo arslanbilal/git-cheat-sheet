@@ -661,16 +661,16 @@ git commit -m "ignorierte Dateien entfernen"
 **Verbesserter Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Inhaltsverzeichnis
-- [🔧 Setup](#setup-1)
-- [🚀 Erste Schritte](#erste-schritte)
-- [✨ Features](#features)
-- [🎁 Release erstellen](#release-erstellen)
-- [🔥 Hotfixes](#hotfixes)
-- [📊 Befehls-Übersicht](#befehls-übersicht)
+- [🔧 Setup](#-setup-1)
+- [🚀 Erste Schritte](#-erste-schritte)
+- [✨ Features](#-features)
+- [🎁 Release erstellen](#-release-erstellen)
+- [🔥 Hotfixes](#-hotfixes)
+- [📊 Befehls-Übersicht](#-befehls-übersicht)
 
 ---
 
-### 🔧 Setup {#setup-1}
+### 🔧 Setup
 
 > **Voraussetzung:** Funktionierende Git-Installation erforderlich. Git-flow funktioniert auf macOS, Linux und Windows.
 
@@ -826,7 +826,7 @@ Dieses Cheat-Sheet ist in mehreren Sprachen verfügbar:
 | 🇧🇩 Bengali | [git-cheat-sheet-bn.md](./git-cheat-sheet-bn.md) |
 | 🇧🇷 Brasilianisches Portugiesisch | [git-cheat-sheet-pt_BR.md](./git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 Chinesisch | [git-cheat-sheet-zh.md](./git-cheat-sheet-zh.md) |
-| 🇩🇪 **Deutsch (aktuell)** | |
+| 🇩🇪 Deutsch | **(aktuell)** |
 | 🇬🇷 Griechisch | [git-cheat-sheet-el.md](./git-cheat-sheet-el.md) |
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./git-cheat-sheet-hi.md) |
 | 🇰🇷 Koreanisch | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
@@ -857,7 +857,7 @@ Wir begrüßen Beiträge! Sie können:
 
 ## 📄 Lizenz
 
-Dieses Projekt ist Open Source und unter der [MIT-Lizenz](LICENSE) verfügbar.
+Dieses Projekt ist Open Source und unter der [MIT-Lizenz](../LICENSE) verfügbar.
 
 ---
 

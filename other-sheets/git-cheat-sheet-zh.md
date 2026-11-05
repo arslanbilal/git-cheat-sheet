@@ -1,6 +1,9 @@
 # Git Cheat Sheet 中文
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-![Git Logo](../Img/git-logo.png)
+<p align="center">
+    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
+</p>
 
 ---
 
@@ -658,16 +661,16 @@ git commit -m "删除忽略的文件"
 **改进的Git-flow：** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 目录
-- [🔧 设置](#设置-1)
-- [🚀 开始](#开始)
-- [✨ 功能](#功能)
-- [🎁 制作发布](#制作发布)
-- [🔥 热修复](#热修复)
-- [📊 命令概览](#命令概览)
+- [🔧 设置](#-设置-1)
+- [🚀 开始](#-开始)
+- [✨ 功能](#-功能)
+- [🎁 制作发布](#-制作发布)
+- [🔥 热修复](#-热修复)
+- [📊 命令概览](#-命令概览)
 
 ---
 
-### 🔧 设置 {#设置-1}
+### 🔧 设置
 
 > **先决条件：** 需要可工作的Git安装。Git-flow可在macOS、Linux和Windows上运行。
 
@@ -829,7 +832,7 @@ git flow hotfix finish 版本
 | 🇰🇷 韩语 | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
 | 🇵🇱 波兰语 | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
 | 🇹🇷 土耳其语 | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
-| 🇨🇳 **中文** | **当前** |
+| 🇨🇳 中文 | **(当前)** |
 
 ---
 
@@ -854,7 +857,7 @@ git flow hotfix finish 版本
 
 ## 📄 许可证
 
-此项目是开源的，在[MIT许可证](LICENSE)下可用。
+此项目是开源的，在[MIT许可证](../LICENSE)下可用。
 
 ---
 

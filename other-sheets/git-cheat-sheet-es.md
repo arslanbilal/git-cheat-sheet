@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Git-flow mejorado:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Tabla de Contenidos
-- [🔧 Instalación](#instalación)
-- [🚀 Primeros Pasos](#primeros-pasos)
-- [✨ Funcionalidades](#funcionalidades)
-- [🎁 Crear un Release](#crear-un-release)
-- [🔥 Hotfixes](#hotfixes)
-- [📊 Resumen de Comandos](#resumen-de-comandos)
+- [🔧 Instalación](#-instalación)
+- [🚀 Primeros Pasos](#-primeros-pasos)
+- [✨ Funcionalidades](#-funcionalidades)
+- [🎁 Crear un Release](#-crear-un-release)
+- [🔥 Hotfixes](#-hotfixes)
+- [📊 Resumen de Comandos](#-resumen-de-comandos)
 
 ---
 
-### 🔧 Instalación {#instalación}
+### 🔧 Instalación
 
 > **Prerrequisito:** Se requiere una instalación funcional de Git. Git-flow funciona en macOS, Linux y Windows.
 
@@ -821,6 +821,7 @@ Esta hoja de referencia está disponible en múltiples idiomas:
 
 | Idioma | Enlace |
 |--------|--------|
+| 🇺🇸 Inglés | [README.md](../README.md) |
 | 🇸🇦 Árabe | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
 | 🇧🇩 Bengalí | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 Portugués Brasileño | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
@@ -830,7 +831,7 @@ Esta hoja de referencia está disponible en múltiples idiomas:
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](git-cheat-sheet-hi.md) |
 | 🇰🇷 Coreano | [git-cheat-sheet-ko.md](git-cheat-sheet-ko.md) |
 | 🇵🇱 Polaco | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
-| 🇪🇸 **Español** (actual) | |
+| 🇪🇸 Español | **(actual)** |
 | 🇹🇷 Turco | [git-cheat-sheet-tr.md](git-cheat-sheet-tr.md) |
 
 ---

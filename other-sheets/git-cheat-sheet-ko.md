@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **개선된 Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 목차
-- [🔧 설정](#setup-1)
-- [🚀 시작하기](#getting-started)
-- [✨ 기능](#features)
-- [🎁 릴리스 만들기](#make-a-release)
-- [🔥 핫픽스](#hotfixes)
-- [📊 명령어 개요](#commands-overview)
+- [🔧 설정](#-설정-1)
+- [🚀 시작하기](#-시작하기)
+- [✨ 기능](#-기능)
+- [🎁 릴리스 만들기](#-릴리스-만들기)
+- [🔥 핫픽스](#-핫픽스)
+- [📊 명령어 개요](#-명령어-개요)
 
 ---
 
-### 🔧 설정 {#setup-1}
+### 🔧 설정
 
 > **전제 조건:** 작동하는 Git 설치가 필요합니다. Git-flow는 macOS, Linux, Windows에서 작동합니다.
 
@@ -821,6 +821,7 @@ git flow hotfix finish VERSION
 
 | 언어 | 링크 |
 |------|------|
+| 🇺🇸 영어 | [README.md](../README.md) |
 | 🇸🇦 아랍어 | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
 | 🇧🇩 벵골어 | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 브라질 포르투갈어 | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
@@ -828,7 +829,7 @@ git flow hotfix finish VERSION
 | 🇩🇪 독일어 | [git-cheat-sheet-de.md](git-cheat-sheet-de.md) |
 | 🇬🇷 그리스어 | [git-cheat-sheet-el.md](git-cheat-sheet-el.md) |
 | 🇮🇳 힌디어 | [git-cheat-sheet-hi.md](git-cheat-sheet-hi.md) |
-| 🇰🇷 **한국어** (현재) | |
+| 🇰🇷 한국어 | **(현재)** |
 | 🇵🇱 폴란드어 | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
 | 🇪🇸 스페인어 | [git-cheat-sheet-es.md](git-cheat-sheet-es.md) |
 | 🇹🇷 터키어 | [git-cheat-sheet-tr.md](git-cheat-sheet-tr.md) |

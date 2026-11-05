@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **উন্নত Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 সূচিপত্র
-- [🔧 সেটআপ](#setup-1)
-- [🚀 শুরু করা](#getting-started)
-- [✨ ফিচার](#features)
-- [🎁 রিলিজ তৈরি](#make-a-release)
-- [🔥 হটফিক্স](#hotfixes)
-- [📊 কমান্ড ওভারভিউ](#commands-overview)
+- [🔧 সেটআপ](#-সেটআপ-1)
+- [🚀 শুরু করা](#-শুরু-করা)
+- [✨ ফিচার](#-ফিচার)
+- [🎁 রিলিজ তৈরি](#-রিলিজ-তৈরি)
+- [🔥 হটফিক্স](#-হটফিক্স)
+- [📊 কমান্ড ওভারভিউ](#-কমান্ড-ওভারভিউ)
 
 ---
 
-### 🔧 সেটআপ {#setup-1}
+### 🔧 সেটআপ
 
 > **পূর্বশর্ত:** কার্যকরী Git ইনস্টলেশন প্রয়োজন। Git-flow macOS, Linux এবং Windows-এ কাজ করে।
 
@@ -821,8 +821,9 @@ git flow hotfix finish VERSION
 
 | ভাষা | লিংক |
 |----------|------|
+| 🇺🇸 ইংরেজি | [README.md](../README.md) |
 | 🇸🇦 আরবি | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
-| 🇧🇩 **বাংলা** | **(বর্তমান)** |
+| 🇧🇩 বাংলা | **(বর্তমান)** |
 | 🇧🇷 ব্রাজিলিয়ান পর্তুগিজ | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 চীনা | [git-cheat-sheet-zh.md](git-cheat-sheet-zh.md) |
 | 🇩🇪 জার্মান | [git-cheat-sheet-de.md](git-cheat-sheet-de.md) |
@@ -832,7 +833,6 @@ git flow hotfix finish VERSION
 | 🇵🇱 পোলিশ | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
 | 🇪🇸 স্প্যানিশ | [git-cheat-sheet-es.md](git-cheat-sheet-es.md) |
 | 🇹🇷 তুর্কি | [git-cheat-sheet-tr.md](git-cheat-sheet-tr.md) |
-| 🇺🇸 ইংরেজি | [README.md](../README.md) |
 
 ---
 

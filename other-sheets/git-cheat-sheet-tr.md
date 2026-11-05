@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Geliştirilmiş Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 İçindekiler
-- [🔧 Kurulum](#setup-1)
-- [🚀 Başlangıç](#getting-started)
-- [✨ Özellikler](#features)
-- [🎁 Sürüm Yayınlama](#make-a-release)
-- [🔥 Acil Düzeltmeler](#hotfixes)
-- [📊 Komutlara Genel Bakış](#commands-overview)
+- [🔧 Kurulum](#-kurulum-1)
+- [🚀 Başlangıç](#-başlangıç)
+- [✨ Özellikler](#-özellikler)
+- [🎁 Sürüm Yayınlama](#-sürüm-yayınlama)
+- [🔥 Acil Düzeltmeler](#-acil-düzeltmeler)
+- [📊 Komutlara Genel Bakış](#-komutlara-genel-bakış)
 
 ---
 
-### 🔧 Kurulum {#setup-1}
+### 🔧 Kurulum
 
 > **Ön Koşul:** Çalışan bir Git kurulumu gereklidir. Git-flow macOS, Linux ve Windows'ta çalışır.
 
@@ -821,6 +821,7 @@ Bu kopya kağıdı birçok dilde mevcuttur:
 
 | Dil | Bağlantı |
 |-----|----------|
+| 🇺🇸 İngilizce | [README.md](../README.md) |
 | 🇸🇦 Arapça | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
 | 🇧🇩 Bengalce | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 Brezilya Portekizcesi | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
@@ -831,7 +832,7 @@ Bu kopya kağıdı birçok dilde mevcuttur:
 | 🇰🇷 Korece | [git-cheat-sheet-ko.md](git-cheat-sheet-ko.md) |
 | 🇵🇱 Lehçe | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
 | 🇪🇸 İspanyolca | [git-cheat-sheet-es.md](git-cheat-sheet-es.md) |
-| 🇹🇷 **Türkçe** | **(mevcut)** |
+| 🇹🇷 Türkçe | **(mevcut)** |
 
 ---
 

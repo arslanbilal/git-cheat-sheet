@@ -1,6 +1,9 @@
 # Git Cheat Sheet Português (Brasil)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-![Git Logo](../Img/git-logo.png)
+<p align="center">
+    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
+</p>
 
 ---
 
@@ -658,16 +661,16 @@ git commit -m "remover arquivos ignorados"
 **Git-flow melhorado:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Índice
-- [🔧 Configuração](#configuração-1)
-- [🚀 Começando](#começando)
-- [✨ Features](#features)
-- [🎁 Fazer um Release](#fazer-um-release)
-- [🔥 Hotfixes](#hotfixes)
-- [📊 Resumo de Comandos](#resumo-de-comandos)
+- [🔧 Configuração](#-configuração-1)
+- [🚀 Começando](#-começando)
+- [✨ Features](#-features)
+- [🎁 Fazer um Release](#-fazer-um-release)
+- [🔥 Hotfixes](#-hotfixes)
+- [📊 Resumo de Comandos](#-resumo-de-comandos)
 
 ---
 
-### 🔧 Configuração {#configuração-1}
+### 🔧 Configuração
 
 > **Pré-requisito:** Instalação do Git funcionando é necessária. Git-flow funciona no macOS, Linux e Windows.
 
@@ -828,7 +831,7 @@ Esta folha de dicas está disponível em múltiplos idiomas:
 | 🇬🇷 Grego | [git-cheat-sheet-el.md](./git-cheat-sheet-el.md) |
 | 🇮🇳 Hindi | [git-cheat-sheet-hi.md](./git-cheat-sheet-hi.md) |
 | 🇰🇷 Coreano | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
-| 🇧🇷 **Português (Brasil)** | **atual** |
+| 🇧🇷 Português (Brasil) | **(atual)** |
 | 🇵🇱 Polonês | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
 | 🇹🇷 Turco | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
 
@@ -855,7 +858,7 @@ Damos as boas-vindas a contribuições! Você pode:
 
 ## 📄 Licença
 
-Este projeto é código aberto e está disponível sob a [Licença MIT](LICENSE).
+Este projeto é código aberto e está disponível sob a [Licença MIT](../LICENSE).
 
 ---
 

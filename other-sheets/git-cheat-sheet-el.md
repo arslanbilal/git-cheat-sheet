@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Βελτιωμένο Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Πίνακας Περιεχομένων
-- [🔧 Ρύθμιση](#setup-1)
-- [🚀 Ξεκινώντας](#ξεκινώντας)
-- [✨ Λειτουργίες](#λειτουργίες)
-- [🎁 Δημιουργία Έκδοσης](#δημιουργία-έκδοσης)
-- [🔥 Hotfixes](#hotfixes)
-- [📊 Επισκόπηση Εντολών](#επισκόπηση-εντολών)
+- [🔧 Ρύθμιση](#-ρύθμιση-1)
+- [🚀 Ξεκινώντας](#-ξεκινώντας)
+- [✨ Λειτουργίες](#-λειτουργίες)
+- [🎁 Δημιουργία Έκδοσης](#-δημιουργία-έκδοσης)
+- [🔥 Hotfixes](#-hotfixes)
+- [📊 Επισκόπηση Εντολών](#-επισκόπηση-εντολών)
 
 ---
 
-### 🔧 Ρύθμιση {#setup-1}
+### 🔧 Ρύθμιση
 
 > **Προαπαιτούμενο:** Απαιτείται λειτουργική εγκατάσταση Git. Το Git-flow λειτουργεί σε macOS, Linux και Windows.
 
@@ -821,12 +821,13 @@ git flow hotfix finish VERSION
 
 | Γλώσσα | Σύνδεσμος |
 |----------|------|
+| 🇺🇸 Αγγλικά | [README.md](../README.md) |
 | 🇸🇦 Αραβικά | [git-cheat-sheet-ar.md](git-cheat-sheet-ar.md) |
 | 🇧🇩 Μπενγκάλι | [git-cheat-sheet-bn.md](git-cheat-sheet-bn.md) |
 | 🇧🇷 Βραζιλιάνικα Πορτογαλικά | [git-cheat-sheet-pt_BR.md](git-cheat-sheet-pt_BR.md) |
 | 🇨🇳 Κινέζικα | [git-cheat-sheet-zh.md](git-cheat-sheet-zh.md) |
 | 🇩🇪 Γερμανικά | [git-cheat-sheet-de.md](git-cheat-sheet-de.md) |
-| 🇬🇷 **Ελληνικά** | [git-cheat-sheet-el.md](git-cheat-sheet-el.md) |
+| 🇬🇷 Ελληνικά | **(τρέχουσα)** |
 | 🇮🇳 Χίντι | [git-cheat-sheet-hi.md](git-cheat-sheet-hi.md) |
 | 🇰🇷 Κορεάτικα | [git-cheat-sheet-ko.md](git-cheat-sheet-ko.md) |
 | 🇵🇱 Πολωνικά | [git-cheat-sheet-pl.md](git-cheat-sheet-pl.md) |
@@ -856,7 +857,7 @@ git flow hotfix finish VERSION
 
 ## 📄 Άδεια Χρήσης
 
-Αυτό το έργο είναι ανοιχτού κώδικα και διαθέσιμο υπό την [Άδεια MIT](LICENSE).
+Αυτό το έργο είναι ανοιχτού κώδικα και διαθέσιμο υπό την [Άδεια MIT](../LICENSE).
 
 ---
 
