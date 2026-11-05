@@ -1,6 +1,13 @@
 # Git Cheat Sheet 中文
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-![Git Logo](../Img/git-logo.png)
+<p align="center">
+    <img alt="Git" src="../Img/git-logo.png" height="190" width="455">
+</p>
+
+---
+
+## 📖 关于
 
 这个全面的Git速查表帮助您掌握Git命令而无需记住所有内容。无论您是初学者还是经验丰富的开发者，本指南都为基本的Git操作提供快速参考。
 
@@ -14,7 +21,6 @@
 
 ## 📋 目录
 
-- [📖 关于](#-关于)
 - [🔧 设置](#-设置)
 - [⚙️ 配置文件](#️-配置文件)
 - [🆕 创建仓库](#-创建仓库)
@@ -27,10 +33,7 @@
 - [🔀 合并和变基](#-合并和变基)
 - [↩️ 撤销](#️-撤销)
 - [🌊 Git Flow](#-git-flow)
-- [📚 附加资源](#-附加资源)
 - [🌍 其他语言](#-其他语言)
-- [🤝 贡献](#-贡献)
-- [📄 许可证](#-许可证)
 
 ---
 
@@ -658,16 +661,16 @@ git commit -m "删除忽略的文件"
 **改进的Git-flow：** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 目录
-- [🔧 设置](#设置-1)
-- [🚀 开始](#开始)
-- [✨ 功能](#功能)
-- [🎁 制作发布](#制作发布)
-- [🔥 热修复](#热修复)
-- [📊 命令概览](#命令概览)
+- [🔧 设置](#-设置-1)
+- [🚀 开始](#-开始)
+- [✨ 功能](#-功能)
+- [🎁 制作发布](#-制作发布)
+- [🔥 热修复](#-热修复)
+- [📊 命令概览](#-命令概览)
 
 ---
 
-### 🔧 设置 {#设置-1}
+### 🔧 设置
 
 > **先决条件：** 需要可工作的Git安装。Git-flow可在macOS、Linux和Windows上运行。
 
@@ -812,33 +815,6 @@ git flow hotfix finish 版本
 
 ---
 
-## 📚 附加资源
-
-### 官方文档和指南
-- [Git官方文档](https://git-scm.com/doc)
-- [Pro Git书籍（免费）](https://git-scm.com/book/zh)
-- [Git参考手册](https://git-scm.com/docs)
-- [Git教程](https://git-scm.com/docs/gittutorial)
-
-### 在线学习资料
-- [GitHub Git手册](https://guides.github.com/introduction/git-handbook/)
-- [Atlassian Git教程](https://www.atlassian.com/git/tutorials)
-- [Learn Git Branching（交互式）](https://learngitbranching.js.org/?locale=zh_CN)
-- [Git Immersion](http://gitimmersion.com/)
-
-### GUI工具
-- [GitHub Desktop](https://desktop.github.com/)
-- [GitKraken](https://www.gitkraken.com/)
-- [SourceTree](https://www.sourcetreeapp.com/)
-- [Tower](https://www.git-tower.com/)
-
-### 高级主题
-- [Git Hooks](https://git-scm.com/book/zh/v2/自定义-Git-Git-钩子)
-- [Git工作流程](https://www.atlassian.com/git/tutorials/comparing-workflows)
-- [Git内部原理](https://git-scm.com/book/zh/v2/Git-内部原理-底层命令与上层命令)
-
----
-
 ## 🌍 其他语言
 
 此速查表提供多种语言版本：
@@ -856,6 +832,7 @@ git flow hotfix finish 版本
 | 🇰🇷 韩语 | [git-cheat-sheet-ko.md](./git-cheat-sheet-ko.md) |
 | 🇵🇱 波兰语 | [git-cheat-sheet-pl.md](./git-cheat-sheet-pl.md) |
 | 🇹🇷 土耳其语 | [git-cheat-sheet-tr.md](./git-cheat-sheet-tr.md) |
+| 🇨🇳 中文 | **(当前)** |
 
 ---
 
@@ -880,7 +857,7 @@ git flow hotfix finish 版本
 
 ## 📄 许可证
 
-此项目是开源的，在[MIT许可证](LICENSE)下可用。
+此项目是开源的，在[MIT许可证](../LICENSE)下可用。
 
 ---
 

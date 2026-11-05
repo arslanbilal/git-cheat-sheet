@@ -660,16 +660,16 @@ git commit -m "remove ignored files"
 **Improved Git-flow:** [git-flow-avh](https://github.com/petervanderdoes/gitflow-avh)
 
 ### 📋 Table of Contents
-- [🔧 Setup](#setup-1)
-- [🚀 Getting Started](#getting-started)
-- [✨ Features](#features)
-- [🎁 Make a Release](#make-a-release)
-- [🔥 Hotfixes](#hotfixes)
-- [📊 Commands Overview](#commands-overview)
+- [🔧 Setup](#-setup-1)
+- [🚀 Getting Started](#-getting-started)
+- [✨ Features](#-features)
+- [🎁 Make a Release](#-make-a-release)
+- [🔥 Hotfixes](#-hotfixes)
+- [📊 Commands Overview](#-commands-overview)
 
 ---
 
-### 🔧 Setup {#setup-1}
+### 🔧 Setup
 
 > **Prerequisite:** Working Git installation required. Git-flow works on macOS, Linux, and Windows.
 
